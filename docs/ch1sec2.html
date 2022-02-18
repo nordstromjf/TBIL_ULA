@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-02-16T19:25:22-08:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Section 1.2</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch1sec1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-first.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch1sec3.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch1sec1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-first.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch1sec3.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1" class="internal"><span class="codenumber">I</span> <span class="title"></span></a></li>
+<li class="link">
+<a href="ch-first.html" data-scroll="ch-first" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a><ul>
+<li><a href="ch1sec1.html" data-scroll="ch1sec1" class="internal">Section 1.1</a></li>
+<li><a href="ch1sec2.html" data-scroll="ch1sec2" class="active">Section 1.2</a></li>
+<li><a href="ch1sec3.html" data-scroll="ch1sec3" class="internal">Section 1.3</a></li>
+<li><a href="ch1sec4.html" data-scroll="ch1sec4" class="internal">Section 1.4</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-two.html" data-scroll="ch-two" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="ch2sec1.html" data-scroll="ch2sec1" class="internal">Section 2.1</a></li>
+<li><a href="ch2sec2.html" data-scroll="ch2sec2" class="internal">Section 2.2</a></li>
+<li><a href="ch2sec3.html" data-scroll="ch2sec3" class="internal">Section 2.3</a></li>
+<li><a href="ch2sec4.html" data-scroll="ch2sec4" class="internal">Section 2.4</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></li>
+<li class="link"><a href="solutions-2.html" data-scroll="solutions-2" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ch1sec2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Section 1.2</span>
+</h2>
+<p id="p-17">One of our goals will be to use algbra to find solutions to our systems of equations.</p>
+<article class="activity project-like" id="activity-5"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
+</h3>
+<p id="p-18">Use algebra to show that the following two equations cannot be true at the same time.</p>
+<div class="displaymath process-math">
+\begin{align*}
+-x_1+2x_2  &amp;=  5\\
+2x_1-4x_2  &amp;=  6
+\end{align*}
+</div>
+<p id="p-19">You are showing that the equations are <dfn class="terminology">inconsistent</dfn>. What contradiction do you reach?</p></article><article class="activity project-like" id="activity-6"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-3">
+<p id="p-20">If a solutions exists, the system is <dfn class="terminology">consistent</dfn>. Consider the following linear system.</p>
+<div class="displaymath process-math">
+\begin{align*}
+-x_1+2x_2  &amp;= -3\\
+2x_1-4x_2  &amp;=  6
+\end{align*}
+</div>
+</div>
+<article class="task exercise-like" id="task-7"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-21">Find three different solutions for this system.</p></article><article class="task exercise-like" id="task-8"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-22">Let <span class="process-math">\(x_2=a\)</span> where <span class="process-math">\(a\)</span> is an arbitrary real number, then find an expression for <span class="process-math">\(x_1\)</span> in terms of <span class="process-math">\(a\text{.}\)</span> Use this to write the solution set <span class="process-math">\(\setBuilder
+{
+\left[\begin{array}{c}
+\unknown \\
+a
+\end{array}\right]
+}{
+a \in \IR
+}\)</span> for the linear system.</p></article></article><article class="activity project-like" id="activity-7"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h3>
+<p id="p-23">Consider the following linear system.</p>
+<div class="displaymath process-math">
+\begin{alignat*}{5}
+x_1 &amp;\,+\,&amp; 2x_2 &amp;\, \,&amp;     &amp;\,-\,&amp;  x_4 &amp;\,=\,&amp; 3\\
+&amp;\, \,&amp;      &amp;\, \,&amp; x_3 &amp;\,+\,&amp; 4x_4 &amp;\,=\,&amp; -2
+\end{alignat*}
+</div>
+<p id="p-24">Describe the solution set</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\setBuilder
+{
+\left[\begin{array}{c}
+\unknown \\
+a \\
+\unknown \\
+b
+\end{array}\right]
+}{
+a,b \in \IR
+}
+\end{equation*}
+</div>
+<p class="continuation">to the linear system by setting <span class="process-math">\(x_2=a\)</span> and <span class="process-math">\(x_4=b\text{,}\)</span> and then solving for <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_3\text{.}\)</span></p></article><p id="p-25">We can use an <dfn class="terminology">augmented matrix</dfn> to represent the system of equations.</p>
+<article class="activity project-like" id="activity-8"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h3>
+<p id="p-26">Two systems of linear equations (and their corresponding augmented matrices) are said to be <dfn class="terminology">equivalent</dfn> if they have the same solution set.</p>
+<p id="p-27">Following are seven procedures used to manipulate an augmented matrix. Label the procedures that would result in an equivalent augmented matrix as <em class="emphasis">valid</em>, and label the procedures that might change the solution set of the corresponding linear system as <em class="emphasis">invalid</em>.</p>
+<ol class="lower-alpha">
+<li id="li-26"><p id="p-derived-li-26">Swap two rows.</p></li>
+<li id="li-27"><p id="p-derived-li-27">Swap two columns.</p></li>
+<li id="li-28"><p id="p-derived-li-28">Add a constant to every term in a row.</p></li>
+<li id="li-29"><p id="p-derived-li-29">Multiply a row by a nonzero constant.</p></li>
+<li id="li-30"><p id="p-derived-li-30">Add a constant multiple of one row to another row.</p></li>
+<li id="li-31"><p id="p-derived-li-31">Replace a column with zeros.</p></li>
+<li id="li-32"><p id="p-derived-li-32">Replace a row with zeros.</p></li>
+</ol></article><article class="activity project-like" id="activity-9"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h3>
+<p id="p-28">Consider the following (equivalent) linear systems.</p>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-29">A)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
+-x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
+2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-30">B)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7 \\
+-x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
+x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3  
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-31">C)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 \\
+&amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4   \\
+&amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 
+\end{alignat*}
+</div>
+</div>
+</div></div>
+<div class="sidebyside"><div class="sbsrow" style="margin-left:0.166666666666667%;margin-right:0.166666666666667%;">
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-32">D)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
+&amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 \\
+2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-33">E)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 \\
+&amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 \\
+&amp; &amp;   &amp; &amp; z &amp;\,=\,&amp; 3   
+\end{alignat*}
+</div>
+</div>
+<div class="sbspanel top" style="width:33.1103678929766%;">
+<p id="p-34">F)</p>
+<div class="displaymath process-math">
+\begin{alignat*}{4}
+x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 \\
+&amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 \\
+&amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1   
+\end{alignat*}
+</div>
+</div>
+</div></div>
+<p id="p-35">Rank the six linear systems from most complicated to simplest.</p></article><article class="activity project-like" id="activity-10"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h3>
+<p id="p-36">We can rewrite the previous in terms of  equivalences of augmented matrices</p>
+<div class="displaymath process-math">
+\begin{alignat*}{3}
+\left[\begin{array}{ccc|c} 2 &amp; 5 &amp; 3 &amp; 7 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 &amp; 3 \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 2 &amp; 5 &amp;  3 &amp; 7  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right] \sim \\
+\left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \circledNumber{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \circledNumber{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \circledNumber{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+\left[\begin{array}{ccc|c} \circledNumber{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \circledNumber{1} &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
+\end{alignat*}
+</div>
+<p id="p-37">Determine the row operation(s) necessary in each step to transform the most complicated system's augmented matrix into the simplest.</p></article><article class="activity project-like" id="activity-11"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h3>
+<article class="task exercise-like" id="task-9"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-38">Suppose that you have a system of linear equations in the unknowns <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> whose augmented matrix is row equivalent to</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+1 \amp 0 \amp 3 \\ 
+0 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp 0 \\
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p></article><article class="task exercise-like" id="task-10"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-39">Suppose that you have a system of linear equations in the unknowns <span class="process-math">\(x\)</span> and <span class="process-math">\(y\)</span> whose augmented matrix is row equivalent to</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rr|r}
+1 \amp 0 \amp 3 \\ 
+0 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp 1 \\
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Write the system of linear equations corresponding to the augmented matrix.  Then describe the solution set of the system of equations in as much detail as you can.</p></article></article><article class="activity project-like" id="activity-12"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h3>
+<p id="p-40">Use Gaussian elimination to describe the solutions to the following systems of linear equations.</p>
+<ol class="lower-alpha">
+<li id="li-33">
+<p id="p-41">Does the following linear system have (a) exactly one solution, (b) infinitely many solutions, or (c) no solutions?</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{alignedat}{4}
+x \amp  {}+{}  \amp y \amp  {}+{}  \amp 2z \amp  {}={}  \amp 1 \\
+2x \amp  {}-{}  \amp y \amp  {}-{}  \amp 2z \amp  {}={}  \amp 2 \\
+-x \amp  {}+{}  \amp y \amp  {}+{}  \amp z \amp  {}={}  \amp 0 \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li id="li-34">
+<p id="p-42">Does the following linear system have (a) exactly one solution, (b) infinitely many solutions, or (c) no solutions?</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{alignedat}{4}
+-x \amp  {}-{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
+2x \amp  {}+{}  \amp 4y \amp  {}-{}  \amp z \amp  {}={}  \amp 5 \\
+x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 3 \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+<li id="li-35">
+<p id="p-43">Does the following linear system have (a) exactly one solution, (b) infinitely many solutions, or (c) no solutions?</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{alignedat}{4}
+-x \amp  {}-{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
+2x \amp  {}+{}  \amp 4y \amp  {}-{}  \amp z \amp  {}={}  \amp 5 \\
+x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 2 \\
+\end{alignedat}
+\end{equation*}
+</div>
+</li>
+</ol></article><article class="activity project-like" id="activity-13"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-4">
+<p id="p-44">Suppose that the augmented matrix of a system of linear equations has the following shape where <span class="process-math">\(*\)</span> could be any real number.</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rrrrr|r}
+* \amp * \amp * \amp * \amp * \amp * \\ 
+* \amp * \amp * \amp * \amp * \amp * \\ 
+* \amp * \amp * \amp * \amp * \amp * \\ 
+\end{array}
+\right].
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-11"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-45">How many equations are there in this system and how many unknowns?</p></article><article class="task exercise-like" id="task-12"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-46">What would be the most likely solution set</p>
+<ol class="lower-alpha">
+<li id="li-36"><p id="p-derived-li-36">the empty set (no solution)</p></li>
+<li id="li-37"><p id="p-derived-li-37">exactly one solution</p></li>
+<li id="li-38"><p id="p-derived-li-38">infinitely many solutions</p></li>
+</ol></article><article class="task exercise-like" id="task-13"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-47">Suppose that this augmented matrix is row equivalent to</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[
+\begin{array}{rrrrr|r}
+1 \amp 2 \amp 0 \amp 0 \amp 3 \amp 2 \\ 
+0 \amp 0 \amp 1 \amp 2 \amp -1 \amp -1 \\ 
+0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\ 
+\end{array}
+\right].
+\end{equation*}
+</div>
+<p class="continuation">Make a choice for the names of the unknowns and write the corresponding system of linear equations.  Does the system have (a) exactly one solution, (b) infinitely many solutions, or (c) no solutions?</p></article></article><article class="activity project-like" id="activity-14"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span>
+</h3>
+<p id="p-48">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cccc}2 &amp; 6 &amp; -1 &amp; 6  \\ 1 &amp; 3 &amp; -1 &amp; 2 \\ -1 &amp; -3 &amp; 2 &amp; 0 \end{array}\right].
+\end{equation*}
+</div>
+<p class="continuation">Which row operation is the best choice for the first move in converting to RREF?</p>
+<ol class="lower-alpha">
+<li id="li-39"><p id="p-derived-li-39">Add row 3 to row 2 (<span class="process-math">\(R_2+R_3 \rightarrow R_2\)</span>)</p></li>
+<li id="li-40"><p id="p-derived-li-40">Add row 2 to row 3 (<span class="process-math">\(R_3+R_2 \rightarrow R_3\)</span>)</p></li>
+<li id="li-41"><p id="p-derived-li-41">Swap row 1 to row 2 (<span class="process-math">\(R_1 \leftrightarrow R_2\)</span>)</p></li>
+<li id="li-42"><p id="p-derived-li-42">Add -2 row 2 to row 1 (<span class="process-math">\(R_1-2R_2 \rightarrow R_1\)</span>)</p></li>
+</ol></article><article class="activity project-like" id="activity-15"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
+</h3>
+<p id="p-49">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cccc} \circledNumber{1} &amp; 3 &amp; -1 &amp; 2 \\ 2 &amp; 6 &amp; -1 &amp; 6 \\ -1 &amp; -3 &amp; 2 &amp; 0 \end{array}\right].
+\end{equation*}
+</div>
+<p class="continuation">Which row operation is the best choice for the next move in converting to RREF?</p>
+<ol class="lower-alpha">
+<li id="li-43"><p id="p-derived-li-43">Add row 1 to  row 3 (<span class="process-math">\(R_3+R_1 \rightarrow R_3\)</span>)</p></li>
+<li id="li-44"><p id="p-derived-li-44">Add -2 row 1 to  row 2 (<span class="process-math">\(R_2-2R_1 \rightarrow R_2\)</span>)</p></li>
+<li id="li-45"><p id="p-derived-li-45">Add 2 row 2 to row 3 (<span class="process-math">\(R_3+2R_2 \rightarrow R_3\)</span>)</p></li>
+<li id="li-46"><p id="p-derived-li-46">Add 2 row 3 to row 2 (<span class="process-math">\(R_2+2R_3 \rightarrow R_2\)</span>)</p></li>
+</ol></article><article class="activity project-like" id="activity-16"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span>
+</h3>
+<p id="p-50">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{cccc}\circledNumber{1} &amp; 3 &amp; -1 &amp; 2  \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 2 \end{array}\right].
+\end{equation*}
+</div>
+<p class="continuation">Which row operation is the best choice for the next move in converting to RREF?</p>
+<ol class="lower-alpha">
+<li id="li-47"><p id="p-derived-li-47">Add row 1 to row 2 (<span class="process-math">\(R_2+R_1 \rightarrow R_2\)</span>)</p></li>
+<li id="li-48"><p id="p-derived-li-48">Add -1 row 3 to  row 2 (<span class="process-math">\(R_2-R_3 \rightarrow R_2\)</span>)</p></li>
+<li id="li-49"><p id="p-derived-li-49">Add -1 row 2 to  row 3 (<span class="process-math">\(R_3-R_2 \rightarrow R_3\)</span>)</p></li>
+<li id="li-50"><p id="p-derived-li-50">Add row 2 to row 1 (<span class="process-math">\(R_1+R_2 \rightarrow R_1\)</span>)</p></li>
+</ol></article><article class="activity project-like" id="activity-17"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.13</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-5">
+<p id="p-51">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc}2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 3 &amp; -1 &amp; 1 \end{array}\right].
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-14"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-52">Perform three row operations to produce a matrix closer to RREF.</p></article><article class="task exercise-like" id="task-15"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-53">Finish putting it in RREF.</p></article></article><article class="activity project-like" id="activity-18"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.14</span><span class="period">.</span>
+</h3>
+<p id="p-54">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right].
+\end{equation*}
+</div>
+<p id="p-55">Compute <span class="process-math">\(\RREF(A)\text{.}\)</span></p></article><article class="activity project-like" id="activity-19"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.15</span><span class="period">.</span>
+</h3>
+<p id="p-56">Consider the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].
+\end{equation*}
+</div>
+<p id="p-57">Compute <span class="process-math">\(\RREF(A)\text{.}\)</span></p></article></section></div></main>
+</div>
+</body>
+</html>
