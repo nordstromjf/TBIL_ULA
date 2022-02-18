@@ -1,0 +1,314 @@
+<section xml:id="ch1sec4">
+
+<title>Section 1.4</title>
+
+<!--Preview Activity 1.4.1-->
+
+<!--TBIL Activity 1.2.7-->
+ <activity estimated-time='8'>
+    <statement>
+        <p>
+Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</term>) if
+        </p>
+<ol>
+<li> The leading term (first nonzero term) of each nonzero row is a 1.
+      Call these terms <term>pivots</term>.
+</li>
+<li> Each pivot is to the right of every higher pivot.
+</li>
+<li> Each term above or below a pivot is zero.
+</li>
+<li> All rows of zeroes are at the bottom of the matrix.
+</li>
+</ol>
+    <p>
+For each matrix, circle the leading terms, and label it as RREF or not RREF.
+For the ones not in RREF, find their RREF.
+    </p>
+      <sidebyside widths="33% 33% 33%">
+<p><me> A=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> B=\left[\begin{array}{ccc|c} 1 &amp; 2 &amp; 4 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> C=\left[\begin{array}{ccc|c} 0 &amp; 0 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; -1  \end{array}\right]</me></p>
+        </sidebyside>
+    </statement>
+</activity>
+
+<!--TBIL-LA Activity 1.2.8-->
+<activity estimated-time='8'>
+    <statement>
+       <!-- <p>
+Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</term>) if
+        </p>
+<ol>
+<li> The leading term (first nonzero term) of each nonzero row is a 1.
+      Call these terms <term>pivots</term>.
+</li>
+<li> Each pivot is to the right of every higher pivot.
+</li>
+<li> Each term above or below a pivot is zero.
+</li>
+<li> All rows of zeroes are at the bottom of the matrix.
+</li>
+</ol>-->
+    <p>
+For each matrix, circle the leading terms, and label it as RREF or not RREF.
+For the ones not in RREF, find their RREF.
+    </p>
+      <sidebyside widths="33% 33% 33%">
+<p><me> D=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 2 &amp; -3 \\ 0 &amp; 3 &amp; 3 &amp; -3 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> E=\left[\begin{array}{ccc|c} 0 &amp; 1 &amp; 0 &amp; 7 \\ 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{array}\right]</me></p>
+<p><me> F=\left[\begin{array}{ccc|c} 1 &amp; 0 &amp; 0 &amp; 4 \\ 0 &amp; 1 &amp; 0 &amp; 7 \\ 0 &amp; 0 &amp; 1 &amp; 0 \end{array}\right]</me></p>
+</sidebyside>
+    </statement>
+</activity>
+
+<activity>
+      <!--<title> Some basic observations about pivots </title>-->
+
+      <statement>
+      <p> 
+      <ol label="a.">
+    <li> <p>  Given below is a matrix and its reduced row echelon
+    form.  Indicate the pivot positions.
+    <me>
+      \left[
+      \begin{array}{rrrr}
+      2 \amp 4 \amp 6 \amp -1 \\
+      -3 \amp 1 \amp 5 \amp 0 \\
+      1 \amp 3 \amp 5 \amp 1 \\
+      \end{array}
+      \right]
+      \sim
+      \left[
+      \begin{array}{rrrr}
+      1 \amp 0 \amp -1 \amp 0 \\
+      0 \amp 1 \amp 2 \amp 0 \\
+      0 \amp 0 \amp 0 \amp 1 \\
+      \end{array}
+      \right]
+    </me>.
+    </p></li>
+
+    <li> <p> How many pivot positions can there be in one row?  </p></li>
+    <li> <p>  In a <m>3\times5</m> matrix, what is the largest possible number
+    of pivot positions?  Give an example of a matrix that has the
+    largest possible number of pivot positions.
+    </p></li>
+
+    <li> <p> How many pivots can there be in one column? </p></li>
+    <li> <p>  In a
+    <m>5\times3</m> matrix, what is the largest possible number of
+    pivot positions?  Give an example of a matrix that has the
+    largest possible number of pivot positions. </p></li>
+
+    <li> <p> Give an example of a matrix with a pivot position in
+    every row and every column.  What is special about 
+    such a matrix? </p></li>
+      </ol>
+      </p>
+      </statement></activity>
+
+      <!--Activity 1.4.2-->
+
+      <activity>
+      <statement>
+      <p>
+      <ol label="a.">
+    <li xml:id="li-existence-examples"> <p>
+      Shown below are three augmented matrices in reduced row
+      echelon form.
+      </p>
+      <sidebyside>
+      <p>
+        <me>
+          (i)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 0 \amp 3 \\
+          0 \amp 1 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 1 \amp -2 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+      </p>
+      
+      <p>
+        <me>
+          (ii)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 2 \amp 3 \\
+          0 \amp 1 \amp -1 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+      </p>
+
+      <p>
+        <me>
+          (iii)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 2 \amp 0 \\
+          0 \amp 1 \amp -1 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 1 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+      </p>
+    </sidebyside>
+    <p>
+      For each matrix, identify the pivot positions and determine if
+      the corresponding linear system is (a) consistent or (b) inconsistent.
+      Be able to explain how the location of the pivots determine
+      consistency or inconsistency.
+    </p>
+    </li>
+    
+    <li> <p> Each of these augmented matrices above has a row in
+    which each entry is zero.  What, if anything, does the
+    presence of such a row tell us about the consistency of the
+    corresponding linear system?  </p></li>
+    </ol></p>
+    </statement>
+</activity>
+
+<activity><statement>
+   <p>
+    <ol label="a.">
+    <li> <p> Give an example of a <m>3\times5</m> augmented matrix
+    in reduced row echelon form that represents a consistent
+    system.  Indicate the pivot positions in your matrix and be able to
+    explain why these pivot positions guarantee a consistent
+    system. 
+    </p></li>
+
+    <li xml:id="li-pivots-existence">
+      <p> Give an example of a <m>3\times5</m> augmented matrix in
+      reduced row echelon form that represents an inconsistent
+      system.  Indicate the pivot positions in your matrix and be able to
+      explain why these pivot positions guarantee an inconsistent
+      system.
+    </p></li>
+
+    <li> <p> Write the reduced row echelon form of the coefficient
+    matrix of the corresponding linear system in
+    <xref ref="li-pivots-existence" />.
+    What do you notice about the pivot positions in this
+    coefficient matrix?  </p></li>
+
+    <li> <p> Suppose we have a linear system for
+    which the <em> coefficient</em> matrix has the following
+    reduced row echelon form.
+    <me>
+      \left[
+      \begin{array}{rrrrr}
+      1 \amp 0 \amp 0 \amp 0 \amp -1 \\
+      0 \amp 1 \amp 0 \amp 0 \amp 2  \\
+      0 \amp 0 \amp 1 \amp 0 \amp 0  \\
+      0 \amp 0 \amp 0 \amp 1 \amp -3 \\
+      \end{array}
+      \right]
+    </me>
+    Must the system be (a) consistent, (b) inconsistent, or (c) are you unable to determine anything about consistency? 
+    </p></li>
+      </ol>
+      </p>
+      </statement></activity>
+
+
+
+<!--Activity 1.4.3-->
+      <activity>
+      <statement>
+    <p>
+        Here are the three augmented matrices in reduced row echelon
+        form that we considered previously.
+        <sidebyside>
+          <p>
+        <me>
+          (i)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 0 \amp 3 \\
+          0 \amp 1 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 1 \amp -2 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+          </p>
+          
+          <p>
+        <me>
+          (ii)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 2 \amp 3 \\
+          0 \amp 1 \amp -1 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+          </p>
+
+          <p>
+        <me>
+          (iii)\left[
+          \begin{array}{rrr|r}
+          1 \amp 0 \amp 2 \amp 0 \\
+          0 \amp 1 \amp -1 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 1 \\
+          0 \amp 0 \amp 0 \amp 0 \\
+          \end{array}
+          \right]
+        </me>
+          </p>
+        </sidebyside>
+      </p>
+      <p>
+        For each matrix, identify the pivot positions. Is the corresponding system of linear equations
+        <ol label="a.">
+            <li><p>consistent with a unique solution.</p>
+            </li>
+            <li><p>consistent with infinitely many solutions.</p>
+            </li>
+            <li><p>inconsistent with no solutions.</p>
+            </li>
+        </ol> 
+      </p></statement></activity>
+    
+    <activity><statement>
+    <p>
+    <ol label="a.">
+      <li><p> If possible, give an example of a <m>3\times5</m>
+      augmented matrix that corresponds to a system of linear equations
+      having a unique solution.  If it is not possible, be able to explain why.
+      </p></li>
+
+      <li><p> If possible, give an example of a <m>5\times3</m>
+      augmented matrix that corresponds to a system of linear equations
+      having a unique solution.  If it is not possible, be able to explain why.
+      </p></li>
+
+      <li> <p>
+        What condition on the pivot positions guarantees that a system
+        of linear equations has a unique solution?
+      </p></li>
+
+      <li> <p>
+        If a system of linear equations has a unique solution, what
+        can we say about the relationship between the number of
+        equations and the number of unknowns?
+      </p></li>
+    </ol>
+    </p>
+      </statement></activity>
+
+
+
+
+
+
+
+</section>

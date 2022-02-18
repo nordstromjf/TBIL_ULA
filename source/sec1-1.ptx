@@ -1,0 +1,121 @@
+<section xml:id="ch1sec1">
+    <title>Section 1.1</title>
+    
+   <p>In these first explorations, we aim to develop some intuition for the
+        type of behavior we can expect to see when looking at solutions of
+        systems of linear equations. The solution to a linear equation in three unknowns <m>x</m>, <m>y</m>,
+        and <m>z</m> is a plane.  Use <m>3\times5</m> cards s models for planes to study the solutions
+            to systems of linear equations in three variables.</p>
+
+    <!-- Section 1.1, similar to Activity 1.1.2-->
+    <activity estimated-time="10">
+        <introduction><p>Consider a system of two equations in three variables. Use two notecards to model the two planes. For each of the following questions, be prepared to explain your answer and/or give an example.</p>
+        </introduction>
+        <task><p>Is it possible that there are no solutions to a system of
+        two equations in three unknowns?</p>
+        <ol label="a">
+            <li> possible
+            </li>
+            <li> not possible
+            </li>
+            </ol></task>
+        <task><p> Is it possible that the solution to a system of two
+        equations in three unknowns is a single point?  </p>
+        <ol label="a">
+            <li> possible
+            </li>
+            <li> not possible
+            </li>
+            </ol></task>
+        <task> <p>If you are studying a system of two equations in three
+        variables, what would be the most likely solution set?  </p>
+        <ol label="a">
+            <li> the empty set (no solution)
+            </li>
+            <li> exactly one solution
+            </li>
+            <li> infinitely many solutions in the form of a line
+            </li>
+            <li> infinitely many solutions in the form of a plane
+            </li>
+            </ol></task>
+          
+    </activity>
+    
+   <!-- <activity estimated-time="5">
+        <statement> <p>If you are studying a system of three equations in three
+        variables, what would be the most likely the solution set?  </p>
+        <ol label="a">
+            <li> the empty set (no solution)
+            </li>
+            <li> exactly one solution
+            </li>
+            <li> infinitely many solutions in the form of a line
+            </li>
+            <li> infinitely many solutions in the form of a plane
+            </li>
+            </ol></statement>
+    </activity>-->
+    
+    <!-- Section 1.1, similar to Activity 1.1.2-->
+    <activity estimated-time="10">
+        <introduction><p>Consider a system of four equations in three uknowns. Use four notecards to model the four planes. For each of the following questions, be prepared to explain your answer and/or give an example.</p>
+        </introduction>
+        <task><p>Is it possible that the solution set for four equations in three variables forms
+        a line?   </p>
+        <ol label="a">
+            <li> not possible
+            </li>
+            <li> possible
+            </li>
+            </ol></task>
+        <task> <p> Is it possible that the solution set for four equations in three variables forms
+        a plane? </p>  
+        <ol label="a">
+            <li>  not possible
+            </li>
+            <li> possible
+            </li>
+            </ol></task>
+        <task> <p>If you are studying a system of four equations in three
+        variables, what would be the most likely solution set?  </p>
+        <ol label="a">
+            <li> the empty set (no solution)
+            </li>
+            <li> exactly one solution
+            </li>
+            <li> infinitely many solutions in the form of a line
+            </li>
+            <li> infinitely many solutions in the form of a plane
+            </li>
+            </ol></task>
+          
+    </activity>
+
+    <activity estimated-time="5">
+        <statement><p>Suppose we have 500 linear equations in 10 unknowns. The most likely solution set would be</p>
+<ol label="a">
+            <li> the empty set (no solution).
+            </li>
+            <li> exactly one solution.
+            </li>
+            <li> infinitely many solutions.
+            </li>
+            </ol>
+    </statement>
+    </activity>
+    
+    <activity estimated-time="5">
+        <statement><p>Suppose we have 10 linear equations in 500 unknowns. The most likely solution set would be</p>
+<ol label="a">
+            <li> the empty set (no solution).
+            </li>
+            <li> exactly one solution.
+            </li>
+            <li> infinitely many solutions.
+            </li>
+            </ol>
+    </statement>
+    </activity>
+</section>
+

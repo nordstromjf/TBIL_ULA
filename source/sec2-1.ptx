@@ -1,0 +1,571 @@
+<section xml:id="ch2sec1">
+
+<title>Section 2.1</title>
+    <!--Activity 2.1.1-->
+
+    <activity>
+      <!--<title> Scalar Multiplication and Vector Addition </title>-->
+      <statement>
+      <p>
+    Suppose that
+    <me>
+      \vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+      \right],
+      \wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+      \right].
+    </me>
+      </p>
+      <p>
+    <ol label="a.">
+      <li> <p> Find expressions for the vectors
+      <me>
+        \begin{array}{cccc}
+        \vvec, \amp 2\vvec, \amp -\vvec, \amp -2\vvec, \\
+        \wvec, \amp 2\wvec, \amp -\wvec, \amp -2\wvec\text{.} \\
+        \end{array}
+      </me>
+      and sketch them in the <m>xy</m> plane.
+
+    </p> </li>
+
+    <li> <p> What geometric effect does scalar multiplication by a positive number have
+    on a vector?  (a) preserves the length, changes the direction, (b) preserves the direction, changes the length, (c) changes the length and the direction.
+    </p></li>
+
+    <li> <p> What geometric effect does scalar multiplication by a negative number have
+    on a vector?  (a) preserves the length, changes the direction, (b) preserves the direction, changes the length, (c) changes the length and the direction.
+    </p></li>
+    
+    <li> <p> Sketch the vectors
+    <m>
+      \vvec, \wvec, \vvec + \wvec
+    </m>
+    in the <m>xy</m> plane.
+
+    </p> </li>
+
+    <li> <p> Consider vectors that have the form <m>\vvec +
+    a\wvec</m> where <m>a</m> is any scalar.  Sketch a few
+    of these vectors when, say, <m>a = -2, -1, 0, 1, </m> and
+    <m>2</m>. 
+    
+      An appropriate geometric description for this set of vectors would be
+      <ol label="a">
+      <li><p>a line through <m>\vvec</m> parallel to <m>\wvec</m>.</p></li>
+      <li><p>a line through <m>\wvec</m> parallel to <m>\vvec</m>.</p></li>
+      <li><p>a line through <m>(0,0)</m> parallel to <m>\vvec+\wvec</m>.</p></li>
+    </ol>
+
+    </p></li>
+
+    <li> <p> If <m>a</m> and <m>b</m> are two scalars, then the
+    vector
+    <me> a \vvec + b \wvec </me>
+    is called a linear combination of the vectors <m>\vvec</m>
+    and <m>\wvec</m>.  Find the vector that is the linear
+    combination when <m>a = -2</m> and <m>b = 1</m>.
+    </p> </li>
+
+    <li> <p> Can the vector <m>\left[\begin{array}{r} -31 \\ 37
+    \end{array}\right]</m> be represented as a linear combination
+    of <m>\vvec</m> and <m>\wvec</m>?
+    </p></li>
+    </ol>
+      </p>
+      </statement>
+    </activity>
+
+    <!--Activity 2.1.2-->
+    <activity>
+      <statement>
+      <p> In this activity, we will look at linear combinations
+      of a pair of vectors,
+      <me>
+    \vvec = \left[\begin{array}{r} 2 \\ 1 \end{array}\right],
+    \wvec = \left[\begin{array}{r} 1 \\ 2 \end{array}\right]
+      </me>
+      with weights <m>a</m> and <m>b</m>.
+      </p>
+
+      <!--<p xml:id="INSERT"> 
+    LINEAR-COMBINATIONS
+      </p>-->
+
+      <p>Go to Applet in Activity 2.1.2 in Understanding Linear Algebra</p>
+
+      <ol label="a.">
+    <li> <p> The weight <m>b</m> is initially set to 0.  Explain
+    what happens as you vary <m>a</m> with <m>b=0</m>?  How is
+    this related to scalar multiplication? </p></li>
+
+    <li> <p> What is the linear combination of <m>\vvec</m> and
+    <m>\wvec</m> when <m>a = 1</m> and <m>b=-2</m>?  You may find
+    this result using the diagram, but you should also verify it
+    by computing the linear combination. </p></li>
+
+    <li> <p> The vectors that arise when the
+    weight <m>b</m> is set to 1 and <m>a</m> is
+    varied is 
+    <ol label="a">
+      <li><p>a line through <m>\vvec</m> parallel to <m>\wvec</m>.</p></li>
+      <li><p>a line through <m>\wvec</m> parallel to <m>\vvec</m>.</p></li>
+      <li><p>a line through <m>(0,0)</m> parallel to <m>\vvec+\wvec</m>.</p></li>
+    </ol> </p></li>
+
+    <li> <p> Can the vector
+    <m>\left[\begin{array}{r} 0 \\ 0 \end{array} \right]</m>
+    be expressed as a linear combination
+    of <m>\vvec</m> and <m>\wvec</m>?  If so, what are weights
+    <m>a</m> and <m>b</m>? </p></li>
+
+    <li> <p> Can the vector
+    <m>\left[\begin{array}{r} 3 \\ 0 \end{array} \right]</m>
+    be expressed as a linear combination
+    of <m>\vvec</m> and <m>\wvec</m>?  If so, what are weights
+    <m>a</m> and <m>b</m>? </p></li>
+
+    <li> <p> Verify the result from the previous part by
+    algebraically finding the weights <m>a</m> and <m>b</m> that
+    form the linear combination 
+    <m>\left[\begin{array}{r} 3 \\ 0 \end{array} \right]</m>.
+    </p></li>
+
+    <li> <p> Can the vector
+    <m>\left[\begin{array}{r} 1.3 \\ -1.7 \end{array} \right]</m>
+    be expressed as a linear combination of <m>\vvec</m> and
+    <m>\wvec</m>?  What about the vector
+    <m>\left[\begin{array}{r} 15.2 \\ 7.1 \end{array} \right]</m>?
+    </p></li>
+
+    <li> <p> Are there any two-dimensional vectors that cannot be
+    expressed as linear combinations of <m>\vvec</m> and
+    <m>\wvec</m>? </p></li>
+      </ol>
+      </statement>
+
+     <!-- <solution>
+    <p>
+      <ol label="a.">
+        <li><p> When we vary <m>a</m> with <m>b=0</m>, the linear
+        combination moves along the line defined by <m>\vvec</m>.
+        </p></li>
+
+        <li><p>
+          When <m>a=1</m> and <m>b=-2</m>, we find
+          <me>
+        1\vvec -2 \wvec =
+        \twovec{0}{-3}\text{.}
+          </me>
+        </p></li>
+
+        <li><p>
+          When <m>b=1</m> and <m>a</m> allowed to vary, the linear
+          combinations lie on the line through <m>\wvec</m>
+          parallel to <m>\vvec</m>.
+        </p></li>
+
+        <li><p>
+          If the weights <m>a=0</m> and <m>b=0</m>, then the
+          linear combination is the vector <m>\twovec{0}{0}</m>.
+        </p></li>
+
+        <li><p>
+          If the weights <m>a=2</m> and <m>b=-1</m>, then the
+          linear combination is the vector <m>\twovec{3}{0}</m>.
+        </p></li>
+
+        <li><p>
+          We find the linear system for the weights:
+          <me>
+        \begin{alignedat}{3}
+        2a \amp {}+{} \amp 1b \amp {}={} \amp 3 \\
+        1a \amp {}+{} \amp 2b \amp {}={} \amp 0 \\
+        \end{alignedat}
+          </me>
+          If we construct the corresponding augmented matrix and
+          determine its reduced row echelon matrix, we find the weights
+          <m>a=2</m> and <m>b=-1</m>.
+        </p></li>
+
+        <li><p>
+          In the same way, we construct a linear system for the
+          weights whose augmented matrix is
+          <me>
+        \left[\begin{array}{rr|r}
+        2 \amp 1 \amp 1.3 \\
+        1 \amp 2 \amp -1.7 \\
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rr|r}
+        1 \amp 0 \amp 1.43 \\
+        0 \amp 1 \amp -1.57 \\
+        \end{array}\right]
+        \text{,}
+          </me>
+          which shows that there are weights that produce the
+          desired linear combination.  The same will happen for
+          any vector <m>\bvec</m> that we ask to write as a linear
+          combination of <m>\vvec</m> and <m>\wvec</m>.
+        </p></li>
+
+        <li><p>
+          Every two-dimensional vector can be written as a linear
+          combination of <m>\vvec</m> and <m>\wvec</m>
+          because the coefficient matrix of the linear system
+          remains the same.  Since that coefficient matrix has a
+          pivot position in every row, the augmented matrix can
+          never have a pivot position in the rightmost column.
+        </p></li>
+      </ol>
+    </p>
+      </solution>
+
+      <answer>
+    <p>
+      <ol label="a.">
+        <li><p> The linear combinations lie on the line defined by
+        <m>\vvec</m>.
+        </p></li>
+
+        <li><p> <m>\twovec{0}{-3}</m>. </p></li>
+
+        <li><p> They lie on the line through <m>\wvec</m> parallel
+        to <m>\vvec</m>.
+        </p></li>
+
+        <li><p> Yes, with weights <m>a=b=0</m>. </p></li>
+
+        <li><p> Yes, with weights <m>a=2</m> and
+        <m>b=-1</m>. </p></li>
+
+        <li><p> This can be done by writing the appropriate linear
+        system for the weights.
+        </p></li>
+
+        <li><p> Yes, any two-dimensional vector can be expressed
+        as a linear combination of <m>\vvec</m> and <m>\wvec</m>.
+        </p></li>
+      </ol>
+    </p>
+      </answer>-->
+    </activity>
+
+    <!--Activity 2.1.3-->
+    
+  <activity>
+      <!--<title> Linear combinations and linear systems </title>-->
+      <statement>
+      <p>
+      <ol label="a.">
+    <li><p> Given the vectors
+    <me>
+      \vvec_1 = \left[\begin{array}{r} 4 \\ 0 \\ 2 \\ 1
+      \end{array} \right], 
+      \vvec_2 = \left[\begin{array}{r} 1 \\ -3 \\ 3 \\ 1
+      \end{array} \right], 
+      \vvec_3 = \left[\begin{array}{r} -2 \\ 1 \\ 1 \\ 0
+      \end{array} \right], 
+      \bvec   = \left[\begin{array}{r} 0 \\ 1 \\ 2 \\ -2
+      \end{array} \right]
+    </me>,
+    we ask if <m>\bvec</m> can be expressed as a
+    linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>, and
+    <m>\vvec_3</m>.  Rephrase this question by writing a linear
+    system for the weights 
+    <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> and use the Sage
+    cell below to answer this question.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    </p></li>
+    
+    <li><p> Consider the following linear system.
+    <me>
+      \begin{alignedat}{4}
+      3x_1 \amp {}+{} \amp 2x_2 \amp {}-{} x_3 \amp {}={} \amp 4 \\
+      x_1 \amp \amp \amp {}+{} 2x_3 \amp {}={} \amp 0 \\
+      -x_1 \amp {}-{} \amp x_2 \amp {}+{} 3x_3 \amp {}={} \amp 1
+      \\
+      \end{alignedat}
+    </me>
+    Identify vectors <m>\vvec_1</m>, <m>\vvec_2</m>,
+    <m>\vvec_3</m>, and <m>\bvec</m> and 
+    rephrase the question "Is this linear system consistent?" by
+    asking "Can <m>\bvec</m> be expressed as a linear combination
+    of <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?"
+    </p></li>
+  </ol>
+  </p></statement>
+</activity>
+
+<activity>
+  <statement>
+    <p>
+    <ol label="a.">
+
+    <li> <p>
+      Consider the vectors
+    <me>
+      \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+      \end{array} \right], 
+      \vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+      \end{array} \right], 
+      \vvec_3 = \left[\begin{array}{r} 2 \\ 0 \\ -1 \\
+      \end{array} \right], 
+      \bvec   = \left[\begin{array}{r} -1 \\ 3 \\ -1 \\
+      \end{array} \right]
+    </me>.
+    Which statement is the most accurate for <m>\bvec</m>?
+    <ol label="a">
+      <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
+    <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in more than one way.</p></li>
+    <li><p>The vector <m>\bvec</m> cannot be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>.</p></li>
+    </ol>
+
+    <sage>
+      <input>
+      </input>
+    </sage>
+     
+    </p></li>
+
+    <li> <p> Considering the vectors <m>\vvec_1</m>,
+    <m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, determine the most accurate statement.
+      <ol label="a">
+      <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
+      <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in more than one way.</p></li>
+      <li><p>There are vectors <m>\bvec</m> that cannot be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>.</p></li>
+      </ol>
+    Be able to explain how the pivot
+    positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
+    \vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
+    question. 
+    </p></li></ol></p></statement></activity>
+
+    <activity><statement><p>
+      <ol label="a.">
+
+
+    <li> <p>
+      Consider the vectors
+    <me>
+      \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+      \end{array} \right], 
+      \vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+      \end{array} \right], 
+      \vvec_3 = \left[\begin{array}{r} 1 \\ -1 \\ -2 \\
+      \end{array} \right], 
+      \bvec   = \left[\begin{array}{r} 0 \\ 8 \\ -4 \\
+      \end{array} \right]
+    </me>.
+    Which statement is the most accurate for <m>\bvec</m>?
+    <ol label="a">
+      <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
+    <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in more than one way.</p></li>
+    <li><p>The vector <m>\bvec</m> cannot be expressed as a linear combination of
+    <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>.</p></li>
+    </ol>
+    <sage>
+      <input>
+      </input>
+    </sage>
+    </p></li>
+
+    <li> <p> Considering the vectors <m>\vvec_1</m>,
+    <m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, determine the most accurate statement.
+      <ol label="a">
+      <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
+      <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in more than one way.</p></li>
+      <li><p>There are vectors <m>\bvec</m> that cannot be expressed as a linear combination of
+        <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>.</p></li>
+      </ol>
+    Be able to explain how the pivot
+    positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
+    \vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
+    question. 
+    </p></li>
+
+      </ol>
+      </p>
+      </statement>
+
+      <!--<solution>
+    <p>
+      <ol label="a.">
+        <li><p>
+          We find the linear system
+          <me>
+        \begin{alignedat}{4}
+        4c_1 \amp {}+{} \amp c_2 \amp {}-{} \amp 2c_3 \amp
+        {}={} \amp 0 \\
+        \amp \amp -3c_2 \amp {}+{} \amp c_3 \amp
+        {}={} \amp 1 \\
+        2c_1 \amp {}+{} \amp 3c_2 \amp {}+{} \amp c_3 \amp
+        {}={} \amp 2 \\
+        c_1 \amp {}+{} \amp c_2 \amp \amp \amp
+        {}={} \amp -2 \\
+        \end{alignedat}
+          </me>
+          with corresponding augmented matrix
+          <me>
+        \left[\begin{array}{rrr|r}
+        4 \amp 1 \amp -2 \amp 0 \\
+        0 \amp -3 \amp 1 \amp 1 \\
+        2 \amp 3 \amp 1 \amp 2 \\
+        1 \amp 1 \amp 0 \amp -2
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rrr|r}
+        1 \amp 0 \amp 0 \amp 0 \\
+        0 \amp 1 \amp 0 \amp 0 \\
+        0 \amp 0 \amp 1 \amp 0 \\
+        0 \amp 0 \amp 0 \amp 1
+        \end{array}\right]\text{.}
+          </me>
+          This shows that the linear system is inconsistent so
+          there are no such weights <m>c_1</m>, <m>c_2</m>, and
+          <m>c_3</m>.  This means that <m>\bvec</m> is not a
+          linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m>.
+        </p></li>
+
+        <li><p>
+          We find vectors
+          <me>
+        \vvec_1=\threevec{3}{1}{-1},
+        \vvec_2=\threevec{2}{0}{-1},
+        \vvec_3=\threevec{-1}{2}{3},
+        \bvec=\threevec{4}{0}{1}\text{.}
+          </me>
+        </p></li>
+
+        <li><p>
+          This is the same as asking if the linear system
+          corresponding to the following augmented matrix is
+          consistent:
+          <me>
+        \left[\begin{array}{rrr|r}
+        0 \amp 1 \amp 2 \amp -1 \\
+        -2 \amp 1 \amp 0 \amp 3 \\
+        1 \amp -1 \amp -1 \amp -1
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rrr|r}
+        1 \amp 0 \amp 1 \amp -2 \\
+        0 \amp 1 \amp 2 \amp -1 \\
+        0 \amp 0 \amp 0 \amp 0
+        \end{array}\right]\text{.}
+          </me>
+          From the reduced row echelon form, we see that the
+          system is consistent, which means that <m>\bvec</m> can
+          be expressed as a linear combination of <m>\vvec_1</m>,
+          <m>\vvec_2</m>, and <m>\vvec_3</m>.  Moreover, there are
+          infinitely ways in which to do so.
+        </p></li>
+
+        <li><p>
+          No, it is not possible to write every three-dimensional
+          <m>\bvec</m> as a linear combination of <m>\vvec_1</m>,
+          <m>\vvec_2</m>, and <m>\vvec_3</m> because the matrix
+          <m>\left[\begin{array}{rrr} \vvec_1 \amp \vvec_2 \amp
+          \vvec_3 \end{array}\right]</m> does not have a pivot
+          position in every row.  This means that, with some
+          choice of vector <m>\bvec</m>, we will obtain an
+          inconsistent system.
+        </p></li>
+
+        <li><p>
+          We find the augmented matrix
+          <me>
+        \left[\begin{array}{rrr|r}
+        0 \amp 1 \amp 1 \amp 0 \\
+        -2 \amp 1 \amp -1 \amp 8 \\
+        1 \amp -1 \amp -2 \amp -4
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rrr|r}
+        1 \amp 0 \amp 0 \amp -4 \\
+        0 \amp 1 \amp 0 \amp 0 \\
+        0 \amp 0 \amp 1 \amp 0
+        \end{array}\right]\text{.}
+          </me>
+          This shows that <m>\bvec</m> can be expressed as a
+          linear combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m> in exactly one way.
+        </p></li>
+
+        <li><p>
+          Every vector <m>\bvec</m> can be expressed as a linear
+          combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m> in exactly one way because 
+          <m>\left[\begin{array}{rrr} \vvec_1 \amp \vvec_2 \amp
+          \vvec_3 \end{array}\right]</m> has a pivot position in
+          every row and every column.
+        </p></li>
+      </ol>
+    </p>
+      </solution>
+
+      <answer>
+    <p>
+      <ol label="a.">
+        <li><p>
+          The vector <m>\bvec</m> cannot be expressed as a linear
+          combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m>.
+        </p></li>
+
+        <li><p>
+          We find vectors
+          <me>
+        \vvec_1=\threevec{3}{1}{-1},
+        \vvec_2=\threevec{2}{0}{-1},
+        \vvec_3=\threevec{-1}{2}{3},
+        \bvec=\threevec{4}{0}{1}\text{.}
+          </me>
+        </p></li>
+
+        <li><p>
+          Yes, <m>\bvec</m> can be expressed as a linear
+          combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m> in infinitely many ways.
+        </p></li>
+
+        <li><p>
+          No.
+        </p></li>
+
+        <li><p>
+          Yes, <m>\bvec</m> can be expressed as a linear
+          combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m> in exactly one way.
+        </p></li>
+
+        <li><p>
+          Any vector <m>\bvec</m> can be expressed as a linear
+          combination of <m>\vvec_1</m>, <m>\vvec_2</m>,
+          and <m>\vvec_3</m> in exactly one way.
+        </p></li>
+      </ol>
+    </p>
+      </answer>-->
+
+    </activity>
+
+
+
+
+
+
+</section>

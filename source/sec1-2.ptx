@@ -1,0 +1,627 @@
+<section xml:id="ch1sec2">
+
+<title>Section 1.2</title>
+<!--Before 1.2, as a preview-->
+<!--TBIL-LA Activity 1.1.8-->
+
+<p>One of our goals will be to use algbra to find solutions to our systems of equations.</p>
+    <activity estimated-time="10">
+        <statement>
+            <p>
+Use algebra to show that the following two equations cannot be true at the same time.
+            </p>
+            <md>
+            <mrow>
+  -x_1+2x_2  &amp;=  5
+                </mrow>
+                <mrow>
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+            </md>
+            <p>You are showing that the equations are <term>inconsistent</term>. What contradiction do you reach?</p>
+        </statement>
+    </activity>
+
+    <!--TBIL-LA Activity 1.1.9-->
+
+    <activity estimated-time="10">
+        <introduction>
+        <p>
+  If a solutions exists, the system is <term>consistent</term>. Consider the following linear system.
+            </p>
+            <md>
+                <mrow>
+  -x_1+2x_2  &amp;= -3
+                </mrow>
+                <mrow>
+  2x_1-4x_2  &amp;=  6
+                </mrow>
+            </md>
+        </introduction>
+        <task>
+            <p>
+  Find three different solutions
+  for this system.
+            </p>
+        </task>
+        <task>
+            <p>
+  Let <m>x_2=a</m> where <m>a</m> is an arbitrary real number, then find an
+  expression for <m>x_1</m> in terms of <m>a</m>. Use this to write
+  the solution set
+  <m>
+    \setBuilder
+    {
+        \left[\begin{array}{c}
+        \unknown \\
+        a
+      \end{array}\right]
+    }{
+      a \in \IR
+      }
+  </m>
+  for the linear system.
+            </p>
+        </task>
+    </activity>
+
+    <activity estimated-time="10">
+        <statement>
+            <p>
+  Consider the following linear system.
+            </p>
+            <md alignment="alignat" alignat-columns="5">
+                <mrow>
+    x_1 &amp;\,+\,&amp; 2x_2 &amp;\, \,&amp;     &amp;\,-\,&amp;  x_4 &amp;\,=\,&amp; 3
+                </mrow>
+                <mrow>
+        &amp;\, \,&amp;      &amp;\, \,&amp; x_3 &amp;\,+\,&amp; 4x_4 &amp;\,=\,&amp; -2
+                </mrow>
+            </md>
+            <p>
+  Describe the solution set
+  <me>
+      \setBuilder
+    {
+        \left[\begin{array}{c}
+          \unknown \\
+          a \\
+          \unknown \\
+          b
+        \end{array}\right]
+    }{
+      a,b \in \IR
+    }
+  </me>
+  to the linear system
+  by setting <m>x_2=a</m> and <m>x_4=b</m>, and then solving for <m>x_1</m> and
+  <m>x_3</m>.
+            </p>
+        </statement>
+    </activity>
+
+    <!--Section 1.2-->
+   
+
+
+    <p>We can use an <term>augmented matrix</term> to represent the system of equations.</p>
+
+    
+
+<!--TBIL-LA Activity 1.2.2-->
+   <activity estimated-time='10'>
+    <statement>
+        <p>
+  Two systems of linear equations (and their corresponding augmented
+  matrices) are said to be <term>equivalent</term><idx>equivalent matrices</idx> if they have the same
+  solution set.
+        </p>
+        <p>
+  Following are seven procedures used to manipulate an augmented matrix.
+  Label the procedures that would result in an equivalent augmented
+  matrix as <em>valid</em>, and label the procedures that might
+  change the solution set of the corresponding linear system as
+  <em>invalid</em>.
+        </p>
+    <ol label="a">
+<li> Swap two rows.
+      </li>
+<li> Swap two columns.
+      </li>
+<li> Add a constant to every term in a row.
+      </li>
+<li> Multiply a row by a nonzero constant.
+      </li>
+<li> Add a constant multiple of one row to another row.
+      </li>
+<li> Replace a column with zeros.
+      </li>
+<li> Replace a row with zeros.
+      </li>
+    </ol>
+  <!--
+    This activity could be ran as a card sort.  Allow 5 additional minutes for intra team discussion.
+  -->
+    </statement>
+</activity>
+
+
+
+<!--TBIL-LA Activity 1.2.4-->
+<activity estimated-time='10'>
+    <statement>
+        <p>
+  Consider the following (equivalent) linear systems.
+        </p>
+      <sidebyside widths="33% 33% 33%">
+          <p> A)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
+</mrow>
+<mrow>  
+             -x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+<mrow>  
+             2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
+</mrow>
+           </md>
+          </p>
+          <p> B)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7 
+</mrow>
+<mrow>  
+             -x &amp;\,-\,&amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+<mrow>  
+             x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3  
+</mrow>
+           </md>
+          </p>
+          <p> C)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4   
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+           </md>
+          </p>
+        </sidebyside>
+      <sidebyside widths="33% 33% 33%">
+          <p> D)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 
+</mrow>
+<mrow>  
+             2x &amp;\,+\,&amp; 5y  &amp;\,+\,&amp; 3z &amp;\,=\,&amp; 7   
+</mrow>
+           </md>
+          </p>
+          <p> E)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             x &amp; &amp;   &amp;\,-\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1 
+</mrow>
+<mrow>  
+              &amp; &amp;   &amp; &amp; z &amp;\,=\,&amp; 3   
+</mrow>
+           </md>
+          </p>
+          <p> F)
+        <md alignment="alignat" alignat-columns='4'>
+<mrow>  
+             x &amp;\,+\,&amp; 2y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 3 
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; 2z &amp;\,=\,&amp; 4 
+</mrow>
+<mrow>  
+              &amp; &amp; y  &amp;\,+\,&amp; z &amp;\,=\,&amp; 1   
+            </mrow>
+           </md>
+          </p>
+        </sidebyside>
+        <p>
+   Rank the six linear systems from most complicated to simplest.
+        </p>
+    </statement>
+</activity>
+
+
+
+<!--TBIL Activity 1.2.5-->
+<activity estimated-time='5'>
+    <statement>
+    <p>
+We can rewrite the previous in terms of  equivalences of augmented matrices
+    </p>
+    <md alignment="alignat" alignat-columns='3'>
+        <mrow>
+        \left[\begin{array}{ccc|c} 2 &amp; 5 &amp; 3 &amp; 7 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 1 &amp; 2 &amp; 1 &amp; 3 \end{array}\right] &amp; \sim &amp;
+        \left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ -1 &amp; -1 &amp; 1 &amp; 1 \\ 2 &amp; 5 &amp;  3 &amp; 7  \end{array}\right] &amp; \sim &amp;
+        \left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; 1 &amp; 2 &amp; 4 \\ 2 &amp; 5 &amp; 3 &amp; 7  \end{array}\right] \sim 
+        </mrow>
+        <mrow>
+        \left[\begin{array}{ccc|c} \circledNumber{1} &amp; 2 &amp; 1 &amp; 3 \\ 0 &amp; \circledNumber{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+        \left[\begin{array}{ccc|c} \circledNumber{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \circledNumber{1} &amp; 2 &amp; 4 \\ 0 &amp; 1 &amp; 1 &amp; 1  \end{array}\right] &amp; \sim &amp;
+        \left[\begin{array}{ccc|c} \circledNumber{1} &amp; 0 &amp; -1 &amp; 1 \\ 0 &amp; \circledNumber{1} &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; -1 &amp; -3  \end{array}\right] 
+        </mrow>
+     </md>
+<p>
+        Determine the row operation(s) necessary in each step to transform the most complicated
+    system's augmented matrix into the simplest.
+        </p>
+    </statement>
+</activity>
+
+ 
+<!--Part of Activity 1.2.3-->
+    <activity>   
+    <task>
+     <p>
+      Suppose that you have a system of linear equations in the
+      unknowns <m>x</m> and <m>y</m> whose
+      augmented matrix is row equivalent to 
+      <me>
+        \left[
+        \begin{array}{rr|r}
+        1 \amp 0 \amp 3 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 0 \\
+        \end{array}
+        \right].
+      </me>
+      Write the system of linear equations corresponding to the
+      augmented matrix.  Then describe the solution set of the
+      system of equations in as much detail as you can.
+    </p>
+    </task>>
+
+    <task> <p>
+      Suppose that you have a system of linear equations in the
+      unknowns <m>x</m> and <m>y</m> whose
+      augmented matrix is row equivalent to 
+      <me>
+        \left[
+        \begin{array}{rr|r}
+        1 \amp 0 \amp 3 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 1 \\
+        \end{array}
+        \right].
+      </me>
+      Write the system of linear equations corresponding to the
+      augmented matrix.  Then describe the solution set of the
+      system of equations in as much detail as you can.
+    </p>
+    </task></activity>
+
+    <!--Activity 1.2.3
+    <activity>
+      <title>
+    Augmented matrices and solution spaces
+      </title>
+
+      <statement>
+    <p> <ol label="a.">
+    <li> <p> Write the augmented matrix for the system of equations
+    <me>
+      \begin{alignedat}{4}
+      x \amp  {}+{}  \amp 2y \amp  {}-{}  \amp z \amp  {}={}  \amp 1 \\
+      3x \amp  {}+{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp 7 \\
+      -x \amp  \amp  \amp  {}+{}  \amp 4z \amp  {}={}  \amp -3 \\
+      \end{alignedat}
+    </me>
+    and perform Gaussian elimination to describe the solution space
+    of the system of equations in as much detail as you can.
+    </p> </li>
+
+    <li> <p>
+      Suppose that you have a system of linear equations in the
+      unknowns <m>x</m> and <m>y</m> whose
+      augmented matrix is row equivalent to 
+      <me>
+        \left[
+        \begin{array}{rr|r}
+        1 \amp 0 \amp 3 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 0 \\
+        \end{array}
+        \right].
+      </me>
+      Write the system of linear equations corresponding to the
+      augmented matrix.  Then describe the solution set of the
+      system of equations in as much detail as you can.
+    </p>
+    </li>
+
+    <li> <p>
+      Suppose that you have a system of linear equations in the
+      unknowns <m>x</m> and <m>y</m> whose
+      augmented matrix is row equivalent to 
+      <me>
+        \left[
+        \begin{array}{rr|r}
+        1 \amp 0 \amp 3 \\ 
+        0 \amp 1 \amp 0 \\ 
+        0 \amp 0 \amp 1 \\
+        \end{array}
+        \right].
+      </me>
+      Write the system of linear equations corresponding to the
+      augmented matrix.  Then describe the solution set of the
+      system of equations in as much detail as you can.
+    </p>
+    </li>
+
+    <li> <p>
+      Suppose that the augmented matrix of a system of linear
+      equations has the following shape where <m>*</m> could be
+      any real number.
+      <me>
+        \left[
+        \begin{array}{rrrrr|r}
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        \end{array}
+        \right].
+      </me>
+      <ol label="i.">
+        <li> <p>
+          How many equations are there in this system and how many
+          unknowns?
+        </p></li>
+        <li> <p> Based on our earlier discussion in <xref
+        ref="sec-expect" />, do you think it's possible that this
+        system has exactly one solution, infinitely many
+        solutions, or no solutions?  </p></li>
+        <li> <p>
+          Suppose that this augmented matrix is row equivalent to 
+          <me>
+        \left[
+        \begin{array}{rrrrr|r}
+        1 \amp 2 \amp 0 \amp 0 \amp 3 \amp 2 \\ 
+        0 \amp 0 \amp 1 \amp 2 \amp -1 \amp -1 \\ 
+        0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\ 
+        \end{array}
+        \right].
+          </me>
+          Make a choice for the names of the unknowns and write
+          the corresponding system of linear equations.  Does the
+          system have exactly one solution, infinitely many
+          solutions, or no solutions?
+        </p></li>
+      </ol>
+    </p>
+    </li>
+    </ol></p>
+      </statement></activity>-->
+
+      <!--Activity 1.2.2-->
+    <activity>
+     
+      <statement>
+      <p>
+    Use Gaussian elimination to describe the solutions to the
+    following systems of linear equations.
+      <ol label="a.">
+    <li> <p>
+      Does the following linear system have (a) exactly one solution,
+      (b) infinitely many solutions, or (c) no solutions?
+      <me>
+        \begin{alignedat}{4}
+        x \amp  {}+{}  \amp y \amp  {}+{}  \amp 2z \amp  {}={}  \amp 1 \\
+        2x \amp  {}-{}  \amp y \amp  {}-{}  \amp 2z \amp  {}={}  \amp 2 \\
+        -x \amp  {}+{}  \amp y \amp  {}+{}  \amp z \amp  {}={}  \amp 0 \\
+        \end{alignedat}
+      </me>
+    </p></li>
+    
+    <li> <p>
+      Does the following linear system have (a) exactly one solution,
+      (b) infinitely many solutions, or (c) no solutions?
+      <me>
+        \begin{alignedat}{4}
+        -x \amp  {}-{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
+        2x \amp  {}+{}  \amp 4y \amp  {}-{}  \amp z \amp  {}={}  \amp 5 \\
+        x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 3 \\
+        \end{alignedat}
+      </me>
+    </p></li>
+    
+    <li> <p>
+      Does the following linear system have (a) exactly one solution,
+      (b) infinitely many solutions, or (c) no solutions?
+      <me>
+        \begin{alignedat}{4}
+        -x \amp  {}-{}  \amp 2y \amp  {}+{}  \amp 2z \amp  {}={}  \amp -1 \\
+        2x \amp  {}+{}  \amp 4y \amp  {}-{}  \amp z \amp  {}={}  \amp 5 \\
+        x \amp  {}+{}  \amp 2y \amp  \amp  \amp  {}={}  \amp 2 \\
+        \end{alignedat}
+      </me>
+    </p></li>
+      </ol></p>
+      </statement></activity>
+
+    <activity>
+
+    <introduction><p>
+      Suppose that the augmented matrix of a system of linear
+      equations has the following shape where <m>*</m> could be
+      any real number.</p>
+      <me>
+        \left[
+        \begin{array}{rrrrr|r}
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        * \amp * \amp * \amp * \amp * \amp * \\ 
+        \end{array}
+        \right].
+      </me></introduction>
+      <task>
+        <p>
+          How many equations are there in this system and how many
+          unknowns?
+        </p></task>
+            <task> <p>What would be the most likely solution set</p>
+            <ol label="a">
+            <li> the empty set (no solution)
+            </li>
+            <li> exactly one solution
+            </li>
+            <li> infinitely many solutions
+            </li>
+            </ol></task>
+        <task> <p>
+          Suppose that this augmented matrix is row equivalent to 
+          <me>
+        \left[
+        \begin{array}{rrrrr|r}
+        1 \amp 2 \amp 0 \amp 0 \amp 3 \amp 2 \\ 
+        0 \amp 0 \amp 1 \amp 2 \amp -1 \amp -1 \\ 
+        0 \amp 0 \amp 0 \amp 0 \amp 0 \amp 0 \\ 
+        \end{array}
+        \right].
+          </me>
+          Make a choice for the names of the unknowns and write
+          the corresponding system of linear equations.  Does the
+          system have (a) exactly one solution, (b) infinitely many
+          solutions, or (c) no solutions?</p></task>
+        
+    </activity>
+   
+<!--TBIL-LA Activity 1.2.10-->
+
+<activity estimated-time='8'>
+    <statement>
+    <p>
+Consider the matrix
+<me>\left[\begin{array}{cccc}2 &amp; 6 &amp; -1 &amp; 6  \\ 1 &amp; 3 &amp; -1 &amp; 2 \\ -1 &amp; -3 &amp; 2 &amp; 0 \end{array}\right].</me>
+Which row operation is the best choice for the first move in converting to RREF?
+        </p>
+<ol label ="a">
+<li> Add row 3 to row 2 (<m>R_2+R_3 \rightarrow R_2</m>)
+</li>
+<li> Add row 2 to row 3 (<m>R_3+R_2 \rightarrow R_3</m>)
+</li>
+<li> Swap row 1 to row 2 (<m>R_1 \leftrightarrow R_2</m>)
+</li>
+<li> Add -2 row 2 to row 1 (<m>R_1-2R_2 \rightarrow R_1</m>)
+</li>
+</ol>
+        </statement>
+</activity>
+
+<!--TBIL-LA Activity 1.2.11-->
+
+<activity estimated-time='7'>
+    <statement>
+        <p>
+Consider the matrix
+<me>\left[\begin{array}{cccc} \circledNumber{1} &amp; 3 &amp; -1 &amp; 2 \\ 2 &amp; 6 &amp; -1 &amp; 6 \\ -1 &amp; -3 &amp; 2 &amp; 0 \end{array}\right].</me>
+Which row operation is the best choice for the next move in converting to RREF?
+        </p>
+<ol label="a">
+<li> Add row 1 to  row 3 (<m>R_3+R_1 \rightarrow R_3</m>)
+</li>
+<li> Add -2 row 1 to  row 2 (<m>R_2-2R_1 \rightarrow R_2</m>)
+</li>
+<li> Add 2 row 2 to row 3 (<m>R_3+2R_2 \rightarrow R_3</m>)
+</li>
+<li> Add 2 row 3 to row 2 (<m>R_2+2R_3 \rightarrow R_2</m>)
+</li>
+</ol>
+    </statement>
+</activity>
+
+<!--TBIL-LA Activity 1.2.12-->
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+Consider the matrix
+<me>\left[\begin{array}{cccc}\circledNumber{1} &amp; 3 &amp; -1 &amp; 2  \\ 0 &amp; 0 &amp; 1 &amp; 2 \\ 0 &amp; 0 &amp; 1 &amp; 2 \end{array}\right].</me>
+Which row operation is the best choice for the next move in converting to RREF?
+        </p>
+<ol label="a">
+<li> Add row 1 to row 2 (<m>R_2+R_1 \rightarrow R_2</m>)
+</li>
+<li> Add -1 row 3 to  row 2 (<m>R_2-R_3 \rightarrow R_2</m>)
+</li>
+<li> Add -1 row 2 to  row 3 (<m>R_3-R_2 \rightarrow R_3</m>)
+</li>
+<li> Add row 2 to row 1 (<m>R_1+R_2 \rightarrow R_1</m>)
+</li>
+</ol>
+    </statement>
+</activity>
+
+<!--TBIL-LA Activity 1.2.13-->
+
+<activity estimated-time='10'>
+    <introduction>
+        <p>
+Consider the matrix
+<me>\left[\begin{array}{ccc}2 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 0 \\ 3 &amp; -1 &amp; 1 \end{array}\right].</me>
+        </p>
+    </introduction>
+<task>
+    <p>
+Perform three row operations to produce a matrix closer to RREF.
+    </p>
+</task>
+<task>
+    <p>
+Finish putting it in RREF.
+    </p>
+</task>
+</activity>
+
+<!--TBIL-LA Activity 1.2.14-->
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Consider the matrix
+<me>A=\left[\begin{array}{cccc}2 &amp; 3 &amp; 2 &amp; 3 \\ -2 &amp; 1 &amp; 6 &amp; 1 \\ -1 &amp; -3 &amp; -4 &amp; 1 \end{array}\right].</me>
+        </p>
+        <p>
+Compute <m>\RREF(A)</m>.
+        </p>
+    </statement>
+</activity>
+
+<!--TBIL-LA Activity 1.2.15-->
+
+<activity estimated-time='10'>
+    <statement>
+        <p>
+Consider the matrix
+<me>A=\left[\begin{array}{cccc} 2 &amp; 4 &amp; 2 &amp; -4 \\ -2 &amp; -4 &amp; 1 &amp; 1 \\ 3 &amp; 6 &amp; -1 &amp; -4 \end{array}\right].</me>
+        </p>
+        <p>
+Compute <m>\RREF(A)</m>.
+        </p>
+    </statement>
+</activity>
+</section>
+
+<!--<section>
+    <title>Section 1.3</title>
+    <p>Do the activities directly in Understanding Linear Algebra, Computation with Sage.</p>
+</section>-->

@@ -1,0 +1,602 @@
+<section xml:id="ch2sec2">
+
+<title>Section 2.2</title>
+
+    <!--Section 2.2-->
+    <!--Activity 2.2.2-->
+
+    <activity>
+      <!--<title> Matrix-vector multiplication </title>-->
+
+      <statement><p>
+      <ol label="a.">
+    <li xml:id = "li-example-product"> <p>
+      Find the matrix product
+      <me>
+        \left[
+        \begin{array}{rrrr}
+        1 \amp 2 \amp 0 \amp -1 \\
+        2 \amp 4 \amp -3 \amp -2 \\
+        -1 \amp -2 \amp 6 \amp 1 \\
+        \end{array}
+        \right]
+        \left[
+        \begin{array}{r}
+        3 \\ 1 \\ -1 \\ 1 \\
+        \end{array}
+        \right]
+      </me>.
+    </p></li>
+
+    <li> <p>
+      Suppose that <m>A</m> is the matrix
+      <me>
+        \left[
+        \begin{array}{rrr}
+        3 \amp -1 \amp 0 \\
+        0 \amp -2 \amp 4 \\
+        2 \amp 1 \amp 5 \\
+        1 \amp 0 \amp 3 \\
+        \end{array}
+        \right]
+      </me>.
+      If <m>A\xvec</m> is defined, what is the dimension of the
+      vector <m>\xvec</m> and what is the dimension of
+      <m>A\xvec</m>?  
+    </p></li>
+  </ol></p></statement></activity>
+
+  <activity><statement><p>
+    <ol label="a.">
+
+    <li> <p>
+      A vector whose entries are all zero is denoted by
+      <m>\zerovec</m>.  If <m>A</m> is a matrix, what is the
+      product <m>A\zerovec</m>?  
+    </p> </li>
+
+    <li><p>
+      Suppose that <m>I = \left[\begin{array}{rrr}
+      1 \amp 0 \amp 0 \\
+      0 \amp 1 \amp 0 \\
+      0 \amp 0 \amp 1 \\
+      \end{array}\right]
+      </m> is the identity matrix and
+      <m>\xvec=\threevec{x_1}{x_2}{x_3}</m>.  Find the product
+      <m>I\xvec</m> and be able to explain why <m>I</m> is called the
+      identity matrix.
+    </p></li>
+
+    </ol></p></statement></activity>
+
+  <activity><statement><p>
+    <ol label="a.">
+
+    <li> <p>
+      Suppose we write the matrix <m>A</m> in terms of its columns
+      as 
+      <me>
+        A = \left[
+        \begin{array}{rrrr}
+        \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n \\
+        \end{array}
+        \right]
+      </me>.
+      If the vector <m>\evec_1 = \left[\begin{array}{r} 1 \\ 0 \\
+      \vdots \\ 0 \end{array}\right]</m>, what is the product
+      <m>A\evec_1</m>?
+    </p> </li>
+
+    <li> <p>
+      Suppose that
+      <me>
+        A = \left[
+        \begin{array}{rrrr}
+        1 \amp 2 \\
+        -1 \amp 1 \\
+        \end{array}
+        \right],
+        \bvec = \left[
+        \begin{array}{r}
+        6 \\ 0
+        \end{array}
+        \right]
+      </me>.
+      Is there a vector <m>\xvec</m> such that <m>A\xvec = \bvec</m>?
+    </p> </li>
+      </ol>
+      </p></statement>
+
+      <!--<solution>
+    <p><ol label="a.">
+      <li><p>
+        We have
+        <me>
+          \begin{alignedat}{2}
+          \left[\begin{array}{rrrr}
+          1 \amp 2 \amp 0 \amp -2 \\
+          2 \amp 4 \amp -3 \amp -2 \\
+          -1 \amp -2 \amp 6 \amp 1 \\
+          \end{array}\right]
+          \amp
+          \fourvec{3}{1}{-1}{1} \\
+          \amp =
+          \threevec{3(1)+1(2)-1(0)+1(-1)}
+          {3(2)+1(4)-1(-3)+1(-2)}
+          {3(-1)+1(-2)-1(6)+1(1)} \\
+          \amp =\threevec{4}{11}{10}\text{.}
+          \end{alignedat}
+        </me>
+      </p></li>
+
+      <li><p>
+        The dimension of <m>\xvec</m> must be the same as the
+        number of columns of <m>A</m> so <m>\xvec</m> is
+        three-dimensional.  The dimension of <m>A\xvec</m> equals
+        the number of rows of <m>A</m> so <m>A\xvec</m> is
+        four-dimensional.
+      </p></li>
+
+      <li><p> We have <m>A\zerovec = \zerovec</m>. </p></li>
+
+      <li><p> We have <m>I\xvec=\xvec</m>;  that is, multiplying a
+      vector by <m>I</m> produces the same vector.
+      </p></li>
+
+      <li><p>
+        The product
+        <m> A\evec_1 = 1\vvec_1+0\vvec_2+\ldots+0\vvec_n =
+        \vvec_1</m>.
+      </p></li>
+
+      <li><p>
+        If <m>A\xvec=\bvec</m>, then we have
+        <me>
+          \begin{alignedat}{3}
+          x_1 \amp {}+{} \amp 2x_2 \amp {}={} \amp 6 \\
+          -x_1 \amp {}+{} \amp x_2 \amp {}={} \amp 0\text{.} \\
+          \end{alignedat}
+        </me>
+        with corresponding augmented matrix
+        <me>
+          \left[\begin{array}{rr|r}
+          1 \amp 2 \amp 6 \\
+          -1 \amp 1 \amp 0
+          \end{array}\right]
+          \sim
+          \left[\begin{array}{rr|r}
+          1 \amp 0 \amp 2 \\
+          0 \amp 1 \amp 2
+          \end{array}\right]\text{.}
+        </me>
+        This means that <m>\xvec=\twovec{2}{2}</m> is the unique
+        solution to the equation <m>A\xvec=\bvec</m>.
+      </p></li>
+    </ol></p>
+      </solution>
+      
+      <answer>
+    <p><ol label="a.">
+      <li><p>
+        <m>\threevec{4}{11}{9}\text{.}
+        </m>
+      </p></li>
+
+      <li><p>
+        The dimension of <m>\xvec</m> must three, and the
+        dimension of <m>A\xvec</m> must be four.
+      </p></li>
+
+      <li><p> <m>A\zerovec = \zerovec</m>. </p></li>
+
+      <li><p> <m>I\xvec = \xvec</m>. </p></li>
+
+      <li><p>
+        <m> A\evec_1 = 1\vvec_1+0\vvec_2+\ldots+0\vvec_n =
+        \vvec_1</m>.
+      </p></li>
+
+      <li><p>
+        <m>\xvec=\twovec{2}{2}</m> is the unique
+        solution.
+      </p></li>
+    </ol></p>
+      </answer>-->
+      
+    </activity>
+
+    <!--Activity 2.2.4-->
+
+     <activity>
+      <title> The equation <m>A\xvec = \bvec</m> </title>
+      <statement><p>
+      <ol label="a.">
+    <li> <p> Consider the linear system
+    <me>
+      \begin{alignedat}{4}
+      2x \amp {}+{} \amp y \amp {}-{} \amp 3z \amp {}={} \amp 4 \\
+      -x \amp {}+{} \amp 2y \amp {}+{} \amp z \amp {}={} \amp 3 \\
+      3x \amp {}-{} \amp y \amp \amp \amp {}={} \amp -4 \\
+      \end{alignedat}
+    </me>.
+    Identify the matrix <m>A</m> and vector <m>\bvec</m> to
+    express this system in the form <m>A\xvec = \bvec</m>.
+    </p></li>
+
+    <li> <p> If <m>A</m> and <m>\bvec</m> are as below, write the
+    linear system corresponding to the equation
+    <m>A\xvec=\bvec</m>. 
+    <me>
+      A = \left[\begin{array}{rrr}
+      3 \amp -1 \amp 0 \\
+      -2 \amp 0 \amp 6
+      \end{array}
+      \right],
+      \bvec = \left[\begin{array}{r}
+      -6 \\ 2
+      \end{array}
+      \right]
+    </me>
+    and describe the solution space in set notation.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    </p></li>
+
+    <li><p>
+      Describe the solution space (in set notation) of the equation
+      <me>
+        \left[
+        \begin{array}{rrrr}
+        1 \amp 2 \amp 0 \amp -1 \\
+        2 \amp 4 \amp -3 \amp -2 \\
+        -1 \amp -2 \amp 6 \amp 1 \\
+        \end{array}
+        \right]
+        \xvec
+        = 
+        \left[\begin{array}{r}
+        -1 \\ 1 \\ 5
+        \end{array}
+        \right]
+      </me>.
+      <sage>
+        <input>
+        </input>
+      </sage>
+    </p></li>
+    </ol></p></statement></activity>
+
+  <activity><statement><p>
+    
+       Suppose <m>A</m> is an <m>m\times n</m> matrix.  Give the statement that best describes the solution space of the equation <m>A\xvec
+    = \zerovec</m>.  
+    <ol label="a">
+      <li>We can't determine anything about the solution space without the actual matrix <m>A</m>.</li>
+      <li>The only solution for <m>A\xvec
+    = \zerovec</m> is <m>\xvec=\zerovec</m>.</li>
+    <li>The system is always consistent, but we can't determine any solutions without knowing <m>A</m>.</li>
+    <li>The system is always consistent, and must contain<m>\zerovec</m>, but may also contain additional solutions.</li>
+   
+      </ol>
+      </p></statement>
+
+      <!--<solution>
+    <p><ol label="a.">
+      <li><p>
+        <m>A = \left[\begin{array}{rrr}
+        2 \amp 1 \amp -3 \\
+        -1 \amp 2 \amp 1 \\
+        3 \amp -1 \amp 0 \\
+        \end{array}\right]
+        </m>
+        and <m>\bvec=\threevec{4}{3}{-4}</m>.
+      </p></li>
+
+      <li><p>
+        Form the augmented matrix
+        <me>
+          \left[\begin{array}{rrrr}
+          3 \amp -1 \amp 0 \amp -6 \\
+          -2 \amp 0 \amp 6 \amp 2
+          \end{array}\right]
+          \sim
+          \left[\begin{array}{rrrr}
+          1 \amp 0 \amp -3 \amp -1 \\
+          0 \amp 1 \amp -9 \amp 3
+          \end{array}\right]
+        </me>
+        so that
+        <me>
+          \xvec = \threevec{x_1}{x_2}{x_3} =
+          \threevec{-1+3x_3}{3+9x_3}{x_3} =
+          \threevec{-1}{3}{0}+x_3\threevec{3}{9}{1}\text{.}
+        </me>
+      </p></li>
+
+      <li><p>
+        We have the augmented matrix
+        <me>
+          \left[\begin{array}{rrrrr}
+          1 \amp 2 \amp 0 \amp -1 \amp -1 \\
+          2 \amp 4 \amp -3 \amp -2 \amp 1 \\
+          -1 \amp -2 \amp 6 \amp 1 \amp 5
+          \end{array}\right]
+          \sim
+          \left[\begin{array}{rrrrr}
+          1 \amp 2 \amp 0 \amp -1 \amp 0 \\
+          0 \amp 0 \amp 1 \amp 0 \amp 0 \\
+          0 \amp 0 \amp 0 \amp 0 \amp 1
+          \end{array}\right]\text{.}
+        </me>
+        Since this system is inconsistent, there are no solutions
+        to the matrix equation.
+      </p></li>
+
+      <li><p>
+        We know that there is at least one solution, namely,
+        <m>\xvec=\zerovec</m>.
+      </p></li>
+
+    </ol></p>
+      </solution>
+
+      <answer>
+    <p><ol label="a.">
+      <li><p>
+        <m>A = \left[\begin{array}{rrr}
+        2 \amp 1 \amp -3 \\
+        -1 \amp 2 \amp 1 \\
+        3 \amp -1 \amp 0 \\
+        \end{array}\right]
+        </m>
+        and <m>\bvec=\threevec{4}{3}{-4}</m>.
+      </p></li>
+
+      <li><p>
+        <m>
+          \xvec = \threevec{x_1}{x_2}{x_3} =
+          \threevec{-1}{3}{0}+x_3\threevec{3}{9}{1}\text{.}
+        </m>
+      </p></li>
+
+      <li><p>
+        There are no solutions.
+      </p></li>
+
+      <li><p>
+        There is at least one solution, namely,
+        <m>\xvec=\zerovec</m>.
+      </p></li>
+
+    </ol></p>
+      </answer>-->
+
+    </activity>
+
+    <!--Activity 2.2.5-->
+
+    <activity>
+      <statement>
+      <p> Consider the matrices
+    <me>
+      A = \left[\begin{array}{rrr}
+      1 \amp 3 \amp 2 \\
+      -3 \amp 4 \amp -1 \\
+      \end{array}\right],
+      B = \left[\begin{array}{rr}
+      3 \amp 0 \\
+      1 \amp 2 \\
+      -2 \amp -1 \\
+      \end{array}\right]
+    </me>.
+    <ol label="a.">
+    <li><p> Suppose we want to form the product <m>AB</m>.  Before
+    computing, first make sure you can explain how you know this product exists
+    and then give the dimensions of the resulting matrix.</p></li>
+
+    <li><p> Compute the product <m>AB</m>. </p></li>
+
+    <li><p> Sage can multiply matrices using the <c>*</c>
+    operator.  Define the matrices <m>A</m> and <m>B</m> in the
+    Sage cell below and
+    check your work by computing <m>AB</m>.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    </p></li>
+
+    <li><p> Are you able to form the matrix product <m>BA</m>?  If
+    so, use the Sage cell above to find <m>BA</m>.  Is it
+    generally true that <m>AB = BA</m>?
+    </p></li>
+
+    <li><p> Suppose we form the three matrices.
+    <me>
+      A = \left[\begin{array}{rr}
+      1 \amp 2 \\
+      3 \amp -2 \\
+      \end{array}\right],
+      B = \left[\begin{array}{rr}
+      0 \amp 4 \\
+      2 \amp -1 \\
+      \end{array}\right],
+      C = \left[\begin{array}{rr}
+      -1 \amp 3 \\
+      4 \amp 3 \\
+      \end{array}\right]
+    </me>.
+    Compare what happens when you compute <m>A(B+C)</m> and <m>AB
+    + AC</m>.  State your finding as a general principle.
+    <sage>
+      <input>
+      </input>
+    </sage>
+
+    </p></li>
+
+    <li><p> Compare the results of evaluating <m>A(BC)</m> and
+    <m>(AB)C</m> and state your finding as a general
+    principle. </p></li> 
+      
+    <li><p> When we are dealing with real numbers, we know if
+    <m>a\neq 0</m> and <m>ab = ac</m>, then <m>b=c</m>.  Define
+    matrices 
+    <me>
+      A = \left[\begin{array}{rr}
+      1 \amp 2 \\
+      -2 \amp -4 \\
+      \end{array}\right],
+      B = \left[\begin{array}{rr}
+      3 \amp 0 \\
+      1 \amp 3 \\
+      \end{array}\right],
+      C = \left[\begin{array}{rr}
+      1 \amp 2 \\
+      2 \amp 2 \\
+      \end{array}\right]
+    </me>
+    and compute <m>AB</m> and <m>AC</m>.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    If <m>AB = AC</m>, is it necessarily true that <m>B = C</m>?
+    </p></li>
+
+    <li><p> Again, with real numbers, we know that if <m>ab =
+    0</m>, then either <m>a = 0</m> or <m>b=0</m>.  Define
+    <me>
+      A = \left[\begin{array}{rr}
+      1 \amp 2 \\
+      -2 \amp -4 \\
+      \end{array}\right],
+      B = \left[\begin{array}{rr}
+      2 \amp -4 \\
+      -1 \amp 2 \\
+      \end{array}\right]
+    </me>
+    and compute <m>AB</m>.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    If <m>AB = 0</m>, is it necessarily true that either
+    <m>A=0</m> or <m>B=0</m>?
+    </p></li>
+    </ol>
+      </p>
+      </statement>
+
+      <!--<solution>
+    <p><ol label="a.">
+      <li><p>
+        The product <m>AB</m> exists because the number of columns
+        of <m>A</m> equals the number of rows of <m>B</m>.  The
+        dimensions of <m>AB</m> are <m>2\times 2</m>.
+      </p></li>
+
+      <li><p>
+        We have
+        <m>AB =
+        \left[\begin{array}{rr}
+        2 \amp 4 \\
+        -3 \amp 9
+        \end{array}\right]
+        </m>.
+      </p></li>
+
+      <li><p> Define
+        <cd>
+A = matrix(2, 3, [1, 3, 2, -3, 4, -1])
+B = matrix(3, 2, [3, 0, 1, 2, -2, -1])
+A*B
+        </cd>
+      </p></li>
+
+      <li><p>
+        Yes, we can form the product <m>BA</m> because the number
+        of columns of <m>B</m> equals the number of rows of
+        <m>A</m>.  This product <m>AB</m> will be <m>3\times3</m>,
+        however, so it must be true that <m>AB\neq BA</m>.
+      </p></li>
+
+      <li><p> We find that <m>A(B+C)=AB + AC</m>.
+      </p></li>
+
+      <li><p> We find that <m>A(BC) = (AB)C</m>.
+      </p></li>
+
+      <li><p>
+        It is not generally true that <m>B=C</m> if <m>AB=AC</m>,
+        as illustrated by this example.
+      </p></li>
+
+      <li><p>
+        It is not generally true that <m>A=0</m> or <m>B=0</m> if
+        <m>AB=0</m>, as illustrated by this example.
+      </p></li>
+
+    </ol></p>
+      </solution>
+
+      <answer>
+    <p><ol label="a.">
+      <li><p>
+        The product <m>AB</m> exists because the number of columns
+        of <m>A</m> equals the number of rows of <m>B</m>.  The
+        dimensions of <m>AB</m> are <m>2\times 2</m>.
+      </p></li>
+
+      <li><p>
+        We have
+        <m>AB =
+        \left[\begin{array}{rr}
+        2 \amp 4 \\
+        -3 \amp 9
+        \end{array}\right]
+        </m>.
+      </p></li>
+
+      <li><p> Define
+        <cd>
+A = matrix(2, 3, [1, 3, 2, -3, 4, -1])
+B = matrix(3, 2, [3, 0, 1, 2, -2, -1])
+A*B
+        </cd>
+      </p></li>
+
+      <li><p>
+        It is not generally true that <m>AB=BA</m>.
+      </p></li>
+
+      <li><p> We find that <m>A(B+C)=AB + AC</m>.
+      </p></li>
+
+      <li><p> We find that <m>A(BC) = (AB)C</m>.
+      </p></li>
+
+      <li><p>
+        It is not generally true that <m>B=C</m> if <m>AB=AC</m>.
+      </p></li>
+
+      <li><p>
+        It is not generally true that <m>A=0</m> or <m>B=0</m> if
+        <m>AB=0</m>.
+      </p></li>
+
+    </ol></p>
+      </answer>-->
+
+      
+    </activity>
+
+
+
+
+
+
+
+</section>

@@ -1,0 +1,412 @@
+<section xml:id="ch2sec4">
+
+<title>Section 2.4</title>
+ <p>
+  Let's start these activities by studying
+  the span of two different sets of vectors.</p>
+
+  <activity>
+      <statement><p>
+     
+     
+    Consider the following vectors in <m>\real^3</m>:
+    <me>
+      \vvec_1=\threevec{0}{-1}{2},
+      \vvec_2=\threevec{3}{1}{-1},
+      \vvec_3=\threevec{2}{0}{1}
+    </me>.
+    Describe the span of these vectors,
+    <m>\laspan{\vvec_1,\vvec_2,\vvec_3}</m>. 
+    <sage>
+      <input>
+      </input>
+    </sage>
+  </p></statement></activity>
+
+  <activity><statement><p>
+
+    We will now consider a set of vectors that looks very much
+    like the first set:
+    <me>
+      \wvec_1=\threevec{0}{-1}{2},
+      \wvec_2=\threevec{3}{1}{-1},
+      \wvec_3=\threevec{3}{0}{1}
+    </me>.
+
+    <ol label="a.">
+    <li><p>Describe the span of these vectors,
+    <m>\laspan{\wvec_1,\wvec_2,\wvec_3}</m>. 
+    <sage>
+      <input>
+      </input>
+    </sage>
+  </p></li>
+
+  <li><p> 
+    Show that the vector <m>\wvec_3</m> is a linear combination
+    of <m>\wvec_1</m> and <m>\wvec_2</m> by finding weights such
+    that
+    <me>
+      \wvec_3 = a\wvec_1 + b\wvec_2
+    </me>.
+  </p></li>
+
+  <li><p>
+    Explain why any linear combination of <m>\wvec_1</m>,
+    <m>\wvec_2</m>, and <m>\wvec_3</m>,
+    <me>
+      c_1\wvec_1 + c_2\wvec_2 + c_3\wvec_3
+    </me>
+    can be written as a linear combination of <m>\wvec_1</m> and
+    <m>\wvec_2</m>. 
+  </p></li>
+
+  <li><p>
+    Explain why
+    <me>
+      \laspan{\wvec_1,\wvec_2,\wvec_3} = \laspan{\wvec_1,\wvec_2}
+    </me>.
+  </p></li>
+
+      </ol>
+      </p>
+      </statement>
+
+    </activity>
+
+    <p> We would like to develop a means of detecting when a set of
+      vectors is linearly dependent.  These questions will point the
+      way. </p>
+
+       
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+  Consider whether the set of Euclidean vectors <m>\left\{
+  \left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
+  \left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
+  \left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
+  \left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
+  \right\}</m> is linearly dependent or linearly independent.
+        </p>
+    </introduction>
+<task>
+    <p>
+Reinterpret this question as an appropriate question about solutions to a vector equation.
+    </p>
+</task>
+<task>
+    <p>
+Use the solution to this question to answer the original question.
+    </p>
+</task>
+</activity>
+
+     <activity>
+      <statement><p>
+      
+       Suppose we have five vectors in <m>\real^4</m> that
+  form the columns of a matrix having reduced row echelon form
+  <me>
+    \left[\begin{array}{rrrrr}
+    \vvec_1 \amp    \vvec_2 \amp    \vvec_3 \amp
+    \vvec_4 \amp    \vvec_5 
+    \end{array}\right]
+    \sim
+    \left[\begin{array}{rrrrr}
+    1 \amp 0 \amp -1 \amp 0 \amp 2 \\
+    0 \amp 1 \amp 2 \amp 0 \amp 3 \\
+    0 \amp 0 \amp 0 \amp 1 \amp -1 \\
+    0 \amp 0 \amp 0 \amp 0 \amp 0 \\
+    \end{array}\right]
+  </me>.
+  <ol label="a.">
+  <li><p>Is it possible to write one of the vectors
+  <m>\vvec_1,\vvec_2,\ldots,\vvec_5</m> as a linear
+  combination of the others?  If so, show explicitly how one
+  vector appears as a linear combination of some of the other
+  vectors. </p></li>
+
+  <li><p> Is this set of vectors linearly dependent or
+  independent? 
+  </p></li>
+</ol></p></statement></activity>
+
+<activity><statement><p>
+  Suppose we have another set of three vectors in
+  <m>\real^4</m> that form the columns of a matrix having 
+  reduced row echelon form
+  <me>
+    \left[\begin{array}{rrr}
+    \wvec_1 \amp    \wvec_2 \amp    \wvec_3 \\
+    \end{array}\right]
+    \sim
+    \left[\begin{array}{rrr}
+    1 \amp 0 \amp 0 \\
+    0 \amp 1 \amp 0 \\
+    0 \amp 0 \amp 1 \\
+    0 \amp 0 \amp 0 \\
+    \end{array}\right]
+  </me>.
+  <ol label="a.">
+  <li><p>Is it possible to write one of these vectors <m>\wvec_1</m>,
+  <m>\wvec_2</m>, <m>\wvec_3</m> as a linear
+  combination of the others?  If so, show explicitly how one
+  vector appears as a linear combination of some of the other
+  vectors.  </p></li>
+
+  <li><p>Is this set of vectors linearly dependent or
+  independent? 
+  </p></li>
+
+  <li><p>
+    By looking at the pivot positions, how can you determine
+    whether the columns of a matrix are linearly dependent or
+    independent?
+  </p></li>
+
+</ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a.">
+
+  <li><p>
+    If one vector in a set is the zero vector <m>\zerovec</m>,
+    can the set of vectors be linearly independent?
+  </p></li>
+
+  <li><p>
+    Suppose a set of vectors in <m>\real^{10}</m> has twelve
+    vectors.  Is it possible for this set to be linearly
+    independent?
+  </p></li>
+      </ol></p>
+      </statement>
+
+      <!--<solution>
+  <p><ol label="a.">
+    <li><p>
+      Let's focus on the first three vectors and view the matrix
+      as an augmented one:
+      <me>
+        \left[\begin{array}{rr|r}
+        \vvec_1 \amp \vvec_2 \amp \vvec_3
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rr|r}
+        1 \amp 0 \amp -1 \\
+        0 \amp 1 \amp 2 \\
+        0 \amp 0 \amp 0 \\
+        0 \amp 0 \amp 0 \\
+        \end{array}\right]\text{.}
+      </me>
+      This shows that <m>\vvec_3=-\vvec_1+2\vvec_2</m> so it is
+      possible to write one of the vectors as a linear
+      combination of the others.  We can also see that
+      <m>\vvec_5 = 2\vvec_1+3\vvec_2-\vvec_4</m> in the same
+      way.
+    </p></li>
+
+    <li><p>
+      Applying the same reasoning as in the previous part, we
+      see that we cannot write any of the vectors as a linear
+      combination of the others.
+    </p></li>
+
+    <li><p>
+      The columns of a matrix are linearly independent exactly
+      when there is a pivot position in every column of the
+      matrix.
+    </p></li>
+
+    <li><p>
+      Yes, because we can write <m>\zerovec = 0\vvec_1 + \ldots
+      + 0\vvec_n</m>.
+    </p></li>
+
+    <li><p>
+      No, because the matrix formed by the vectors would have 12
+      columns and only 10 rows.  There can at most be 10 pivot
+      positions so there are at least two columns without pivot
+      positions.
+    </p></li>
+  </ol></p>
+      </solution>-->
+    </activity>
+
+    <activity estimated-time='10'>
+    <statement>
+  <p>
+  Let <m>\vec{v}_1,\vec{v}_2,\vec{v}_3 </m> be vectors in <m>\mathbb R^n</m>.
+  Suppose <m>3\vec{v}_1-5\vec{v}_2=\vec{v}_3</m>, so the set
+  <m>\{\vec{v}_1,\vec{v}_2,\vec{v}_3\}</m> is linearly dependent.
+  Which of the following is true of the vector equation <m>x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3=\vec{0}</m>?
+  </p>
+  <ol label="A">
+<li>
+    <p>
+    It is consistent with one solution
+    </p>
+  </li>
+<li>
+    <p>
+    It is consistent with infinitely many solutions
+    </p>
+  </li>
+<li>
+    <p>
+    It is inconsistent.
+    </p>
+  </li>
+  </ol>
+    </statement>
+</activity>
+
+    <activity>
+      <title> Linear independence and homogeneous equations </title>
+
+      <statement>
+      <p><ol label="a.">
+  <li><p> Explain why the homogenous equation <m>A\xvec =
+  \zerovec</m> is consistent no matter the matrix <m>A</m>.
+  </p></li>
+
+  <li><p> Consider the matrix
+  <me>
+  A = \left[\begin{array}{rrr}
+  3 \amp 2 \amp 0 \\
+  -1 \amp 0 \amp -2 \\
+  2 \amp 1 \amp 1
+  \end{array}\right]
+  </me>
+  whose columns we denote by <m>\vvec_1</m>, <m>\vvec_2</m>, and
+  <m>\vvec_3</m>.
+  Are the vectors <m>\vvec_1</m>, <m>\vvec_2</m>, and
+  <m>\vvec_3</m> linearly dependent or independent?
+  <sage>
+    <input>
+    </input>
+  </sage>
+        
+  </p></li>
+
+  <li><p>
+    Give a description of the solution space of
+    the homogeneous equation <m>A\xvec = \zerovec</m>.
+  </p></li>
+
+  <li><p>
+    We know that <m>\zerovec</m> is a solution to the
+    homogeneous equation.  Find another solution that is
+    different from <m>\zerovec</m>.  Use your solution to find
+    weights 
+    <m>c_1</m>, <m>c_2</m>, and <m>c_3</m> such that
+    <me>
+      c_1\vvec_1 + c_2\vvec_2 + c_3\vvec_3 = \zerovec
+    </me>.
+  </p></li>
+
+  <li><p>
+    Use the expression you found in the previous part to write
+    one of the vectors as a linear combination of the others.
+  </p></li>
+      </ol></p>
+      </statement>
+
+      <!--<solution>
+  <p><ol label="a.">
+    <li><p>
+      The vector <m>\zerovec</m> is always a solution.
+    </p></li>
+
+    <li><p>
+      We have
+      <me>
+        \left[\begin{array}{rrr}
+        3 \amp 2 \amp 0 \\
+        -1 \amp 0 \amp -2 \\
+        2 \amp 1 \amp 1
+        \end{array}\right]
+        \sim
+        \left[\begin{array}{rrr}
+        1 \amp 0 \amp 2 \\
+        0 \amp 1 \amp -3 \\
+        0 \amp 0 \amp 0
+        \end{array}\right]\text{,}
+      </me>
+      which shows that the vectors are linearly dependent.  
+    </p></li>
+
+    <li><p>
+      From the reduced row echelon form, we see that <m>x_3</m>
+      is a free variable and that we have
+      <me>
+        \begin{alignedat}{2}
+        x_1 \amp {}={} -2x_3 \\
+        x_2 \amp {}={} 3x_3\text{.} \\
+        \end{alignedat}
+      </me>
+      The solution space is then written parametrically as
+      <me>
+        \xvec=\threevec{x_1}{x_2}{x_3} = x_3\threevec{-2}{3}{1}\text{.}
+      </me>
+    </p></li>
+
+    <li><p>
+      If we set <m>x_3=1</m>, then we have the solution
+      <m>\xvec=\threevec{-2}{3}{1}</m>, which says that
+      <me>
+        -2\vvec_1+3\vvec_2+\vvec_3 = \zerovec\text{.}
+      </me>
+    </p></li>
+
+    <li><p>
+      We may rewrite this expression as
+      <m>\vvec_3=2\vvec_1-3\vvec_2</m>, showing that
+      <m>\vvec_3</m> is a linear combination of <m>\vvec_1</m>
+      and <m>\vvec_2</m>.
+    </p></li>
+    </ol></p>
+      </solution>-->
+        
+    </activity>
+
+    
+
+<activity estimated-time='5'>
+    <statement>
+        <p>
+What is the largest number of <m>\IR^4</m> vectors that can form a linearly independent set?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>3</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>4</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>5</m>
+    </p>
+</li>
+<li>
+    <p>
+    You can have infinitely many vectors and still be linearly independent.
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+
+
+
+
+
+</section>
