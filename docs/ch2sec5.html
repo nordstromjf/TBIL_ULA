@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-03-04T11:59:19-08:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Section 2.5</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch2sec4.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-two.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch2sec6.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch2sec4.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-two.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch2sec6.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1" class="internal"><span class="codenumber">I</span> <span class="title"></span></a></li>
+<li class="link">
+<a href="ch-first.html" data-scroll="ch-first" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a><ul>
+<li><a href="ch1sec1.html" data-scroll="ch1sec1" class="internal">Section 1.1</a></li>
+<li><a href="ch1sec2.html" data-scroll="ch1sec2" class="internal">Section 1.2</a></li>
+<li><a href="ch1sec3.html" data-scroll="ch1sec3" class="internal">Section 1.3</a></li>
+<li><a href="ch1sec4.html" data-scroll="ch1sec4" class="internal">Section 1.4</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-two.html" data-scroll="ch-two" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="ch2sec1.html" data-scroll="ch2sec1" class="internal">Section 2.1</a></li>
+<li><a href="ch2sec2.html" data-scroll="ch2sec2" class="internal">Section 2.2</a></li>
+<li><a href="ch2sec3.html" data-scroll="ch2sec3" class="internal">Section 2.3</a></li>
+<li><a href="ch2sec4.html" data-scroll="ch2sec4" class="internal">Section 2.4</a></li>
+<li><a href="ch2sec5.html" data-scroll="ch2sec5" class="active">Section 2.5</a></li>
+<li><a href="ch2sec6.html" data-scroll="ch2sec6" class="internal">Section 2.6</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></li>
+<li class="link"><a href="solutions-2.html" data-scroll="solutions-2" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ch2sec5"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.5</span> <span class="title">Section 2.5</span>
+</h2>
+<p id="p-266">In the first several activities, we will look at some examples of matrix transformations.</p>
+<article class="activity project-like" id="activity-58"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.1</span><span class="period">.</span>
+</h3>
+<p id="p-267">Suppose that <span class="process-math">\(A\)</span> is the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+2 \amp 1 \\
+1 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We define the matrix transformation <span class="process-math">\(T(\xvec) =
+A\xvec\)</span> so that</p>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\twovec{-2}{3}\right) =
+A\twovec{-2}{3} =
+\left[\begin{array}{rr}
+2 \amp 1 \\
+1 \amp 2 \\
+\end{array}\right]
+\twovec{-2}{3} =
+\twovec{-1}{4}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">The function <span class="process-math">\(T\)</span> takes the vector <span class="process-math">\(\twovec{-2}{3}\)</span> as an input and gives us <span class="process-math">\(\twovec{-1}{4}\)</span> as the output.</p>
+<ol id="p-268" class="lower-alpha">
+<li id="li-207"><p id="p-269">What is <span class="process-math">\(T\left(\twovec{1}{-2}\right)\text{?}\)</span></p></li>
+<li id="li-208"><p id="p-270">What is <span class="process-math">\(T\left(\twovec{1}{0}\right)\text{?}\)</span></p></li>
+<li id="li-209"><p id="p-271">What is <span class="process-math">\(T\left(\twovec{0}{1}\right)\text{?}\)</span></p></li>
+<li id="li-210"><p id="p-272">Is there a vector <span class="process-math">\(\xvec\)</span> such that <span class="process-math">\(T(\xvec) = \twovec{3}{0}\text{?}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-59"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.2</span><span class="period">.</span>
+</h3>
+<p id="p-273">Suppose that <span class="process-math">\(T(\xvec) = A\xvec\)</span> where</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A=\left[\begin{array}{rrrr}
+3 \amp 3 \amp -2 \amp 1 \\
+0 \amp 2 \amp 1 \amp -3 \\
+-2 \amp 1 \amp 4 \amp -4
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-211"><p id="p-274">What is the dimension of the vectors <span class="process-math">\(\xvec\)</span> that are inputs for <span class="process-math">\(T\text{?}\)</span></p></li>
+<li id="li-212"><p id="p-275">What is the dimension of the vectors <span class="process-math">\(T(\xvec)=A\xvec\)</span> that are outputs?</p></li>
+<li id="li-213"><p id="p-276">Describe the vectors <span class="process-math">\(\xvec\)</span> for which <span class="process-math">\(T(\xvec) = \zerovec\text{.}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-60"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.3</span><span class="period">.</span>
+</h3>
+<p id="p-277">If <span class="process-math">\(A\)</span> is the matrix <span class="process-math">\(A=\left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+\end{array}\right]\text{,}\)</span> what is <span class="process-math">\(T\left(\twovec{0}{1}\right)\)</span> in terms of the vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{?}\)</span></p></article><article class="activity project-like" id="activity-61"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.4</span><span class="period">.</span>
+</h3>
+<p id="p-278">Suppose that <span class="process-math">\(A\)</span> is a <span class="process-math">\(3\times 2\)</span> matrix and that <span class="process-math">\(T(\xvec)=A\xvec\text{.}\)</span>  If</p>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\twovec{1}{0}\right) = \threevec{3}{-1}{1},
+T\left(\twovec{0}{1}\right) = \threevec{2}{2}{-1}\text{,}
+\end{equation*}
+</div>
+<p class="continuation">what is the matrix <span class="process-math">\(A\text{?}\)</span></p></article><article class="activity project-like" id="activity-62"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.5</span><span class="period">.</span>
+</h3>
+<p id="p-279">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\)</span> What is <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]\right)\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-214"><p id="p-280"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 2 \\ 1\end{array}\right]\)</span></p></li>
+<li id="li-215"><p id="p-281"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 3 \\ -1 \end{array}\right]\)</span></p></li>
+<li id="li-216"><p id="p-282"><span class="process-math">\(\displaystyle \left[\begin{array}{c} -1 \\ 3 \end{array}\right]\)</span></p></li>
+<li id="li-217"><p id="p-283"><span class="process-math">\(\displaystyle \left[\begin{array}{c} 5 \\ -8 \end{array}\right]\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-63"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.6</span><span class="period">.</span>
+</h3>
+<p id="p-284">Suppose <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> is a linear map, and you know <span class="process-math">\(T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+\left[\begin{array}{c} 2 \\ 1 \end{array}\right]\)</span> and <span class="process-math">\(T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+\left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+\text{.}\)</span> What piece of information would help you compute <span class="process-math">\(T\left(\left[\begin{array}{c}0\\4\\-1\end{array}\right]\right)\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-218"><p id="p-285">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)\text{.}\)</span></p></li>
+<li id="li-219"><p id="p-286">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 0\\1\\0\end{array}\right]\right)\text{.}\)</span></p></li>
+<li id="li-220"><p id="p-287">The value of <span class="process-math">\(T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)\text{.}\)</span></p></li>
+<li id="li-221"><p id="p-288">Any of the above.</p></li>
+</ol></article><article class="activity project-like" id="activity-64"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.7</span><span class="period">.</span>
+</h3>
+<p id="p-289">Let <span class="process-math">\(T: \IR^4 \rightarrow \IR^3\)</span> be the linear transformation given by</p>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\vec e_1 \right)
+=
+\left[\begin{array}{c} 0 \\ 3 \\ -2\end{array}\right]
+\hspace{2em}
+T\left(\vec e_2 \right)
+=
+\left[\begin{array}{c} -3 \\ 0 \\ 1\end{array}\right]
+\hspace{2em}
+T\left(\vec e_3 \right)
+=
+\left[\begin{array}{c} 4 \\ -2 \\ 1\end{array}\right]
+\hspace{2em}
+T\left(\vec e_4 \right)
+=
+\left[\begin{array}{c} 2 \\ 0 \\ 0\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">Write the matrix <span class="process-math">\([T(\vec e_1) \,\cdots\, T(\vec e_n)]\)</span> for <span class="process-math">\(T\text{.}\)</span> The matrix <span class="process-math">\(A\)</span> is called the standard matrix for the transformation <span class="process-math">\(T\text{.}\)</span></p></article><article class="activity project-like" id="activity-65"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.8</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-8">
+<p id="p-290">Let <span class="process-math">\(T: \IR^3 \rightarrow \IR^2\)</span> be the linear transformation given by</p>
+<div class="displaymath process-math">
+\begin{equation*}
+T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) = \left[\begin{array}{c} x+3z \\ 2x-y-4z \end{array}\right]
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-21"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-291">Compute <span class="process-math">\(T(\vec e_1)\text{,}\)</span> <span class="process-math">\(T(\vec e_2)\text{,}\)</span> and <span class="process-math">\(T(\vec e_3)\text{.}\)</span></p></article><article class="task exercise-like" id="task-22"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-292">Find the standard matrix for <span class="process-math">\(T\text{,}\)</span> so that <span class="process-math">\(T(\xvec) =
+A\xvec\text{.}\)</span></p></article></article><p id="p-293">Now we will look at some applications of matrix transformations.</p>
+<article class="activity project-like" id="activity-66"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.9</span><span class="period">.</span>
+</h3>
+<p id="p-294">Suppose that we work for a company that produces baked goods, including cakes, donuts, and eclairs.  Our company operates two plants, Plant 1 and Plant 2.  In one hour of operation,</p>
+<ul class="disc">
+<li id="li-222"><p id="p-295">Plant 1 produces 10 cakes, 50 donuts, and 30 eclairs.</p></li>
+<li id="li-223"><p id="p-296">Plant 2 produces 20 cakes, 30 donuts, and 30 eclairs.</p></li>
+</ul>
+<ol class="lower-alpha">
+<li id="li-224"><p id="p-297">If plant 1 operates for <span class="process-math">\(x_1\)</span> hours and Plant 2 for <span class="process-math">\(x_2\)</span> hours, how many cakes <span class="process-math">\(C\)</span> does the company produce?  How many donuts <span class="process-math">\(D\text{?}\)</span>  How many eclairs <span class="process-math">\(E\text{?}\)</span></p></li>
+<li id="li-225"><p id="p-299">We define a matrix transformation <span class="process-math">\(T(\xvec) =
+\threevec{C}{D}{E}\)</span> where <span class="process-math">\(\threevec{C}{D}{E}\)</span> represents the number of baked goods produced when the plants are operated for times <span class="process-math">\(\xvec=\twovec{x_1}{x_2}\text{.}\)</span>  If <span class="process-math">\(T(\xvec) 
+= A\xvec\text{,}\)</span> what are the dimensions of the matrix <span class="process-math">\(A\text{?}\)</span></p></li>
+<li id="li-226"><p id="p-300">Find the vector <span class="process-math">\(T\left(\twovec{1}{0}\right)\)</span> and the vector <span class="process-math">\(T\left(\twovec{0}{1}\right)\)</span> and use your results to write the matrix <span class="process-math">\(A\text{.}\)</span></p></li>
+<li id="li-227"><p id="p-301">If we operate Plant 1 for 40 hours and Plant 2 for 50 hours, how many baked goods have we produced?</p></li>
+<li id="li-228"><p id="p-302">Suppose the marketing department says we need to produce 1500 cakes, 4700 donuts, and 3300 eclairs. Is it possible to meet this order?  If so, how long should the two plants operate?</p></li>
+</ol></article><article class="activity project-like" id="activity-67"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.10</span><span class="period">.</span>
+</h3>
+<p id="p-303">Continue with the same baked good producing plants from the previous activity.</p>
+<ol class="lower-alpha">
+<li id="li-229">
+<p id="p-304">Let's now consider the needed ingredients:</p>
+<ul class="disc">
+<li id="li-230"><p id="p-305">Each cake requires 4 units of flour and and 2 units of sugar.</p></li>
+<li id="li-231"><p id="p-306">Each donut requires 1 unit of flour and 1 unit of sugar.</p></li>
+<li id="li-232"><p id="p-307">Each eclair requires 1 units of flour and 2 units of sugar.</p></li>
+</ul>
+<p id="p-308">Suppose we make <span class="process-math">\(C\)</span> cakes, <span class="process-math">\(D\)</span> donuts, and <span class="process-math">\(E\)</span> eclairs.  How many units of flour <span class="process-math">\(F\)</span> are required? How many units of sugar <span class="process-math">\(S\text{?}\)</span></p>
+</li>
+<li id="li-233"><p id="p-309">Write a matrix <span class="process-math">\(B\)</span> that defines the matrix transformation <span class="process-math">\(R\left(\threevec{C}{D}{E}\right) =
+\twovec{F}{S}\text{.}\)</span></p></li>
+<li id="li-234"><p id="p-310">If Plant 1 operates for 30 hours and Plant 2 operates for 20 hours, how many units of flour and sugar are required?</p></li>
+<li id="li-235"><p id="p-311">We can consider the matrix transformation <span class="process-math">\(P(\xvec) = \twovec{F}{S}\)</span> that tells us how many units of flour and sugar are required when we operate the plants for <span class="process-math">\(x_1\)</span> and <span class="process-math">\(x_2\)</span> hours.  Find the matrix that defines the transformation <span class="process-math">\(P\text{.}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-68"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.11</span><span class="period">.</span>
+</h3>
+<p id="p-312">Suppose we run a company that has two warehouses, which we will call <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\text{,}\)</span> and a fleet of 1000 delivery trucks. Every day, a delivery truck goes out from one of the warehouses and returns every evening to one of the warehouses.  Every evening,</p>
+<ul class="disc">
+<li id="li-236"><p id="p-313">70% of the trucks that leave <span class="process-math">\(P\)</span> return to <span class="process-math">\(P\text{.}\)</span>  The other 30% return to <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li id="li-237"><p id="p-314">50% of the trucks that leave <span class="process-math">\(Q\)</span> return to <span class="process-math">\(Q\)</span> and 50% return to <span class="process-math">\(P\text{.}\)</span></p></li>
+</ul>
+<p id="p-315">We will use the vector <span class="process-math">\(\xvec=\twovec{P}{Q}\)</span> to represent the number of trucks at location <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> in the morning.  We consider the matrix transformation <span class="process-math">\(T(\xvec) = \twovec{P'}{Q'}\)</span> that describes the number of trucks at location <span class="process-math">\(P\)</span> and <span class="process-math">\(Q\)</span> in the evening. <div class="sagecell-sage" id="sage-18"><script type="text/x-sage">
+</script></div></p>
+<ol class="lower-alpha">
+<li id="li-238">
+<p id="p-316">Suppose that all 1000 trucks begin the day at location <span class="process-math">\(P\)</span> and none at <span class="process-math">\(Q\text{.}\)</span>  How many trucks are at each location at the end of the day? Therefore, what is the vector <span class="process-math">\(T\left(\ctwovec{1000}{0}\right)\text{?}\)</span></p>
+<p id="p-317">Using this result, what is <span class="process-math">\(T\left(\twovec{1}{0}\right)\text{?}\)</span></p>
+</li>
+<li id="li-239"><p id="p-318">In the same way, suppose that all 1000 trucks begin the day at location <span class="process-math">\(Q\)</span> and none at <span class="process-math">\(P\text{.}\)</span>  How many trucks are at each location at the end of the day? What is the result <span class="process-math">\(T\left(\ctwovec{0}{1000}\right)\text{?}\)</span></p></li>
+<li id="li-240"><p id="p-319">Find the matrix <span class="process-math">\(A\)</span> such that <span class="process-math">\(T(\xvec) =
+A\xvec\text{.}\)</span></p></li>
+<li id="li-241"><p id="p-320">Suppose that there are 100 trucks at <span class="process-math">\(P\)</span> and 900 at <span class="process-math">\(Q\)</span> at the beginning of the day.  How many are there at the two locations at the end of the day?</p></li>
+<li id="li-242"><p id="p-321">Suppose that there are 550 trucks at <span class="process-math">\(P\)</span> and 450 at <span class="process-math">\(Q\)</span> at the end of the day.  How many trucks were there at the two locations at the beginning of the day?</p></li>
+</ol></article><article class="activity project-like" id="activity-69"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.12</span><span class="period">.</span>
+</h3>
+<p id="p-322">Continue with the same trucking company from the previous activity.</p>
+<p id="p-323">Suppose that all of the trucks are at location <span class="process-math">\(Q\)</span> on Monday morning.</p>
+<ol class="lower-alpha">
+<li id="li-243"><p id="p-324">How many trucks are at each location Monday evening?</p></li>
+<li id="li-244"><p id="p-325">How many trucks are at each location Tuesday evening?</p></li>
+<li id="li-245"><p id="p-326">How many trucks are at each location Wednesday evening?</p></li>
+</ol></article><article class="activity project-like" id="activity-70"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span>
+</h3>
+<p id="p-327">Continue with the same trucking company from the previous two activities.</p>
+<ol class="lower-alpha">
+<li id="li-246"><p id="p-328">Suppose that <span class="process-math">\(S\)</span> is the matrix transformation that transforms the distribution of trucks <span class="process-math">\(\xvec\)</span> one morning into the distribution of trucks two mornings later. What is the matrix that defines the transformation <span class="process-math">\(S\text{?}\)</span></p></li>
+<li id="li-247"><p id="p-329">Suppose that <span class="process-math">\(R\)</span> is the matrix transformation that transforms the distribution of trucks <span class="process-math">\(\xvec\)</span> one morning into the distribution of trucks one week later. What is the matrix that defines the transformation <span class="process-math">\(R\text{?}\)</span></p></li>
+<li id="li-248">
+<p id="p-330">What happens to the distribution of trucks after a very long time?</p>
+<ol class="lower-alpha">
+<li id="li-249"><p id="p-331">All the trucks end up at location <span class="process-math">\(P\text{.}\)</span></p></li>
+<li id="li-250"><p id="p-332">All the trucks end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li id="li-251"><p id="p-333">625 trucks end up at location <span class="process-math">\(P\text{,}\)</span> while 375 end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li id="li-252"><p id="p-334">375 trucks end up at location <span class="process-math">\(P\text{,}\)</span> while 625 end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+</ol>
+</li>
+</ol></article></section></div></main>
+</div>
+</body>
+</html>
