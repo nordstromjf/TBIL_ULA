@@ -277,7 +277,7 @@
       <li>The only solution for <m>A\xvec
     = \zerovec</m> is <m>\xvec=\zerovec</m>.</li>
     <li>The system is always consistent, but we can't determine any solutions without knowing <m>A</m>.</li>
-    <li>The system is always consistent, and must contain<m>\zerovec</m>, but may also contain additional solutions.</li>
+    <li>The system is always consistent, and must contain <m>\zerovec</m>, but may also contain additional solutions.</li>
    
       </ol>
       </p></statement>

@@ -98,14 +98,13 @@
       </solution>-->
 	    
     <!--</activity>-->
-
+<p> In the first several activities, we will look at some examples of matrix
+		transformations. </p>
      <activity>
-	<statement>
-	<p> In this activity, we will look at some examples of matrix
-	transformations. 
-	<ol label="a."> 
-	  <li><p>
-	    To begin, suppose that <m>A</m> is the matrix
+		<statement>
+		
+	  <p>
+	    Suppose that <m>A</m> is the matrix
 	    <me>A = \left[\begin{array}{rr}
 	    2 \amp 1 \\
 	    1 \amp 2 \\
@@ -129,7 +128,7 @@
 	    output.
 	    </p>
 
-	    <p> <ol label="i.">
+	    <p> <ol label="a.">
 	      <li><p>What is <m>T\left(\twovec{1}{-2}\right)</m>?</p></li>
 
 	      <li><p>What is <m>T\left(\twovec{1}{0}\right)</m>?</p></li>
@@ -140,9 +139,12 @@
 	      <li><p> Is there a vector <m>\xvec</m> such that
 	      <m>T(\xvec) = \twovec{3}{0}</m>? </p></li>
 	    </ol></p>
-	    </li>
+	  </statement></activity>
 
-	    <li> <p> Suppose that <m>T(\xvec) = A\xvec</m> where
+	  <activity>
+	  	<statement>
+
+	    <p> Suppose that <m>T(\xvec) = A\xvec</m> where
 	    <me>
 	      A=\left[\begin{array}{rrrr}
 	      3 \amp 3 \amp -2 \amp 1 \\
@@ -150,7 +152,7 @@
 	      -2 \amp 1 \amp 4 \amp -4
 	      \end{array}\right]
 	    </me>.
-	    <ol label="i.">  
+	    <ol label="a.">  
 	      <li><p> What is the dimension of the vectors
 	      <m>\xvec</m> that are inputs for <m>T</m>?  </p></li>
 
@@ -159,24 +161,28 @@
 
 	      <li><p> Describe the vectors <m>\xvec</m> for which
 	      <m>T(\xvec) = \zerovec</m>. </p></li>
-	    </ol></p></li>
+	    </ol></p></statement></activity>
 
-	    <li><p> If <m>A</m> is the matrix
+	    <activity><statement>
+
+
+	    <p> If <m>A</m> is the matrix
 	    <m>A=\left[\begin{array}{rr} \vvec_1 \amp \vvec_2
 	    \end{array}\right]</m>,
 	    what is <m>T\left(\twovec{0}{1}\right)</m> in terms of the
-	    vectors <m>\vvec_1</m> and <m>\vvec_2</m>?</p></li>
+	    vectors <m>\vvec_1</m> and <m>\vvec_2</m>?</p>
+	</statement></activity>
 
-	    <li><p> Suppose that <m>A</m> is a <m>3\times 2</m> matrix
+	 <activity><statement>
+
+	    <p> Suppose that <m>A</m> is a <m>3\times 2</m> matrix
 	    and that <m>T(\xvec)=A\xvec</m>.  If
 	    <me>
 	      T\left(\twovec{1}{0}\right) = \threevec{3}{-1}{1},
 	      T\left(\twovec{0}{1}\right) = \threevec{2}{2}{-1}
 	    </me>,
 	    what is the matrix <m>A</m>?
-	    </p></li>
-
-	</ol></p>
+	    </p>
 	</statement>
 
 	<!--<solution>
@@ -247,6 +253,138 @@
 	      
       </activity>
 
+      <activity estimated-time='5'>
+    <statement>
+        <p>
+Suppose <m>T: \IR^3 \rightarrow \IR^2</m> is a linear map, and you know
+<m>
+  T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+  \left[\begin{array}{c} 2 \\ 1 \end{array}\right]
+</m>
+and
+<m>
+  T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+  \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+</m>.
+What is <m>T\left(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]\right)</m>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    <m>\left[\begin{array}{c} 2 \\ 1\end{array}\right]</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\left[\begin{array}{c} 3 \\ -1 \end{array}\right]</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\left[\begin{array}{c} -1 \\ 3 \end{array}\right]</m>
+    </p>
+</li>
+<li>
+    <p>
+    <m>\left[\begin{array}{c} 5 \\ -8 \end{array}\right]</m>
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+      <activity estimated-time='5'>
+    <statement>
+        <p>
+Suppose <m>T: \IR^3 \rightarrow \IR^2</m> is a linear map, and you know
+<m>
+  T\left(\left[\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right] \right)
+=
+  \left[\begin{array}{c} 2 \\ 1 \end{array}\right]
+</m>
+and
+<m>
+  T\left(\left[\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right] \right)
+=
+  \left[\begin{array}{c} -3 \\ 2 \end{array}\right]
+</m>.
+What piece of information would help you compute <m>T\left(\left[\begin{array}{c}0\\4\\-1\end{array}\right]\right)</m>?
+        </p>
+<ol label="a">
+<li>
+    <p>
+    The value of <m>T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)</m>.
+    </p>
+</li>
+<li>
+    <p>
+    The value of <m>T\left(\left[\begin{array}{c} 0\\1\\0\end{array}\right]\right)</m>.
+    </p>
+</li>
+<li>
+    <p>
+    The value of <m>T\left(\left[\begin{array}{c} 1\\1\\1\end{array}\right]\right)</m>.
+    </p>
+</li>
+<li>
+    <p>
+    Any of the above.
+    </p>
+</li>
+</ol>
+    </statement>
+</activity>
+
+<activity estimated-time='3'>
+    <statement>
+        <p>
+  Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
+  <me>
+    T\left(\vec e_1 \right)
+  =
+    \left[\begin{array}{c} 0 \\ 3 \\ -2\end{array}\right]
+  \hspace{2em}
+    T\left(\vec e_2 \right)
+  =
+    \left[\begin{array}{c} -3 \\ 0 \\ 1\end{array}\right]
+  \hspace{2em}
+    T\left(\vec e_3 \right)
+  =
+    \left[\begin{array}{c} 4 \\ -2 \\ 1\end{array}\right]
+  \hspace{2em}
+    T\left(\vec e_4 \right)
+  =
+    \left[\begin{array}{c} 2 \\ 0 \\ 0\end{array}\right]
+  </me>
+Write the matrix <m>[T(\vec e_1) \,\cdots\, T(\vec e_n)]</m> for <m>T</m>. The matrix <m>A</m> is called the <emph>standard matrix</emph> for the transformation <m>T</m>.
+        </p>
+    </statement>
+</activity>
+
+<activity estimated-time='5'>
+    <introduction>
+        <p>
+  Let <m>T: \IR^3 \rightarrow \IR^2</m> be the linear transformation given by
+<me>T\left(\left[\begin{array}{c} x\\ y \\ z \end{array}\right] \right) = \left[\begin{array}{c} x+3z \\ 2x-y-4z \end{array}\right]</me>
+        </p>
+    </introduction>
+<task>
+    <p>
+Compute <m>T(\vec e_1)</m>, <m>T(\vec e_2)</m>, and <m>T(\vec e_3)</m>.
+    </p>
+</task>
+<task>
+    <p>
+Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
+	    A\xvec</m>. 
+    </p>
+</task>
+</activity>
+
+<p>Now we will look at some applications of matrix transformations.</p>
+
        <activity>
 	<statement>
 	<p> Suppose that we work for a company that produces baked
@@ -290,11 +428,17 @@
 
 	  <li><p> If we operate Plant 1 for 40 hours and Plant 2 for
 	  50 hours, how many baked goods have we produced? </p></li>
-
+	
 	  <li><p> Suppose the marketing department says we need to
 	  produce 1500 cakes, 4700 donuts, and 3300 eclairs.
 	  Is it possible to meet this order?  If so, how long should
 	  the two plants operate? </p></li>
+
+	  </ol></p></statement></activity>
+
+	<activity><statement>
+		<p>Continue with the same baked good producing plants from the previous activity.
+		<ol label="a.">
 
 	  <li><p> Let's now consider the needed ingredients:
 	  <ul>
@@ -468,8 +612,14 @@
 	  450 at <m>Q</m> at the end of the day.  How many trucks were
 	  there at the two locations at the beginning of the day? </p></li>
 
-	  <li><p> Suppose that all of the trucks are at location
-	  <m>Q</m> on Monday morning?
+	  </ol></p></statement></activity>
+
+	<activity><statement>
+		<p>Continue with the same trucking company from the previous activity.</p>
+		
+
+	  <p> Suppose that all of the trucks are at location
+	  <m>Q</m> on Monday morning.
 	  <ol label="a.">
 	    <li><p> How many trucks are at each location Monday
 	    evening? </p></li>
@@ -479,7 +629,12 @@
 
 	    <li><p> How many trucks are at each location Wednesday
 	    evening? </p></li>
-	  </ol></p></li>
+	  </ol>
+	  </p></statement></activity>
+
+	<activity><statement>
+		<p>Continue with the same trucking company from the previous two activities.
+		<ol label="a.">
 
 	  <li><p> Suppose that <m>S</m> is the matrix transformation
 	  that transforms the distribution of trucks <m>\xvec</m> one
@@ -494,7 +649,31 @@
 	  </p></li>
 
 	  <li><p> What happens to the distribution of trucks after a
-	  very long time? </p></li>
+	  very long time? 
+
+<ol label="a">
+<li>
+    <p>
+    All the trucks end up at location <m>P</m>.
+    </p>
+</li>
+<li>
+    <p>
+    All the trucks end up at location <m>Q</m>.
+    </p>
+</li>
+<li>
+    <p>
+    625 trucks end up at location <m>P</m>, while 375 end up at location <m>Q</m>.
+    </p>
+</li>
+<li>
+    <p>
+    375 trucks end up at location <m>P</m>, while 625 end up at location <m>Q</m>.
+    </p>
+</li>
+</ol>
+	</p></li>
 
 	</ol></p>
 	</statement>

@@ -1,0 +1,298 @@
+<section xml:id="ch2sec6">
+	<title>Section 2.6</title>
+	
+
+<activity xml:id="activity-linear-trans-geom">
+      <statement>
+	<p> For this activity, use the applet in Understanding Linear Algebra, Activity 2.6.2.
+	</p>
+
+	<p>
+	  For the following matrices <m>A</m> given below, use the
+	  diagram to study the effect of the corresponding matrix
+	  transformation <m>T(\xvec) = A\xvec</m>.  For each
+	  transformation, describe the geometric effect of the
+	  transformation on the plane.
+	  <ol label="a.">
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      2 \amp 0 \\
+	      0 \amp 1 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      2 \amp 0 \\
+	      0 \amp 2 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      0 \amp -1 \\
+	      1 \amp 0 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      1 \amp 1 \\
+	      0 \amp 1 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      -1 \amp 0 \\
+	      0 \amp 1 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      1 \amp 0 \\
+	      0 \amp 0 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      1 \amp 0 \\
+	      0 \amp 1 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	    <li><p>
+	      The matrix
+	      <m>A=\left[\begin{array}{rr}
+	      1 \amp -1 \\
+	      -2 \amp 2 \\
+	      \end{array}\right]</m>.
+	    </p></li>
+
+	  </ol>
+	</p>
+      </statement>
+
+      <!--<solution>
+	<p><ol label="a.">
+	  <li><p> This transformation stretches by a factor of 2 in
+	  the horizontal direction.
+	  </p></li>
+
+	  <li><p> This transformation stretches by a factor of 2
+	  uniformly in all directions.
+	  </p></li>
+
+	  <li><p> This is a <m>90^\circ</m> counterclockwise rotation.
+	  </p></li>
+
+	  <li><p> This transformation is called a <em>shear</em>;  it
+	  pushes vectors horizontally an amount equal to the vertical
+	  component.
+	  </p></li>
+
+	  <li><p> This transformation reflects vectors in the vertical
+	  axis.
+	  </p></li>
+
+	  <li><p> This transformation is called a <em>projection</em>;
+	  it produces the shadow of the vector on the horizontal
+	  axis.
+	  </p></li>
+
+	  <li><p> This transformation is called the <em>identity</em>;
+	  it causes no change.
+	  </p></li>
+
+	  <li><p> This transformation pushes vectors onto the line
+	  defined by the vector <m>\twovec{1}{-2}</m>.
+	  </p></li>
+	</ol></p>
+      </solution>-->
+
+    </activity>
+
+    <activity>
+      <statement>
+      <p> In this activity, we seek to describe various matrix
+      transformations by finding the matrix that gives the desired
+      transformation.  All of the transformations that we study here
+      have the form <m>T:\real^2\to\real^2</m>.
+      <ol label="a.">
+	<li><p> Find the matrix of the transformation that has no
+	effect on vectors;  that is, <m>T(\xvec) = \xvec</m>.  We call
+	this matrix the <em>identity</em> and denote it by
+	<m>I</m>. </p></li>
+
+	<li><p> Find the matrix of the transformation that reflects
+	vectors in <m>\real^2</m> over the line <m>y=x</m>. </p></li>
+
+	<li><p> What is the result of composing the reflection you
+	found in the previous part with itself;  that is, what is the
+	effect of reflecting in the line <m>y=x</m> and then
+	reflecting in this line again?  Provide a geometric
+	explanation for your result as well as an algebraic one
+	obtained by multiplying matrices. </p></li>
+
+	<li><p> Find the matrix that rotates vectors
+	counterclockwise in the plane by <m>90^\circ</m>. </p></li>
+
+	<li><p> Compare the result of rotating by <m>90^\circ</m> and
+	then 
+	reflecting in the line <m>y=x</m> to the result of first
+	reflecting in <m>y=x</m> and then rotating
+	<m>90^\circ</m>. </p></li>
+
+	<li><p> Find the matrix that results from composing a
+	<m>90^\circ</m> rotation with itself.  Explain the geometric
+	meaning of this operation.</p></li>
+
+	<li><p> Find the matrix that results from composing a
+	<m>90^\circ</m> rotation with itself four times; that is, if
+	<m>T</m> is the matrix transformation that rotates vectors by
+	<m>90^\circ</m>, find the matrix for <m>T\circ T\circ T \circ
+	T</m>.  Explain why 
+	your result makes sense geometrically. </p></li>
+
+	<li><p> Explain why the matrix that rotates vectors
+	counterclockwise by an angle <m>\theta</m> is
+	<me>
+	  \left[\begin{array}{rr}
+	  \cos\theta \amp -\sin\theta \\
+	  \sin\theta \amp \cos\theta \\
+	  \end{array}\right]
+	</me>.
+	</p></li>
+      </ol></p>
+      </statement>
+
+      <!--<solution>
+	<p> We use the fact that the columns of the requested matrices
+	have the form <m>\left[\begin{array}{rr} T(\evec_1) \amp
+	T(\evec_2) \end{array}\right]</m>.
+	<ol label="a.">
+	  <li><p>
+	    <m>\left[\begin{array}{rr}
+	    1 \amp 0 \\
+	    0 \amp 1 \\
+	    \end{array}\right]
+	    </m>.
+	  </p></li>
+
+	  <li><p>
+	    <m>\left[\begin{array}{rr}
+	    0 \amp 1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    </m>.
+	  </p></li>
+
+	  <li><p> The composition of this reflection with itself is
+	  described by 
+	  multiplying the matrix by itself.  This produces the matrix
+	  <m>\left[\begin{array}{rr}
+	  1 \amp 0 \\
+	  0 \amp 1 \\
+	  \end{array}\right]
+	  </m>, which we just saw is the matrix for the identity
+	  transformation.  This means that reflecting a vector in the
+	  line <m>y=x</m> twice produces the original vector.
+	  </p></li>
+
+	  <li><p>
+	    <m>\left[\begin{array}{rr}
+	    0 \amp -1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    </m>.
+	  </p></li>
+
+	  <li><p> If we first rotate and then reflect, we obtain the
+	  matrix transformation defined by
+	  <me>
+	    \left[\begin{array}{rr}
+	    0 \amp 1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    \left[\begin{array}{rr}
+	    0 \amp -1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    =
+	    \left[\begin{array}{rr}
+	    1 \amp 0 \\
+	    0 \amp -1 \\
+	    \end{array}\right]\text{,}
+	  </me> which is the matrix for reflecting in the horizontal
+	  axis. </p>
+
+	  <p> If we first reflect and then rotate, we obtain the
+	  matrix
+	  <me>
+	    \left[\begin{array}{rr}
+	    0 \amp -1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    \left[\begin{array}{rr}
+	    0 \amp 1 \\
+	    1 \amp 0 \\
+	    \end{array}\right]
+	    =
+	    \left[\begin{array}{rr}
+	    -1 \amp 0 \\
+	    0 \amp 1 \\
+	    \end{array}\right]\text{,}
+	  </me> which is the matrix for reflecting in the vertical
+	  axis.
+	  </p></li>
+
+	  <li><p>
+	    <m>
+	      \left[\begin{array}{rr}
+	      0 \amp -1 \\
+	      1 \amp 0 \\
+	      \end{array}\right]
+	      \left[\begin{array}{rr}
+	      0 \amp -1 \\
+	      1 \amp 0 \\
+	      \end{array}\right]
+	      =
+	      \left[\begin{array}{rr}
+	      -1 \amp 0 \\
+	      0 \amp -1 \\
+	      \end{array}\right]
+	    </m>, which represents a <m>180^\circ</m> rotation.
+	  </p></li>
+
+	  <li><p>
+	    Composing four times corresponds to raising the matrix to
+	    the fourth power, which gives us the identity matrix
+	    <m>I</m>. 
+	  </p></li>
+
+	  <li><p>
+	    If we consider the effect of rotating the vector
+	    <m>\twovec{1}{0}</m> by an angle <m>\theta</m>, we obtain
+	    the vector <m>\twovec{\cos\theta}{\sin\theta}</m>.
+	  </p></li>
+
+	</ol></p>
+      </solution>-->
+	    
+    </activity>
+
+    <activity><statement>
+    	<p>For this last activity, do Activity 2.6.4 in the Understanding Linear Algebra.</p>
+    </statement></activity>
+
+
+</section>

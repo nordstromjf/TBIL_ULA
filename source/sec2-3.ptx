@@ -354,9 +354,9 @@
     <li> <p> Suppose <m>v=\threevec{1}{2}{1}</m>.  Give a written
     description of 
     <m>\laspan{v}</m> and a rough sketch of it.
-    <sidebyside width="50%">
+    <!--<sidebyside width="50%">
       <image source ="images/coordinates-3d" />
-    </sidebyside>
+    </sidebyside>-->
     </p></li>
 
     <li> <p> Consider now the two vectors
