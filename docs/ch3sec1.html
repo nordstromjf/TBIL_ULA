@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-03-16T15:38:24-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Section 3.1</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch-two.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-two.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="ch3sec2.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch-two.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-two.html" title="Up">Up</a><a class="next-button button toolbar-item" href="ch3sec2.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1" class="internal"><span class="codenumber">I</span> <span class="title"></span></a></li>
+<li class="link">
+<a href="ch-first.html" data-scroll="ch-first" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a><ul>
+<li><a href="ch1sec1.html" data-scroll="ch1sec1" class="internal">Section 1.1</a></li>
+<li><a href="ch1sec2.html" data-scroll="ch1sec2" class="internal">Section 1.2</a></li>
+<li><a href="ch1sec3.html" data-scroll="ch1sec3" class="internal">Section 1.3</a></li>
+<li><a href="ch1sec4.html" data-scroll="ch1sec4" class="internal">Section 1.4</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-two.html" data-scroll="ch-two" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="ch2sec1.html" data-scroll="ch2sec1" class="internal">Section 2.1</a></li>
+<li><a href="ch2sec2.html" data-scroll="ch2sec2" class="internal">Section 2.2</a></li>
+<li><a href="ch2sec3.html" data-scroll="ch2sec3" class="internal">Section 2.3</a></li>
+<li><a href="ch2sec4.html" data-scroll="ch2sec4" class="internal">Section 2.4</a></li>
+<li><a href="ch2sec5.html" data-scroll="ch2sec5" class="internal">Section 2.5</a></li>
+<li><a href="ch2sec6.html" data-scroll="ch2sec6" class="internal">Section 2.6</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-two.html" data-scroll="ch-two" class="internal"><span class="codenumber">3</span> <span class="title">TBIL Activities: Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="ch3sec1.html" data-scroll="ch3sec1" class="active">Section 3.1</a></li>
+<li><a href="ch3sec2.html" data-scroll="ch3sec2" class="internal">Section 3.2</a></li>
+<li><a href="ch3sec3.html" data-scroll="ch3sec3" class="internal">Section 3.3</a></li>
+<li><a href="ch3sec4.html" data-scroll="ch3sec4" class="internal">Section 3.4</a></li>
+<li><a href="ch3sec5.html" data-scroll="ch3sec5" class="internal">Section 3.5</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="solutions-1.html" data-scroll="solutions-1" class="internal"><span class="codenumber">A</span> <span class="title">Selected Hints</span></a></li>
+<li class="link"><a href="solutions-2.html" data-scroll="solutions-2" class="internal"><span class="codenumber">B</span> <span class="title">Selected Solutions</span></a></li>
+<li class="link"><a href="appendix-1.html" data-scroll="appendix-1" class="internal"><span class="codenumber">C</span> <span class="title">List of Symbols</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ch3sec1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Section 3.1</span>
+</h2>
+<article class="activity project-like" id="activity-74"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h3>
+<p id="p-364">Let's consider the matrices</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 0 \amp 2 \\
+2 \amp 2 \amp 1 \\
+1 \amp 1 \amp 1 \\
+\end{array}\right],
+B = \left[\begin{array}{rrr}
+1 \amp 2 \amp -4 \\
+-1 \amp -1 \amp 3 \\
+0 \amp -1 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-278"><p id="p-365">Define these matrices in Sage and verify that <span class="process-math">\(BA =
+I\)</span> so that <span class="process-math">\(B=A^{-1}\text{.}\)</span> <div class="sagecell-sage" id="sage-19"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-279"><p id="p-366">Find the solution to the equation <span class="process-math">\(A\xvec =
+\threevec{4}{-1}{4}\)</span> using <span class="process-math">\(A^{-1}\text{.}\)</span></p></li>
+<li id="li-280"><p id="p-367">Using your Sage cell above, multiply <span class="process-math">\(A\)</span> and <span class="process-math">\(B\)</span> in the opposite order;  that is, what do you find when you evaluate <span class="process-math">\(AB\text{?}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-75"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h3>
+<p id="p-368">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> invertible matrix with inverse <span class="process-math">\(A^{-1}\text{.}\)</span>  This means that every equation of the form <span class="process-math">\(A\xvec=\bvec\)</span> has a solution, namely, <span class="process-math">\(\xvec = A^{-1}\bvec\text{.}\)</span> Which of the following best describes a restatement of this fact?</p>
+<ol class="lower-alpha">
+<li id="li-281"><p id="p-369">The columns of <span class="process-math">\(A\)</span> are linearly independent.</p></li>
+<li id="li-282"><p id="p-370">The columns of <span class="process-math">\(A\)</span> span <span class="process-math">\(\real^3\text{.}\)</span></p></li>
+</ol></article><article class="activity project-like" id="activity-76"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h3>
+<p id="p-371">Suppose that <span class="process-math">\(A\)</span> is an <span class="process-math">\(n\times n\)</span> invertible matrix with inverse <span class="process-math">\(A^{-1}\text{.}\)</span>  This means that every equation of the form <span class="process-math">\(A\xvec=\bvec\)</span> has a solution, namely, <span class="process-math">\(\xvec = A^{-1}\bvec\text{.}\)</span>  What can you conclude about the pivot positions of the matrix <span class="process-math">\(A\text{?}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-283"><p id="p-372">Every column of <span class="process-math">\(A\)</span> has a pivot position.</p></li>
+<li id="li-284"><p id="p-373">Every row of <span class="process-math">\(A\)</span> has a pivot position.</p></li>
+<li id="li-285"><p id="p-374">Every row and every column of <span class="process-math">\(A\)</span> has a pivot position.</p></li>
+</ol></article><article class="activity project-like" id="activity-77"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
+</h3>
+<p id="p-375">If <span class="process-math">\(A\)</span> is an invertible <span class="process-math">\(4\times4\)</span> matrix, what is its reduced row echelon form?</p></article><article class="activity project-like" id="activity-78"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
+</h3>
+<p id="p-376">In this activity, we let</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+1 \amp 2 \\
+1 \amp 3 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">and construct its inverse <span class="process-math">\(A^{-1}\text{.}\)</span> For the time being, let's denote the inverse by <span class="process-math">\(B\)</span> so that <span class="process-math">\(B=A^{-1}\text{.}\)</span></p>
+<ol class="lower-alpha">
+<li id="li-286">
+<p id="p-377">We know that <span class="process-math">\(AB = I\text{.}\)</span>  If we write <span class="process-math">\(B = \left[\begin{array}{rr}\bvec_1\amp
+\bvec_2\end{array}\right]\text{,}\)</span> then we have</p>
+<div class="displaymath process-math">
+\begin{equation*}
+AB = \left[\begin{array}{rr}
+A\bvec_1 \amp A\bvec_2
+\end{array}\right] =
+\left[\begin{array}{rr}
+\evec_1 \amp \evec_2
+\end{array}\right] = I\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This means that we need to solve the equations</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+A\bvec_1 \amp {}={} \evec_1 \\
+A\bvec_2 \amp {}={} \evec_2 \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the Sage cell below, solve these equations for the columns of <span class="process-math">\(B\text{.}\)</span> <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
+</script></div></p>
+</li>
+<li id="li-287"><p id="p-378">What is the matrix <span class="process-math">\(B\text{?}\)</span>  Check that <span class="process-math">\(AB = I\)</span> and <span class="process-math">\(BA = I\text{.}\)</span> <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-288">
+<p id="p-379">To find the columns of <span class="process-math">\(B\text{,}\)</span> we solved two equations, <span class="process-math">\(A\bvec_1=\evec_1\)</span> and <span class="process-math">\(A\bvec_2=\evec_2\text{.}\)</span>  We could do this by augmenting <span class="process-math">\(A\)</span> two separate times, forming matrices</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
+\\
+\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
+\\
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix <span class="process-math">\(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
+\end{array}\right]\)</span> and finding the row reduced echelon form.  In other words, we augment <span class="process-math">\(A\)</span> by the matrix <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}
+A \amp I \end{array}
+\right]
+\text{.}\)</span></p>
+<p id="p-380">Form this augmented matrix and find its reduced row echelon form to find <span class="process-math">\(A^{-1}\text{.}\)</span> <div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
+</script></div></p>
+</li>
+</ol></article><p id="p-381">Assuming <span class="process-math">\(A\)</span> is invertible, we have shown that</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{r|r}
+A \amp I
+\end{array}\right]
+\sim 
+\left[\begin{array}{r|r}
+I \amp A^{-1}
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<article class="activity project-like" id="activity-79"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
+</h3>
+<p id="p-382">If you have defined a matrix <span class="process-math">\(A\)</span> in Sage, you can find it's inverse as <code class="code-inline tex2jax_ignore">A.inverse()</code>.  Use Sage to find the inverse of the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp -2 \amp -1 \\
+-1 \amp 5 \amp 6 \\
+5 \amp -4 \amp 6 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation"><div class="sagecell-sage" id="sage-23"><script type="text/x-sage">
+</script></div></p></article><article class="activity project-like" id="activity-80"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
+</h3>
+<p id="p-383">What happens when we try to find the inverse of the matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{rr}
+-4 \amp 2 \\
+-2 \amp 1 \\
+\end{array}\right]\text{?}
+\end{equation*}
+</div></article><article class="activity project-like" id="activity-81"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
+</h3>
+<p id="p-384">Suppose that <span class="process-math">\(n\times n\)</span> matrices <span class="process-math">\(C\)</span> and <span class="process-math">\(D\)</span> are both invertible.  What do you find when you simplify the product <span class="process-math">\((D^{-1}C^{-1})(CD)\text{?}\)</span>  Explain why this shows the product <span class="process-math">\(CD\)</span> is invertible and <span class="process-math">\((CD)^{-1} =
+D^{-1}C^{-1}\text{.}\)</span></p></article><p id="p-385">We have seen how to use Gaussian elimination to find the inverse of a matrix. Now we wan to look at how to use matrix multiplication to perform Gaussian Elinmination.</p>
+<article class="activity project-like" id="activity-82"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-9"><p id="p-386">Tweaking the identity matrix slightly allows us to write row operations in terms of matrix multiplication.</p></div>
+<article class="task exercise-like" id="task-23"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-387">Create a matrix that doubles the third row of <span class="process-math">\(A\text{:}\)</span></p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 2 &amp; 2 &amp; -2 \end{array}\right]
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-24"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-388">Create a matrix that swaps the second and third rows of <span class="process-math">\(A\text{:}\)</span></p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 1 &amp; 1 &amp; -1 \\ 0 &amp; 3 &amp; 2 \end{array}\right]
+\end{equation*}
+</div></article><article class="task exercise-like" id="task-25"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-389">Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
+\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+=
+\left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+\end{equation*}
+</div></article></article><article class="activity project-like" id="activity-83"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
+</h3>
+<p id="p-390">Consider the two row operations <span class="process-math">\(R_2\leftrightarrow R_3\)</span> and <span class="process-math">\(R_1+R_2\to R_1\)</span> applied as follows to show <span class="process-math">\(A\sim B\text{:}\)</span></p>
+<div class="displaymath process-math">
+\begin{align*}
+A
+=
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+0&amp;3&amp;-1\\
+1&amp;2&amp;3\\
+\end{array}\right]
+&amp;\sim
+\left[\begin{array}{ccc}
+-1&amp;4&amp;5\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]\\
+&amp;\sim
+\left[\begin{array}{ccc}
+-1+1&amp;4+2&amp;5+3\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+=
+\left[\begin{array}{ccc}
+0&amp;6&amp;8\\
+1&amp;2&amp;3\\
+0&amp;3&amp;-1\\
+\end{array}\right]
+= 
+B
+\end{align*}
+</div>
+<p id="p-391">Express these row operations as matrix multiplication by expressing <span class="process-math">\(B\)</span> as the product of two matrices and <span class="process-math">\(A\text{:}\)</span></p>
+<div class="displaymath process-math">
+\begin{equation*}
+B =
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+\left[\begin{array}{ccc}
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown\\
+\unknown&amp;\unknown&amp;\unknown
+\end{array}\right]
+A
+\end{equation*}
+</div>
+<p class="continuation">Check your work using technology.</p></article><article class="activity project-like" id="activity-84"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
+</h3>
+<p id="p-392">We have now seen how to do Gaussian elimination with matrix multiplication, if we are careful to describe our row operation with lower triangular matrices, Then we can connect matrix multiplication to finding the inverse. We will see this through the following example.</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">When performing Gaussian elimination on <span class="process-math">\(A\text{,}\)</span> we first apply a row replacement operation in which we multiply the first row by <span class="process-math">\(-2\)</span> and add to the second row.  After this step, we have a new matrix <span class="process-math">\(A_1\text{.}\)</span></p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp -4 \amp -4 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-289">
+<p id="p-393">Show that multiplying <span class="process-math">\(A\)</span> by the lower triangular matrix</p>
+<div class="displaymath process-math">
+\begin{equation*}
+L_1 = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+-2 \amp 1 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<p class="continuation">has the same effect as this row operation;  that is, show that <span class="process-math">\(L_1A = A_1\text{.}\)</span></p>
+</li>
+<li id="li-290"><p id="p-394">Explain why <span class="process-math">\(L_1\)</span> is invertible and find its inverse <span class="process-math">\(L_1^{-1}\text{.}\)</span> <div class="sagecell-sage" id="sage-24"><script type="text/x-sage">
+</script></div></p></li>
+<li id="li-291"><p id="p-395">You should see that there is a simple relationship between <span class="process-math">\(L_1\)</span> and <span class="process-math">\(L_1^{-1}\text{.}\)</span>  Describe this relationship and explain why it holds.</p></li>
+<li id="li-292">
+<p id="p-396">To continue the Gaussian elimination algorithm, we need to apply two more row replacements to bring <span class="process-math">\(A\)</span> into a triangular form <span class="process-math">\(U\)</span> where</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+2 \amp 0 \amp -2 \\
+-1 \amp 2 \amp -1 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp 2 \amp 1 \\
+0 \amp -4 \amp -4 \\
+0 \amp 0 \amp -4 \\
+\end{array}\right] = U\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Find the matrices <span class="process-math">\(L_2\)</span> and <span class="process-math">\(L_3\)</span> that perform these row replacement operations so that <span class="process-math">\(L_3L_2L_1 A = U\text{.}\)</span></p>
+</li>
+<li id="li-293"><p id="p-397">Explain why the matrix product <span class="process-math">\(L_3L_2L_1\)</span> is invertible and use this fact to write <span class="process-math">\(A = LU\text{.}\)</span>  What is the matrix <span class="process-math">\(L\)</span> that you find?  Why do you think we denote it by <span class="process-math">\(L\text{?}\)</span> <div class="sagecell-sage" id="sage-25"><script type="text/x-sage">
+</script></div></p></li>
+</ol></article><article class="activity project-like" id="activity-85"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span>
+</h3>
+<ol id="p-398" class="lower-alpha">
+<li id="li-294">
+<p id="p-399">Row replacement operations may always be performed by multiplying by a lower triangular matrix.  It turns out the other two row operations, scaling and interchange, may also be performed using matrix multiplication.  For instance, consider the two matrices</p>
+<div class="displaymath process-math">
+\begin{equation*}
+S = \left[\begin{array}{rrr}
+1 \amp 0 \amp 0 \\
+0 \amp 3 \amp 0 \\
+0 \amp 0 \amp 1 \\
+\end{array}\right],
+\hspace{24pt}
+P = \left[\begin{array}{rrr}
+0 \amp 0 \amp 1 \\
+0 \amp 1 \amp 0 \\
+1 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Show that multiplying <span class="process-math">\(A\)</span> by <span class="process-math">\(S\)</span> performs a scaling operation and that multiplying by <span class="process-math">\(P\)</span> performs a row interchange.</p>
+</li>
+<li id="li-295"><p id="p-400">Explain why the matrices <span class="process-math">\(S\)</span> and <span class="process-math">\(P\)</span> are invertible and state their inverses.</p></li>
+</ol></article></section></div></main>
+</div>
+</body>
+</html>
