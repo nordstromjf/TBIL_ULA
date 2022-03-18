@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<chapter xml:id="ch-two" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>TBIL Activities: Invertibility, Bases, and Coordinate Systems</title>
+  <!-- If the chapter has sections, there may be an introduction -->
+  <!-- before those sections. Note the <p> tags around content.  -->
+  <!--<introduction>
+    <p>This is the introduction to the chapter</p>
+  </introduction>-->
+
+  <objectives>
+        <ul>
+             <li>   <p>
+                I can determine if a matrix is invertible, and if so, compute its inverse.
+                </p>
+            </li>
+            <li>   <p>
+                I can invert an appropriate matrix to solve a system of linear equations.
+                </p>
+            </li>
+             <li>   <p>
+                I can explain why a set of Euclidean vectors is or is not a basis of <m>\IR^n</m>.
+                </p></li>
+                <li>   <p>
+                I can compute a basis for the subspace spanned by a given set of Euclidean vectors, and determine the dimension of the subspace.
+                </p></li>
+             <li>   <p>
+                I can find a basis for the solution set of a homogeneous system of equations.
+                </p>
+            </li>
+            <li>   <p>
+                I can compute a basis for the null space and a basis for the column space of a linear map, and verify that the rank-nullity theorem holds for a given linear map.
+                </p>
+            </li>
+           
+             <li>   <p>
+                I can describe how a row operation affects the determinant of a matrix.
+                </p>
+            </li>
+             <li>   <p>
+                I can compute the determinant of a <m>4\times 4</m> matrix.
+                </p>
+            </li>
+            <li>
+                <p>
+                I can determine if a subset of <m>\IR^n</m> is a subspace or not.
+                </p></li>
+        </ul>
+    </objectives>
+
+  <!-- Sections can be written directly here, but it might help  -->
+  <!-- with organization to include them as separate files.      -->
+  <!-- That way it is easy to include the section in a different -->
+  <!-- chapter later if you change your mind about the order.    -->
+  <xi:include href="./sec3-1.ptx" />
+  <xi:include href="./sec3-2.ptx" />
+  <xi:include href="./sec3-3.ptx" />
+  <xi:include href="./sec3-4.ptx" />
+  <xi:include href="./sec3-5.ptx" />
+  
+  <!--<xi:include href="./sec_firstch-examples.ptx" />-->
+
+  <!-- One or more of the sections of a chapter might be exercises-->
+  <!--<xi:include href="./ex_firstch.ptx"/>-->
+</chapter>
