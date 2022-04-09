@@ -1,0 +1,571 @@
+<section xml:id="ch4sec2">
+
+<title>Section 4.2</title>
+
+<activity>
+      <statement>
+      <p>  
+      <ol label="a.">
+  <li><p> Suppose that <m>A</m> is a square matrix and that
+  the nonzero vector <m>\xvec</m> is a solution to
+  the homogeneous equation <m>A\xvec = \zerovec</m>.  What can
+  we conclude about the invertibility of <m>A</m>?  
+
+  <ol label="a">
+    <li><p><m>A</m> is invertible.</p></li>
+    <li><p><m>A</m> is not invertible.</p></li>
+    <li><p><m>A</m> could be either invertible or not invertible.</p></li>
+  </ol></p></li>
+
+  <li><p> How does the determinant <m>\det A</m> tell us if
+  there is a nonzero solution to the homogeneous equation
+  <m>A\xvec = \zerovec</m>? 
+  <ol label="a">
+    <li><p>The determinant of <m>A</m> must be 0.</p></li>
+    <li><p>The determinant of <m>A</m> must be nonzero.</p></li>
+    <li><p>The determinant of <m>A</m> must be 1.</p></li>
+  </ol></p>
+
+</li></ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Suppose that
+  <me>
+    A = \left[\begin{array}{rrr}
+    3 \amp -1 \amp 1 \\
+    0 \amp 2 \amp 4 \\
+    1 \amp 1 \amp 3 \\
+    \end{array}\right]
+  </me>.
+  Find the determinant <m>\det A</m>.  What does this tell us
+  about the solution space to the homogeneous equation <m>A\xvec
+  = \zerovec</m>? </p></li>
+
+  <li><p> Find a basis for <m>\nul(A)</m>.</p></li>
+
+  <li><p> What is the relationship between the rank of a matrix
+  and the dimension of its null space? </p></li>
+      </ol></p>
+      </statement>
+
+     <!-- <solution>
+  <p><ol label="a.">
+    <li><p> The matrix cannot have a pivot position in every
+    column so it is not invertible. </p></li>
+
+    <li><p> If there is a nonzero solution to the homogeneous
+    equation <m>A\xvec=\zerovec</m>, then <m>A</m> is not
+    invertible so <m>\det A = 0</m>. </p></li>
+
+    <li><p> We find that <m>\det A = 0</m> so there is a nonzero
+    solution to the homogeneous equation. </p></li>
+
+    <li><p> The reduced row echelon form of <m>A</m> is
+    <me>
+      \left[\begin{array}{rrr}
+      1 \amp 0 \amp 1 \\
+      0 \amp 1 \amp 2 \\
+      0 \amp 0 \amp 0 \\
+      \end{array}\right]
+    </me>
+    so the solution space to the homogeneous equation may be
+    described parametrically as
+    <m>x=x_3\threevec{-1}{-2}{1}</m>.  A basis for
+    <m>\nul(A)</m> is therefore
+    <m>\threevec{-1}{-2}{1}</m>. </p></li>
+
+    <li><p> If the matrix <m>A</m> has <m>n</m> columns, then
+    <m>\dim~\nul(A) = n-\rank(A)</m>. </p></li>
+
+  </ol></p>
+      </solution>-->
+    </activity>
+
+    <activity>
+      <statement>
+      <p> The eigenvalues of a square matrix are defined by the
+      condition that there be a nonzero solution to the homogeneous
+      equation <m>(A-\lambda I)\vvec=\zerovec</m>.
+      <ol label="a.">
+  <li><p> If there is a nonzero solution to the homogeneous
+  equation <m>(A-\lambda I)\vvec = \zerovec</m>, what can we
+  conclude about the invertibility of the matrix <m>A-\lambda
+  I</m>? 
+  <ol label="a">
+    <li><p><m>A-\lambda I</m> is invertible.</p></li>
+    <li><p><m>A-\lambda I</m> is not invertible.</p></li>
+    <li><p><m>A-\lambda I</m> could be either invertible or not invertible, depending on the invertibility of <m>A</m>.</p></li>
+  </ol>
+
+</p></li>
+
+  <li><p> If there is a nonzero solution to the homogeneous
+  equation <m>(A-\lambda I)\vvec = \zerovec</m>, what can we
+  conclude about the determinant <m>\det(A-\lambda I)</m>?
+
+  <ol label="a">
+    <li><p>The determinant of <m>A-\lambda I</m> must be 0.</p></li>
+    <li><p>The determinant of <m>A-\lambda I</m> must be nonzero.</p></li>
+    <li><p>The determinant of <m>A</m> must equal the determinant of <m>\lambda I</m>.</p></li>
+  </ol>
+  </p></li>
+
+  </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Let's consider the matrix 
+  <me>
+    A = \left[\begin{array}{rr}
+    1 \amp 2 \\
+    2 \amp 1 \\
+    \end{array}\right]
+  </me>
+  from which we construct
+  <me>
+    A-\lambda I =
+    \left[\begin{array}{rr}
+    1 \amp 2 \\
+    2 \amp 1 \\
+    \end{array}\right]
+    - \lambda 
+    \left[\begin{array}{rr}
+    1 \amp 0 \\
+    0 \amp 1 \\
+    \end{array}\right]
+    =
+    \left[\begin{array}{rr}
+    1-\lambda \amp 2 \\
+    2 \amp 1-\lambda \\
+    \end{array}\right]
+  </me>.
+  Find the determinant <m>\det(A-\lambda I)</m>. </p></li>
+  <li><p> What kind of
+  equation do you obtain when we set this determinant to zero to
+  obtain <m>\det(A-\lambda I) = 0</m>? </p></li>
+
+  <li><p> Use the determinant you found in the previous part to
+  find the eigenvalues <m>\lambda</m> by solving
+  <m>\det(A-\lambda I) = 0</m>.  We considered this matrix in
+  the previous section so we should find the same eigenvalues
+  for <m>A</m> that we found by reasoning geometrically
+  there. </p></li> 
+
+   </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Consider the matrix
+  <m>A = \left[\begin{array}{rr}
+  2 \amp 1 \\
+  0 \amp 2 \\
+  \end{array}\right]
+  </m> and find its eigenvalues by solving the equation
+  <m>\det(A-\lambda I) = 0</m>. </p></li>
+
+  <li><p> Consider the matrix
+  <m>A = \left[\begin{array}{rr}
+  0 \amp -1 \\
+  1 \amp 0 \\
+  \end{array}\right]
+  </m> and find its eigenvalues by solving the equation
+  <m>\det(A-\lambda I) = 0</m>. </p></li>
+
+   </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Find the eigenvalues of the triangular matrix
+  <m>
+    \left[\begin{array}{rrr}
+    3 \amp -1 \amp 4 \\
+    0 \amp -2 \amp 3 \\
+    0 \amp 0 \amp 1 \\
+    \end{array}\right]
+  </m>.  </p></li>
+  <li><p> What is generally true about the eigenvalues of a
+  triangular matrix? </p></li>
+      </ol>
+      </p>
+      </statement>
+
+      <!--<solution>
+  <p>
+    The solutions to this activity are given in the text
+    below.
+  </p>
+      </solution>-->
+    </activity>
+
+    <p>In the next few activities, we will find the eigenvectors of a matrix
+      as the null space of the matrix <m>A-\lambda I</m>.</p>
+
+    <activity>
+      <statement>
+      <p> 
+      <ol label="a.">
+  <li><p> Let's begin with the matrix
+  <m>
+    A = \left[\begin{array}{rr}
+    1 \amp 2 \\
+    2 \amp 1 \\
+    \end{array}\right]
+  </m>.  We have seen that <m>\lambda = 3</m> is an eigenvalue.
+  Form the matrix <m>A-3I</m> and find a basis for the
+  eigenspace <m>E_3 = \nul(A-3I)</m>.</p></li>
+  <li><p>
+  What is the dimension of this eigenspace?</p></li>
+  <li><p>
+  For each of the basis vectors <m>\vvec</m>, verify
+  that <m>A\vvec = 3\vvec</m>. </p></li>
+
+  <li><p> We also saw that <m>\lambda = -1</m> is an
+  eigenvalue.  Form the matrix <m>A-(-1)I</m> and find a basis
+  for the eigenspace <m>E_{-1}</m>. </p></li>
+  <li><p> What is the dimension of
+  this eigenspace? </p></li>
+  <li><p>
+  For each of the basis vectors
+  <m>\vvec</m>, verify that <m>A\vvec = -\vvec</m>. </p></li>
+
+  <li><p> Is it possible to form a basis of <m>\real^2</m>
+  consisting of eigenvectors of <m>A</m>? </p></li>
+
+  </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Now consider the matrix
+  <m>A = \left[\begin{array}{rr}
+  3 \amp 0 \\
+  0 \amp 3 \\
+  \end{array}\right]
+  </m>.  Write the characteristic equation for <m>A</m> and use
+  it to find the eigenvalues of <m>A</m>. </p></li>
+  <li><p> For each eigenvalue,
+  find a basis for its eigenspace <m>E_\lambda</m>. </p></li>
+  <li><p> Is it
+  possible to form a basis of <m>\real^2</m> consisting of
+  eigenvectors of <m>A</m>? </p></li>
+
+  </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Next, consider the matrix
+  <m>A = \left[\begin{array}{rr}
+  2 \amp 1 \\
+  0 \amp 2 \\
+  \end{array}\right]
+  </m>.  Write the characteristic equation for <m>A</m> and use
+  it to find the eigenvalues of <m>A</m>. </p></li>
+  <li><p> For each eigenvalue,
+  find a basis for its eigenspace <m>E_\lambda</m>. </p></li>
+  <li><p> Is it
+  possible to form a basis of <m>\real^2</m> consisting of
+  eigenvectors of <m>A</m>? </p></li>
+
+  </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+  <li><p> Finally, find the eigenvalues and eigenvectors of the
+  diagonal matrix  
+  <m>
+    A = \left[\begin{array}{rr}
+    4 \amp 0 \\
+    0 \amp -1 \\
+    \end{array}\right]
+  </m>. </p></li>
+  <li><p> Explain your result by considering the geometric effect
+  of the matrix transformation defined by <m>A</m>. </p></li>
+      </ol>
+      </p>
+      </statement>
+
+     <!-- <solution>
+  <p><ol label="a.">
+    <li><p> We have
+    <me>
+      A - 3I =
+      \mattwo{-2}{2}{2}{-2}
+      \sim
+      \mattwo{1}{-1}{0}{0}\text{.}
+    </me>
+    The null space <m>\nul(A-3I)</m> is one-dimensional with
+    basis <m>\twovec{1}{1}</m>.
+    </p></li>
+
+    <li><p> We have
+    <me>
+      A - (-1)I =
+      \mattwo{2}{2}{2}{2}
+      \sim
+      \mattwo{1}{1}{0}{0}\text{.}
+    </me>
+    The null space <m>\nul(A+I)</m> is one-dimensional with
+    basis <m>\twovec{-1}{1}</m>.
+    </p></li>
+
+    <li><p> We can form a basis for <m>\real^2</m> consisting of
+    eigenvectors of <m>A</m> by taking <m>\left\{\twovec{1}{1},
+    \twovec{-1}{1}\right\}</m>.
+    </p></li>
+
+    <li><p> The characteristic equation is <m>(3-\lambda)^2 =
+    0</m>, which means that there is a single eigenvalue
+    <m>\lambda=3</m>.  This eigenspace is two-dimensional with
+    basis <m>\left\{\twovec{1}{0},\twovec{0}{1}\right\}</m>.  In
+    this case, 
+    we can form a basis for <m>\real^2</m> consisting of
+    eigenvectors of <m>A</m>.
+    </p></li>
+
+    <li><p> The characteristic equation is <m>(2-\lambda)^2 =
+    0</m> so there is again a single eigenvalue
+    <m>\lambda=2</m>.  In this case, the eigenspace is
+    one-dimensional with basis vector <m>\twovec{1}{0}</m>.  It
+    is not possible to form a basis for <m>\real^2</m>
+    consisting of eigenvectors.
+    </p></li>
+
+    <li><p> We have eigenvectors <m>\twovec10</m> with
+    associated eigenvector <m>\lambda=4</m> and <m>\twovec01</m>
+    with associated eigenvector <m>\lambda=-1</m>.
+    </p></li>
+  </ol></p>
+      </solution>-->
+      
+    </activity>
+
+    <p> Once we find the eigenvalues of a matrix <m>A</m>, describing
+    the eigenspace <m>E_\lambda</m> amounts to the familiar task of
+    describing the null space <m>\nul(A-\lambda I)</m>.</p>
+
+    <activity>
+      <statement>
+      <p>
+  <ol label="a.">
+    <li><p> Identify the eigenvalues, and their multiplicities,
+    of an <m>n\times n</m>
+    matrix whose characteristic polynomial is
+    <m>(2-\lambda)^3(-3-\lambda)^{10}(5-\lambda)</m>.</p></li>
+    <li><p>  What can you
+    conclude about the dimensions of the eigenspaces? </p></li>
+    <li><p> What is the
+    dimension of the matrix? </p></li>
+    <li><p> Do you have enough information to
+    guarantee that there is a basis of <m>\real^n</m> consisting
+    of eigenvectors? </p></li>
+
+    </ol></p></statement></activity>
+
+<activity><statement><p>
+  <ol label="a">
+
+    <li><p> Find the eigenvalues of 
+    <m>
+      \left[\begin{array}{rr}
+      0 \amp -1 \\
+      4 \amp -4 \\
+      \end{array}\right]
+    </m> and state their multiplicities. </p></li>
+    <li><p> Can you find a basis
+    of <m>\real^2</m> consisting of eigenvectors of this matrix?
+    </p></li>
+    </ol></p></statement></activity>
+
+<activity><statement>
+  
+    
+    <p> Consider the matrix
+    <m>A =
+    \left[\begin{array}{rrr}
+    -1 \amp 0 \amp 2 \\
+    -2 \amp -2 \amp -4 \\
+    0 \amp 0 \amp -2 \\
+    \end{array}\right]
+    </m> whose characteristic equation is
+    <me>
+      (-2-\lambda)^2(-1-\lambda) = 0
+    </me>.
+    <ol label="a.">
+      <li><p> Identify the eigenvalues and their
+      multiplicities. </p></li>
+
+      <li><p> For each eigenvalue <m>\lambda</m>, find a basis
+      of the eigenspace <m>E_\lambda</m> and state its
+      dimension. </p></li>
+
+      <li><p> Is there a basis of <m>\real^3</m> consisting of
+      eigenvectors of <m>A</m>?</p></li>
+    
+
+    </ol></p></statement></activity>
+
+<activity><statement><p>
+  
+
+     Now consider the matrix
+    <m> A =
+    \left[\begin{array}{rrr}
+    -5 \amp -2 \amp -6 \\
+    -2 \amp -2 \amp -4 \\
+    2 \amp 1 \amp 2 \\
+    \end{array}\right]
+    </m> whose characteristic equation is also
+    <me>
+      (-2-\lambda)^2(-1-\lambda) = 0
+    </me>.
+    <ol label="a.">
+      <li><p> Identify the eigenvalues and their
+      multiplicities. </p></li>
+
+      <li><p> For each eigenvalue <m>\lambda</m>, find a basis
+      of the eigenspace <m>E_\lambda</m> and state its
+      dimension. </p></li>
+
+      <li><p> Is there a basis of <m>\real^3</m> consisting of
+      eigenvectors of <m>A</m>?</p></li>
+    </ol></p></statement></activity>
+
+    <activity><statement><p>
+
+
+    Consider the matrix
+    <m>A = 
+    \left[\begin{array}{rrr}
+    -5 \amp -2 \amp -6 \\
+    4 \amp 1 \amp 8 \\
+    2 \amp 1 \amp 2 \\
+    \end{array}\right]
+    </m> whose characteristic equation is 
+    <me>
+      (-2-\lambda)(1-\lambda)(-1-\lambda) = 0
+    </me>.
+    <ol label="a.">
+      <li><p> Identify the eigenvalues and their
+      multiplicities. </p></li>
+
+      <li><p> For each eigenvalue <m>\lambda</m>, find a basis
+      of the eigenspace <m>E_\lambda</m> and state its
+      dimension. </p></li>
+
+      <li><p> Is there a basis of <m>\real^3</m> consisting of
+      eigenvectors of <m>A</m>?</p></li>
+    </ol>
+      </p>
+      </statement>
+
+    <!--  <solution>
+  <p><ol label="a.">
+    <li><p> There are three eigenvalues, <m>\lambda=2</m> has
+    multiplicity <m>3</m>, <m>\lambda=-3</m> has multiplicity
+    <m>10</m>, and <m>\lambda=5</m> has multiplicity <m>1</m>.
+    We know that
+    <me>
+    \begin{aligned}
+    1 \leq \dim E_2 \amp {}\leq{} 3 \\
+    1 \leq \dim E_{-3} \amp {}\leq{} 10 \\
+    1 \leq \dim E_5 \amp {}\leq{} 1\text{.} \\
+    \end{aligned}
+    </me>
+    We can guarantee that <m>\dim E_{5} = 1</m>, but we can say
+    nothing further about the other two eigenspaces.
+  </p>
+
+  <p> The dimension of the matrix is <m>14\times14</m> since the
+  degree of the characteristic polynomial is <m>14</m>.  We
+  cannot guarantee that we can form a basis for
+  <m>\real^{14}</m> consisting of eigenvectors, however.
+    </p></li>
+
+    <li><p> There is one eigenvalue <m>\lambda=-2</m> having
+    multiplicity two.  Because the eigenspace <m>E_{-2}</m> is
+    one-dimensional, however, we cannot find a basis for
+    <m>\real^2</m> consisting of eigenvectors of <m>A</m>.
+    </p></li>
+
+    <li><p> For the <m>3\times3</m> matrix <m>A</m>,
+    <ol label="i.">
+      <li><p> We have eigenvalues <m>\lambda=-2</m> with
+      multiplicty <m>2</m> and <m>\lambda=-1</m> with multiplicity
+      <m>1</m>.
+      </p></li>
+
+      <li><p> The eigenspace <m>E_{-2}</m> is two-dimensional
+      with basis
+      <m>\left\{\threevec{-2}{0}{1},\threevec010\right\}</m>.
+      The eigenspace <m>E_{-1}</m> is one-dimensional with basis
+      vector <m>\threevec{-1}20</m>.
+      </p></li>
+
+      <li><p> We are able to form a
+      basis for <m>\real^3</m> consisting of eigenvectors of
+      <m>A</m>.
+      </p></li>
+    </ol>
+    </p></li>
+
+    <li><p> For the <m>3\times3</m> matrix <m>A</m>,
+    <ol label="i">
+      <li><p> We have eigenvalues <m>\lambda=-2</m> with
+      multiplicty <m>2</m> and <m>\lambda=-1</m> with multiplicity
+      <m>1</m>.
+      </p></li>
+
+      <li><p> The eigenspace <m>E_{-2}</m> is one-dimensional
+      with basis vector <m>\threevec{-2}01</m>.  The eigenspace
+      <m>E_{-1}</m> is also one-dimensional with basis vector
+      <m>\threevec{-1}{2}{0}</m>.
+      </p></li>
+
+      <li><p> It is not possible to form a basis for
+      <m>\real^3</m> consisting of eigenvectors of <m>A</m>.
+      </p></li>
+    </ol>
+    </p></li>
+
+    <li><p> For this matrix,
+    <ol label="i.">
+      <li><p> There are three eigenvalues <m>\lambda=-2</m>,
+      <m>-1</m>, and <m>1</m>, each having multiplicity
+      <m>1</m>.
+      </p></li>
+
+      <li><p> A basis vector for the eigenspace <m>E_{-2}</m> is
+      <m>\threevec{-2}01</m>. 
+      A basis vector for the eigenspace <m>E_{-1}</m> is
+      <m>\threevec{1}{-2}0</m>. 
+      A basis vector for the eigenspace <m>E_{1}</m> is
+      <m>\threevec{-2}{3}{1}</m>.
+      </p></li>
+
+      <li><p> We can form a basis for <m>\real^3</m> consisting
+      of eigenvectors of <m>A</m>.
+      </p></li>
+    </ol>
+    </p></li>
+  </ol></p>
+      </solution>-->
+    
+    </activity>
+
+
+
+<!--optional activity on using Sage in text-->
+
+
+
+
+
+
+</section>

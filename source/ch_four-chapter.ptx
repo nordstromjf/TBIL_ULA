@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Chapters are enclosed with <chapter> tags. Use xml:id to -->
+<!-- uniquely identify the chapter.  The @xmlns:xi attribute  -->
+<!-- is needed if you use xi:include in this file             -->
+<chapter xml:id="ch-four" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+<!-- Change title when you have one: -->
+  <title>TBIL Activities: Eigenvalues and Eigenvectors</title>
+  <!-- If the chapter has sections, there may be an introduction -->
+  <!-- before those sections. Note the <p> tags around content.  -->
+  <!--<introduction>
+    <p>This is the introduction to the chapter</p>
+  </introduction>-->
+
+  <objectives>
+        <ul>
+             <li>   <p>
+                 I can describe how a row operation affects the determinant of a matrix.
+                </p>
+            </li>
+            <li>   <p>
+                I can compute the determinant of a <m>4 \times 4</m> matrix.
+                </p>
+            </li>
+             <li>   <p>
+                I can find the eigenvalues of a <m>2 \times 2</m> matrix.
+                </p></li>
+                <li>   <p>
+                I can find a basis for the eigenspace of a <m>4 \times 4</m> matrix associated with a given eigenvalue.
+                </p></li>
+             <li>   <p>
+                I can write <m>A\vvec</m> as a linear combination of eigenvectors.
+                </p>
+            </li>
+            
+        </ul>
+    </objectives>
+
+  <!-- Sections can be written directly here, but it might help  -->
+  <!-- with organization to include them as separate files.      -->
+  <!-- That way it is easy to include the section in a different -->
+  <!-- chapter later if you change your mind about the order.    -->
+  <xi:include href="./sec4-1.ptx" />
+  <xi:include href="./sec4-2.ptx" />
+  <xi:include href="./sec4-3.ptx" />
+  <xi:include href="./sec4-4.ptx" />
+  <!--<xi:include href="./sec4-5.ptx" />-->
+  
+  <!--<xi:include href="./sec_firstch-examples.ptx" />-->
+
+  <!-- One or more of the sections of a chapter might be exercises-->
+  <!--<xi:include href="./ex_firstch.ptx"/>-->
+</chapter>

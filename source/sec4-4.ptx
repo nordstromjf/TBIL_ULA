@@ -1,0 +1,523 @@
+<section xml:id="ch4sec4">
+
+<title>Section 4.4</title>
+
+<activity>
+      <statement>
+      <p> Suppose that we have a diagonalizable matrix
+      <m>A=PDP^{-1}</m> where
+      <me>
+  P = \left[\begin{array}{rr}
+  1 \amp -1 \\
+  1 \amp 2 \\
+  \end{array}\right],\qquad
+  D = \left[\begin{array}{rr}
+  2 \amp 0 \\
+  0 \amp -3 \\
+  \end{array}\right]
+      </me>.
+      <ol label="a.">
+  <li><p> Find the eigenvalues of <m>A</m> and find a basis for
+  the associated eigenspaces. </p></li>
+
+  <li><p> Form a basis <m>\bcal</m> of <m>\real^2</m> consisting
+  of eigenvectors 
+  of <m>A</m> and write the vector <m>\xvec = \twovec{1}{4}</m>
+  as a linear combination of basis vectors. </p></li>
+
+  <li><p> Write <m>A\xvec</m> as a linear combination of basis
+  vectors. </p></li>
+
+  <li><p> What is <m>\coords{\xvec}{\bcal}</m>, the
+  representation of <m>\xvec</m> in the coordinate system
+  defined by <m>\bcal</m>? </p></li>
+
+  <li><p> What is <m>\coords{A\xvec}{\bcal}</m>, the
+  representation of <m>A\xvec</m> in the coordinate system
+  defined by <m>\bcal</m>? </p></li>
+
+  <li><p> What is <m>\coords{A^4\xvec}{\bcal}</m>, the
+  representation of <m>A^4\xvec</m> in the coordinate system
+  defined by <m>\bcal</m>? </p></li>
+      </ol></p>
+      </statement>
+
+  <!--    <solution>
+  <p><ol label="a.">
+    <li><p> Since <m>A</m> has been diagonized as
+    <m>A=PDP^{-1}</m>, the eigenvalues of <m>A</m>
+    are the diagonal entries of <m>D</m> and the eigenvectors
+    are the columns of <m>P</m>.  Therefore, we know the
+    eigenvectors are <m>\lambda_1=2</m> with associated
+    eigenvector <m>\vvec_1=\twovec11</m> and <m>\lambda_2=-3</m>
+    with associated eigenvector <m>\vvec_2=\twovec{-1}{2}</m>.
+    </p></li>
+
+    <li><p> The columns of <m>P</m>, <m>\vvec_1</m> and
+    <m>\vvec_2</m>, form a basis <m>\bcal</m> for
+    <m>\real^2</m>.  We find that <m>\xvec=\twovec14 =
+    2\vvec_1+\vvec_2</m>. </p></li>
+
+    <li><p> Then
+    <m>A\xvec=2\lambda_1\vvec_1+\lambda_2\vvec_2=
+    4\vvec_1-3\vvec_2</m>. </p></li>
+
+    <li><p> The components of <m>\coords{\xvec}{\bcal}</m> are
+    the weights of the linear combination of <m>\vvec_1</m> and
+    <m>\vvec_2</m> that form <m>\xvec</m>.  Therefore,
+    <m>\coords{\xvec}{\bcal} = \twovec21</m>. </p></li>
+
+    <li><p> In the same way, <m>\coords{A\xvec}{\bcal} =
+    \twovec4{-3}</m>. </p></li>
+
+    <li><p> Each time we multiply by <m>A</m>, the vectors
+    <m>\vvec_j</m> are multiplied by their eigenvalue.  This
+    means that <m>A^4\xvec=2\cdot 2^4\vvec_1 + (-3)^4\vvec_2 =
+    32\vvec_1+81\vvec_2</m>.  Therefore,
+    <m>\coords{A\xvec}{\bcal} = \twovec{32}{81}</m>. </p></li>
+  </ol></p>
+      </solution>-->
+    </activity>
+
+    <activity>
+      <statement>
+      <p> Suppose we have two species <m>R</m> and <m>S</m> that
+      interact with one another and that we record the change in their
+      populations from year to year.  When we begin our study, the
+      populations, measured in thousands, are <m>R_0</m> and <m>S_0</m>;
+      after <m>k</m> years, the populations are <m>R_k</m>
+      and <m>S_k</m>. </p>
+
+      <p> If we know the populations in one year, they are determined
+      in the following year by the expressions
+      <me>
+  \begin{aligned}
+  R_{k+1} \amp {}={} 0.9 R_k + 0.8 S_k \\
+  S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
+  \end{aligned}
+      </me>
+      We will combine the populations in a vector
+      <m>\xvec_k = \twovec{R_k}{S_k}</m> and note that
+      <m>\xvec_{k+1} = A\xvec_k</m> where
+      <m>A = \left[\begin{array}{rr}
+      0.9 \amp 0.8 \\
+      0.2 \amp 0.9 \\
+      \end{array}\right]
+      </m>.
+      <ol label="a.">
+  <li><p> Verify that
+  <me>
+    \vvec_1=\twovec{2}{1},\qquad
+    \vvec_2=\twovec{-2}{1}
+  </me>
+  are eigenvectors of <m>A</m> and find their respective
+  eigenvalues. </p></li>
+
+  <li><p> Suppose that initially <m>\xvec_0 = \twovec{2}{3}</m>.
+  Write 
+  <m>\xvec_0</m> as a linear combination of the eigenvectors
+  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+
+  <li><p> Write the vectors <m>\xvec_1</m>, <m>\xvec_2</m>, and
+  <m>\xvec_3</m> as a linear combination of eigenvectors
+  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+
+  <li><p> When <m>k</m> becomes very large, what happens to the
+  ratio of the populations <m>R_k/S_k</m>?  </p></li>
+</ol></p></statement></activity>
+
+<activity><statement>
+  <p>We will contnue to use the population model from the previous problem:
+  <me>
+  \begin{aligned}
+  R_{k+1} \amp {}={} 0.9 R_k + 0.8 S_k \\
+  S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
+  \end{aligned}
+      </me>
+      Where we have the corresponding matrix equation with
+      <m>\xvec_k = \twovec{R_k}{S_k}</m> and 
+      <m>\xvec_{k+1} = A\xvec_k</m> where
+      <m>A = \left[\begin{array}{rr}
+      0.9 \amp 0.8 \\
+      0.2 \amp 0.9 \\
+      \end{array}\right]
+      </m>.
+      <ol label="a.">
+
+  <li><p> Begin instead with <m>\xvec_0 =
+  \twovec{4}{4}</m>. What eventually happens to the ratio
+  <m>R_k/S_k</m> as <m>k</m> becomes very large? </p></li>
+
+  <li><p> Explain what happens to the ratio <m>R_k/S_k</m> as
+  <m>k</m> becomes very large no matter what the initial
+  populations are. </p></li>
+
+  <li><p> After a very long time, by approximately what factor does
+  the population of <m>R</m> grow every year?  By approximately
+  what factor does the population of <m>S</m> grow every year?
+  </p></li> 
+      </ol></p>
+      </statement>
+
+      <!--<solution>
+  <p><ol label="a.">
+    <li><p> We find that <m>A\vvec_1=\twovec{2.6}{1.3} =
+    1.3\vvec_1</m> and
+    <m>A\vvec_2=\twovec{-1}{0.5}=0.5\vvec_2</m>.  This shows
+    that <m>\vvec_1</m> and <m>\vvec_2</m> are eigenvectors with
+    associated eigenvalues <m>\lambda_1=1.3</m> and
+    <m>\lambda_2=0.5</m>.  </p></li>
+
+    <li><p> Solving for the weights of the linear combination of
+    <m>\vvec_1</m> and <m>\vvec_2</m> that produces
+    <m>\xvec_0</m>, we find that
+    <m>\xvec_0=2\vvec_1+\vvec_2</m>. </p></li>
+
+    <li><p> Each time we multiply by <m>A</m>, the eigenvectors
+    are multiplied by their associated eigenvalues.  This gives
+    <me>
+      \begin{aligned}
+      \xvec_1 = A\xvec_0 \amp = 2(1.3)\vvec_1 + 0.5\vvec_2 \\
+      \xvec_2 = A\xvec_1 \amp = 2(1.3)^2\vvec_1 + 0.5^2\vvec_2 \\
+      \xvec_3 = A\xvec_2 \amp = 2(1.3)^3\vvec_1 +
+      0.5^3\vvec_2\text{.} \\
+      \end{aligned}
+    </me>
+    </p></li>
+
+    <li><p> More generally, we have <m>\xvec_k=2(1.3)^k\vvec_1 +
+    0.5^k\vvec_2</m>.  As <m>k</m> grows large, <m>0.5^k</m>
+    becomes insignificantly small so that <m>\xvec_k\approx
+    2(1.3)^k\vvec_1</m>.  This means that <m>R_k\approx
+    4(1.3)^k</m> and <m>S_k\approx2(1.3)^k</m> so that the ratio
+    <m>R_k/S_k \approx 2</m>.
+    </p></li>
+
+    <li><p> Now we have <m>\xvec_0 = 3\vvec_1 + \vvec_2</m>.  In
+    the same way, when <m>k </m> is very large, we have
+    <m>\xvec_k\approx 3(1.3)^k\vvec_1</m> so that
+    <m>R_k\approx6(1.3)^k</m> and <m>S_k\approx3(1.3)^k</m>.
+    This gives the same ratio:  <m>R_k/S_k\approx
+    2</m>.</p></li>
+
+    <li><p> No matter what the starting populations, we will
+    have <m>\xvec_0 = c_1\vvec_1+c_2\vvec_2</m> and
+    <m>\xvec_k\approx c_1(1.3)^k</m> as <m>k</m> grows very
+    large.  Therefore, <m>R_k\approx 2c_1(1.3)^k</m> and
+    <m>S_k\approx c_2(1.3)^k</m> and ratio <m>R_k/S_k\approx
+    2</m>. </p></li>
+
+    <li><p> We see that <m>\xvec_{k+1}\approx 1.3\xvec_k</m> so
+    that the populations both grow by a factor of approximately
+    1.3, which is a 30<percent /> growth rate. </p></li>
+  </ol></p>
+      </solution>-->
+    </activity>
+
+    <p>In the next few activities, we will consider several ways in which two
+      species might interact with one another.  We will
+      consider two species <m>R</m> and <m>S</m> whose populations in
+      year <m>k</m> form a vector <m>\xvec_k=\twovec{R_k}{S_k}</m> and
+      which evolve according to the rule
+      <me>
+  \xvec_{k+1}=A\xvec_k
+      </me>.</p>
+
+    <activity>
+      <statement>
+    <p> Suppose that
+    <m> A = \left[\begin{array}{rr}
+    0.7 \amp 0 \\
+    0 \amp 1.6 \\
+    \end{array}\right]
+    </m>.
+    </p>
+
+    <p> Explain why the species do not interact with one
+    another.  Which of the six types of dynamical systems do we
+    have?  What happens to both species after a long time?</p>
+  </statement></activity>
+
+  <activity><statement>
+
+    <p> Suppose now that
+    <m> A = \left[\begin{array}{rr}
+    0.7 \amp 0.3 \\
+    0 \amp 1.6 \\
+    \end{array}\right]
+    </m>.
+    </p>
+
+    <p> Explain why <m>S</m> is a beneficial species for <m>R</m>.
+    Which of the six types of dynamical systems do we
+    have?  What happens to both species after a long time?</p>
+  </statement></activity>
+
+  <activity><statement>
+
+    <p> Suppose now that
+    <m> A = \left[\begin{array}{rr}
+    0.7 \amp 0.5 \\
+    -0.4 \amp 1.6 \\
+    \end{array}\right]
+    </m>.
+    </p>
+
+    <p> Explain why this describes a predator-prey system.
+    Which of the species is the predator and which is the prey?
+    Which of the six types of dynamical systems do we
+    have?  What happens to both species after a long time?</p>
+</statement></activity>
+
+  <activity><statement>
+
+    <p> Suppose now that
+    <m> A = \left[\begin{array}{rr}
+    0.5 \amp 0.2 \\
+    -0.4 \amp 1.1 \\
+    \end{array}\right]
+    </m>.
+    </p>
+
+    <p> Compare this predator-prey system to the one in the
+    previous part.  Which of the six types of dynamical systems
+    do we have?  What happens to both species after a long
+    time?</p>
+
+</statement>
+
+  
+
+  <!--    <solution>
+  <p><ol label="a.">
+    <li><p> With this matrix <m>A</m>, we have
+    <me>
+      \begin{aligned}
+      R_{k+1} \amp = 0.7R_k \\
+      S_{k+1} \amp = 1.6S_k\text{.} \\
+      \end{aligned}
+    </me>
+    This shows that the population of one species does not
+    depend on the other.  This dynamical system is a saddle
+    because we have the eigenvalues <m>\lambda_1=0.7</m> and
+    <m>\lambda_2=1.6</m>.  Eventually, species <m>R</m> will
+    become extinct while species <m>S</m> grows by a factor of
+    1.6.
+    </p></li>
+
+    <li><p> Now we have
+    <me>
+      \begin{alignedat}{3}
+      R_{k+1} \amp {}={} \amp 0.7R_k \amp{}+{} \amp 0.3S_k\\
+      S_{k+1} \amp {}={} \amp \amp \amp 1.6S_k\text{.} \\
+      \end{alignedat}
+    </me>
+    The population of species <m>S</m> is not influenced by
+    species <m>R</m>.  However, we see that the population of
+    species <m>R</m> grows in the presence of species <m>S</m>.
+    In other words, species <m>S</m> helps species <m>R</m> to
+    grow so we say that <m>S</m> is beneficial for <m>R</m>.
+  </p>
+
+  <p> Because the eigenvalues are <m>\lambda_1=0.7</m> and
+  <m>\lambda_2=1.6</m>, this dynamical system is again a
+  saddle.  The associated eigenvectors are
+  <m>\vvec_1=\twovec10</m> and <m>\vvec_2=\twovec13</m>.  After
+  a long time, the population vector <m>\xvec_k\approx
+  c_1(1.6)^k\vvec_2</m> so both populations grow by a factor of
+  1.6 and with a ratio <m>R_k/S_k=1/3.</m>
+    </p></li>
+
+    <li><p> Here we have 
+    <me>
+      \begin{alignedat}{3}
+      R_{k+1} \amp {}={} \amp 0.7R_k \amp{}+{} \amp 0.5S_k\\
+      S_{k+1} \amp {}={} \amp -0.4R_k \amp {}+{}\amp 1.6S_k\text{.} \\
+      \end{alignedat}
+    </me>
+    Species <m>S</m> helps species <m>R</m> to grow, while
+    species <m>R</m> inhibits the growth of species <m>S</m>.
+    One explanation for this is that species <m>R</m> preys on
+    species <m>S</m> as a food source.
+  </p>
+
+  <p> We have eigenvectors <m>\vvec_1=\twovec11</m> with
+  associated eigenvalue <m>\lambda_1=1.2</m> and
+  <m>\vvec_2=\twovec{5}{4}</m> with <m>\lambda_2=1.1</m>.  This
+  dynamical system is a repellor so both species will grow
+  arbitrarily large.
+    </p></li>
+
+    <li><p> This example is similar to the previous one, but the
+    coefficients are slightly different.  We see that the growth
+    rate of both species is smaller.  For instance, in the
+    previous problem, we had <m>R_{k+1}=0.7R_k+\ldots</m> while
+    we now have <m>R_{k+1}=0.5R_k+\ldots</m>.  This says that
+    the reproduction rate of species <m>R</m> has decreased
+    from <m>0.7</m> to <m>0.5</m>.  In the same way, that of
+    species <m>S</m> has decreased from <m>1.6</m> to
+    <m>1.1</m>.  Also, <m>R_{k+1}=\ldots + 0.2S_k</m> so the
+    presence of species <m>S</m> is less beneficial to species
+    <m>R</m>.  </p>
+
+    <p> We now have the eigenvalues <m>\lambda_1=0.9</m> and
+    <m>\lambda_2=0.7</m>, which means that this dynamical system is
+    an attractor and that both species will become
+    extinct. </p></li> 
+  </ol></p>
+      </solution>-->
+
+    
+    </activity>
+
+    <activity>
+      <statement>
+      <p> The following type of analysis has been used to study the
+      population of a bison herd.  We will divide the population of
+      female bison into three groups: juveniles who are less than one
+      year old; yearlings between one and two years old; and adults
+      who are older than two years. </p>
+
+      <sidebyside widths="50% 45%">
+  <p> Each year,
+  <ul>
+    <li><p> 80<percent /> of the juveniles survive to become
+    yearlings. </p></li>
+
+    <li><p> 90<percent /> of the yearlings survive to become
+    adults. </p></li>
+
+    <li><p> 80<percent /> of the adults survive. </p></li>
+
+    <li><p> 40<percent /> of the adults give birth to a juvenile.</p></li> 
+  </ul></p>
+  
+  <image source="eigen-3d-species.pdf" />
+      </sidebyside>
+
+      <p> By <m>J_k</m>, <m>Y_k</m>, and <m>A_k</m>, we denote the
+      number of juveniles, yearlings, and adults in year <m>k</m>.  We
+      have
+      <me>
+  J_{k+1} = 0.4 A_k
+      </me>.
+      <ol label="a.">
+  <li><p> Find similar expressions for <m>Y_{k+1}</m> and
+  <m>A_{k+1}</m> in terms of <m>J_k</m>, <m>Y_k</m>, and
+  <m>A_k</m>.  </p></li>
+
+  <li><p> As is usual, we write the matrix
+  <m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>.  Write the matrix
+  <m>A</m> such that
+  <m>\xvec_{k+1} = A\xvec_k</m>.
+  </p></li>
+
+  <li><p> We can write <m>A = PEP^{-1}</m> where the matrices
+  <m>E</m> and <m>P</m> are approximately:
+  <me>
+    \begin{aligned}
+    E \amp {}={} \left[\begin{array}{rrr}
+     1.058 \amp  0 \amp  0 \\
+     0 \amp -0.128 \amp -0.506 \\
+     0 \amp  0.506 \amp -0.128 \\
+     \end{array}\right], \\ \\
+    P \amp {}={} \left[\begin{array}{rrr}
+    1 \amp  1 \amp  0 \\
+    0.756 \amp -0.378 \amp   1.486 \\
+    2.644 \amp -0.322 \amp  -1.264 \\
+    \end{array}\right]\text{.}
+    \end{aligned}
+  </me>
+  Make a prediction about the long-term behavior of
+  <m>\xvec_k</m>.  For instance, at what rate does it grow?  For
+  every 100 adults, how many juveniles, and yearlings are there?
+  </p></li>
+
+  <li><p> Suppose that the birth rate decreases so that only 30<percent />
+  of adults give birth to a juvenile.  How does this affect the
+  long-term growth rate of the herd?
+  <sage>
+    <input>
+    </input>
+  </sage>
+  </p></li>
+
+  <li><p> Suppose that the birth rate decreases further so that
+  only 20<percent /> of adults give birth to a juvenile.  How does this affect the
+  long-term growth rate of the herd?
+  <sage>
+    <input>
+    </input>
+  </sage>
+  </p></li>
+
+  <li><p> Find the smallest birth rate that supports a stable
+  population. </p></li>
+
+      </ol></p>
+      </statement>
+
+   <!--   <solution>
+  <p><ol label="a.">
+    <li><p> We have the relationships
+    <me>
+      \begin{alignedat}{4}
+      J_{k+1} \amp {}={} \amp \amp \amp \amp \amp 0.4 A_k \\
+      Y_{k+1} \amp {}={} \amp 0.8 J_k \\
+      A_{k+1} \amp {}={} \amp \amp \amp 0.9Y_k \amp {}+{} \amp
+      0.8A_k\text{.} \\
+      \end{alignedat}
+    </me>
+    </p></li>
+
+    <li><p> The matrix <m>A=\left[\begin{array}{rrr}
+    0 \amp 0 \amp 0.4 \\
+    0.8 \amp 0 \amp 0 \\
+    0 \amp 0.9 \amp 0.8 \\
+    \end{array}\right]</m>.
+    </p></li>
+
+    <li><p> There is a real eigenvalue <m>\lambda_1=1.058</m>,
+    which is larger than <m>1</m>.  The other eigenvalues are
+    complex <m>\lambda_{2,3} = -0.128\pm 0.506i</m> and satisfy
+    <m>|\lambda_{2,3}| \lt 1</m>.  Therefore, the complex
+    eigenvalues will pull vectors in toward the line defined by
+    the eigenvector <m>\vvec_1</m>.  After a long
+    time, the population is <m>\xvec_k\approx
+    c_1(1.058)^k\vvec_1</m>.  All the populations grow annually
+    by a factor of <m>1.058</m> or 5.8<percent />, and there are
+    approximately 38 juveniles and 29 yearlings for every 100
+    adults. </p></li>
+
+    <li><p> We now have eigenvalues <m>\lambda_1=1.011</m> and
+    <m>\lambda_{2,3} = -0.106\pm 0.450i</m>.  This shows that
+    the growth rate is lowered to <m>1.011</m> or
+    <m>1.1</m><percent /> annually.
+    </p></li>
+
+    <li><p> The first eigenvalue is <m>\lambda_1=0.957</m> so
+    the growth rate is about <m>96</m><percent />.  In other
+    words, the population decreases every year.
+    </p></li>
+
+    <li><p> To be stable, we need the first eigenvalue
+    <m>\lambda_1=1</m>.  If we experiment with different birth
+    rates,
+    we see that a birth rate of about 0.278 gives this
+    eigenvalue. </p></li>
+
+  </ol></p>
+      </solution>-->
+    </activity>
+
+
+
+
+
+
+
+
+
+
+
+</section>

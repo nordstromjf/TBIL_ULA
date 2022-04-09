@@ -31,6 +31,7 @@
     <xi:include href="./ch_first-chapter.ptx" />
     <xi:include href="./ch_two-chapter.ptx" />
     <xi:include href="./ch_three-chapter.ptx" />
+    <xi:include href="./ch_four-chapter.ptx" />
     </part>
 
     <!--<xi:include href="./ch_empty.ptx"/>-->
