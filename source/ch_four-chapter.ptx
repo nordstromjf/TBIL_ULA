@@ -44,7 +44,7 @@
   <xi:include href="./sec4-2.ptx" />
   <xi:include href="./sec4-3.ptx" />
   <xi:include href="./sec4-4.ptx" />
-  <!--<xi:include href="./sec4-5.ptx" />-->
+  <xi:include href="./sec4-5.ptx" />
   
   <!--<xi:include href="./sec_firstch-examples.ptx" />-->
 

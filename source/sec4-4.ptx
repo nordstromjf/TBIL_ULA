@@ -392,7 +392,7 @@
     <li><p> 40<percent /> of the adults give birth to a juvenile.</p></li> 
   </ul></p>
   
-  <image source="eigen-3d-species.pdf" />
+  <image source="eigen-3d-species.svg" />
       </sidebyside>
 
       <p> By <m>J_k</m>, <m>Y_k</m>, and <m>A_k</m>, we denote the
@@ -429,11 +429,17 @@
     \end{aligned}
   </me>
   Make a prediction about the long-term behavior of
-  <m>\xvec_k</m>.  For instance, at what rate does it grow?  For
+  <m>\xvec_k</m>.  For instance, at what rate does it grow?</p></li>
+  <li><p>  For
   every 100 adults, how many juveniles, and yearlings are there?
   </p></li>
+</ol></p></statement></activity>
 
-  <li><p> Suppose that the birth rate decreases so that only 30<percent />
+<activity><statement><p>
+  <ol label="a.">
+
+  <li><p> Use the same model for the bison herd as the previous activity, but 
+  suppose that the birth rate decreases so that only 30<percent />
   of adults give birth to a juvenile.  How does this affect the
   long-term growth rate of the herd?
   <sage>

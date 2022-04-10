@@ -1,0 +1,488 @@
+<section xml:id="ch4sec5">
+
+<title>Section 4.5</title>
+
+<activity>
+      <statement>
+      <p> Suppose that our rental car company rents from two locations
+      <m>P</m> and <m>Q</m>.  We find that 80<percent /> of the cars rented from
+      location <m>P</m> are returned to <m>P</m> while the other 20<percent /> are
+      returned to <m>Q</m>.  For cars rented from location <m>Q</m>,
+      60<percent /> are returned to <m>Q</m> and 40<percent /> to <m>P</m>. </p>
+
+      <p> We will use <m>P_k</m> and <m>Q_k</m> to denote the number
+      of cars at the two locations on day <m>k</m>.  The following
+      day, the number of cars at <m>P</m> equals 80<percent /> of <m>P_k</m> and
+      40<percent /> of <m>Q_k</m>.  This shows that
+      <me>
+  \begin{aligned}
+  P_{k+1} \amp {}={} 0.8 P_k + 0.4Q_k \\
+  Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
+  \end{aligned}
+      </me>
+
+      <ol label="a.">
+  <li><p> If we use the vector <m>\xvec_k =
+  \twovec{P_k}{Q_k}</m> to represent the distribution of cars on
+  day <m>k</m>, find a matrix <m>A</m> such that
+  <m>\xvec_{k+1} = A\xvec_k</m>. </p></li>
+
+  <li><p> Find the eigenvalues and associated eigenvectors of
+  <m>A</m>.  </p></li>
+
+  <li><p> Suppose that there are initially 1500 cars, all of
+  which are at location <m>P</m>.  Write the vector
+  <m>\xvec_0</m> as a linear combination of eigenvectors of
+  <m>A</m>. </p></li>
+
+  <li><p> Write the vectors <m>\xvec_k</m> as a linear
+  combination of eigenvectors of <m>A</m>. </p></li>
+
+  <li><p> What happens to the distribution of cars after a long
+  time? </p></li>
+
+      </ol></p>
+      </statement>
+
+  <!--    <solution>
+  <p><ol label="a.">
+    <li><p> Expressing the set of equations in matrix form, we
+    see that
+    <m>A = \mattwo{0.8}{0.4}{0.2}{0.6}</m>.
+    </p></li>
+
+    <li><p> We have eigenvalues <m>\lambda_1 = 1</m> and
+    <m>\lambda_2 = 0.4</m> with associated eigenvectors
+    <m>\vvec_1 = \twovec21</m> and
+    <m>\vvec_2=\twovec{-1}{1}</m>. </p></li>
+
+    <li><p> We find that
+    <m>\xvec_0=\twovec{1500}{0} = 500\vvec_1-500\vvec_2</m>.
+    </p></li>
+
+    <li><p> Multiplying by the matrix <m>A</m> has the effect of
+    multiplying the eigenvectors by their associated
+    eigenvalues.  Therefore,
+    <m>\xvec_k=500\vvec_1-500(0.4)^k\vvec_2</m>.
+    </p></li>
+
+    <li><p> As <m>k</m> becomes large, <m>0.4^k</m> becomes very
+    close to zero.  Therefore <m>\xvec_k\approx500\vvec_1 =
+    \twovec{1000}{500}</m>.  This tells us that <m>1000</m> cars
+    are at location <m>P</m> and <m>500</m> are at <m>Q</m>.
+    </p></li>
+  </ol></p>
+      </solution>-->
+    </activity>
+
+    <definition>
+      <idx> probability vector </idx>
+      <idx> stochastic matrix </idx>
+      <p> A vector whose entries are nonnegative and add to 1 is
+      called a <em>probability vector</em>.  A square matrix whose
+      columns are probability vectors is called a
+      <em>stochastic</em> matrix. </p>
+    </definition>
+
+    <activity>
+      <statement>
+      <p> Suppose you live in a country with three political parties
+      <m>P</m>, <m>Q</m>, and <m>R</m>.  We use <m>P_k</m>,
+      <m>Q_k</m>, and <m>R_k</m> to denote the percentage of voters
+      voting for that party in election <m>k</m>.  </p>
+
+      <sidebyside widths="50% 45%">
+  <p> Voters will change parties from one election to the next as
+  shown in the figure.  We see that 60<percent /> of voters stay with the
+  same party.  However, 40<percent /> of those who vote for party <m>P</m>
+  will vote for party <m>Q</m> in the next election. </p>
+
+  <image source="stoch-parties.svg" />
+      </sidebyside>
+
+      <p>
+  <ol label="a.">
+    <li><p> Write expressions for <m>P_{k+1}</m>,
+    <m>Q_{k+1}</m>, and <m>R_{k+1}</m> in terms of <m>P_k</m>,
+    <m>Q_k</m>, and <m>R_k</m>.  </p></li>
+
+    <li><p> If we write <m>\xvec_k =
+    \threevec{P_k}{Q_k}{R_k}</m>, find the matrix <m>A</m> such
+    that <m>\xvec_{k+1} = A\xvec_k</m>.  </p></li>
+
+    <li><p> Explain why <m>A</m> is a stochastic
+    matrix. </p></li>
+
+    <li><p> Suppose that initially 40<percent /> of citizens vote for
+    party <m>P</m>, 30<percent /> vote for party <m>Q</m>, and 30<percent /> vote
+    for party <m>R</m>.  Form the vector <m>\xvec_0</m> and
+    explain why <m>\xvec_0</m> is a probability
+    vector. </p></li>
+
+    <li><p> Find <m>\xvec_1</m>, the percentages who vote for
+    the three parties in the next election.  Verify that
+    <m>\xvec_1</m> is 
+    also a probabilty vector and explain why <m>\xvec_k</m> will
+    be a probability vector for every <m>k</m>.
+    <sage>
+      <input>
+      </input>
+    </sage>
+    </p></li>
+  </ol></p>
+</statement></activity>
+
+<activity><statement>
+  <p>Use the matrix <m>A</m> you found in the previous activity.
+  <ol label="a.">
+
+    <li><p> Find the eigenvalues of the matrix <m>A</m> and 
+    explain why the eigenspace <m>E_1</m> is a one-dimensional
+    subspace 
+    of <m>\real^3</m>.  Then verify that
+    <m>\vvec=\threevec{1}{2}{2}</m> is a basis vector for
+    <m>E_1</m>.  </p></li> 
+
+    <li><p> As every vector in <m>E_1</m> is a scalar multiple
+    of <m>\vvec</m>, find a probability vector in <m>E_1</m> and
+    explain why it is the only probability vector in
+    <m>E_1</m>.  </p></li>
+
+    <li><p> Describe what happens to <m>\xvec_k</m> after a very
+    long time. </p></li>
+  </ol>
+      </p>
+      </statement>
+
+     <!-- <solution>
+  <p> The solutions to this activity are given in the following
+  text. </p>
+      </solution>-->
+    </activity>
+
+    <definition>
+      <idx> steady-state vector </idx>
+      <idx> stationary vector </idx>
+      <p> If <m>A</m> is a stochastic matrix, we say that a
+      probability vector <m>\qvec</m>
+      is a <em>steady-state</em> or <em>stationary</em> vector if
+      <m>A\qvec = \qvec</m>.
+      </p>
+    </definition>
+
+    <question>
+      <p> If <m>A</m> is a stochastic matrix and <m>\xvec_k</m> a
+      Markov chain, does <m>\xvec_k</m> converge to a steady-state
+      vector? </p>
+    </question>
+
+    <activity>
+      <statement>
+      <p> Consider the matrix
+      <me>
+  A=\left[\begin{array}{rr}
+  0 \amp 1 \\
+  1 \amp 0 \\
+  \end{array}\right]
+     </me>.
+      <ol label="a.">
+  <li><p> Verify that <m>A</m> is a stochastic
+  matrix. </p></li>
+
+  <li><p> Find the eigenvalues of <m>A</m> and then find a
+  steady-state vector for <m>A</m>.  </p></li>
+
+  <li><p> We will form the Markov chain beginning with the
+  vector <m>\xvec_0 = \twovec{1}{0}</m> and defining
+  <m>\xvec_{k+1} = A\xvec_k</m>.  The Sage cell below 
+  constructs the first <m>N</m> terms of the Markov chain with
+  the command <c>markov_chain(A, x0, N)</c>.  Define the matrix
+  <m>A</m> and vector <m>x0</m> and evaluate the cell to find
+  the first 10 terms of the Markov chain.
+  <sage>
+    <input>
+def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix A and x0
+A =
+x0 =
+markov_chain(A, x0, 10)
+    </input>
+  </sage></p></li>
+  <li><p>What do you notice about the Markov chain?  Does it converge
+  to the steady-state vector for <m>A</m>? </p></li></ol>
+</p></statement></activity>
+
+ <activity>
+      <statement>
+      <p> Consider the matrix
+      <me>
+  B=\left[\begin{array}{rr}
+  0.4 \amp 0.3 \\
+  0.6 \amp 0.7 \\
+  \end{array}\right]
+      </me>.
+      <ol label="a.">
+
+  <li><p> Find the eigenvalues of <m>B</m> along with a
+  steady-state vector for <m>B</m>. </p></li>
+
+  <li><p> As before, find the first 10 terms in the Markov chain
+  beginning with <m>\xvec_0 = \twovec{1}{0}</m> and
+  <m>\xvec_{k+1} = B\xvec_k</m>.  
+<sage>
+    <input>
+def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix A and x0
+A =
+x0 =
+markov_chain(A, x0, 10)
+    </input>
+  </sage></p></li>
+
+  <li><p>What do you notice about the
+  Markov chain?  Does it converge to the steady-state vector for
+  <m>B</m>? </p></li></ol></p>
+</statement></activity>
+
+<activity><statement>
+
+ <p> What condition on the eigenvalues of a stochastic
+  matrix will guarantee that a Markov chain will converge to a
+  steady-state vector? </p>
+      
+  </statement>
+
+  <!--    <solution>
+  <p><ol label="a.">
+    <li><p> If we add the entries in each column of <m>A</m>
+    and each column of <m>B</m>, we obtain <m>1</m>.  Also, all
+    the entries in both matrices are nonnegative.
+    </p></li>
+
+    <li><p> The matrix <m>A</m> has the eigenvalues <m>\lambda_1
+    = 1</m> and <m>\lambda_2=-1</m> with associated eigenvectors
+    <m>\vvec_1=\twovec11</m> and
+    <m>\vvec_2=\twovec{-1}{1}</m>.  The steady-state vector is
+    <m>\qvec=\twovec{\frac12}{\frac12}</m> as this is the unique
+    probability vector in <m>E_1</m>. 
+    </p></li>
+
+    <li><p> The terms in the Markov chain are
+    <me>
+      \xvec_0 = \twovec10,
+      \xvec_1 = \twovec01,
+      \xvec_2 = \twovec10,
+      \xvec_3 = \twovec01,\ldots
+    </me>
+    so the chain does not converge to any vector, much less the
+    steady-state vector.
+    </p></li>
+
+    <li><p> The matrix <m>B</m> has eigenvalues
+    <m>\lambda_1=1</m> and <m>\lambda_2=0.1</m> with associated
+    eigenvectors <m>\vvec_1=\twovec12</m> and
+    <m>\vvec_2=\twovec{-1}{1}</m>.  The unique steady-state
+    vector is <m>\qvec=\twovec{\frac13}{\frac23}</m> since this
+    is the only probability vector in <m>E_1</m>. </p></li>
+
+    <li><p> Here we find
+    <me>
+      \begin{array}{rrrr}
+      \xvec_0 = \twovec10, \amp
+      \xvec_1 = \twovec{0.4}{0.6}, \amp
+      \xvec_2 = \twovec{0.34}{0.66}, \\
+      \xvec_3 = \twovec{0.334}{0.666}, \amp
+      \xvec_4 = \twovec{0.3334}{0.6666}, \amp
+      \xvec_5 = \twovec{0.33334}{0.66666},\amp\ldots
+      \end{array}
+    </me>
+    which appears to be converging to the steady-state vector
+    <m>\qvec=\twovec{\frac13}{\frac23}</m>.
+    </p></li>
+
+    <li><p> If there is one eigenvalue <m>\lambda_1=1</m> having
+    multiplicity one with the other eigenvalues satisfying
+    <m>|\lambda_j|\lt 1</m>, we can guarantee that any Markov
+    chain will converge to a unique steady-state vector.
+    </p></li>
+  </ol></p>
+      </solution>-->
+
+    </activity>
+
+    <definition>
+      <idx> positive matrix </idx>
+      <p> We say that a matrix <m>A</m> is <em>positive</em> if either
+      <m>A</m> or some power <m>A^k</m> has all positive entries.
+      </p>
+    </definition>
+
+    <theorem xml:id="theorem-perron">
+      <title> Perron-Frobenius </title>
+      <statement>
+  <p> If <m>A</m> is a positive stochastic matrix, then the
+  eigenvalues satisfy <m>\lambda_1=1</m> and <m>|\lambda_j| \lt
+  1</m> for <m>j\gt 1</m>.  This means that <m>A</m> has a
+  unique positive, steady-state vector <m>\qvec</m> and 
+  that every Markov chain defined by <m>A</m>
+  will converge to <m>\qvec</m>.
+  </p>
+      </statement>
+    </theorem>
+
+    <activity>
+      <statement>  <p> We will explore the meaning of the
+      Perron-Frobenius theorem in this activity. 
+      <ol label="a.">
+  <li><p> Consider the matrix
+  <m>C = \left[\begin{array}{rr}
+  0 \amp 0.5 \\
+  1 \amp 0.5 \\
+  \end{array}\right]
+  </m>.
+  This is a positive matrix, as we saw in the
+  previous example.  Find the eigenvectors of <m>C</m> and
+  verify there is a unique
+  steady-state vector.</p></li>
+
+  <li><p> Using the Sage cell below, construct the Markov chain
+  with initial vector <m>\xvec_0= \twovec{1}{0}</m> and describe
+  what happens to <m>\xvec_k</m> as <m>k</m> becomes large.
+  <sage>
+    <input>
+def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix C and x0
+C =
+x0 =
+markov_chain(C, x0, 10)
+    </input>
+  </sage>
+  </p></li>
+
+
+  <li><p> Construct another Markov chain with initial vector
+  <m>\xvec_0=\twovec{0.2}{0.8}</m> and describe what happens to
+  <m>\xvec_k</m> as <m>k</m> becomes large. 
+</p></li>
+
+</ol></p>
+</statement></activity>
+
+<activity><statement><p>
+  <ol label="a.">
+
+  <li><p> Consider the matrix
+  <m>D = \left[\begin{array}{rrr}
+  0 \amp 0.5 \amp 0 \\
+  1 \amp 0.5 \amp 0 \\
+  0 \amp 0 \amp 1 \\
+  \end{array}\right]
+  </m> and compute several powers of <m>D</m> below.
+  <sage>
+    <input>
+    </input>
+  </sage>
+  Determine whether <m>D</m> is a positive matrix. </p></li>
+
+  <li><p> Find the eigenvalues of <m>D</m> and then find the
+  steady-state vectors.  Is there a unique steady-state
+  vector? </p></li>
+
+  <li><p> What happens to the Markov chain defined by <m>D</m>
+  with initial vector 
+  <m>\xvec_0 =\threevec{1}{0}{0}</m>?</p></li>
+  <li><p> What happens to the
+  Markov chain with initial vector
+  <m>\xvec_0=\threevec{0}{0}{1}</m>?  </p></li>
+</ol></p></statement></activity>
+
+ <activity><statement><p> Explain how the matrices <m>C</m> and <m>D</m>, which
+  we have considered in previous activities, relate to the
+  Perron-Frobenius theorem. 
+      <ol label="a">
+        <li><p> The P-F Theorem tells us <m>C</m> and <m>D</m> both converge to a unique steady-state vector.</p></li>
+        <li><p> The P-F Theorem tells us <m>C</m> converges to a unique steady-state vector, but <m>D</m> cannot converge to a unique steady-state vector.</p></li>
+        <li><p> The P-F Theorem tells us <m>C</m> converges to a unique steady-state vector, but it tells us nothing about <m>D</m>.</p></li>
+        <li><p> The P-F Theorem tells us nothing about <m>C</m> and <m>D</m>. Neither needs to converge to a unique steady-state vector.</p></li>
+  
+      </ol></p>
+      </statement>
+
+   <!--   <solution>
+  <p><ol label="a.">
+    <li><p> We find that <m>C</m> has eigenvalues
+    <m>\lambda_1=1</m> and <m>\lambda_2 = -\frac12</m> with
+    eigenvectors <m>\vvec_1=\twovec12</m> and <m>\vvec_2 =
+    \twovec{-1}{1}</m>.  Therefore, the unique steady-state
+    vector is <m>\qvec=\twovec{\frac13}{\frac23}</m> for this is
+    the only probability vector in the eigenspace
+    <m>E_1</m>. </p></li>
+
+    <li><p> We see that the Markov chain converges to the
+    steady-state vector <m>\qvec=\twovec{\frac13}{\frac23}</m>
+    as the Perron-Frobenius theorem tells us to
+    expect. </p></li> 
+
+    <li><p> Another Markov chain converges to the unique
+    steady-state vector <m>\qvec=\twovec{\frac13}{\frac23}</m>
+    as the Perron-Frobenius theorem tells us to
+    expect. </p></li>
+
+    <li><p> The matrix <m>D</m> is not positive because the
+    first two entries in the bottom row of any
+    power <m>D^k</m> are zero. </p></li>
+
+    <li><p> The eigenvalues are <m>\lambda_1=1</m>, which has
+    multiplicity two, and <m>\lambda_2=-1</m>.  The eigenspace
+    <m>E_1</m> is two-dimensional and spanned by the probability
+    vectors <m>\qvec_1=\threevec{\frac13}{\frac23}0</m> and
+    <m>\qvec_2=\threevec001</m>.  Both of these vectors are
+    steady-state vectors so there is not a unique steady-state
+    vector. </p></li>
+
+    <li><p> If <m>\xvec_0=\threevec100</m>, then the Markov
+    chain converges to
+    <m>\qvec_1=\threevec{\frac13}{\frac23}0</m>.  If
+    <m>\xvec_0=\threevec001</m>, then the Markov 
+    chain converges to
+    <m>\qvec_1=\threevec001</m>.  </p></li>
+
+    <li><p> Because <m>C</m> is a positive matrix, the
+    Perron-Frobenius theorem tells us that there is a unique
+    steady-state vector to which any Markov chain will
+    converge.  Because <m>D</m> is not a positive matrix, the
+    Perron-Frobenius theorem does not tell us anything, and,
+    indeed, we see that there is not a unique steady-state
+    vector and different Markov chains can converge to different
+    vectors. </p></li>
+  </ol></p>
+      </solution>-->
+    </activity>
+
+
+
+<p>Do Activity 4.5.5 and 4.5.6 on Google's Page Rank Algorithm directly in Understanding Linear Algebra.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section>
