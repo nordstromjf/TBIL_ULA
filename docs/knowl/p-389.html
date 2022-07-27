@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:18-07:00       *-->
+<!--*       on 2022-07-27T10:59:54-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,15 +15,22 @@
 </head>
 <body class="ignore-math">
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Create a matrix that adds <span class="process-math">\(5\)</span> times the third row of <span class="process-math">\(A\)</span> to the first row:</p>
+<p>To find the columns of <span class="process-math">\(B\text{,}\)</span> we solved two equations, <span class="process-math">\(A\bvec_1=\evec_1\)</span> and <span class="process-math">\(A\bvec_2=\evec_2\text{.}\)</span>  We could do this by augmenting <span class="process-math">\(A\)</span> two separate times, forming matrices</p>
 <div class="displaymath process-math">
 \begin{equation*}
-\left[\begin{array}{ccc} \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \\ \unknown &amp; \unknown &amp; \unknown \end{array}\right]
-\left[\begin{array}{ccc} 2 &amp; 7 &amp; -1 \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
-=
-\left[\begin{array}{ccc} 2+5(1) &amp; 7+5(1) &amp; -1+5(-1) \\ 0 &amp; 3 &amp; 2 \\ 1 &amp; 1 &amp; -1 \end{array}\right]
+\begin{aligned}
+\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
+\\
+\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
+\\
+\end{aligned}
 \end{equation*}
 </div>
+<p class="continuation">and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix <span class="process-math">\(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
+\end{array}\right]\)</span> and finding the row reduced echelon form.  In other words, we augment <span class="process-math">\(A\)</span> by the matrix <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}
+A \amp I \end{array}
+\right]
+\text{.}\)</span></p>
 <span class="incontext"><a href="ch3sec1.html#p-389">in-context</a></span>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:19-07:00       *-->
+<!--*       on 2022-07-27T10:59:55-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,24 +15,29 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.5.8</span><span class="period">.</span>
 </h3>
-<p>Continue with the car company example and <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> from the previous activity.</p>
-<ol class="lower-alpha">
-<li><p>We said that 1000 cars are initially at location <span class="process-math">\(P\)</span> and none at location <span class="process-math">\(Q\text{.}\)</span>  This means that the initial vector describing the number of cars is <span class="process-math">\(\xvec_0 =
-\twovec{1000}{0}\text{.}\)</span>  Write <span class="process-math">\(\xvec_0\)</span> as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
-<li><p>Remember that <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> are eigenvectors of <span class="process-math">\(A\text{.}\)</span>  Use the linearity of matrix multiplicaiton to write the vector <span class="process-math">\(\xvec_1 =
-A\xvec_0\text{,}\)</span> describing the number of cars at the two locations at the end of the first day, as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
-<li>
-<p>Write the vector <span class="process-math">\(\xvec_2 = A\xvec_1\)</span> as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  Then write the next few vectors as linear combinations of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{:}\)</span></p>
-<ol class="lower-alpha">
-<li><p><span class="process-math">\(\xvec_3 = A\xvec_2\text{.}\)</span></p></li>
-<li><p><span class="process-math">\(\xvec_4 = A\xvec_3\text{.}\)</span></p></li>
-<li><p><span class="process-math">\(\xvec_5 = A\xvec_4\text{.}\)</span></p></li>
-<li><p><span class="process-math">\(\xvec_6 = A\xvec_5\text{.}\)</span></p></li>
-</ol>
-</li>
-<li><p>What will happen to the number of cars at the two locations after a very long time?  Be able to explain how writing <span class="process-math">\(\xvec_0\)</span> as a linear combination of eigenvectors helps you determine the long-term behavior.</p></li>
-</ol></article><span class="incontext"><a href="ch4sec1.html#activity-130">in-context</a></span>
+<div class="introduction">
+<p>Consider the matrix <span class="process-math">\(A\)</span> and its reduced row echelon form:</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rrrr}
+-2 \amp -4 \amp 0 \amp 6 \\
+1 \amp 2 \amp 0 \amp -3 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrrr}
+1 \amp 2 \amp 0 \amp -3 \\
+0 \amp 0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<p class="continuation">We will call the columns <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\text{.}\)</span></p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Explain why <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\vvec_4\)</span> can be written as a linear combination of <span class="process-math">\(\vvec_1\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Explain why <span class="process-math">\(\col(A)\)</span> is a 1-dimensional subspace of <span class="process-math">\(\real^2\)</span> and is therefore a line.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>What is the relationship between the dimension <span class="process-math">\(\dim~\col(A)\)</span> and the rank <span class="process-math">\(\rank(A)\text{?}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>What is the relationship between the dimension of the column space <span class="process-math">\(\col(A)\)</span> and the null space <span class="process-math">\(\nul(A)\text{?}\)</span></p></article></article><span class="incontext"><a href="ch3sec5.html#activity-130">in-context</a></span>
 </body>
 </html>

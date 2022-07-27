@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2022-07-27T10:59:52-07:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orthogonal complements and the matrix transpose</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.13/pretext.js"></script><script>miniversion=0.674</script><script src="https://pretextbook.org/js/0.13/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.4/setcolors.css" rel="stylesheet" type="text/css">
+<!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link href="developer.css" rel="stylesheet" type="text/css">
+</head>
+<body class="pretext-book ignore-math has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</span></div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar"><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3">
+<a class="index-button toolbar-item button" href="index-1.html" title="Index">Index</a><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="ch6sec1.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="ch-six.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a></span>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="ch6sec1.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="ch-six.html" title="Up">Up</a><a class="next-button button toolbar-item" href="backmatter.html" title="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<div id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
+<nav id="toc"><ul>
+<li class="link frontmatter">
+<a href="frontmatter.html" data-scroll="frontmatter" class="internal"><span class="title">Front Matter</span></a><ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1" class="internal">Colophon</a></li>
+<li><a href="acknowledgement-1.html" data-scroll="acknowledgement-1" class="internal">Acknowledgements</a></li>
+<li><a href="preface.html" data-scroll="preface" class="internal">Preface</a></li>
+</ul>
+</li>
+<li class="link part"><a href="part-1.html" data-scroll="part-1" class="internal"><span class="codenumber">I</span> <span class="title"></span></a></li>
+<li class="link">
+<a href="ch-first.html" data-scroll="ch-first" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a><ul>
+<li><a href="ch1sec1.html" data-scroll="ch1sec1" class="internal">What can we expect</a></li>
+<li><a href="ch1sec2.html" data-scroll="ch1sec2" class="internal">Finding solutions to systems of linear equations</a></li>
+<li><a href="ch1sec3.html" data-scroll="ch1sec3" class="internal">Computation with Sage</a></li>
+<li><a href="ch1sec4.html" data-scroll="ch1sec4" class="internal">Pivots and their influence on solution spaces</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-two.html" data-scroll="ch-two" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a><ul>
+<li><a href="ch2sec1.html" data-scroll="ch2sec1" class="internal">Vectors and linear combinations</a></li>
+<li><a href="ch2sec2.html" data-scroll="ch2sec2" class="internal">Matrix multiplication and linear combinations</a></li>
+<li><a href="ch2sec3.html" data-scroll="ch2sec3" class="internal">The span of a set of vectors</a></li>
+<li><a href="ch2sec4.html" data-scroll="ch2sec4" class="internal">Linear independence</a></li>
+<li><a href="ch2sec5.html" data-scroll="ch2sec5" class="internal">Matrix transformations</a></li>
+<li><a href="ch2sec6.html" data-scroll="ch2sec6" class="internal">The geometry of matrix transformations</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-three.html" data-scroll="ch-three" class="internal"><span class="codenumber">3</span> <span class="title">TBIL Activities: Invertibility, Bases, and Coordinate Systems</span></a><ul>
+<li><a href="ch3sec1.html" data-scroll="ch3sec1" class="internal">Invertibility</a></li>
+<li><a href="ch3sec2.html" data-scroll="ch3sec2" class="internal">Bases and coordinate systems</a></li>
+<li><a href="ch3sec3.html" data-scroll="ch3sec3" class="internal">Image Compression</a></li>
+<li><a href="ch3sec4.html" data-scroll="ch3sec4" class="internal">Determinants</a></li>
+<li><a href="ch3sec5.html" data-scroll="ch3sec5" class="internal">Subspaces of <span class="process-math">\(\real^p\)</span></a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-four.html" data-scroll="ch-four" class="internal"><span class="codenumber">4</span> <span class="title">TBIL Activities: Eigenvalues and Eigenvectors</span></a><ul>
+<li><a href="ch4sec1.html" data-scroll="ch4sec1" class="internal">An introduction to eigenvalues and eigenvectors</a></li>
+<li><a href="ch4sec2.html" data-scroll="ch4sec2" class="internal">Finding eigenvalues and eigenvectors</a></li>
+<li><a href="ch4sec3.html" data-scroll="ch4sec3" class="internal">Diagonalization, similarity, and powers of a matrix</a></li>
+<li><a href="ch4sec4.html" data-scroll="ch4sec4" class="internal">Dynamical Systems</a></li>
+<li><a href="ch4sec5.html" data-scroll="ch4sec5" class="internal">Markov chains and Google's PageRank algorithm</a></li>
+</ul>
+</li>
+<li class="link">
+<a href="ch-six.html" data-scroll="ch-six" class="internal"><span class="codenumber">5</span> <span class="title">TBIL Activities: Orthogonality</span></a><ul>
+<li><a href="ch6sec1.html" data-scroll="ch6sec1" class="internal">The dot product</a></li>
+<li><a href="ch6sec2.html" data-scroll="ch6sec2" class="active">Orthogonal complements and the matrix transpose</a></li>
+</ul>
+</li>
+<li class="link backmatter"><a href="backmatter.html" data-scroll="backmatter" class="internal"><span class="title">Backmatter</span></a></li>
+<li class="link"><a href="index-1.html" data-scroll="index-1" class="internal"><span class="title">Index</span></a></li>
+<li class="link"><a href="colophon-2.html" data-scroll="colophon-2" class="internal"><span class="title">Colophon</span></a></li>
+</ul></nav><div class="extras"><nav><a class="pretext-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
+</div></div>
+<main class="main"><div id="content" class="pretext-content"><section class="section" id="ch6sec2"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">5.2</span> <span class="title">Orthogonal complements and the matrix transpose</span>
+</h2>
+<article class="activity project-like" id="activity-195"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-121"><p id="p-849">Let <span class="process-math">\(\vvec=\twovec{-1}2\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-408"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-850">Sketch the vector <span class="process-math">\(\vvec\)</span> and one vector that is orthogonal to it.</p></article><article class="task exercise-like" id="task-409"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-851">If a vector <span class="process-math">\(\xvec\)</span> is orthogonal to <span class="process-math">\(\vvec\text{,}\)</span> what do we know about the dot product <span class="process-math">\(\vvec\cdot\xvec\text{?}\)</span></p></article><article class="task exercise-like" id="task-410"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-852">If we write <span class="process-math">\(\xvec=\twovec xy\text{,}\)</span> use the dot product to write an equation for the vectors orthogonal to <span class="process-math">\(\vvec\)</span> in terms of <span class="process-math">\(x\)</span> and <span class="process-math">\(y\text{.}\)</span></p></article><article class="task exercise-like" id="task-411"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-853">Use this equation to sketch the set of all vectors orthogonal to <span class="process-math">\(\vvec\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-196"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-122"><p id="p-854"><a href="ch3sec5.html" class="internal" title="Section 3.5: Subspaces of \real^p">Section 3.5</a> introduced the column space <span class="process-math">\(\col(A)\)</span> and null space <span class="process-math">\(\nul(A)\)</span> of a matrix <span class="process-math">\(A\text{.}\)</span> Suppose that <span class="process-math">\(A\)</span> is a matrix and <span class="process-math">\(\xvec\)</span> is a vector satisfying <span class="process-math">\(A\xvec=\zerovec\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-412"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-855">Does <span class="process-math">\(\xvec\)</span> belong to <span class="process-math">\(\nul(A)\)</span> or <span class="process-math">\(\col(A)\text{?}\)</span></p></article><article class="task exercise-like" id="task-413"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-856">Suppose that the equation <span class="process-math">\(A\xvec=\bvec\)</span> is consistent.  Does <span class="process-math">\(\bvec\)</span> belong to <span class="process-math">\(\nul(A)\)</span> or <span class="process-math">\(\col(A)\text{?}\)</span></p></article></article><article class="definition definition-like" id="definition-22"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.1</span><span class="period">.</span>
+</h3>
+<p id="p-857">Given a subspace <span class="process-math">\(W\)</span> of <span class="process-math">\(\real^m\text{,}\)</span> the orthogonal complement of <span class="process-math">\(W\)</span> is the set of vectors in <span class="process-math">\(\real^m\)</span> each of which is orthogonal to every vector in <span class="process-math">\(W\text{.}\)</span>  We denote the orthogonal complement by <span class="process-math">\(W^\perp\text{.}\)</span></p></article><p id="p-858">The next two activities help us find a description of the orthogonal complement <span class="process-math">\(W^\perp\text{.}\)</span></p>
+<article class="activity project-like" id="activity-197"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-123"><p id="p-859">Suppose that <span class="process-math">\(\wvec_1=\threevec10{-2}\)</span> and <span class="process-math">\(\wvec_2=\threevec11{-1}\)</span> form a basis for <span class="process-math">\(W\text{,}\)</span> a two-dimensional subspace of <span class="process-math">\(\real^3\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-414"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-860">Suppose that the vector <span class="process-math">\(\xvec\)</span> is orthogonal to <span class="process-math">\(\wvec_1\text{.}\)</span>  If we write <span class="process-math">\(\xvec=\threevec{x_1}{x_2}{x_3}\text{,}\)</span> use the fact that <span class="process-math">\(\wvec_1\cdot\xvec =
+0\)</span> to write a linear equation for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\text{.}\)</span></p></article><article class="task exercise-like" id="task-415"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-861">Suppose that <span class="process-math">\(\xvec\)</span> is also orthogonal to <span class="process-math">\(\wvec_2\text{.}\)</span>  In the same way, write a linear equation for <span class="process-math">\(x_1\text{,}\)</span> <span class="process-math">\(x_2\text{,}\)</span> and <span class="process-math">\(x_3\)</span> that arises from the fact that <span class="process-math">\(\wvec_2\cdot\xvec =
+0\text{.}\)</span></p></article><article class="task exercise-like" id="task-416"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-862">If <span class="process-math">\(\xvec\)</span> is orthogonal to both <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{,}\)</span> these two equations give us a linear system <span class="process-math">\(B\xvec=\zerovec\)</span> for some matrix <span class="process-math">\(B\text{.}\)</span>  Identify the matrix <span class="process-math">\(B\)</span> and write a parametric description of the solution space to the equation <span class="process-math">\(B\xvec = \zerovec\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-198"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-124"><p id="p-863">Suppose that <span class="process-math">\(\wvec_1=\threevec10{-2}\)</span> and <span class="process-math">\(\wvec_2=\threevec11{-1}\)</span> form a basis for <span class="process-math">\(W\text{,}\)</span> a two-dimensional subspace of <span class="process-math">\(\real^3\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-417"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-864">Since <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\)</span> form a basis for the two-dimensional subspace <span class="process-math">\(W\text{,}\)</span> any vector in <span class="process-math">\(\wvec\)</span> in <span class="process-math">\(W\)</span> can be written as a linear combination</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\wvec = c_1\wvec_1 + c_2\wvec_2\text{.}
+\end{equation*}
+</div>
+<p class="continuation">If <span class="process-math">\(\xvec\)</span> is orthogonal to both <span class="process-math">\(\wvec_1\)</span> and <span class="process-math">\(\wvec_2\text{,}\)</span> use the distributive property of dot products to explain why <span class="process-math">\(\xvec\)</span> is orthogonal to <span class="process-math">\(\wvec\text{.}\)</span></p></article><article class="task exercise-like" id="task-418"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-865">Give a basis for the orthogonal complement <span class="process-math">\(W^\perp\)</span> and state the dimension <span class="process-math">\(\dim W^\perp\text{.}\)</span></p></article><article class="task exercise-like" id="task-419"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-866">Describe <span class="process-math">\((W^\perp)^\perp\text{,}\)</span> the orthogonal complement of <span class="process-math">\(W^\perp\text{.}\)</span></p></article></article><article class="definition definition-like" id="definition-23"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">5.2.2</span><span class="period">.</span>
+</h3>
+<p id="p-867">The transpose of the <span class="process-math">\(m\times n\)</span> matrix <span class="process-math">\(A\)</span> is the <span class="process-math">\(n\times m\)</span> matrix <span class="process-math">\(A^T\)</span> whose rows are the columns of <span class="process-math">\(A\text{.}\)</span></p></article><article class="activity project-like" id="activity-199"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.5</span><span class="period">.</span>
+</h3>
+<p id="p-868">If <span class="process-math">\(B =
+\begin{bmatrix}
+3 \amp 4 \\
+-1 \amp 2 \\
+0 \amp -2 \\
+\end{bmatrix}
+\text{,}\)</span> write the matrix <span class="process-math">\(B^T\text{.}\)</span></p></article><p id="p-869">The next activity illustrates how multiplying a vector by <span class="process-math">\(A^T\)</span> is related to computing dot products with the columns of <span class="process-math">\(A\text{.}\)</span>  You'll develop a better understanding of this relationship if you compute the dot products and matrix products in this activity without using technology.</p>
+<article class="activity project-like" id="activity-200"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.6</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-125">
+<p id="p-870">Suppose that</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec_1=\threevec20{-2},\hspace{24pt}
+\vvec_2=\threevec112,\hspace{24pt}
+\wvec=\threevec{-2}23\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-420"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-871">Find the dot products <span class="process-math">\(\vvec_1\cdot\wvec\)</span> and <span class="process-math">\(\vvec_2\cdot\wvec\text{.}\)</span></p></article><article class="task exercise-like" id="task-421"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-872">Now write the matrix <span class="process-math">\(A = \begin{bmatrix} \vvec_1 \amp \vvec_2 \end{bmatrix}\)</span> and its transpose <span class="process-math">\(A^T\text{.}\)</span>  Find the product <span class="process-math">\(A^T\wvec\)</span> and describe how this product computes both dot products <span class="process-math">\(\vvec_1\cdot\wvec\)</span> and <span class="process-math">\(\vvec_2\cdot\wvec\text{.}\)</span></p></article><article class="task exercise-like" id="task-422"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-873">Suppose that <span class="process-math">\(\xvec\)</span> is a vector that is orthogonal to both <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  What does this say about the dot products <span class="process-math">\(\vvec_1\cdot\xvec\)</span> and <span class="process-math">\(\vvec_2\cdot\xvec\text{?}\)</span>  What does this say about the product <span class="process-math">\(A^T\xvec\text{?}\)</span></p></article><article class="task exercise-like" id="task-423"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-874">Use the matrix <span class="process-math">\(A^T\)</span> to give a parametric description of all the vectors <span class="process-math">\(\xvec\)</span> that are orthogonal to <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></article></article><article class="activity project-like" id="activity-201"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.7</span><span class="period">.</span>
+</h3>
+<p id="p-875">Remember that <span class="process-math">\(\nul(A^T)\text{,}\)</span> the null space of <span class="process-math">\(A^T\text{,}\)</span> is the solution set of the equation <span class="process-math">\(A^T\xvec=\zerovec\text{.}\)</span>  If <span class="process-math">\(\xvec\)</span> is a vector in <span class="process-math">\(\nul(A^T)\text{,}\)</span> explain why <span class="process-math">\(\xvec\)</span> must be orthogonal to both <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></article><article class="activity project-like" id="activity-202"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.8</span><span class="period">.</span>
+</h3>
+<p id="p-876">Remember that <span class="process-math">\(\col(A)\text{,}\)</span> the column space of <span class="process-math">\(A\text{,}\)</span> is the set of linear combinations of the columns of <span class="process-math">\(A\text{.}\)</span>  Therefore, any vector in <span class="process-math">\(\col(A)\)</span> can be written as <span class="process-math">\(c_1\vvec_1+c_2\vvec_2\text{.}\)</span> If <span class="process-math">\(\xvec\)</span> is a vector in <span class="process-math">\(\nul(A^T)\text{,}\)</span> explain why <span class="process-math">\(\xvec\)</span> is orthogonal to every vector in <span class="process-math">\(\col(A)\text{.}\)</span></p></article><article class="activity project-like" id="activity-203"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.9</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-126">
+<p id="p-877">In Sage, the transpose of a matrix <code class="code-inline tex2jax_ignore">A</code> is given by <code class="code-inline tex2jax_ignore">A.T</code>.  Define the matrices</p>
+<div class="displaymath process-math">
+\begin{equation*}
+A =
+\begin{bmatrix}
+1 \amp 0 \amp -3 \\
+2 \amp -2 \amp 1 \\
+\end{bmatrix},
+\hspace{6pt}
+B =
+\begin{bmatrix}
+3 \amp -4 \amp 1 \\
+0 \amp 1 \amp 2 \\
+\end{bmatrix},
+\hspace{6pt}
+C=
+\begin{bmatrix}
+1 \amp 0 \amp -3 \\
+2 \amp -2 \amp 1 \\
+3 \amp 2 \amp 0 \\
+\end{bmatrix}\text{.}
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-424"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-878">Evaluate <span class="process-math">\((A+B)^T\)</span> and <span class="process-math">\(A^T+B^T\text{.}\)</span>  What do you notice about the relationship between these two matrices? <div class="sagecell-sage" id="sage-39"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like" id="task-425"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-879">What happens if you transpose a matrix twice;  that is, what is <span class="process-math">\((A^T)^T\text{?}\)</span></p></article><article class="task exercise-like" id="task-426"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-880">Find <span class="process-math">\(\det(C)\)</span> and <span class="process-math">\(\det(C^T)\text{.}\)</span>  What do you notice about the relationship between these determinants?</p></article><article class="task exercise-like" id="task-427"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-881">Find the product <span class="process-math">\(AC\)</span> and its transpose <span class="process-math">\((AC)^T\text{.}\)</span></p></article><article class="task exercise-like" id="task-428"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-882">Is it possible to compute the product <span class="process-math">\(A^TC^T\text{?}\)</span> Explain why or why not.</p></article><article class="task exercise-like" id="task-429"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-883">Find the product <span class="process-math">\(C^TA^T\)</span> and compare it to <span class="process-math">\((AC)^T\text{.}\)</span>  What do you notice about the relationship between these two matrices?</p></article></article><article class="activity project-like" id="activity-204"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.10</span><span class="period">.</span>
+</h3>
+<p id="p-884">What is the transpose of the identity matrix <span class="process-math">\(I\text{?}\)</span></p></article><article class="activity project-like" id="activity-205"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.11</span><span class="period">.</span>
+</h3>
+<p id="p-885">If a square matrix <span class="process-math">\(D\)</span> is invertible, explain why you can guarantee that <span class="process-math">\(D^T\)</span> is invertible and why <span class="process-math">\((D^T)^{-1} = (D^{-1})^T\text{.}\)</span></p></article><article class="activity project-like" id="activity-206"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.12</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-127"><p id="p-886">Suppose that <span class="process-math">\(W\)</span> is a <span class="process-math">\(5\)</span>-dimensional subspace of <span class="process-math">\(\real^9\)</span> and that <span class="process-math">\(A\)</span> is a matrix whose columns form a basis for <span class="process-math">\(W\text{;}\)</span>  that is, <span class="process-math">\(\col(A) =
+W\text{.}\)</span></p></div>
+<article class="task exercise-like" id="task-430"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-887">What are the dimensions of <span class="process-math">\(A\text{?}\)</span></p></article><article class="task exercise-like" id="task-431"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-888">What is the rank of <span class="process-math">\(A\text{?}\)</span></p></article><article class="task exercise-like" id="task-432"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-889">What are the dimensions of <span class="process-math">\(A^T\text{?}\)</span></p></article><article class="task exercise-like" id="task-433"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p id="p-890">What is the rank of <span class="process-math">\(A^T\text{?}\)</span></p></article><article class="task exercise-like" id="task-434"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p id="p-891">What is <span class="process-math">\(\dim\nul(A^T)\text{?}\)</span></p></article><article class="task exercise-like" id="task-435"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<p id="p-892">What is <span class="process-math">\(\dim W^\perp\text{?}\)</span></p></article><article class="task exercise-like" id="task-436"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<p id="p-893">How are the dimensions of <span class="process-math">\(W\)</span> and <span class="process-math">\(W^\perp\)</span> related?</p></article></article><article class="activity project-like" id="activity-207"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">5.2.13</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-128">
+<p id="p-894">Suppose that <span class="process-math">\(W\)</span> is a subspace of <span class="process-math">\(\real^4\)</span> having basis</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\wvec_1 = \fourvec102{-1},\hspace{24pt}
+\wvec_2 = \fourvec{-1}2{-6}3.
+\end{equation*}
+</div>
+</div>
+<article class="task exercise-like" id="task-437"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p id="p-895">Find the dimensions <span class="process-math">\(\dim W\)</span> and <span class="process-math">\(\dim
+W^\perp\text{.}\)</span></p></article><article class="task exercise-like" id="task-438"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p id="p-896">Find a basis for <span class="process-math">\(W^\perp\text{.}\)</span>  It may be helpful to know that the Sage command <code class="code-inline tex2jax_ignore">A.right_kernel()</code> produces a basis for <span class="process-math">\(\nul(A)\text{.}\)</span> <div class="sagecell-sage" id="sage-40"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like" id="task-439"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p id="p-897">Verify that each of the basis vectors you found for <span class="process-math">\(W^\perp\)</span> are orthogonal to the basis vectors for <span class="process-math">\(W\text{.}\)</span></p></article></article></section></div></main>
+</div>
+</body>
+</html>

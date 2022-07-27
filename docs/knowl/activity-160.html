@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:19-07:00       *-->
+<!--*       on 2022-07-27T10:59:56-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -15,37 +15,25 @@
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.4.2</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.3.1</span><span class="period">.</span>
 </h3>
-<p>Suppose we have two species <span class="process-math">\(R\)</span> and <span class="process-math">\(S\)</span> that interact with one another and that we record the change in their populations from year to year.  When we begin our study, the populations, measured in thousands, are <span class="process-math">\(R_0\)</span> and <span class="process-math">\(S_0\text{;}\)</span> after <span class="process-math">\(k\)</span> years, the populations are <span class="process-math">\(R_k\)</span> and <span class="process-math">\(S_k\text{.}\)</span></p>
-<p>If we know the populations in one year, they are determined in the following year by the expressions</p>
+<div class="introduction">
+<p>Let's recall how a vector in <span class="process-math">\(\real^2\)</span>  can be represented in a coordinate system defined by a basis <span class="process-math">\(\bcal=\{\vvec_1, \vvec_2\}\text{.}\)</span></p>
+<p>Suppose that we consider the basis <span class="process-math">\(\bcal\)</span> defined by</p>
 <div class="displaymath process-math">
 \begin{equation*}
-\begin{aligned}
-R_{k+1} \amp {}={} 0.9 R_k + 0.8 S_k \\
-S_{k+1} \amp {}={} 0.2 R_k + 0.9 S_k\text{.} \\
-\end{aligned}
+\vvec_1 = \twovec{1}{1},\qquad
+\vvec_2 = \twovec{-1}{0}\text{.}
 \end{equation*}
 </div>
-<p class="continuation">We will combine the populations in a vector <span class="process-math">\(\xvec_k = \twovec{R_k}{S_k}\)</span> and note that <span class="process-math">\(\xvec_{k+1} = A\xvec_k\)</span> where <span class="process-math">\(A = \left[\begin{array}{rr}
-0.9 \amp 0.8 \\
-0.2 \amp 0.9 \\
-\end{array}\right]
-\text{.}\)</span></p>
-<ol class="lower-alpha">
-<li>
-<p>Verify that</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\vvec_1=\twovec{2}{1},\qquad
-\vvec_2=\twovec{-2}{1}
-\end{equation*}
 </div>
-<p class="continuation">are eigenvectors of <span class="process-math">\(A\)</span> and find their respective eigenvalues.</p>
-</li>
-<li><p>Suppose that initially <span class="process-math">\(\xvec_0 = \twovec{2}{3}\text{.}\)</span> Write <span class="process-math">\(\xvec_0\)</span> as a linear combination of the eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
-<li><p>Write the vectors <span class="process-math">\(\xvec_1\text{,}\)</span> <span class="process-math">\(\xvec_2\text{,}\)</span> and <span class="process-math">\(\xvec_3\)</span> as a linear combination of eigenvectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></li>
-<li><p>When <span class="process-math">\(k\)</span> becomes very large, what happens to the ratio of the populations <span class="process-math">\(R_k/S_k\text{?}\)</span></p></li>
-</ol></article><span class="incontext"><a href="ch4sec4.html#activity-160">in-context</a></span>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>Find the vector <span class="process-math">\(\xvec\)</span> whose representation in the coordinate system defined by <span class="process-math">\(\bcal\)</span> is <span class="process-math">\(\coords{\xvec}{\bcal} = \twovec{-3}{2}\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Consider the vector <span class="process-math">\(\xvec=\twovec{4}{5}\)</span> and find its representation <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>How do we use the matrix <span class="process-math">\(C_{\bcal} = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
+\end{array}\right]\)</span> to convert a vector's representation <span class="process-math">\(\coords{\xvec}{\bcal}\)</span> in the coordinate system defined by <span class="process-math">\(\bcal\)</span> into its standard representation <span class="process-math">\(\xvec\text{?}\)</span> How do we use this matrix to convert <span class="process-math">\(\xvec\)</span> into <span class="process-math">\(\coords{\xvec}{\bcal}\text{?}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<p>Suppose that we have a matrix <span class="process-math">\(A\)</span> whose eigenvectors are <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> and associated eigenvalues are <span class="process-math">\(\lambda_1=4\)</span> and <span class="process-math">\(\lambda_2
+= 2\text{.}\)</span>  Express the vector <span class="process-math">\(A(-3\vvec_1 +5\vvec_2)\)</span> as a linear combination of <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<p>If <span class="process-math">\(\coords{\xvec}{\bcal} = \twovec{-3}{5}\text{,}\)</span> find <span class="process-math">\(\coords{A\xvec}{\bcal}\text{.}\)</span></p></article></article><span class="incontext"><a href="ch4sec3.html#activity-160">in-context</a></span>
 </body>
 </html>

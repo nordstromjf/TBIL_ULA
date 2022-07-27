@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:18-07:00       *-->
+<!--*       on 2022-07-27T10:59:54-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,23 +12,75 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.2.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h3>
-<p>If <span class="process-math">\(\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}\)</span> is a basis for <span class="process-math">\(\IR^4\text{,}\)</span> that means <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\)</span> doesn't have a non-pivot column, and doesn't have a row of zeros. What is <span class="process-math">\(\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]\text{?}\)</span></p>
+<div class="introduction">
+<p>In this activity, we let</p>
 <div class="displaymath process-math">
 \begin{equation*}
-\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
-=
-\left[\begin{array}{cccc}
-\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-\unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+A = \left[\begin{array}{rr}
+1 \amp 2 \\
+1 \amp 3 \\
 \end{array}\right]
 \end{equation*}
-</div></article><span class="incontext"><a href="ch3sec2.html#activity-88">in-context</a></span>
+</div>
+<p class="continuation">and construct its inverse <span class="process-math">\(A^{-1}\text{.}\)</span> For the time being, let's denote the inverse by <span class="process-math">\(B\)</span> so that <span class="process-math">\(B=A^{-1}\text{.}\)</span></p>
+</div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<p>We know that <span class="process-math">\(AB = I\text{.}\)</span>  If we write <span class="process-math">\(B = \left[\begin{array}{rr}\bvec_1\amp
+\bvec_2\end{array}\right]\text{,}\)</span> then we have</p>
+<div class="displaymath process-math">
+\begin{equation*}
+AB = \left[\begin{array}{rr}
+A\bvec_1 \amp A\bvec_2
+\end{array}\right] =
+\left[\begin{array}{rr}
+\evec_1 \amp \evec_2
+\end{array}\right] = I\text{.}
+\end{equation*}
+</div>
+<p class="continuation">This means that we need to solve the equations</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+A\bvec_1 \amp {}={} \evec_1 \\
+A\bvec_2 \amp {}={} \evec_2 \\
+\end{aligned}\text{.}
+\end{equation*}
+</div>
+<p class="continuation">Using the Sage cell below, solve these equations for the columns of <span class="process-math">\(B\text{.}\)</span> <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>What is the matrix <span class="process-math">\(B\text{?}\)</span>  Check that <span class="process-math">\(AB = I\)</span> and <span class="process-math">\(BA = I\text{.}\)</span> <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>To find the columns of <span class="process-math">\(B\text{,}\)</span> we solved two equations, <span class="process-math">\(A\bvec_1=\evec_1\)</span> and <span class="process-math">\(A\bvec_2=\evec_2\text{.}\)</span>  We could do this by augmenting <span class="process-math">\(A\)</span> two separate times, forming matrices</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{aligned}
+\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
+\\
+\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
+\\
+\end{aligned}
+\end{equation*}
+</div>
+<p class="continuation">and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix <span class="process-math">\(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
+\end{array}\right]\)</span> and finding the row reduced echelon form.  In other words, we augment <span class="process-math">\(A\)</span> by the matrix <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}
+A \amp I \end{array}
+\right]
+\text{.}\)</span></p>
+<p>Form this augmented matrix and find its reduced row echelon form to find <span class="process-math">\(A^{-1}\text{.}\)</span> <div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
+</script></div></p></article></article><span class="incontext"><a href="ch3sec1.html#activity-88">in-context</a></span>
 </body>
 </html>

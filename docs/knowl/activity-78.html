@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:18-07:00       *-->
+<!--*       on 2022-07-27T10:59:54-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,78 +12,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-</script>
 </head>
 <body class="ignore-math">
-<article class="activity project-like"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
-</h3>
-<p>In this activity, we let</p>
-<div class="displaymath process-math">
-\begin{equation*}
-A = \left[\begin{array}{rr}
-1 \amp 2 \\
-1 \amp 3 \\
-\end{array}\right]
-\end{equation*}
-</div>
-<p class="continuation">and construct its inverse <span class="process-math">\(A^{-1}\text{.}\)</span> For the time being, let's denote the inverse by <span class="process-math">\(B\)</span> so that <span class="process-math">\(B=A^{-1}\text{.}\)</span></p>
-<ol class="lower-alpha">
-<li>
-<p>We know that <span class="process-math">\(AB = I\text{.}\)</span>  If we write <span class="process-math">\(B = \left[\begin{array}{rr}\bvec_1\amp
-\bvec_2\end{array}\right]\text{,}\)</span> then we have</p>
-<div class="displaymath process-math">
-\begin{equation*}
-AB = \left[\begin{array}{rr}
-A\bvec_1 \amp A\bvec_2
-\end{array}\right] =
-\left[\begin{array}{rr}
-\evec_1 \amp \evec_2
-\end{array}\right] = I\text{.}
-\end{equation*}
-</div>
-<p class="continuation">This means that we need to solve the equations</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{aligned}
-A\bvec_1 \amp {}={} \evec_1 \\
-A\bvec_2 \amp {}={} \evec_2 \\
-\end{aligned}\text{.}
-\end{equation*}
-</div>
-<p class="continuation">Using the Sage cell below, solve these equations for the columns of <span class="process-math">\(B\text{.}\)</span> <div class="sagecell-sage" id="sage-20"><script type="text/x-sage">
-</script></div></p>
-</li>
-<li><p>What is the matrix <span class="process-math">\(B\text{?}\)</span>  Check that <span class="process-math">\(AB = I\)</span> and <span class="process-math">\(BA = I\text{.}\)</span> <div class="sagecell-sage" id="sage-21"><script type="text/x-sage">
-</script></div></p></li>
-<li>
-<p>To find the columns of <span class="process-math">\(B\text{,}\)</span> we solved two equations, <span class="process-math">\(A\bvec_1=\evec_1\)</span> and <span class="process-math">\(A\bvec_2=\evec_2\text{.}\)</span>  We could do this by augmenting <span class="process-math">\(A\)</span> two separate times, forming matrices</p>
-<div class="displaymath process-math">
-\begin{equation*}
-\begin{aligned}
-\left[\begin{array}{r|r} A \amp \evec_1 \end{array}\right] \amp
-\\
-\left[\begin{array}{r|r} A \amp \evec_2 \end{array}\right] \amp
-\\
-\end{aligned}
-\end{equation*}
-</div>
-<p class="continuation">and finding their reduced row echelon forms. But instead of solving these two equations separately, we could also solve them together by forming the augmented matrix <span class="process-math">\(\left[\begin{array}{r|rr} A \amp \evec_1 \amp \evec_2
-\end{array}\right]\)</span> and finding the row reduced echelon form.  In other words, we augment <span class="process-math">\(A\)</span> by the matrix <span class="process-math">\(I\)</span> to form <span class="process-math">\(\left[\begin{array}{r|r}
-A \amp I \end{array}
-\right]
-\text{.}\)</span></p>
-<p>Form this augmented matrix and find its reduced row echelon form to find <span class="process-math">\(A^{-1}\text{.}\)</span> <div class="sagecell-sage" id="sage-22"><script type="text/x-sage">
-</script></div></p>
-</li>
-</ol></article><span class="incontext"><a href="ch3sec1.html#activity-78">in-context</a></span>
+<article class="activity project-like"><h4 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.5.13</span><span class="period">.</span>
+</h4>
+<div class="introduction"><p>Continue with the same trucking company from the previous two activities.</p></div>
+<article class="task exercise-like"><h5 class="heading"><span class="codenumber">(a)</span></h5>
+<p>Suppose that <span class="process-math">\(S\)</span> is the matrix transformation that transforms the distribution of trucks <span class="process-math">\(\xvec\)</span> one morning into the distribution of trucks two mornings later. What is the matrix that defines the transformation <span class="process-math">\(S\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(b)</span></h5>
+<p>Suppose that <span class="process-math">\(R\)</span> is the matrix transformation that transforms the distribution of trucks <span class="process-math">\(\xvec\)</span> one morning into the distribution of trucks one week later. What is the matrix that defines the transformation <span class="process-math">\(R\text{?}\)</span></p></article><article class="task exercise-like"><h5 class="heading"><span class="codenumber">(c)</span></h5>
+<p>What happens to the distribution of trucks after a very long time?</p>
+<ol class="upper-alpha">
+<li><p>All the trucks end up at location <span class="process-math">\(P\text{.}\)</span></p></li>
+<li><p>All the trucks end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li><p>625 trucks end up at location <span class="process-math">\(P\text{,}\)</span> while 375 end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+<li><p>375 trucks end up at location <span class="process-math">\(P\text{,}\)</span> while 625 end up at location <span class="process-math">\(Q\text{.}\)</span></p></li>
+</ol></article></article><span class="incontext"><a href="ch2sec5.html#activity-78">in-context</a></span>
 </body>
 </html>

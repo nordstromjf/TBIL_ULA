@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2022-04-09T17:09:17-07:00       *-->
+<!--*       on 2022-07-27T10:59:53-07:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -12,19 +12,40 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
 </head>
 <body class="ignore-math">
 <article class="activity project-like"><h3 class="heading">
-<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span>
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.3.6</span><span class="period">.</span>
 </h3>
-<div class="introduction"><p>Consider whether the set of Euclidean vectors <span class="process-math">\(\left\{
-\left[\begin{array}{c}-4\\2\\3\\0\\-1\end{array}\right],
-\left[\begin{array}{c}1\\2\\0\\0\\3\end{array}\right],
-\left[\begin{array}{c}1\\10\\10\\2\\6\end{array}\right],
-\left[\begin{array}{c}3\\4\\7\\2\\1\end{array}\right]
-\right\}\)</span> is linearly dependent or linearly independent.</p></div>
+<div class="introduction">
+<p>Consider the vectors</p>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec_1 = \threevec{1}{1}{-1},
+\vvec_2 = \threevec{0}{2}{1}\text{.}
+\end{equation*}
+</div>
+</div>
 <article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
-<p>Reinterpret this question as an appropriate question about solutions to a vector equation.</p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
-<p>Use the solution to this question to answer the original question.</p></article></article><span class="incontext"><a href="ch2sec4.html#activity-51">in-context</a></span>
+<p>Is the vector <span class="process-math">\(\bvec=\threevec{1}{-2}{4}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span> <div class="sagecell-sage" id="sage-12"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<p>Is the vector <span class="process-math">\(\bvec=\threevec{-2}{0}{3}\)</span> in <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span> <div class="sagecell-sage" id="sage-13"><script type="text/x-sage">
+</script></div></p></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<p>Which of the following is the most appropriate description of <span class="process-math">\(\laspan{\vvec_1,\vvec_2}\text{?}\)</span></p>
+<ol class="upper-alpha">
+<li><p><span class="process-math">\(\laspan{\vvec_1,\vvec_2}\)</span> is <span class="process-math">\(\real^2\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\laspan{\vvec_1,\vvec_2}\)</span> is <span class="process-math">\(\real^3\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\laspan{\vvec_1,\vvec_2}\)</span> is a plane in <span class="process-math">\(real^3\text{.}\)</span></p></li>
+<li><p><span class="process-math">\(\laspan{\vvec_1,\vvec_2}\)</span> is a line in <span class="process-math">\(real^3\text{.}\)</span></p></li>
+</ol></article></article><span class="incontext"><a href="ch2sec3.html#activity-51">in-context</a></span>
 </body>
 </html>
