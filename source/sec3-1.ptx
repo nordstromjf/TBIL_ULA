@@ -1,10 +1,10 @@
 <section xml:id="ch3sec1">
 
-<title>Section 3.1</title>
+<title>Invertibility</title>
     <!--Activity 2.1.1-->
 
  <activity>
-      <statement>
+      <introduction>
       <p> Let's consider the matrices
       <me>
   A = \left[\begin{array}{rrr}
@@ -17,23 +17,23 @@
   -1 \amp -1 \amp 3 \\
   0 \amp -1 \amp 2 \\
   \end{array}\right]
-      </me>.
-  <ol label="a.">
-    <li><p> Define these matrices in Sage and verify that <m>BA =
+      </me>.</p></introduction>
+  
+    <task><p> Define these matrices in Sage and verify that <m>BA =
     I</m> so that <m>B=A^{-1}</m>.
     <sage>
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></task>
 
-    <li><p>Find the solution to the equation <m>A\xvec =
-    \threevec{4}{-1}{4}</m> using <m>A^{-1}</m>.  </p></li>
+    <task><p>Find the solution to the matrix equation <m>A\xvec =
+    \threevec{4}{-1}{4}</m> using <m>A^{-1}</m>.  </p></task>
 
-    <li><p> Using your Sage cell above, multiply <m>A</m> and
+    <task><p> Using Sage, multiply <m>A</m> and
     <m>B</m> in the opposite order;  that is, what do you find
-    when you evaluate <m>AB</m>? </p></li>
-  </ol></p></statement></activity>
+    when you evaluate <m>AB</m>? </p></task>
+  </activity>
 
 <activity>
       <statement>
@@ -43,7 +43,7 @@
     that every equation of the form <m>A\xvec=\bvec</m> has a
     solution, namely, <m>\xvec = A^{-1}\bvec</m>. Which of the following best describes 
     a restatement of this fact?
-    <ol label ="a">
+    <ol label ="A">
       <li><p>The columns of <m>A</m> are linearly independent.</p></li>
       <li><p>The columns of <m>A</m> span <m>\real^3</m>.</p></li>
     </ol>
@@ -58,7 +58,7 @@
     solution, namely, <m>\xvec = A^{-1}\bvec</m>.  What can you conclude about the pivot positions of the
     matrix <m>A</m>? 
 
-  <ol label ="a">
+  <ol label ="A">
       <li><p>Every column of <m>A</m> has a pivot position.</p></li>
       <li><p>Every row of <m>A</m> has a pivot position.</p></li>
       <li><p>Every row and every column of <m>A</m> has a pivot position.</p></li>
@@ -127,7 +127,7 @@
     </activity>
 
     <activity>
-      <statement>
+      <introduction>
       <p> In this activity, we let
       <me>
   A = \left[\begin{array}{rr}
@@ -138,10 +138,10 @@
       and construct its inverse <m>A^{-1}</m>.
       For the time being, let's denote the inverse by <m>B</m> so that
       <m>B=A^{-1}</m>.
-      </p>
+      </p></introduction>
 
-      <ol label="a.">
-  <li><p> We know that <m>AB = I</m>.  If we write
+      
+  <task><p> We know that <m>AB = I</m>.  If we write
   <m>B = \left[\begin{array}{rr}\bvec_1\amp
   \bvec_2\end{array}\right]</m>, then we have
   <me>
@@ -165,17 +165,17 @@
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li><p> What is the matrix <m>B</m>?  Check that <m>AB = I</m>
+  <task><p> What is the matrix <m>B</m>?  Check that <m>AB = I</m>
   and <m>BA = I</m>.
   <sage>
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li><p> To find the columns of <m>B</m>, we solved two
+  <task><p> To find the columns of <m>B</m>, we solved two
   equations, <m>A\bvec_1=\evec_1</m> and
   <m>A\bvec_2=\evec_2</m>.  We could do this by augmenting
   <m>A</m> two separate times, forming matrices
@@ -209,7 +209,7 @@
     <input>
     </input>
   </sage>
-      </p></li></ol></statement></activity>
+      </p></task></activity>
 
   <p> Assuming <m>A</m> is invertible, we have shown that
       <me>
@@ -330,7 +330,7 @@
 
     </activity>
 
-    <p>We have seen how to use Gaussian elimination to find the inverse of a matrix. Now we wan to look at how to use matrix multiplication to perform Gaussian Elinmination.</p>
+    <p>We have seen how to use Gaussian elimination to find the inverse of a matrix. Now we want to look at how to use matrix multiplication to perform Gaussian Elimination.</p>
 
     <activity estimated-time='20'>
     <introduction>
@@ -436,10 +436,12 @@ Check your work using technology.
     </statement>
 </activity>
 
+<p> We have now seen how to do Gaussian elimination with matrix multiplication. If we are careful to describe our row operation with lower triangular matrices, then we can connect matrix multiplication to finding the inverse. We will see this through the next couple of activities.</p>
+
     <activity>
-      <statement>
-      <p> We have now seen how to do Gaussian elimination with matrix multiplication, if we are careful to describe our row operation with lower triangular matrices, Then we can connect matrix multiplication to finding the inverse. We will see this through the following example.
-      <me>
+      <introduction>
+      
+     <p> Let <me>
   A = \left[\begin{array}{rrr}
   1 \amp 2 \amp 1 \\
   2 \amp 0 \amp -2 \\
@@ -464,9 +466,9 @@ Check your work using technology.
   -1 \amp 2 \amp -1 \\
   \end{array}\right]
   = A_1
-      </me>.
-  <ol label="a.">
-    <li><p>
+      </me>.</p></introduction>
+  
+    <task><p>
       Show that multiplying <m>A</m> by the lower triangular matrix
       <me>
         L_1 = \left[\begin{array}{rrr}
@@ -476,21 +478,24 @@ Check your work using technology.
         \end{array}\right]
       </me> has the same effect as this row operation;  that is,
       show that <m>L_1A = A_1</m>.
-    </p></li>
+    </p></task>
 
-    <li><p> Explain why <m>L_1</m> is invertible and find its
+    <task><p> Explain why <m>L_1</m> is invertible and find its
     inverse <m>L_1^{-1}</m>.
     <sage>
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></task>
 
-    <li><p> You should see that there is a simple relationship
+    <task><p> You should see that there is a simple relationship
     between <m>L_1</m> and <m>L_1^{-1}</m>.  Describe this
-    relationship and explain why it holds.  </p></li>
+    relationship and explain why it holds.  </p></task>
+  </activity>
 
-    <li><p> To continue the Gaussian elimination algorithm, we
+  <activity><introduction>
+
+    <p> To continue the Gaussian elimination algorithm, we
     need to apply two more row replacements to bring <m>A</m>
     into a triangular form <m>U</m> where
     <me>
@@ -505,13 +510,14 @@ Check your work using technology.
       0 \amp -4 \amp -4 \\
       0 \amp 0 \amp -4 \\
       \end{array}\right] = U
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Find the matrices <m>L_2</m> and
     <m>L_3</m> that perform these row replacement operations so
     that <m>L_3L_2L_1 A = U</m>.
-    </p></li>
+    </p></task>
 
-    <li><p> Explain why the matrix product <m>L_3L_2L_1</m> is
+    <task><p> Explain why the matrix product <m>L_3L_2L_1</m> is
     invertible and use this fact to write <m>A = LU</m>.  What
     is the matrix <m>L</m> that you find?  Why do you think we
     denote it by <m>L</m>?
@@ -520,11 +526,11 @@ Check your work using technology.
       </input>
     </sage>
     
-    </p></li></ol></p></statement></activity>
+    </p></task></activity>
 
-    <activity><statement><p><ol label="a">
+    <activity><introduction>
 
-    <li><p> Row replacement operations may always be performed
+    <p> Row replacement operations may always be performed
     by multiplying by a lower triangular matrix.  It turns out
     the other two row operations, scaling and interchange, may
     also be performed using matrix multiplication.  For
@@ -541,17 +547,16 @@ Check your work using technology.
       0 \amp 1 \amp 0 \\
       1 \amp 0 \amp 0 \\
       \end{array}\right]
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Show that multiplying <m>A</m> by <m>S</m> performs a
     scaling operation and that multiplying by <m>P</m> performs
     a row interchange.
-    </p></li>
+    </p></task>
 
-    <li><p> Explain why the matrices <m>S</m> and <m>P</m> are
-    invertible and state their inverses.</p></li>
-  </ol>
-      </p>
-      </statement>
+    <task><p> Explain why the matrices <m>S</m> and <m>P</m> are
+    invertible and state their inverses.</p></task>
+  
 
       <!--<solution>
   <p><ol label="a.">

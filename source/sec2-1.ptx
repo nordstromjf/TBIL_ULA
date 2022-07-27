@@ -1,11 +1,11 @@
 <section xml:id="ch2sec1">
 
-<title>Section 2.1</title>
+<title>Vectors and linear combinations</title>
     <!--Activity 2.1.1-->
 
     <activity>
       <!--<title> Scalar Multiplication and Vector Addition </title>-->
-      <statement>
+      <introduction>
       <p>
     Suppose that
     <me>
@@ -14,10 +14,10 @@
       \wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
       \right].
     </me>
-      </p>
-      <p>
-    <ol label="a.">
-      <li> <p> Find expressions for the vectors
+      </p></introduction>
+     
+   
+      <task> <p> Find expressions for the vectors
       <me>
         \begin{array}{cccc}
         \vvec, \amp 2\vvec, \amp -\vvec, \amp -2\vvec, \\
@@ -26,58 +26,80 @@
       </me>
       and sketch them in the <m>xy</m> plane.
 
-    </p> </li>
+    </p> </task>
 
-    <li> <p> What geometric effect does scalar multiplication by a positive number have
-    on a vector?  (a) preserves the length, changes the direction, (b) preserves the direction, changes the length, (c) changes the length and the direction.
-    </p></li>
+    <task> <p> What geometric effect does scalar multiplication by a positive number have
+    on a vector?  (A) preserves the length, changes the direction, (B) preserves the direction, changes the length, (C) changes the length and the direction.
+    </p></task>
 
-    <li> <p> What geometric effect does scalar multiplication by a negative number have
-    on a vector?  (a) preserves the length, changes the direction, (b) preserves the direction, changes the length, (c) changes the length and the direction.
-    </p></li>
+    <task> <p> What geometric effect does scalar multiplication by a negative number have
+    on a vector?  (A) preserves the length, changes the direction, (B) preserves the direction, changes the length, (C) changes the length and the direction.
+    </p></task>
+  </activity>
+
+  <activity><introduction>
+      <p>
+    As in the previous activity, suppose that
+    <me>
+      \vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+      \right],
+      \wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+      \right].
+    </me>
+      </p></introduction>
     
-    <li> <p> Sketch the vectors
+    <task> <p> Sketch the vectors
     <m>
       \vvec, \wvec, \vvec + \wvec
     </m>
     in the <m>xy</m> plane.
 
-    </p> </li>
+    </p> </task>
 
-    <li> <p> Consider vectors that have the form <m>\vvec +
+    <task> <p> Consider vectors that have the form <m>\vvec +
     a\wvec</m> where <m>a</m> is any scalar.  Sketch a few
     of these vectors when, say, <m>a = -2, -1, 0, 1, </m> and
-    <m>2</m>. 
+    <m>2</m>. Consider the points at the tips of each of these vectors.
     
-      An appropriate geometric description for this set of vectors would be
-      <ol label="a">
-      <li><p>a line through <m>\vvec</m> parallel to <m>\wvec</m>.</p></li>
-      <li><p>a line through <m>\wvec</m> parallel to <m>\vvec</m>.</p></li>
+      An appropriate geometric description for this set of points would be
+      <ol label="A">
+      <li><p>a line through the tip of <m>\vvec</m> parallel to <m>\wvec</m>.</p></li>
+      <li><p>a line through the tip of <m>\wvec</m> parallel to <m>\vvec</m>.</p></li>
       <li><p>a line through <m>(0,0)</m> parallel to <m>\vvec+\wvec</m>.</p></li>
     </ol>
 
-    </p></li>
+    </p></task></activity>
 
-    <li> <p> If <m>a</m> and <m>b</m> are two scalars, then the
+    <activity><introduction>
+      <p>
+    As in the previous activity, suppose that
+    <me>
+      \vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+      \right],
+      \wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+      \right].
+    </me>
+      </p></introduction>
+
+    <task> <p> If <m>a</m> and <m>b</m> are two scalars, then the
     vector
     <me> a \vvec + b \wvec </me>
-    is called a linear combination of the vectors <m>\vvec</m>
+    is called a <term>linear combination</term> of the vectors <m>\vvec</m>
     and <m>\wvec</m>.  Find the vector that is the linear
     combination when <m>a = -2</m> and <m>b = 1</m>.
-    </p> </li>
+    </p> </task>
 
-    <li> <p> Can the vector <m>\left[\begin{array}{r} -31 \\ 37
+    <task> <p> Can the vector <m>\left[\begin{array}{r} -31 \\ 37
     \end{array}\right]</m> be represented as a linear combination
     of <m>\vvec</m> and <m>\wvec</m>?
-    </p></li>
-    </ol>
-      </p>
-      </statement>
+    </p></task>
+   
+      
     </activity>
 
     <!--Activity 2.1.2-->
     <activity>
-      <statement>
+      <introduction>
       <p> In this activity, we will look at linear combinations
       of a pair of vectors,
       <me>
@@ -91,57 +113,56 @@
     LINEAR-COMBINATIONS
       </p>-->
 
-      <p>Go to Applet in Activity 2.1.2 in Understanding Linear Algebra</p>
+      <p>Go to the Applet in <url href="https://davidaustinm.github.io/ula/sec-vectors-lin-combs.html#activity-11" visual="davidaustinm.github.io/ula/sec-vectors-lin-combs.html#activity-11">Activity 2.1.2</url> in Understanding Linear Algebra.</p></introduction>
 
-      <ol label="a.">
-    <li> <p> The weight <m>b</m> is initially set to 0.  Explain
+      
+    <task> <p> The weight <m>b</m> is initially set to 0.  Explain
     what happens as you vary <m>a</m> with <m>b=0</m>?  How is
-    this related to scalar multiplication? </p></li>
+    this related to scalar multiplication? </p></task>
 
-    <li> <p> What is the linear combination of <m>\vvec</m> and
+    <task> <p> What is the linear combination of <m>\vvec</m> and
     <m>\wvec</m> when <m>a = 1</m> and <m>b=-2</m>?  You may find
     this result using the diagram, but you should also verify it
-    by computing the linear combination. </p></li>
+    by computing the linear combination. </p></task>
 
-    <li> <p> The vectors that arise when the
+    <task> <p> The vectors that arise when the
     weight <m>b</m> is set to 1 and <m>a</m> is
     varied is 
-    <ol label="a">
+    <ol label="A">
       <li><p>a line through <m>\vvec</m> parallel to <m>\wvec</m>.</p></li>
       <li><p>a line through <m>\wvec</m> parallel to <m>\vvec</m>.</p></li>
       <li><p>a line through <m>(0,0)</m> parallel to <m>\vvec+\wvec</m>.</p></li>
-    </ol> </p></li>
+    </ol> </p></task>
 
-    <li> <p> Can the vector
+    <task> <p> Can the vector
     <m>\left[\begin{array}{r} 0 \\ 0 \end{array} \right]</m>
     be expressed as a linear combination
     of <m>\vvec</m> and <m>\wvec</m>?  If so, what are weights
-    <m>a</m> and <m>b</m>? </p></li>
+    <m>a</m> and <m>b</m>? </p></task>
 
-    <li> <p> Can the vector
+    <task> <p> Can the vector
     <m>\left[\begin{array}{r} 3 \\ 0 \end{array} \right]</m>
     be expressed as a linear combination
     of <m>\vvec</m> and <m>\wvec</m>?  If so, what are weights
-    <m>a</m> and <m>b</m>? </p></li>
+    <m>a</m> and <m>b</m>? </p></task>
 
-    <li> <p> Verify the result from the previous part by
+    <task> <p> Verify the result from the previous part by
     algebraically finding the weights <m>a</m> and <m>b</m> that
     form the linear combination 
     <m>\left[\begin{array}{r} 3 \\ 0 \end{array} \right]</m>.
-    </p></li>
+    </p></task>
 
-    <li> <p> Can the vector
+    <task> <p> Can the vector
     <m>\left[\begin{array}{r} 1.3 \\ -1.7 \end{array} \right]</m>
     be expressed as a linear combination of <m>\vvec</m> and
     <m>\wvec</m>?  What about the vector
     <m>\left[\begin{array}{r} 15.2 \\ 7.1 \end{array} \right]</m>?
-    </p></li>
+    </p></task>
 
-    <li> <p> Are there any two-dimensional vectors that cannot be
+    <task> <p> Are there any two-dimensional vectors that cannot be
     expressed as linear combinations of <m>\vvec</m> and
-    <m>\wvec</m>? </p></li>
-      </ol>
-      </statement>
+    <m>\wvec</m>? </p></task>
+      
 
      <!-- <solution>
     <p>
@@ -256,8 +277,7 @@
       <!--<title> Linear combinations and linear systems </title>-->
       <statement>
       <p>
-      <ol label="a.">
-    <li><p> Given the vectors
+       Given the vectors
     <me>
       \vvec_1 = \left[\begin{array}{r} 4 \\ 0 \\ 2 \\ 1
       \end{array} \right], 
@@ -278,9 +298,11 @@
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></statement></activity>
+
+    <activity><statement>
     
-    <li><p> Consider the following linear system.
+    <p> Consider the following linear system.
     <me>
       \begin{alignedat}{4}
       3x_1 \amp {}+{} \amp 2x_2 \amp {}-{} x_3 \amp {}={} \amp 4 \\
@@ -294,17 +316,12 @@
     rephrase the question "Is this linear system consistent?" by
     asking "Can <m>\bvec</m> be expressed as a linear combination
     of <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m>?"
-    </p></li>
-  </ol>
-  </p></statement>
+    </p></statement>
 </activity>
 
 <activity>
-  <statement>
+  <introduction>
     <p>
-    <ol label="a.">
-
-    <li> <p>
       Consider the vectors
     <me>
       \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
@@ -315,9 +332,10 @@
       \end{array} \right], 
       \bvec   = \left[\begin{array}{r} -1 \\ 3 \\ -1 \\
       \end{array} \right]
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Which statement is the most accurate for <m>\bvec</m>?
-    <ol label="a">
+    <ol label="A">
       <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
     <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
     <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
@@ -331,11 +349,11 @@
       </input>
     </sage>
      
-    </p></li>
+    </p></task>
 
-    <li> <p> Considering the vectors <m>\vvec_1</m>,
-    <m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, determine the most accurate statement.
-      <ol label="a">
+    <task> <p> Considering just the vectors <m>\vvec_1</m>,
+    <m>\vvec_2</m>, and <m>\vvec_3</m>, determine the most accurate statement.
+      <ol label="A">
       <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
         <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
       <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
@@ -347,13 +365,10 @@
     positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
     \vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
     question. 
-    </p></li></ol></p></statement></activity>
+    </p></task></activity>
 
-    <activity><statement><p>
-      <ol label="a.">
+    <activity><introduction><p>
 
-
-    <li> <p>
       Consider the vectors
     <me>
       \vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
@@ -364,9 +379,10 @@
       \end{array} \right], 
       \bvec   = \left[\begin{array}{r} 0 \\ 8 \\ -4 \\
       \end{array} \right]
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Which statement is the most accurate for <m>\bvec</m>?
-    <ol label="a">
+    <ol label="A">
       <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
     <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
     <li><p>The vector <m>\bvec</m> can be expressed as a linear combination of
@@ -378,11 +394,11 @@
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></task>
 
-    <li> <p> Considering the vectors <m>\vvec_1</m>,
+    <task> <p> Considering just the vectors <m>\vvec_1</m>,
     <m>\vvec_2</m>, and <m>\vvec_3</m> from the previous part, determine the most accurate statement.
-      <ol label="a">
+      <ol label="A">
       <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
         <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> in exactly one way.</p></li>
       <li><p>Every three dimensional vector <m>\bvec</m> can be expressed as a linear combination of
@@ -394,11 +410,9 @@
     positions of the matrix <m>\left[\begin{array}{rrr} \vvec_1 \amp
     \vvec_2 \amp \vvec_3 \end{array} \right]</m> help answer this
     question. 
-    </p></li>
+    </p></task>
 
-      </ol>
-      </p>
-      </statement>
+    
 
       <!--<solution>
     <p>

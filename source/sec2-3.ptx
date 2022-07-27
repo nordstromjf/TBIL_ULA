@@ -1,17 +1,17 @@
 <section xml:id="ch2sec3">
 
-<title>Section 2.3</title>
+<title>The span of a set of vectors</title>
 
     <activity>
       <!--<title> The existence of solutions </title>-->
       <statement>
       
-  <p> If the equation <m>A\xvec = \bvec</m> is
+  <p> If the matrix equation <m>A\xvec = \bvec</m> is
   inconsistent, give the statement that best describes the pivots of the
   augmented matrix 
   <m>\left[\begin{array}{r|r} A \amp \bvec
   \end{array}\right]</m>.
-  <ol label="a">
+  <ol label="A">
     <li> <p>There must be a pivot in the last row of the augmented matrix.</p></li>
     <li> <p>There must be a pivot in the last column of the augmented matrix.</p></li>
     <li>The augmented matrix must be the identity matrix.</li>
@@ -21,10 +21,8 @@
 
    <activity>
       <!--<title> The existence of solutions </title>-->
-      <statement>
-      <p> <ol label="a.">
-
-  <li> <p>
+      <introduction>
+      <p>
     Consider the matrix <m>A</m>
     <me>
       A = \left[
@@ -33,39 +31,38 @@
       -2 \amp 2 \amp 2 \\
       1 \amp 1 \amp -3
       \end{array}\right]
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     If <m>\bvec=\threevec{2}{2}{5}</m>, is the equation
     <m>A\xvec = \bvec</m> consistent?  If so, find a solution.
     <sage>
       <input>
       </input>
     </sage>
-  </p></li>
+  </p></task>
 
-  <li> <p> If <m>\bvec=\threevec{2}{2}{6}</m>, is the equation
+  <task> <p> If <m>\bvec=\threevec{2}{2}{6}</m>, is the equation
   <m>A\xvec = \bvec</m> consistent?  If so, find a solution.
   <sage>
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li> <p> Identify the pivot positions of <m>A</m>. </p></li>
+  <task> <p> Identify the pivot positions of <m>A</m>. </p></task>
 
-  <li> <p> For our two choices of the vector <m>\bvec</m>, one
+  <task> <p> For our two choices of the vector <m>\bvec</m>, one
   equation <m>A\xvec = \bvec</m> has a solution and the other
   does not.  What feature of the pivot positions of the
   matrix <m>A</m> tells us to expect this? 
-<ol label="a">
+<ol label="A">
     <li> <p>There is a row of the coefficient matrix with no pivot position.</p></li>
     <li> <p>There is column of the coefficient matrix with no pivot position.</p></li>
     <li>The coefficient matrix is not the identity matrix.</li>
     <li><p>We can't determine anything about the pivot positions without the specific matrix.</p></li>
   </ol>
-</p></li>
-      </ol>
-      </p>
-      </statement>
+</p></task>
+      
 
       <!--<solution>
   <p><ol label="a.">
@@ -143,11 +140,33 @@
 
     </activity>
 
+        <definition>
+      <idx> span </idx>
+      <p> The span of a set of vectors
+      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is the set of all linear
+      combinations of the vectors.
+      </p>
+    </definition>
+
+    <p>
+      In other words, the span of
+      <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> consists of all the
+      vectors <m>\bvec</m> for which the equation
+    <me>
+      \left[\begin{array}{rrrr}
+      \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
+      \end{array}\right]
+      \xvec = \bvec
+    </me>
+    is consistent.
+    </p>
+
+
     <p>  Let's look at two examples to develop some intuition for
       the concept of span.</p>
 
     <activity xml:id="activity-intro-span">
-      <statement>
+      <introduction>
     
       <p> Consider the set of vectors
   <me>
@@ -158,48 +177,47 @@
       <!--<p xml:id="INSERT-SPAN1">
   SPAN1
       </p>-->
-<p>Go to Applet in Activity 2.3.2 part (a) in Understanding Linear Algebra</p>
-      <p> <ol label="a.">
-  <li><p> What vector is the linear combination of <m>\vvec</m>
+<p>Go to the Applet in <url href="https://davidaustinm.github.io/ula/sec-span.html#activity-intro-span" visual="davidaustinm.github.io/ula/sec-span.html#activity-intro-span">Activity 2.3.2</url>, part (a) in Understanding Linear Algebra.</p></introduction>
+     
+  <task><p> What vector is the linear combination of <m>\vvec</m>
   and <m>\wvec</m> with weights:
   <ul>
     <li> <p> <m> a = 2</m> and <m>b=0</m>? </p></li>
     <li> <p> <m> a = 1</m> and <m>b=1</m>? </p></li>
     <li> <p> <m> a = 0</m> and <m>b=-1</m>? </p></li>
   </ul>
-  </p> </li>
+  </p> </task>
 
-  <li> <p>
+  <task> <p>
     Can the vector <m> \twovec{2}{4}</m> be expressed as a
     linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
     vector <m> \twovec{2}{4}</m> in the span of <m>\vvec</m> and
     <m>\wvec</m>?  
-  </p></li>
+  </p></task>
 
-  <li> <p>
+  <task> <p>
     Can the vector <m> \twovec{3}{0}</m> be expressed as a
     linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
     vector <m> \twovec{3}{0}</m> in the span of <m>\vvec</m> and
     <m>\wvec</m>?  
-  </p></li>
+  </p></task>
 
-  <li> <p>
+  <task> <p>
     Describe the set of vectors in the span of <m>\vvec</m> and
     <m>\wvec</m>.
-  </p></li>
+  </p></task>
 
-  <li> <p> For what vectors <m>\bvec</m> does the equation
+  <task> <p> For what vectors <m>\bvec</m> does the equation
   <me>
     \left[\begin{array}{rr} 1 \amp -2 \\ 2 \amp -4
     \end{array}\right] \xvec = \bvec
   </me>
   have a solution?
-  </p></li>
-      </ol> </p>
-      </statement></activity>.
+  </p></task>
+      </activity>.
 
 <activity>
-  <statement>
+  <introduction>
  
    <p>
   We will now look at an example where
@@ -212,49 +230,45 @@
   <!--<p xml:id="INSERT-SPAN2">
   SPAN2
   </p>-->
-  <p>Go to Applet in Activity 2.3.2 part (b) in Understanding Linear Algebra</p>
+  <p>Go to the Applet in <url href="https://davidaustinm.github.io/ula/sec-span.html#activity-intro-span" visual="davidaustinm.github.io/ula/sec-span.html#activity-intro-span">Activity 2.3.2</url>, part (b) in Understanding Linear Algebra.</p>
+</introduction>
 
-      <p> <ol label="a.">
-  <li><p> What vector is the linear combination of <m>\vvec</m>
+  <task><p> What vector is the linear combination of <m>\vvec</m>
   and <m>\wvec</m> with weights:
   <ul>
     <li> <p> <m> a = 2</m> and <m>b=0</m>? </p></li>
     <li> <p> <m> a = 1</m> and <m>b=1</m>? </p></li>
     <li> <p> <m> a = 0</m> and <m>b=-1</m>? </p></li>
   </ul>
-  </p> </li>
+  </p> </task>
 
-  <li> <p>
+  <task> <p>
     Can the vector <m> \twovec{-2}{2}</m> be expressed as a
     linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
     vector <m> \twovec{-2}{2}</m> in the span of <m>\vvec</m> and
     <m>\wvec</m>?  
-  </p></li>
+  </p></task>
 
-  <li> <p>
+  <task> <p>
     Can the vector <m> \twovec{3}{0}</m> be expressed as a
     linear combination of <m>\vvec</m> and <m>\wvec</m>?  Is the
     vector <m> \twovec{3}{0}</m> in the span of <m>\vvec</m> and
     <m>\wvec</m>?  
-  </p></li>
+  </p></task>
 
-  <li> <p>
+  <task> <p>
     Describe the set of vectors in the span of <m>\vvec</m> and
     <m>\wvec</m>.
-  </p></li>
+  </p></task>
 
-  <li> <p> For what vectors <m>\bvec</m> does the equation
+  <task> <p> For what vectors <m>\bvec</m> does the equation
   <me>
     \left[\begin{array}{rr} 2 \amp 1 \\ 1 \amp 2
     \end{array}\right] \xvec = \bvec
   </me>
   have a solution?
-  </p></li>
-      </ol> </p>
-   
-
-    
-      </statement>
+  </p></task>
+      
 
       <!--<solution>
   <p><ol label="a.">
@@ -347,19 +361,18 @@
     <p> In the next couple of activities, we will look at the span of sets of
   vectors in <m>\real^3</m>.</p>
 
-    <activity>
-  <statement>
-  <p>
-  <ol label="a.">
-    <li> <p> Suppose <m>v=\threevec{1}{2}{1}</m>.  Give a written
+    <activity><introduction><p> In this activity, we will look at the span of a set of
+  vectors in <m>\real^3</m>.</p></introduction>
+  
+    <task> <p> Suppose <m>\vvec=\threevec{1}{2}{1}</m>.  Give a written
     description of 
-    <m>\laspan{v}</m> and a rough sketch of it.
+    <m>\laspan{\vvec}</m> and a rough sketch of it.
     <!--<sidebyside width="50%">
       <image source ="images/coordinates-3d" />
     </sidebyside>-->
-    </p></li>
+    </p></task>
 
-    <li> <p> Consider now the two vectors
+    <task> <p> Consider now the two vectors
     <me>
       \evec_1 = \threevec{1}{0}{0},
       \evec_2 = \threevec{0}{1}{0}
@@ -367,8 +380,8 @@
     Sketch the vectors.  Then give a written description of
     <m>\laspan{\evec_1,\evec_2}</m> and a rough sketch of it.
     
-  </p></li>
-  <li>
+  </p></task>
+  <task>
   <p> Let's now look at this algebraically by writing
   write <m>\bvec = \threevec{b_1}{b_2}{b_3}</m>.  Determine the
   conditions on <m>b_1</m>, <m>b_2</m>, and <m>b_3</m> so that
@@ -394,84 +407,90 @@
   Be able to explain how this relates to your sketch of
   <m>\laspan{\evec_1,\evec_2}</m>. 
     
-    </p></li></ol></p></statement></activity>
+    </p></task></activity>
 
-    <activity><statement><p>
+    <activity><introduction><p>
      Consider the vectors
     <me>
       \vvec_1 = \threevec{1}{1}{-1},
       \vvec_2 = \threevec{0}{2}{1}
-    </me>.
-    <ol label="a.">
-      <li> <p> Is the vector <m>\bvec=\threevec{1}{-2}{4}</m> in
+    </me>.</p></introduction>
+    
+      <task> <p> Is the vector <m>\bvec=\threevec{1}{-2}{4}</m> in
       <m>\laspan{\vvec_1,\vvec_2}</m>?
 
       <sage>
         <input>
         </input>
       </sage>
-      </p></li>
+      </p></task>
 
-      <li> <p> Is the vector <m>\bvec=\threevec{-2}{0}{3}</m> in
+      <task> <p> Is the vector <m>\bvec=\threevec{-2}{0}{3}</m> in
       <m>\laspan{\vvec_1,\vvec_2}</m>?
       <sage>
         <input>
         </input>
       </sage>
-      </p></li>
+      </p></task>
 
-      <li><p> Give a written description of 
-      <m>\laspan{\vvec_1,\vvec_2}</m>.
-      </p></li>
+      <task><p> Which of the following is the most appropriate description of 
+      <m>\laspan{\vvec_1,\vvec_2}</m>?
+      <ol label="A">
+        <li><p><m>\laspan{\vvec_1,\vvec_2}</m> is <m>\real^2</m>.</p></li>
+        <li><p><m>\laspan{\vvec_1,\vvec_2}</m> is <m>\real^3</m>.</p></li>
+        <li><p><m>\laspan{\vvec_1,\vvec_2}</m> is a plane in <m>real^3</m>.</p></li>
+        <li><p><m>\laspan{\vvec_1,\vvec_2}</m> is a line in <m>real^3</m>.</p></li>
+      </ol>
+      </p></task>
 
-    </ol></p>
-    </statement></activity>
+    </activity>
 
-   <activity><statement><p>
+   <activity><introduction><p>
     Consider the vectors
     <me>
       \vvec_1 = \threevec{1}{1}{-1},
       \vvec_2 = \threevec{0}{2}{1},
       \vvec_3 = \threevec{1}{-2}{4}
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Form the matrix <m>\left[\begin{array}{rrrr} \vvec_1 \amp \vvec_2
     \amp \vvec_3 \end{array}\right]</m> and find its reduced row
     echelon form.
       <sage>
         <input>
         </input>
-      </sage>
-      What does this tell you about
+      </sage></p></task>
+      <task><p>
+      What does the reduced row echelon form of the above matrix tell you about
       <m>\laspan{\vvec_1,\vvec_2,\vvec_3}</m>? 
-      <ol label="a">
+      <ol label="A">
         <li><m>\laspan{\vvec_1,\vvec_2,\vvec_3}=\laspan{\vvec_1,\vvec_2}</m>.</li>
         <li><m>\laspan{\vvec_1,\vvec_2,\vvec_3}=\laspan{\vvec_2,\vvec_3}</m>.</li>
         <li><m>\laspan{\vvec_1,\vvec_2,\vvec_3}=\laspan{\vvec_1}</m>.</li>
         <li><m>\laspan{\vvec_1,\vvec_2,\vvec_3}=\real^3</m>.</li>
       </ol>
-    </p>
+    </p></task>
 
-  </statement></activity>
+ </activity>
 
-  <activity><statement><p>
-    <ol label="a.">
+  <activity><introduction><p>What can we say more generally about when the span of a set of vectors is all of <m>\real^3</m>?</p></introduction>
+   
 
-    <li> <p> If a set of vectors
+    <task> <p> If a set of vectors
     <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> spans <m>\real^3</m>,
     what can you say about the pivots of the matrix
     <m>\left[\begin{array}{rrrr}
     \vvec_1\amp\vvec_2\amp\ldots\amp\vvec_n
     \end{array}\right]</m>?
-    </p></li>
+    </p></task>
 
-    <li><p> What is the smallest number of vectors such that
+    <task><p> What is the smallest number of vectors such that
     <m>\laspan{\vvec_1,\vvec_2,\ldots,\vvec_n} = \real^3</m>?
-    </p></li>   
-  </ol></p>
-  </statement></activity>
+    </p></task>   
+  </activity>
 
   <!--TBIL Activity 2.3.14-->
-<activity>
+<!--<activity>
     <statement>
         <p>
 Let <m>\vec{v}_1, \vec{v}_2, \vec{v}_3 \in \IR^7</m> be three vectors,
@@ -488,7 +507,7 @@ What can you conclude about
 <li> <m> \vspan \left\{ \vec{w}, \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m> is smaller than <m> \vspan \left\{ \vec{v}_1, \vec{v}_2, \vec{v}_3 \right\} </m>.
 </li>
 </ol>
-    </statement>
+    </statement>-->
 
   <!--<solution>
     <p><ol label="a.">
@@ -579,7 +598,7 @@ What can you conclude about
     </ol></p>
   </solution>-->
   
-      </activity>
+   <!--   </activity>-->
 <!--TBIL Activity 2.2.6-->
       <activity estimated-time='15'>
     <introduction>

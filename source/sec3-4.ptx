@@ -1,12 +1,12 @@
 <section xml:id="ch3sec4">
 
-<title>Section 3.4</title>
+<title>Determinants</title>
 
 <p> A pair of vectors <m>\vvec_1</m> and
     <m>\vvec_2</m> is called <em>positively</em> oriented if the
     angle, measured in the counterclockwise direction, from
     <m>\vvec_1</m> to <m>\vvec_2</m> is less than <m>180^\circ</m>;
-    we say the pair is <m>negatively</m> oriented if it is more than
+    we say the pair is <em>negatively</em> oriented if it is more than
     <m>180^\circ</m>.</p>
 
 <definition>
@@ -22,100 +22,102 @@
       </statement>
     </definition>
 
-     <p> For the next several activities, We will use the diagram in Activity 3.4.2 in Understanding Linear Algebra to find the determinant of some
+     <p> For the next several activities, We will use geometry to find the determinant of some
       simple <m>2\times2</m> matrices.
       </p>
 
 <activity>
-      <statement>
+      <introduction><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</p></introduction>
      
 
       <!--<p xml:id="INSERT-DETERMINANTS">
   DETERMINANTS
       </p>-->
 
-      <p> <ol label="a.">
-  <li><p>
-    Use the diagram to find the determinant of the matrix
+  <task><p>
+    Find the determinant of the matrix
     <m>\left[\begin{array}{rr} -\frac12 \amp 0 \\ 0 \amp 2
-    \end{array}\right]</m>.</p></li>
+    \end{array}\right]</m>.</p></task>
 
-    <li><p>What is the geometric effect of the matrix transformation
-    defined by this matrix.  </p></li>
-   <li><p> What does this lead you to believe is generally true about
+    <task><p>What is the geometric effect of the matrix transformation
+    defined by this matrix?  </p></task>
+   <task><p> What does this lead you to believe is generally true about
     the determinant of a diagonal matrix?
-  </p></li></ol></p></statement></activity>
+  </p></task></activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
+    <introduction><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</p></introduction>
 
-  <li><p> Use the diagram to find the determinant of the matrix
+  <task><p> Find the determinant of the matrix
   <m>\left[\begin{array}{rr} 0 \amp 1 \\
   1 \amp 0 \\
-  \end{array}\right]</m>.</p></li>
-  <li><p>  What is the geometric effect of the
+  \end{array}\right]</m>.</p></task>
+  <task><p>  What is the geometric effect of the
   matrix transformation defined by this matrix?
-  </p></li>
+  </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity> 
+    <introduction><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</p></introduction>
 
-  <li><p> Use the diagram to find the determinant of the matrix
+  <task><p> Find the determinant of the matrix
   <m>\left[\begin{array}{rr} 2 \amp 1 \\
   0 \amp 1 \\
-  \end{array}\right]</m>. </p></li>
-  <li><p> What is the geometric effect of the
-  matrix transformation defined by this matrix?
-  </p></li>
+  \end{array}\right]</m>. </p></task>
 
-  <li><p> What do you notice about the determinant of any matrix
+  <task><p> What is the geometric effect of the
+  matrix transformation defined by this matrix?
+  </p></task>
+
+  <task><p> What do you notice about the determinant of any matrix
   of the form
   <m>\left[\begin{array}{rr} 2 \amp k \\
   0 \amp 1 \\
-  \end{array}\right]</m>? </p></li>
-  <li><p> What does this say about the
+  \end{array}\right]</m>? </p></task>
+  <task><p> What does this say about the
   determinant of an upper triangular matrix?
-  </p></li>
+  </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
+    <introduction><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</p></introduction>
+    
 
-  <li><p> Use the diagram to find the determinant of the matrix
+  <task><p> Find the determinant of the matrix
   <m>\left[\begin{array}{rr} 2 \amp 0 \\
   1 \amp 1 \\
-  \end{array}\right]</m>.</p></li>
-  <li><p>  When we change
+  \end{array}\right]</m>.</p></task>
+  <task><p>  When we change
   the entry in the lower left corner, what is the effect on the
-  determinant? </p></li>
-  <li><p> What does this say about the determinant of a
+  determinant? </p></task>
+  <task><p> What does this say about the determinant of a
   lower triangular matrix?
-  </p></li>
+  </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
+    <introduction><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</p></introduction>
+    
 
-  <li><p> Use the diagram to find the determinant of the matrix
+  <task><p> Find the determinant of the matrix
   <m>\left[\begin{array}{rr} 1 \amp -1 \\
   -2 \amp 2 \\
-  \end{array}\right]</m>.</p></li>
-  <li><p>  What is the geometric effect of the
-  matrix transformation defined by this matrix? </p></li> 
-  <li><p> In general,
+  \end{array}\right]</m>.</p></task>
+  <task><p>  What is the geometric effect of the
+  matrix transformation defined by this matrix? </p></task> 
+  <task><p> In general,
   what is the determinant of a matrix whose columns are linearly
   dependent? 
-  </p></li>
-  </ol></p></statement></activity>
+  </p></task>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
+    
 
-  <li><p> Consider the matrices
+  <introduction><p> Consider the matrices
       <me>
         A = \left[\begin{array}{rr}
         2 \amp 1 \\
@@ -125,16 +127,16 @@
         1 \amp 0 \\
         0 \amp 2 \\
         \end{array}\right]
-      </me>.
-      Use the diagram to find the determinants of <m>A</m>,
-      <m>B</m>, and <m>AB</m>. </p></li>
-      <li><p> What does this suggest is
+      </me>.</p></introduction>
+
+      <task><p>Use the diagram in <url href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" visual="davidaustinm.github.io/ula/sec-determinants.html#activity-35">Activity 3.4.2</url> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinants of <m>A</m>,
+      <m>B</m>, and <m>AB</m>. </p></task>
+      <task><p> What does this suggest is
       generally true about the 
       relationship of <m>\det(AB)</m> to <m>\det A</m> and
       <m>\det B</m>?
-  </p></li>
-      </ol></p>
-      </statement>
+  </p></task>
+      
 
     <!--  <solution>
   <p><ol label="a.">
@@ -187,10 +189,8 @@
       of a matrix and its invertibility using Gaussian elimination.</p>
 
     <activity>
-      <statement>
-      <p> 
-      <ol label="a.">
-  <li><p> Consider the two upper triangular matrices
+      
+  <introduction><p> Consider the two upper triangular matrices
   <me>
     U_1 =
     \left[\begin{array}{rrr}
@@ -204,23 +204,23 @@
     0 \amp 2 \amp 4 \\
     0 \amp 0 \amp 0 \\
     \end{array}\right]
-  </me>.  Which of the matrices <m>U_1</m> and <m>U_2</m> are invertible?</p></li>
+  </me>.</p></introduction>
+  <task><p>Which of the matrices <m>U_1</m> and <m>U_2</m> are invertible?</p></task>
 
-  <li><p>Use our earlier observation that the determinant of an upper
+  <task><p>Use our earlier observation that the determinant of an upper
   triangular matrix is the product of its diagonal entries to
   find <m>\det U_1</m> and <m>\det U_2</m>. 
-  </p></li>
+  </p></task>
 
-  <li><p> Explain why an upper triangular matrix is invertible
+  <task><p> Explain why an upper triangular matrix is invertible
   if and only if its determinant is not zero.
-  </p></li>
+  </p></task>
 
-  </ol></p></statement></activity>
+ </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
 
-  <li><p> 
+  <introduction><p> 
     Let's now consider the matrix
     <me>
       A = 
@@ -229,7 +229,8 @@
       -2 \amp 2 \amp -6 \\
       3 \amp -1 \amp 10 \\
       \end{array}\right]
-    </me> and start the Gaussian elimination process.
+    </me> and use the Gaussian elimination process.</p></introduction>
+    <task><p> 
     We begin with a row replacement operation
     <me>
       A = 
@@ -248,9 +249,9 @@
       </me>.
       What is the relationship between <m>\det A</m> and
       <m>\det A_1</m>?
-  </p></li>
+  </p></task>
 
-  <li><p> Next we perform another row replacement operation:
+  <task><p> Next we perform another row replacement operation:
   <me>
     A_1=
   \left[\begin{array}{rrr}
@@ -268,9 +269,9 @@
   </me>.
   What is the relationship between <m>\det A</m> and <m>\det
   A_2</m>?
-  </p></li>
+  </p></task>
 
-  <li><p> Finally, we perform an interchange:
+  <task><p> Finally, we perform an interchange:
   <me>
     A_2 =
     \left[\begin{array}{rrr}
@@ -288,19 +289,18 @@
   </me>
   to arrive at an upper triangular matrix <m>U</m>.  What is the
   relationship between <m>\det A</m> and <m>\det U</m>?
-  </p></li>
+  </p></task>
 
-  <li><p> Since <m>U</m> is upper
+  <task><p> Since <m>U</m> is upper
   triangular, we can compute its determinant, which allows us to
   find <m>\det A</m>.  What is <m>\det A</m>?  Is <m>A</m>
   invertible?
-  </p></li>
-  </ol></p></statement></activity>
+  </p></task>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
 
-  <li><p> Now consider the matrix
+  <introduction><p> Consider the matrix
   <me>
     A = 
     \left[\begin{array}{rrr}
@@ -308,33 +308,35 @@
     0 \amp 2 \amp -2 \\
     2 \amp 1 \amp 3 \\
     \end{array}\right]
-  </me>.
-  Perform a sequence of row operations to find an upper
+  </me>.</p></introduction>
+  <task><p>Perform a sequence of row operations to find an upper
   triangular matrix <m>U</m> that is row equivalent to
-  <m>A</m>.  Use this to determine <m>\det A</m>.  </p></li>
-  <li><p>Is the matrix
+  <m>A</m>.  Use this to determine <m>\det A</m>.  </p></task>
+  <task><p>Is the matrix
   <m>A</m> invertible?
-  </p></li>
+  </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-  <activity><statement>
-    <p><ol label="a,">
+  <activity>
 
-  <li><p> Suppose we apply a sequence of row operations on a
-  matrix <m>A</m> to obtain <m>A'</m>.  Explain why <m>\det A
+  <introduction><p> Suppose we apply a sequence of row operations on a
+  matrix <m>A</m> to obtain <m>A'</m>.</p></introduction>
+  <task><p>Explain why <m>\det A
   \neq 0</m> if and only if <m>\det A' \neq 0</m>.
-  </p></li>
+  </p></task>
 
-  <li><p> Explain why an <m>n\times n</m> matrix
+  <task><p> Explain why an <m>n\times n</m> matrix
   <m>A</m> is invertible if and only if <m>\det A \neq 0</m>.
-  </p></li>
+  </p></task>
+</activity>
 
-  <li><p> If <m>A</m> is an invertible matrix with <m>\det A =
+<activity>
+
+  <statement><p> If <m>A</m> is an invertible matrix with <m>\det A =
   -3</m>, what is <m>\det A^{-1}</m>?
-  </p></li>
-      </ol></p>
-      </statement>
+  </p>
+  </statement>
 
     <!--  <solution>
   <p><ol label="a.">
@@ -423,8 +425,7 @@
     <activity>
       <statement>
       <p> 
-      <ol label="a.">
-  <li><p> Using a cofactor expansion, show that the determinant
+       Using a cofactor expansion, show that the determinant
   of the following matrix 
   <me> \det
     \left[\begin{array}{rrr}
@@ -436,9 +437,11 @@
   create the expansion, but the choice of a particular row or
   column may simplify 
   the computation.
-  </p></li>
+  </p></statement></activity>
 
-  <li><p> Use a cofactor expansion to find the determinant of
+  <activity><statement>
+
+  <p> Use a cofactor expansion to find the determinant of
   <me>
     \left[\begin{array}{rrrr}
     -3 \amp 0 \amp 0 \amp 0 \\
@@ -446,15 +449,15 @@
     -1 \amp 4 \amp -4 \amp 0\\
     0 \amp 3 \amp 2 \amp 3 \\
     \end{array}\right]
-  </me>. </p></li>
-   <li><p> Explain how the cofactor expansion technique shows
-  that the determinant of a triangular matrix is equal to the
-  product of its diagonal entries.
-  </p></li>
-
-</ol></p></statement></activity>
+  </me>. </p></statement></activity>
 
   <activity><statement>
+   <p> Explain how the cofactor expansion technique shows
+  that the determinant of a triangular matrix is equal to the
+  product of its diagonal entries.
+  </p></statement></activity>
+
+ <!-- <activity><statement>
    
 
   <p> Use a cofactor expansion to determine whether the
@@ -466,7 +469,7 @@
   </me>.
   </p>
 
-</statement></activity>
+</statement></activity>-->
 
   <activity><statement>
     <p>

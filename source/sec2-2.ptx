@@ -1,16 +1,44 @@
 <section xml:id="ch2sec2">
 
-<title>Section 2.2</title>
+<title>Matrix multiplication and linear combinations</title>
 
     <!--Section 2.2-->
     <!--Activity 2.2.2-->
+    <definition>
+      <idx> matrix multiplication </idx>
+      <statement>
+  <p>
+    The product of a matrix <m>A</m> by a vector
+  <m>\xvec</m> will be the linear combination of the columns of
+  <m>A</m> using the components of <m>\xvec</m> as weights.
+  </p>
+
+  <p>
+    If <m>A</m> is an <m>m\times n</m> matrix, then <m>\xvec</m>
+    must be an <m>n</m>-dimensional vector, and the product
+    <m>A\xvec</m> will be an <m>m</m>-dimensional vector.
+    If
+    <me>
+      A=\left[\begin{array}{rrrr}
+      \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+      \end{array}\right],
+      \xvec = \left[\begin{array}{r}
+      c_1 \\ c_2 \\ \vdots \\ c_n \end{array}\right],
+    </me>
+    then
+    <me>
+      A\xvec = c_1\vvec_1 + c_2\vvec_2 + \ldots c_n\vvec_n
+      </me>.
+  </p>
+      </statement>
+    </definition>
 
     <activity>
       <!--<title> Matrix-vector multiplication </title>-->
 
-      <statement><p>
-      <ol label="a.">
-    <li xml:id = "li-example-product"> <p>
+      <introduction><p>Use the definition of matrix multiplication to find the product of a matrix and a vector.</p></introduction>
+      
+    <task xml:id = "li-example-product"> <p>
       Find the matrix product
       <me>
         \left[
@@ -26,9 +54,9 @@
         \end{array}
         \right]
       </me>.
-    </p></li>
+    </p></task>
 
-    <li> <p>
+    <task> <p>
       Suppose that <m>A</m> is the matrix
       <me>
         \left[
@@ -43,19 +71,19 @@
       If <m>A\xvec</m> is defined, what is the dimension of the
       vector <m>\xvec</m> and what is the dimension of
       <m>A\xvec</m>?  
-    </p></li>
-  </ol></p></statement></activity>
+    </p></task>
+  </activity>
 
   <activity><statement><p>
-    <ol label="a.">
 
-    <li> <p>
       A vector whose entries are all zero is denoted by
       <m>\zerovec</m>.  If <m>A</m> is a matrix, what is the
       product <m>A\zerovec</m>?  
-    </p> </li>
+    </p> </statement></activity>
 
-    <li><p>
+    <activity><statement>
+
+    <p>
       Suppose that <m>I = \left[\begin{array}{rrr}
       1 \amp 0 \amp 0 \\
       0 \amp 1 \amp 0 \\
@@ -65,14 +93,11 @@
       <m>\xvec=\threevec{x_1}{x_2}{x_3}</m>.  Find the product
       <m>I\xvec</m> and be able to explain why <m>I</m> is called the
       identity matrix.
-    </p></li>
+    </p>
 
-    </ol></p></statement></activity>
+    </statement></activity>
 
-  <activity><statement><p>
-    <ol label="a.">
-
-    <li> <p>
+  <activity><introduction><p>
       Suppose we write the matrix <m>A</m> in terms of its columns
       as 
       <me>
@@ -81,13 +106,15 @@
         \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n \\
         \end{array}
         \right]
-      </me>.
-      If the vector <m>\evec_1 = \left[\begin{array}{r} 1 \\ 0 \\
+      </me>.</p></introduction>
+
+    <task> 
+      <p>If the vector <m>\evec_1 = \left[\begin{array}{r} 1 \\ 0 \\
       \vdots \\ 0 \end{array}\right]</m>, what is the product
       <m>A\evec_1</m>?
-    </p> </li>
+    </p> </task>
 
-    <li> <p>
+    <task> <p>
       Suppose that
       <me>
         A = \left[
@@ -103,9 +130,8 @@
         \right]
       </me>.
       Is there a vector <m>\xvec</m> such that <m>A\xvec = \bvec</m>?
-    </p> </li>
-      </ol>
-      </p></statement>
+    </p> </task>
+    
 
       <!--<solution>
     <p><ol label="a.">
@@ -209,9 +235,9 @@
 
      <activity>
       <title> The equation <m>A\xvec = \bvec</m> </title>
-      <statement><p>
-      <ol label="a.">
-    <li> <p> Consider the linear system
+      <introduction><p>We can now relate a <term>matrix equation</term> to a system of equations, where the vector <m>\xvec</m> is a vector whose coordinates are the variables in the system of equations.</p></introduction>
+      
+    <task> <p> Consider the linear system
     <me>
       \begin{alignedat}{4}
       2x \amp {}+{} \amp y \amp {}-{} \amp 3z \amp {}={} \amp 4 \\
@@ -221,9 +247,9 @@
     </me>.
     Identify the matrix <m>A</m> and vector <m>\bvec</m> to
     express this system in the form <m>A\xvec = \bvec</m>.
-    </p></li>
+    </p></task>
 
-    <li> <p> If <m>A</m> and <m>\bvec</m> are as below, write the
+    <task> <p> If <m>A</m> and <m>\bvec</m> are as below, write the
     linear system corresponding to the equation
     <m>A\xvec=\bvec</m>. 
     <me>
@@ -242,9 +268,9 @@
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></task>
 
-    <li><p>
+    <task><p>
       Describe the solution space (in set notation) of the equation
       <me>
         \left[
@@ -265,14 +291,14 @@
         <input>
         </input>
       </sage>
-    </p></li>
-    </ol></p></statement></activity>
+    </p></task>
+    </activity>
 
   <activity><statement><p>
     
        Suppose <m>A</m> is an <m>m\times n</m> matrix.  Give the statement that best describes the solution space of the equation <m>A\xvec
     = \zerovec</m>.  
-    <ol label="a">
+    <ol label="A">
       <li>We can't determine anything about the solution space without the actual matrix <m>A</m>.</li>
       <li>The only solution for <m>A\xvec
     = \zerovec</m> is <m>\xvec=\zerovec</m>.</li>
@@ -378,7 +404,7 @@
     <!--Activity 2.2.5-->
 
     <activity>
-      <statement>
+      <introduction>
       <p> Consider the matrices
     <me>
       A = \left[\begin{array}{rrr}
@@ -390,15 +416,15 @@
       1 \amp 2 \\
       -2 \amp -1 \\
       \end{array}\right]
-    </me>.
-    <ol label="a.">
-    <li><p> Suppose we want to form the product <m>AB</m>.  Before
+    </me>.</p></introduction>
+    
+    <task><p> Suppose we want to form the product <m>AB</m>.  Before
     computing, first make sure you can explain how you know this product exists
-    and then give the dimensions of the resulting matrix.</p></li>
+    and then give the dimensions of the resulting matrix.</p></task>
 
-    <li><p> Compute the product <m>AB</m>. </p></li>
+    <task><p> Compute the product <m>AB</m>. </p></task>
 
-    <li><p> Sage can multiply matrices using the <c>*</c>
+    <task><p> Sage can multiply matrices using the <c>*</c>
     operator.  Define the matrices <m>A</m> and <m>B</m> in the
     Sage cell below and
     check your work by computing <m>AB</m>.
@@ -406,14 +432,17 @@
       <input>
       </input>
     </sage>
-    </p></li>
+    </p></task>
 
-    <li><p> Are you able to form the matrix product <m>BA</m>?  If
+    <task><p> Are you able to form the matrix product <m>BA</m>?  If
     so, use the Sage cell above to find <m>BA</m>.  Is it
     generally true that <m>AB = BA</m>?
-    </p></li>
+    </p></task>
+  </activity>
 
-    <li><p> Suppose we form the three matrices.
+  <activity>
+
+    <introduction><p> Suppose we form the three matrices.
     <me>
       A = \left[\begin{array}{rr}
       1 \amp 2 \\
@@ -427,7 +456,8 @@
       -1 \amp 3 \\
       4 \amp 3 \\
       \end{array}\right]
-    </me>.
+    </me>.</p></introduction>
+    <task><p>
     Compare what happens when you compute <m>A(B+C)</m> and <m>AB
     + AC</m>.  State your finding as a general principle.
     <sage>
@@ -435,13 +465,15 @@
       </input>
     </sage>
 
-    </p></li>
+    </p></task>
 
-    <li><p> Compare the results of evaluating <m>A(BC)</m> and
+    <task><p> Compare the results of evaluating <m>A(BC)</m> and
     <m>(AB)C</m> and state your finding as a general
-    principle. </p></li> 
+    principle. </p></task> </activity>
+
+    <activity><introduction>
       
-    <li><p> When we are dealing with real numbers, we know if
+    <p> When we are dealing with real numbers, we know if
     <m>a\neq 0</m> and <m>ab = ac</m>, then <m>b=c</m>.  Define
     matrices 
     <me>
@@ -456,17 +488,20 @@
       C = \left[\begin{array}{rr}
       1 \amp 2 \\
       2 \amp 2 \\
-      \end{array}\right]
-    </me>
-    and compute <m>AB</m> and <m>AC</m>.
+      \end{array}\right].
+    </me></p></introduction>
+    <task> <p>Compute <m>AB</m> and <m>AC</m>.</p>
     <sage>
       <input>
       </input>
-    </sage>
+    </sage></task>
+    <task><p>
     If <m>AB = AC</m>, is it necessarily true that <m>B = C</m>?
-    </p></li>
+    </p></task></activity>
 
-    <li><p> Again, with real numbers, we know that if <m>ab =
+    <activity>
+
+    <introduction><p> Again, with real numbers, we know that if <m>ab =
     0</m>, then either <m>a = 0</m> or <m>b=0</m>.  Define
     <me>
       A = \left[\begin{array}{rr}
@@ -477,18 +512,17 @@
       2 \amp -4 \\
       -1 \amp 2 \\
       \end{array}\right]
-    </me>
-    and compute <m>AB</m>.
+    </me>.</p></introduction>
+    <task><p>Compute <m>AB</m>.</p>
     <sage>
       <input>
       </input>
-    </sage>
+    </sage></task>
+    <task><p>
     If <m>AB = 0</m>, is it necessarily true that either
     <m>A=0</m> or <m>B=0</m>?
-    </p></li>
-    </ol>
-      </p>
-      </statement>
+    </p></task>
+    
 
       <!--<solution>
     <p><ol label="a.">

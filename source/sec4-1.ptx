@@ -1,10 +1,10 @@
 <section xml:id="ch4sec1">
 
-<title>Section 4.1</title>
+<title>An introduction to eigenvalues and eigenvectors</title>
 
 
 <activity>
-      <statement>
+      <introduction>
       <p>  Suppose that <m>A</m> is a <m>2\times 2</m>
   matrix and that <m>\vvec_1</m> and <m>\vvec_2</m> are vectors
   such that
@@ -12,18 +12,16 @@
   </me>.
   Use the linearity of matrix multiplication to express the
   following vectors in terms of <m>\vvec_1</m> and 
-  <m>\vvec_2</m>.
-      <ol label="a.">
+  <m>\vvec_2</m>.</p></introduction>
+     
     
-    <li><p> <m>A(4\vvec_1)</m>. </p></li>
-    <li><p> <m>A(\vvec_1 + \vvec_2)</m>. </p></li>
-    <li><p> <m>A(4\vvec_1 -3\vvec_2)</m>. </p></li>
-    <li><p> <m>A^2\vvec_1</m>. </p></li>
-    <li><p> <m>A^2(4\vvec_1 - 3\vvec_2)</m>. </p></li>
-    <li><p> <m>A^4\vvec_1</m>. </p></li>
-  </ol></p>
-
-      </statement>
+    <task><p> <m>A(4\vvec_1)</m>. </p></task>
+    <task><p> <m>A(\vvec_1 + \vvec_2)</m>. </p></task>
+    <task><p> <m>A(4\vvec_1 -3\vvec_2)</m>. </p></task>
+    <task><p> <m>A^2\vvec_1</m>. </p></task>
+    <task><p> <m>A^2(4\vvec_1 - 3\vvec_2)</m>. </p></task>
+    <task><p> <m>A^4\vvec_1</m>. </p></task>
+  
 
      <!-- <solution>
   <p><ol label="a.">
@@ -89,28 +87,26 @@
       that we will investigate in the next few activities.</p>
 
 <activity>
-      <statement>
-      <p> 
-      <ol label="a.">
-  <li><p> Suppose that <m>\vvec</m> is a nonzero vector and
-  that <m>\lambda</m> is a scalar.  What is the geometric
+      <introduction>
+     <p> Suppose that <m>\vvec</m> is a nonzero vector and
+  that <m>\lambda</m> is a scalar.</p></introduction>
+  <task><p>  What is the geometric
   relationship between <m>\vvec</m> and <m>\lambda\vvec</m>?
-  </p></li>
+  </p></task>
 
-  <li><p> Let's now consider the eigenvector condition:
+  <task><p> Let's now consider the eigenvector condition:
   <m>A\vvec = \lambda\vvec</m>.  Here we have two vectors,
   <m>\vvec</m> and <m>A\vvec</m>.  If <m>A\vvec =
   \lambda\vvec</m>, what is the geometric relationship between
   <m>\vvec</m> and <m>A\vvec</m>?
-  </p></li>
-    </ol>
-    </p></statement></activity>
+  </p></task>
+   </activity>
 
   <activity>
-    <statement><p>Use the applet in Understanding Linear Algebra Activity 4.1.2, part c.</p>
-      <p><ol label="a.">
+    <introduction><p>Use the applet in Understanding Linear Algebra <url href="https://davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41" visual="davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41">Activity 4.1.2, part c</url>.</p></introduction>
+      
 
-  <li>
+  <task>
   <!--<p xml:id="INSERT-EIGENVECTORS">
     EIGENVECTORS
   </p>-->
@@ -125,26 +121,25 @@
   Move the vector <m>\vvec</m> so that the eigenvector condition
   holds.  What is the eigenvector <m>\vvec</m> and what is the
   associated eigenvalue?
-  </p></li>
+  </p></task>
 
-  <li><p> By algebraically computing <m>A\vvec</m>, verify that
+  <task><p> By algebraically computing <m>A\vvec</m>, verify that
   the eigenvector condition holds for the vector <m>\vvec</m>
-  that you found.  </p></li>
+  that you found.  </p></task>
 
-  <li><p> If you multiply the eigenvector <m>\vvec</m> that you
+  <task><p> If you multiply the eigenvector <m>\vvec</m> that you
   found by <m>2</m>, do you still have an eigenvector?  If so,
-  what is the associated eigenvalue? </p></li>
+  what is the associated eigenvalue? </p></task>
 
-  <li><p> Are you able to find another eigenvector <m>\vvec</m>
+  <task><p> Are you able to find another eigenvector <m>\vvec</m>
   that is not a scalar multiple of the first one that you found?
   If so, what is the eigenvector and what is the associated
-  eigenvalue? </p></li>
+  eigenvalue? </p></task>
 
-  </ol>
-    </p></statement></activity>
+  </activity>
 
   <activity>
-    <statement><p>Use the applet in Understanding Linear Algebra Activity 4.1.2, part c.</p>
+    <statement><p>Use the applet in Understanding Linear Algebra <url href="https://davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41" visual="davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41">Activity 4.1.2, part c</url>.</p>
      <p> Now consider the matrix
   <m>A = \left[\begin{array}{rr}
   2 \amp 1 \\
@@ -156,31 +151,29 @@
   </p></statement></activity>
 
   <activity>
-    <statement><p>Use the applet in Understanding Linear Algebra Activity 4.1.2, part c.</p>
+    <introduction><p>Use the applet in Understanding Linear Algebra <url href="https://davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41" visual="davidaustinm.github.io/ula/sec-eigen-intro.html#activity-41">Activity 4.1.2, part c</url>.</p>
 
   <p> Consider the matrix
   <m>A = \left[\begin{array}{rr}
   0 \amp -1 \\
   1 \amp 0 \\
   \end{array}\right]
-  </m>.
-   <ol label="a.">
+  </m>.</p></introduction>
+   
 
-  <li><p>
+  <task><p>
   Use the applet to find any eigenvectors and associated
-  eigenvalues. </p></li>
-  <li><p> What geometric transformation does this
-  matrix perform on vectors?  </p></li>
-  <li><p>
+  eigenvalues. </p></task>
+  <task><p> What geometric transformation does this
+  matrix perform on vectors?  </p></task>
+  <task><p>
   What does this tell you about the presence of eigenvectors for matrix <m>A</m>?
-    <ol label="a">
+    <ol label="A">
       <li>The matrix A has at least two eigenvectors.</li>
       <li>The matrix A has at least one eigenvector.</li>
       <li>The matrix A has no eigenvectors.</li>
     </ol>
-  </p></li></ol>
-  </p>
-      </statement>
+  </p></task>
 
       <!--<solution>
   <p><ol label="a.">
@@ -219,7 +212,7 @@
     <p>Now we will look at an application of eigenvalues and eigenvectors.</p>
 
     <activity xml:id="activity-eigen-intro">
-      <statement>
+      <introduction>
 
       <p> Suppose that we work for a car rental company that has two
       locations, <m>P</m> and <m>Q</m>.  When a customer rents a car
@@ -227,25 +220,25 @@
       location at the end of the day.  After doing some market
       research, we determine:
       <ul>
-  <li><p> 80<percent /> of the cars rented at location <m>P</m> are
-  returned to <m>P</m> and 20<percent /> are returned to
+  <li><p> 80% of the cars rented at location <m>P</m> are
+  returned to <m>P</m> and 20% are returned to
   <m>Q</m>. </p></li> 
 
-  <li><p> 40<percent /> of the cars rented at location <m>Q</m> are
-  returned to <m>Q</m> and 60<percent /> are returned to
+  <li><p> 40% of the cars rented at location <m>Q</m> are
+  returned to <m>Q</m> and 60% are returned to
   <m>P</m>. </p></li>
-      </ul>
+      </ul></p></introduction>
 
-      <ol label="a.">
-  <li><p> Suppose that there are 1000 cars at location <m>P</m>
+      
+  <task><p> Suppose that there are 1000 cars at location <m>P</m>
   and no cars at location <m>Q</m> on Monday morning.  How many
   cars are there are locations <m>P</m> and <m>Q</m> at the end
-  of the day on Monday?  </p></li>
+  of the day on Monday?  </p></task>
 
-  <li><p> How many are at locations <m>P</m> and <m>Q</m> at end
-  of the day on Tuesday? </p></li></ol></p></statement></activity>
+  <task><p> How many are at locations <m>P</m> and <m>Q</m> at end
+  of the day on Tuesday? </p></task></activity>
 
-  <activity><statement>
+  <activity><introduction>
     <p>Continue with the car company example.</p>
      <p> If we let <m>P_k</m> and <m>Q_k</m> be the number of
   cars at locations <m>P</m> and <m>Q</m>, respectively, at the
@@ -281,49 +274,51 @@
   \vvec_1 = \twovec{3}{1},
   \qquad
   \vvec_2 = \twovec{-1}{1}
-      </me>.
-      <ol label="a.">
-      <li><p>Compute <m>A\vvec_1</m> and <m>A\vvec_2</m> to demonstrate that
-      <m>\vvec_1</m> and <m>\vvec_2</m> are eigenvectors of <m>A</m>.</p></li>
+      </me>.</p></introduction>
+      
+      <task><p>Compute <m>A\vvec_1</m> and <m>A\vvec_2</m> to demonstrate that
+      <m>\vvec_1</m> and <m>\vvec_2</m> are eigenvectors of <m>A</m>.</p></task>
 
-      <li><p>What are the associated eigenvalues <m>\lambda_1</m> and
-      <m>\lambda_2</m>?</p></li></ol>  
-    </p></statement></activity>
+      <task><p>What are the associated eigenvalues <m>\lambda_1</m> and
+      <m>\lambda_2</m>?</p></task></activity>
 
-    <activity><statement>
-    <p>Continue with the car company example and <m>\vvec_1</m> and <m>\vvec_2</m> from the previous activity.
-      <ol label="a.">
-      <li><p> We said that 1000 cars are initially at location
+    <activity><introduction>
+    <p>Continue with the car company example and <me>
+  \vvec_1 = \twovec{3}{1},
+  \qquad
+  \vvec_2 = \twovec{-1}{1}
+      </me> from the previous activity.</p></introduction>
+      
+      <task><p> We said that 1000 cars are initially at location
       <m>P</m> and none at location <m>Q</m>.  This means that the
       initial vector describing the number of cars is <m>\xvec_0 =
       \twovec{1000}{0}</m>.  Write <m>\xvec_0</m> as a linear
-      combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+      combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></task>
 
-      <li><p> Remember that <m>\vvec_1</m> and <m>\vvec_2</m>
+      <task><p> Remember that <m>\vvec_1</m> and <m>\vvec_2</m>
       are eigenvectors of <m>A</m>.  Use the linearity of matrix
       multiplicaiton to write the vector <m>\xvec_1 =
       A\xvec_0</m>, describing the number of cars at the two locations
       at the end of the first day, as a linear combination of
-      <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+      <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></task>
 
-      <li><p> Write the vector <m>\xvec_2 = A\xvec_1</m> as a linear
+      <task><p> Write the vector <m>\xvec_2 = A\xvec_1</m> as a linear
       combination of <m>\vvec_1</m> and <m>\vvec_2</m>.  Then write
       the next few vectors as linear combinations of <m>\vvec_1</m>
       and <m>\vvec_2</m>:
-      <ol>
+      <ol label="i">
   <li><p> <m>\xvec_3 = A\xvec_2</m>. </p></li>
   <li><p> <m>\xvec_4 = A\xvec_3</m>. </p></li>
   <li><p> <m>\xvec_5 = A\xvec_4</m>. </p></li>
   <li><p> <m>\xvec_6 = A\xvec_5</m>. </p></li>
       </ol>
-      </p></li>
+      </p></task>
 
-      <li><p> What will happen to the number of cars at the two
+      <task><p> What will happen to the number of cars at the two
       locations after a very long time?  Be able to explain how writing
       <m>\xvec_0</m> as a linear combination of eigenvectors helps you
-      determine the long-term behavior. </p></li>
-      </ol></p>
-      </statement>
+      determine the long-term behavior. </p></task>
+      
 
      <!-- <solution>
   <p> The solution to this activity is given in the text

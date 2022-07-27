@@ -1,0 +1,89 @@
+<section xml:id="ch6sec1">
+
+<title>The dot product</title>
+
+<definition><statement><p>For
+    two-dimensional vectors <m>\vvec</m> and <m>\wvec</m>, their dot
+    product <m>\vvec\cdot\wvec</m> is the scalar defined to be
+    <me>
+      \vvec\cdot\wvec = \twovec{v_1}{v_2}\cdot\twovec{w_1}{w_2} =
+      v_1w_1 + v_2w_2\text{.}
+    </me></p></statement></definition>
+
+    <definition><statement>
+      <idx> dot product </idx>
+      <p>For
+    <m>n</m>-dimensional vectors <m>\vvec</m> and <m>\wvec</m>, their dot
+    product <m>\vvec\cdot\wvec</m> is the scalar defined to be
+    <me>
+      \vvec\cdot\wvec  =
+      v_1w_1 + v_2w_2+\cdots + v_nw_n\text{.}
+    </me></p></statement></definition>
+
+
+<activity>
+      <introduction>
+      <p>  Suppose that <m>\vvec=\twovec{3}{4}</m> and <m>\wvec=\twovec{2}{-2}</m>.</p></introduction>
+     
+    
+    <task><p>Compute the dot product
+    <m>\vvec\cdot\wvec
+    </m>.</p></task>
+    <task><p> Sketch the vector <m>\vvec</m>.  Then
+    use the Pythagorean theorem to find the length of <m>\vvec</m>. </p></task>
+    <task><p>Compute the dot product <m>\vvec\cdot\vvec</m>.  How
+    is the dot product related to the length of <m>\vvec</m>? </p></task>
+    
+
+    </activity>
+
+    <definition>
+      <statement>
+  <idx> magnitude of a vector </idx>
+  
+  <p> The <term>magnitude</term>, or length, of <m>\vvec</m>, which we denote as
+      <m>\len{\vvec}</m>, is <m>\len{\vvec} = \sqrt{(v_1)^2 + (v_2)^2+\cdots +
+      (v_n)^2}</m>.
+  </p>
+      </statement>
+    </definition>
+
+    <p>We saw in the first activity that <m>\vvec\cdot\vvec = \len{\vvec}^2</m>.</p>
+
+    <definition><statement><idx>orthogonal</idx>
+    <p>Two vectors <m>\vvec</m> and <m>\wvec</m> are perpendicular or <term>orthogonal</term> if <m>\vvec\cdot\wvec=0</m>.</p></statement></definition>
+
+<activity>
+      <introduction><p>Let <m>\vvec=\twovec32</m> and
+        <m>\wvec=\twovec{-1}3</m>.</p></introduction>
+        <task><p>Find the lengths <m>\len{\vvec}</m> and
+      <m>\len{\wvec}</m> using the dot product.</p></task>
+
+      <task><p> Find the dot product <m>\vvec\cdot\wvec</m>. Are <m>\vvec</m> and <m>\wvec</m> orthogonal?
+      </p></task>
+
+      <task><p> Consider the vector <m>\xvec = \twovec{-2}{3}</m>. Find <m>\vvec\cdot \xvec</m>. Are <m>\vvec</m> and <m>\xvec</m> orthogonal?
+      </p></task>
+
+      <task><p> For what value of <m>k</m> is the vector
+      <m>\twovec6k</m> perpendicular to <m>\wvec</m>?
+      </p></task>
+    
+    </activity>
+
+    <activity><introduction><p>
+      Suppose that
+      <me>
+        \vvec=\fourvec203{-2}, \hspace{24pt}
+        \wvec=\fourvec1{-3}41\text{.}
+      </me>
+    </p></introduction>
+<task><p>Find <m>\len{\vvec}</m>.</p></task>
+<task><p>Find <m>\len{\wvec}</m>.</p></task>
+<task><p>Find <m>\vvec\cdot\wvec</m>.</p></task>
+  </activity>
+
+
+
+
+</section>

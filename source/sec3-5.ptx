@@ -1,9 +1,9 @@
 <section xml:id="ch3sec5">
 
-<title>Section 3.5</title>
+<title>Subspaces of <m>\real^p</m></title>
 
 <activity>
-      <statement>
+      <introduction>
       <p> Let's consider the following matrix <m>A</m> and its reduced
       row echelon form.
       <me>
@@ -18,39 +18,38 @@
   0 \amp 1 \amp -2 \amp 1 \\
   0 \amp 0 \amp 0 \amp 0 \\
   \end{array}\right]
-      </me>.
+      </me>.</p></introduction>
 
-      <ol label="a.">
-  <li><p> Are the columns of <m>A</m> linearly independent?  Do
-  they span <m>\real^3</m>? </p></li>
+     
+  <task><p> Are the columns of <m>A</m> linearly independent?  Do
+  they span <m>\real^3</m>? </p></task>
 
-  <li><p> Give a parametric description of the solution space to
-  the homogeneous equation <m>A\xvec = \zerovec</m>. </p></li>
+  <task><p> Give a parametric description of the solution space to
+  the homogeneous equation <m>A\xvec = \zerovec</m>. </p></task>
 
-  <li><p> Explain how this parametric description produces two
+  <task><p> Explain how this parametric description produces two
   vectors <m>\wvec_1</m> and <m>\wvec_2</m> whose span is the
   solution space to the equation <m>A\xvec = \zerovec</m>.
-  </p></li>
+  </p></task>
 
-  <li><p> What can you say about the linear independence of the
-  set of vectors <m>\wvec_1</m> and <m>\wvec_2</m>? </p></li>
+  <task><p> What can you say about the linear independence of the
+  set of vectors <m>\wvec_1</m> and <m>\wvec_2</m>? </p></task>
 
-  <li><p> Let's denote the columns of <m>A</m> as
+  <task><p> Let's denote the columns of <m>A</m> as
   <m>\vvec_1</m>, 
   <m>\vvec_2</m>, 
   <m>\vvec_3</m>,  and
   <m>\vvec_4</m>.
   Explain why <m>\vvec_3</m> and <m>\vvec_4</m> can be written
   as linear combinations of <m>\vvec_1</m> and <m>\vvec_2</m>.
-  </p></li>
+  </p></task>
 
-  <li><p> Explain why <m>\vvec_1</m> and <m>\vvec_2</m> are
+  <task><p> Explain why <m>\vvec_1</m> and <m>\vvec_2</m> are
   linearly independent and <m>\laspan{\vvec_1,\vvec_2} =
   \laspan{\vvec_1, \vvec_2, \vvec_3, \vvec_4}</m>.
-  </p></li>
+  </p></task>
 
-      </ol></p>
-      </statement>
+     
 
       <!--<solution>
   <p><ol label="a.">
@@ -115,31 +114,31 @@
     </definition>
 
     <activity>
-      <statement>
-      <p> We will look at some subspaces of <m>\real^2</m>.
-      <ol label="a.">
-  <li>
+      <introduction>
+      <p> We will look at some subspaces of <m>\real^2</m>.</p></introduction>
+     
+  <task>
     
       <p> Explain why a line that does not pass through the
       origin is not a subspace of
       <m>\real^2</m>.
       </p>      
    
-  </li>
+  </task>
 
-  <li><p> Explain why any subspace of <m>\real^2</m> must
-  contain the zero vector <m>\zerovec</m>. </p></li>
+  <task><p> Explain why any subspace of <m>\real^2</m> must
+  contain the zero vector <m>\zerovec</m>. </p></task>
 
-  <li><p> Explain why the subset <m>S</m> of <m>\real^2</m> that
+  <task><p> Explain why the subset <m>S</m> of <m>\real^2</m> that
   consists of only the zero vector <m>\zerovec</m> is a subspace
-  of <m>\real^2</m>. </p></li>
+  of <m>\real^2</m>. </p></task>
 
-  <li><p> Explain why the subspace <m>S=\real^2</m> is itself a
-  subspace of <m>\real^2</m>. </p></li>
+  <task><p> Explain why the subspace <m>S=\real^2</m> is itself a
+  subspace of <m>\real^2</m>. </p></task>
 
-  <li><p> If <m>\vvec</m> and <m>\wvec</m> are two vectors in a
+  <task><p> If <m>\vvec</m> and <m>\wvec</m> are two vectors in a
   subspace <m>S</m>, explain why <m>\laspan{\vvec,\wvec}</m> is contained
-  in the subspace <m>S</m> as well. </p></li>
+  in the subspace <m>S</m> as well. </p></task>
 
   <!--<li>
     
@@ -150,8 +149,7 @@
       </p>
      
   </li>-->
-      </ol></p>
-      </statement>
+      
 
       <!--<solution>
   <p><ol label="a.">
@@ -212,32 +210,28 @@
     <p>We will explore some null spaces in the next couple of activities.</p>
 
     <activity>
-      <statement>
-      <p> 
-      <ol label="a.">
-  <li><p>
+     
+  <introduction><p>
     Consider the matrix
     <me>A=\left[\begin{array}{rrr}
     1 \amp 3 \amp -1 \\
     -2 \amp 0 \amp -4 \\
     1 \amp 2 \amp 0 \\
     \end{array}\right]
-    </me>
-    and give a parametric description of the null space
-  <m>\nul(A)</m>. </p></li>
+    </me></p></introduction>
+    <task><p>Give a parametric description of the null space
+  <m>\nul(A)</m>. </p></task>
 
-  <li><p> Give a basis for and state the
-  dimension of <m>\nul(A)</m>. </p></li>
+  <task><p> Give a basis for and state the
+  dimension of <m>\nul(A)</m>. </p></task>
 
-  <li><p> The null space <m>\nul(A)</m> is a subspace of
-  <m>\real^p</m> for which <m>p</m>? </p></li>
+  <task><p> The null space <m>\nul(A)</m> is a subspace of
+  <m>\real^p</m> for which <m>p</m>? </p></task>
 
-</ol></p></statement></activity>
+</activity>
 
-<activity><statement>
-  <p><ol label="a.">
-
-  <li><p> Consider the matrix <m>A</m> whose reduced row
+<activity><introduction>
+  <p> Consider the matrix <m>A</m> whose reduced row
   echelon form is given:
   <me>
   A \sim
@@ -245,35 +239,34 @@
   1 \amp 2 \amp 0 \amp -3 \\
   0 \amp 0 \amp 1 \amp 2 \\
   \end{array}\right]
-  </me>.
-  Give a parametric description of <m>\nul(A)</m>.  </p></li>
+  </me>.</p></introduction>
+  <task><p>Give a parametric description of <m>\nul(A)</m>.  </p></task>
 
-  <li> <p> Notice that
+  <task> <p> Notice that
   the parametric description gives a set of vectors that span
   <m>\nul(A)</m>.  Explain why this set of vectors is linearly
   independent and hence forms a basis.  What is the dimension of
-  <m>\nul(A)</m>? </p> </li>
+  <m>\nul(A)</m>? </p> </task>
 
-  <li> <p> For this matrix, <m>\nul(A)</m> is a subspace of
-  <m>\real^p</m> for what <m>p</m>?  </p></li>
+  <task> <p> For this matrix, <m>\nul(A)</m> is a subspace of
+  <m>\real^p</m> for what <m>p</m>?  </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-<activity><statement>
-  <p><ol label="a.">
+<activity>
 
-  <li><p> What is the relationship between the dimensions of the
+  <task><p> What is the relationship between the dimensions of the
   matrix <m>A</m>, the number of pivot positions of <m>A</m> and the
-  dimension of <m>\nul(A)</m>?</p></li>
+  dimension of <m>\nul(A)</m>?</p></task>
 
-  <li><p> Suppose that the columns of a matrix <m>A</m> are
+  <task><p> Suppose that the columns of a matrix <m>A</m> are
   linearly independent.  What can you say about <m>\nul(A)</m>?
-  </p></li>
+  </p></task>
 
-  <li><p> If <m>A</m> is an invertible <m>n\times n</m> matrix,
-  what can you say about <m>\nul(A)</m>? </p></li>
+  <task><p> If <m>A</m> is an invertible <m>n\times n</m> matrix,
+  what can you say about <m>\nul(A)</m>? </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
 <activity><statement>
 
@@ -344,7 +337,7 @@
     <definition>
       <statement>
   <idx> rank </idx>
-  <p> The <m>rank</m> of a matrix <m>A</m>, denoted
+  <p> The <em>rank</em> of a matrix <m>A</m>, denoted
   <m>\rank(A)</m>, is the number of pivot positions of <m>A</m>.
   </p>
       </statement>
@@ -362,10 +355,8 @@
 
 <p>We will explore some column spaces in the next couple of activities.</p>
     <activity>
-      <statement>
-      <p> 
-      <ol label="a.">
-  <li><p>
+     
+  <introduction><p>
     Consider the matrix
     <me>A= \left[\begin{array}{rrr}
     \vvec_1 \amp \vvec_2 \amp \vvec_3
@@ -376,28 +367,27 @@
     -2 \amp 0 \amp -4 \\
     1 \amp 2 \amp 0 \\
     \end{array}\right]
-    </me>.
-    Since <m>\col(A)</m> is the span of the columns, the vectors
+    </me>.</p></introduction>
+    <task><p>Since <m>\col(A)</m> is the span of the columns, the vectors
     <m>\vvec_1</m>, <m>\vvec_2</m>, and <m>\vvec_3</m> naturally
     span <m>\col(A)</m>.  Are these vectors linearly
     independent?
-  </p></li>
+  </p></task>
 
-  <li><p> Show that <m>\vvec_3</m> can be written as a linear
-  combination of <m>\vvec_1</m> and <m>\vvec_2</m>.  Then
-  explain why <m>\col(A)=\laspan{\vvec_1,\vvec_2}</m>. </p> </li>
+  <task><p> Show that <m>\vvec_3</m> can be written as a linear
+  combination of <m>\vvec_1</m> and <m>\vvec_2</m> by giving the linear combination.  Then
+  explain why <m>\col(A)=\laspan{\vvec_1,\vvec_2}</m>. </p> </task>
 
-  <li><p> Explain why the vectors <m>\vvec_1</m> and
+  <task><p> Explain why the vectors <m>\vvec_1</m> and
   <m>\vvec_2</m> form a basis for <m>\col(A)</m>.  This shows
   that <m>\col(A)</m> is a 2-dimensional subspace of
-  <m>\real^2</m> and is therefore a plane. </p></li>
+  <m>\real^3</m> and is therefore a plane in <m>\real^3</m>. </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
-<activity><statement>
-  <p><ol label="a.">
+<activity>
 
-  <li><p> Consider the matrix <m>A</m> and its reduced row
+  <introduction><p> Consider the matrix <m>A</m> and its reduced row
   echelon form:
   <me>
     A = \left[\begin{array}{rrrr}
@@ -411,23 +401,24 @@
     \end{array}\right]
   </me>.
   We will call the columns <m>\vvec_1</m>, <m>\vvec_2</m>,
-  <m>\vvec_3</m>, and <m>\vvec_4</m>.
-  Explain why <m>\vvec_2</m>, <m>\vvec_3</m>, and <m>\vvec_4</m>
+  <m>\vvec_3</m>, and <m>\vvec_4</m>.</p></introduction>
+
+  <task><p>Explain why <m>\vvec_2</m>, <m>\vvec_3</m>, and <m>\vvec_4</m>
   can be written as a linear combination of
-  <m>\vvec_1</m>. </p></li>
+  <m>\vvec_1</m>. </p></task>
 
-  <li><p> Explain why <m>\col(A)</m> is a 1-dimensional
+  <task><p> Explain why <m>\col(A)</m> is a 1-dimensional
   subspace of <m>\real^2</m> and is therefore a line.
-  </p></li>
+  </p></task>
 
-  <li><p> What is the relationship between the dimension
-  <m>\dim~\col(A)</m> and the rank <m>\rank(A)</m>? </p></li>
+  <task><p> What is the relationship between the dimension
+  <m>\dim~\col(A)</m> and the rank <m>\rank(A)</m>? </p></task>
 
-  <li><p> What is the relationship between the dimension of the
+  <task><p> What is the relationship between the dimension of the
   column space <m>\col(A)</m> and the null space
-  <m>\nul(A)</m>? </p></li>
+  <m>\nul(A)</m>? </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
 <activity><statement>
 
@@ -512,7 +503,7 @@
 Consider a matrix <m>A</m>.
 Which of the following is equal to the dimension of the null space of <m>A</m>?
         </p>
-<ol label="a">
+<ol label="A">
 <li>
     <p>
     The number of pivot columns
@@ -543,7 +534,7 @@ Which of the following is equal to the dimension of the null space of <m>A</m>?
 Consider a matrix <m>A</m>.
 Which of the following is equal to the dimension of the column space of <m>A</m>?
         </p>
-<ol label="a">
+<ol label="A">
 <li>
     <p>
     The number of pivot columns
@@ -577,7 +568,10 @@ Consider the matrix
     =
   \left[\begin{array}{ccc} 1 &amp; -3 &amp; 2\\ 2 &amp; -6 &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ -1 &amp; 3 &amp; 1 \end{array}\right]
 .</me>
-Verify that the rank-nullity theorem holds for <m>A</m>.
+Verify that if <m>A</m> is an <m>m\times n</m> matrix, then
+    <me>
+      \dim~\nul(A) + \dim~\col(A) = n
+    </me> holds for <m>A</m>. This equation is also known as the Rank-Nullity Theorem.
         </p>
     </statement>
 </activity>

@@ -1,6 +1,6 @@
 <section xml:id="ch3sec3">
 
-<title>Section 3.3</title>
+<title>Image Compression</title>
 
 <p> Suppose that we have a basis
   <m>\bcal=\{\vvec_1,\vvec_2,\ldots,\vvec_m\}</m> for
@@ -16,20 +16,20 @@
     <m>\xvec=c_1\vvec_1+c_2\vvec_2+\ldots+c_m\vvec_m</m>.</p>
 
 <activity>
-      <statement>
+      <introduction>
       <p> Since we will be using various bases and the coordinate
       systems they define, let's review how we translate between
-      coordinate systems.
-      <ol label="a.">
+      coordinate systems.</p></introduction>
+    
 
-  <li><p> If we are given the representation
+  <task><p> If we are given the representation
   <m>\coords{\xvec}{\bcal}</m>, how can we recover the vector
-  <m>\xvec</m>?  </p></li>
+  <m>\xvec</m>?  </p></task>
 
-  <li><p> If we are given the vector <m>\xvec</m>, how can we
-  find <m>\coords{\xvec}{\bcal}</m>? </p></li>
+  <task><p> If we are given the vector <m>\xvec</m>, how can we
+  find <m>\coords{\xvec}{\bcal}</m>? </p></task>
 
-  <li><p> Suppose that
+  <task><p> Suppose that
   <me>
     \bcal=\left\{\twovec{1}{3},\twovec{1}{1}\right\}
   </me> is a basis for <m>\real^2</m>.  If
@@ -39,12 +39,11 @@
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li><p> If <m>\xvec=\twovec{2}{-4}</m>, find
-  <m>\coords{\xvec}{\bcal}</m>. </p></li>
-      </ol></p>
-      </statement>
+  <task><p> If <m>\xvec=\twovec{2}{-4}</m>, find
+  <m>\coords{\xvec}{\bcal}</m>. </p></task>
+     
     <!--<solution>
       <p><ol label="a.">
   <li><p>
@@ -81,8 +80,10 @@
 
 <!--optional-->
 
+<p>Section 3.3 in Understanding Linear Algebra provides some applications of applications of change of basis, including digital color models and image compression.</p>
+
 <activity><statement>
-  <p> Do Acitivity 3.3.2 Color Models in Understanding Linear Algebra</p>
+  <p> Do <url href="https://davidaustinm.github.io/ula/sec-jpeg.html#activity-33" visual="davidaustinm.github.io/ula/sec-jpeg.html#activity-33">Activity 3.3.2 Color models</url> in Understanding Linear Algebra</p>
 </statement></activity>
 
 

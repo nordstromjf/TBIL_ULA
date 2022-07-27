@@ -1,46 +1,45 @@
 <section xml:id="ch4sec3">
 
-<title>Section 4.3</title>
+<title>Diagonalization, similarity, and powers of a matrix</title>
 
 <activity>
-      <statement>
+      <introduction>
       <p> Let's recall how a vector in <m>\real^2</m>  can be
       represented in a coordinate system defined by a basis
-      <m>\bcal=\{\vvec_1, \vvec_2\}</m>.
-      <ol label="a.">
-  <li><p> Suppose that we consider the basis <m>\bcal</m>
+      <m>\bcal=\{\vvec_1, \vvec_2\}</m>.</p>
+     
+  <p> Suppose that we consider the basis <m>\bcal</m>
   defined by 
   <me>
     \vvec_1 = \twovec{1}{1},\qquad
     \vvec_2 = \twovec{-1}{0}
-  </me>.
-  Find the vector <m>\xvec</m> whose representation in the
+  </me>.</p></introduction>
+  <task><p>Find the vector <m>\xvec</m> whose representation in the
   coordinate system defined by <m>\bcal</m> is
-  <m>\coords{\xvec}{\bcal} = \twovec{-3}{2}</m>. </p></li>
+  <m>\coords{\xvec}{\bcal} = \twovec{-3}{2}</m>. </p></task>
 
-  <li><p> Consider the vector <m>\xvec=\twovec{4}{5}</m> and
+  <task><p> Consider the vector <m>\xvec=\twovec{4}{5}</m> and
   find its representation <m>\coords{\xvec}{\bcal}</m> in the
-  coordinate system defined by <m>\bcal</m>. </p></li>
+  coordinate system defined by <m>\bcal</m>. </p></task>
 
-  <li><p> How do we use the matrix
+  <task><p> How do we use the matrix
   <m>C_{\bcal} = \left[\begin{array}{rr} \vvec_1 \amp \vvec_2
   \end{array}\right]</m> to convert a vector's representation
   <m>\coords{\xvec}{\bcal}</m> in the coordinate system defined
   by <m>\bcal</m> into its standard representation <m>\xvec</m>?
   How do we use this matrix to convert <m>\xvec</m> into
-  <m>\coords{\xvec}{\bcal}</m>? </p></li>
+  <m>\coords{\xvec}{\bcal}</m>? </p></task>
 
-  <li><p> Suppose that we have a matrix <m>A</m> whose
+  <task><p> Suppose that we have a matrix <m>A</m> whose
   eigenvectors are <m>\vvec_1</m> and <m>\vvec_2</m> and
   associated eigenvalues are <m>\lambda_1=4</m> and <m>\lambda_2
   = 2</m>.  Express the vector <m>A(-3\vvec_1 +5\vvec_2)</m> as
   a linear combination of <m>\vvec_1</m> and
-  <m>\vvec_2</m>. </p></li>
+  <m>\vvec_2</m>. </p></task>
 
-  <li><p> If <m>\coords{\xvec}{\bcal} = \twovec{-3}{5}</m>, find
-  <m>\coords{A\xvec}{\bcal}</m>. </p></li>
-      </ol></p>
-      </statement>
+  <task><p> If <m>\coords{\xvec}{\bcal} = \twovec{-3}{5}</m>, find
+  <m>\coords{A\xvec}{\bcal}</m>. </p></task>
+      
 
       <!--<solution>
   <p><ol label="a.">
@@ -73,7 +72,7 @@
     </activity>
 
     <activity>
-      <statement>
+      <introduction>
       <p> Once again, we will consider the matrices
       <me>
   A = \left[\begin{array}{rr}
@@ -89,34 +88,34 @@
       <m>\vvec_1=\twovec{1}{1}</m> and <m>\vvec_2=\twovec{-1}{1}</m>
       and eigenvalues <m>\lambda_1=3</m> and <m>\lambda_2=-1</m>.  We
       will consider the basis of <m>\real^2</m> consisting of
-      eigenvectors <m>\bcal= \{\vvec_1, \vvec_2\}</m>. 
-      <ol label="a.">
-  <li><p> If <m>\xvec= 2\vvec_1 - 3\vvec_2</m>, write
+      eigenvectors <m>\bcal= \{\vvec_1, \vvec_2\}</m>. </p></introduction>
+      
+  <task><p> If <m>\xvec= 2\vvec_1 - 3\vvec_2</m>, write
   <m>A\xvec</m> as a linear combination of <m>\vvec_1</m> and
-  <m>\vvec_2</m>. </p></li>
+  <m>\vvec_2</m>. </p></task>
 
-  <li><p> If <m>\coords{\xvec}{\bcal}=\twovec{2}{-3}</m>, find
+  <task><p> If <m>\coords{\xvec}{\bcal}=\twovec{2}{-3}</m>, find
   <m>\coords{A\xvec}{\bcal}</m>, the representation of
   <m>A\xvec</m> in the coordinate system defined by
-  <m>\bcal</m>.  </p></li>
+  <m>\bcal</m>.  </p></task>
 
-  <li><p> If <m>\coords{\xvec}{\bcal}=\twovec{c_1}{c_2}</m>,
+  <task><p> If <m>\coords{\xvec}{\bcal}=\twovec{c_1}{c_2}</m>,
   find <m>\coords{A\xvec}{\bcal}</m>, the representation of
   <m>A\xvec</m> in the coordinate system defined by
-  <m>\bcal</m>.  </p></li>
+  <m>\bcal</m>.  </p></task>
 
-  <li><p> Explain why
+  <task><p> Explain why
   <m>\coords{A\xvec}{\bcal} =
-  D\coords{\xvec}{\bcal}</m>. </p></li>
+  D\coords{\xvec}{\bcal}</m>. </p></task>
 
-  <li><p> Explain why <m>C_{\bcal}^{-1}A\xvec =
+  <task><p> Explain why <m>C_{\bcal}^{-1}A\xvec =
   DC_{\bcal}^{-1}\xvec</m> 
   for all vectors <m>\xvec</m> and hence
   <me>
     C_{\bcal}^{-1}A = DC_{\bcal}^{-1}
-  </me>.  </p></li>
+  </me>.  </p></task>
 
-  <li><p> Explain why <m>A = C_{\bcal}DC_{\bcal}^{-1}</m> and
+  <task><p> Explain why <m>A = C_{\bcal}DC_{\bcal}^{-1}</m> and
   verify this relationship by computing
   <m>C_{\bcal}DC_{\bcal}^{-1}</m> in the Sage cell below. </p>
   <sage>
@@ -127,9 +126,8 @@ C =
 C*D*C.inverse()
     </input>
   </sage>
-  </li>
-      </ol></p>
-      </statement>
+  </task>
+    
 
     <!--  <solution>
   <p><ol label="a.">
@@ -244,7 +242,7 @@ C*D*C.inverse()
   </sage>
     </statement></activity>
 
-    <activity><statement>
+    <activity><introduction>
 
    <p> Suppose that <m>A=PDP^{-1}</m> where
     <me>
@@ -258,15 +256,12 @@ C*D*C.inverse()
       2 \amp 2 \\
       1 \amp -1 \\
       \end{array}\right]
-    </me>.
-    <ol label="a.">
-      <li><p> Explain why <m>A</m> is invertible. </p></li>
-      <li><p> Find a diagonalization of <m>A^{-1}</m>. </p></li>
-      <li><p> Find a diagonalization of <m>A^3</m>. </p></li>
-    </ol></p>
-  
-      
-      </statement>
+    </me>.</p></introduction>
+    
+      <task><p> Explain why <m>A</m> is invertible. </p></task>
+      <task><p> Find a diagonalization of <m>A^{-1}</m>. </p></task>
+      <task><p> Find a diagonalization of <m>A^3</m>. </p></task>
+    
 
    <!--   <solution>
   <p><ol label="a.">
@@ -360,33 +355,31 @@ C*D*C.inverse()
 
     </statement></activity>
 
-  <activity><statement><p>
-    <ol label="a.">
+  <activity>
 
-    <li><p> Suppose that <m>A= PDP^{-1}</m> where
+    <introduction><p> Suppose that <m>A= PDP^{-1}</m> where
     <me>
       D = \left[\begin{array}{rr}
       2 \amp 0 \\
       0 \amp -1 \\
       \end{array}\right]
-    </me>.  Remembering that the columns of <m>P</m> are
+    </me>. </p></introduction>
+    <task><p> Remembering that the columns of <m>P</m> are
     eigenvectors of <m>A</m>,
     explain why <m>A^2</m> is diagonalizable and find a
-    diagonalization of it.</p></li>
+    diagonalization of <m>A^2</m>.</p></task>
 
-    <li><p> Give another explanation of the diagonalizability of
+    <task><p> Give another explanation of the diagonalizability of
     <m>A^2</m> by writing
     <me>
       A^2 = (PDP^{-1})(PDP^{-1}) = PD(P^{-1}P)DP^{-1}
-    </me>. </p></li>
+    </me>. </p></task>
 
-    <li><p> In the same way, find a diagonalization of
-    <m>A^3</m>, <m>A^4</m>, and <m>A^k</m>. </p></li>
+    <task><p> In the same way, find a diagonalization of
+    <m>A^3</m>, <m>A^4</m>, and <m>A^k</m>. </p></task>
 
 
-  </ol>
-      </p>
-      </statement></activity>
+  </activity>
       <activity><statement>
         <p> Suppose that <m>A</m> is a diagonalizable
     <m>2\times2</m> matrix with eigenvalues <m>\lambda_1 =
@@ -437,6 +430,7 @@ C*D*C.inverse()
   </ol></p>
       </solution>-->
     </activity>
+
 <!--optional-->
     <definition>
       <statement>
@@ -448,7 +442,12 @@ C*D*C.inverse()
       </statement>
     </definition>
 
-    <p> In case a matrix <m>A</m> has complex eigenvalues, we will
+    
+
+
+    <activity>
+      <introduction>
+        <p> In case a matrix <m>A</m> has complex eigenvalues, we will
     find a simpler matrix <m>C</m> that is
     similar to <m>A</m>.  In particular, if <m>A</m> has an eigenvalue
     <m>\lambda = a+bi</m>, then <m>A</m> is similar to
@@ -456,15 +455,10 @@ C*D*C.inverse()
     a \amp -b \\
     b \amp a \\
     \end{array}\right]
-    </m>. </p>
-
-
-    <activity>
-      <statement>
-      <p>
-  <ol label="a.">
-    <li><p> We will rewrite <m>C</m> in terms of <m>r</m> and
-    <m>\theta</m>.  Explain why
+    </m>.  We will rewrite <m>C</m> in terms of <m>r</m> and
+    <m>\theta</m>.</p></introduction>
+      
+    <task><p>  Explain why
     <me>
       \left[\begin{array}{rr}
       a \amp -b \\
@@ -485,13 +479,13 @@ C*D*C.inverse()
       \sin\theta \amp \cos\theta \\
       \end{array}\right]
     </me>.
-    </p></li>
+    </p></task>
 
-    <li><p> Explain why <m>C</m> has the geometric effect of
+    <task><p> Explain why <m>C</m> has the geometric effect of
     rotating vectors by <m>\theta</m> and stretching them by a
-    factor of <m>r</m>. </p></li>
+    factor of <m>r</m>. </p></task>
 
-    <li><p> Let's now consider the matrix <m>A</m>:
+    <task><p> Let's now consider the matrix <m>A</m>:
     <me>
       A = \left[\begin{array}{rr}
       -2 \amp 2  \\
@@ -507,9 +501,9 @@ C*D*C.inverse()
     coordinates by identifying the values of <m>r</m> and
     <m>\theta</m>.  Explain the geometric effect of multiplying
     vectors of <m>C</m>. </p>
-    </li>
+    </task>
 
-    <li><p> Suppose that
+    <task><p> Suppose that
     <m>P=\left[\begin{array}{rr}
     1 \amp 1 \\
     2 \amp 1 \\
@@ -523,32 +517,29 @@ P =
 P*C*P.inverse()
     </input>
   </sage>
-  </li>
+  </task>
 
-  <li><p> Explain why <m>A^k = PC^kP^{-1}</m>. </p></li></ol>
-</p></statement></activity>
+  <task><p> Explain why <m>A^k = PC^kP^{-1}</m>. </p></task></activity>
 
-<activity><statement>
+<activity><introduction>
   <p>In the previous activity, we formed the matrix <m>C</m> by choosing the
   eigenvalue <m>\lambda_1=1+i</m>.  Suppose we had instead
-  chosen <m>\lambda_2 = 1-i</m>.
-  <ol label="a.">
+  chosen <m>\lambda_2 = 1-i</m>.</p></introduction>
+  
+  <task><p>   Form the matrix <m>C'</m></p></task>
 
-  <li><p>   Form the matrix <m>C'</m></p></li>
+  <task><p> Use polar coordinates to describe the geometric effect of
+  <m>C'</m>.  </p></task>
 
-  <li><p> Use polar coordinates to describe the geometric effect of
-  <m>C'</m>.  </p></li>
-
-  <li><p> Using the matrix
+  <task><p> Using the matrix
   <m>
     P' = \left[\begin{array}{rr}
     1 \amp -1 \\
     2 \amp -1 \\
     \end{array}\right]
     </m>, show that <m>A = P'C'P'^{-1}</m>.
-  </p></li>
-      </ol></p>
-      </statement>
+  </p></task>
+      
 
      <!-- <solution>
   <p><ol label="a.">

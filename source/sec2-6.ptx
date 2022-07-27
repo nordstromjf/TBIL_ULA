@@ -1,86 +1,84 @@
 <section xml:id="ch2sec6">
-	<title>Section 2.6</title>
+	<title>The geometry of matrix transformations</title>
 	
 
 <activity xml:id="activity-linear-trans-geom">
-      <statement>
-	<p> For this activity, use the applet in Understanding Linear Algebra, Activity 2.6.2.
-	</p>
+      <introduction>
+	<p> For this activity, use the applet in Understanding Linear Algebra, <url href="https://davidaustinm.github.io/ula/sec-transforms-geom.html#activity-linear-trans-geom" visual="davidaustinm.github.io/ula/sec-transforms-geom.html#activity-linear-trans-geom">Activity 2.6.2</url>.</p>
+
 
 	<p>
 	  For the following matrices <m>A</m> given below, use the
 	  diagram to study the effect of the corresponding matrix
 	  transformation <m>T(\xvec) = A\xvec</m>.  For each
 	  transformation, describe the geometric effect of the
-	  transformation on the plane.
-	  <ol label="a.">
-	    <li><p>
+	  transformation on the plane.</p></introduction>
+	  
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      2 \amp 0 \\
 	      0 \amp 1 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      2 \amp 0 \\
 	      0 \amp 2 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      0 \amp -1 \\
 	      1 \amp 0 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      1 \amp 1 \\
 	      0 \amp 1 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      -1 \amp 0 \\
 	      0 \amp 1 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      1 \amp 0 \\
 	      0 \amp 0 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      1 \amp 0 \\
 	      0 \amp 1 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	    <li><p>
+	    <task><p>
 	      The matrix
 	      <m>A=\left[\begin{array}{rr}
 	      1 \amp -1 \\
 	      -2 \amp 2 \\
 	      \end{array}\right]</m>.
-	    </p></li>
+	    </p></task>
 
-	  </ol>
-	</p>
-      </statement>
+
 
       <!--<solution>
 	<p><ol label="a.">
@@ -119,51 +117,64 @@
 	</ol></p>
       </solution>-->
 
-    </activity>
+    </activity> 
 
     <activity>
-      <statement>
-      <p> In this activity, we seek to describe various matrix
+      <introduction>
+      <p> In this activity, we seek to describe some matrix
       transformations by finding the matrix that gives the desired
       transformation.  All of the transformations that we study here
-      have the form <m>T:\real^2\to\real^2</m>.
-      <ol label="a.">
-	<li><p> Find the matrix of the transformation that has no
+      have the form <m>T:\real^2\to\real^2</m>.</p></introduction>
+      
+	<task><p> Find the matrix of the transformation that has no
 	effect on vectors;  that is, <m>T(\xvec) = \xvec</m>.  We call
 	this matrix the <em>identity</em> and denote it by
-	<m>I</m>. </p></li>
+	<m>I</m>. </p></task>
 
-	<li><p> Find the matrix of the transformation that reflects
-	vectors in <m>\real^2</m> over the line <m>y=x</m>. </p></li>
+	<task><p> Find the matrix of the transformation that reflects
+	vectors in <m>\real^2</m> over the line <m>y=x</m>. </p></task>
 
-	<li><p> What is the result of composing the reflection you
+	<task><p> What is the result of composing the reflection you
 	found in the previous part with itself;  that is, what is the
 	effect of reflecting in the line <m>y=x</m> and then
 	reflecting in this line again?  Provide a geometric
 	explanation for your result as well as an algebraic one
-	obtained by multiplying matrices. </p></li>
+	obtained by multiplying matrices. </p></task>
 
-	<li><p> Find the matrix that rotates vectors
-	counterclockwise in the plane by <m>90^\circ</m>. </p></li>
+</activity>
 
-	<li><p> Compare the result of rotating by <m>90^\circ</m> and
+ <activity>
+      <introduction>
+      <p> As above, we can describe various matrix
+      transformations by finding the matrix that gives the desired
+      transformation.  All of the transformations that we study here
+      have the form <m>T:\real^2\to\real^2</m>.</p></introduction>
+
+	<task><p> Find the matrix that rotates vectors
+	counterclockwise in the plane by <m>90^\circ</m>. </p></task>
+
+	<task><p> Compare the result of rotating by <m>90^\circ</m> and
 	then 
 	reflecting in the line <m>y=x</m> to the result of first
 	reflecting in <m>y=x</m> and then rotating
-	<m>90^\circ</m>. </p></li>
+	<m>90^\circ</m>. </p></task>
 
-	<li><p> Find the matrix that results from composing a
+	<task><p> Find the matrix that results from composing a
 	<m>90^\circ</m> rotation with itself.  Explain the geometric
-	meaning of this operation.</p></li>
+	meaning of this operation.</p></task>
 
-	<li><p> Find the matrix that results from composing a
+	<task><p> Find the matrix that results from composing a
 	<m>90^\circ</m> rotation with itself four times; that is, if
 	<m>T</m> is the matrix transformation that rotates vectors by
 	<m>90^\circ</m>, find the matrix for <m>T\circ T\circ T \circ
 	T</m>.  Explain why 
-	your result makes sense geometrically. </p></li>
+	your result makes sense geometrically. </p></task>
 
-	<li><p> Explain why the matrix that rotates vectors
+</activity>
+
+<activity>
+
+	<statement><p> Explain why the matrix that rotates vectors
 	counterclockwise by an angle <m>\theta</m> is
 	<me>
 	  \left[\begin{array}{rr}
@@ -171,8 +182,7 @@
 	  \sin\theta \amp \cos\theta \\
 	  \end{array}\right]
 	</me>.
-	</p></li>
-      </ol></p>
+	</p>
       </statement>
 
       <!--<solution>
@@ -291,7 +301,9 @@
     </activity>
 
     <activity><statement>
-    	<p>For this last activity, do Activity 2.6.4 in the Understanding Linear Algebra.</p>
+    	<p>For this last activity, do <url href="Activity 2.6.4 
+https://davidaustinm.github.io/ula/sec-transforms-geom.html#activity-26" visual="Activity 2.6.4 
+davidaustinm.github.io/ula/sec-transforms-geom.html#activity-26">Activity 2.6.4</url> in Understanding Linear Algebra.</p>
     </statement></activity>
 
 

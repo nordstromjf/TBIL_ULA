@@ -1,5 +1,5 @@
 <section xml:id="ch2sec5">
-	<title>Section 2.5</title>
+	<title>Matrix transformations</title>
 	<!--<activity>
       <statement>
       <p> We will begin by considering a more familiar situation;
@@ -101,7 +101,7 @@
 <p> In the first several activities, we will look at some examples of matrix
 		transformations. </p>
      <activity>
-		<statement>
+		<introduction>
 		
 	  <p>
 	    Suppose that <m>A</m> is the matrix
@@ -126,23 +126,22 @@
 	    <m>\twovec{-2}{3}</m> as 
 	    an input and gives us <m>\twovec{-1}{4}</m> as the
 	    output.
-	    </p>
+	    </p></introduction>
 
-	    <p> <ol label="a.">
-	      <li><p>What is <m>T\left(\twovec{1}{-2}\right)</m>?</p></li>
+	   
+	      <task><p>What is <m>T\left(\twovec{1}{-2}\right)</m>?</p></task>
 
-	      <li><p>What is <m>T\left(\twovec{1}{0}\right)</m>?</p></li>
+	      <task><p>What is <m>T\left(\twovec{1}{0}\right)</m>?</p></task>
 
-	      <li><p>What is
-	      <m>T\left(\twovec{0}{1}\right)</m>?</p></li>
+	      <task><p>What is
+	      <m>T\left(\twovec{0}{1}\right)</m>?</p></task>
 
-	      <li><p> Is there a vector <m>\xvec</m> such that
-	      <m>T(\xvec) = \twovec{3}{0}</m>? </p></li>
-	    </ol></p>
-	  </statement></activity>
+	      <task><p> Is there a vector <m>\xvec</m> such that
+	      <m>T(\xvec) = \twovec{3}{0}</m>? </p></task>
+	    </activity>
 
 	  <activity>
-	  	<statement>
+	  	<introduction>
 
 	    <p> Suppose that <m>T(\xvec) = A\xvec</m> where
 	    <me>
@@ -151,17 +150,17 @@
 	      0 \amp 2 \amp 1 \amp -3 \\
 	      -2 \amp 1 \amp 4 \amp -4
 	      \end{array}\right]
-	    </me>.
-	    <ol label="a.">  
-	      <li><p> What is the dimension of the vectors
-	      <m>\xvec</m> that are inputs for <m>T</m>?  </p></li>
+	    </me>.</p></introduction>
+	     
+	      <task><p> What is the dimension of the vectors
+	      <m>\xvec</m> that are inputs for <m>T</m>?  </p></task>
 
-	      <li><p> What is the dimension of the vectors
-	      <m>T(\xvec)=A\xvec</m> that are outputs? </p></li>
+	      <task><p> What is the dimension of the vectors
+	      <m>T(\xvec)=A\xvec</m> that are outputs? </p></task>
 
-	      <li><p> Describe the vectors <m>\xvec</m> for which
-	      <m>T(\xvec) = \zerovec</m>. </p></li>
-	    </ol></p></statement></activity>
+	      <task><p> Describe the vectors <m>\xvec</m> for which
+	      <m>T(\xvec) = \zerovec</m>. </p></task>
+	   </activity>
 
 	    <activity><statement>
 
@@ -270,7 +269,7 @@ and
 </m>.
 What is <m>T\left(\left[\begin{array}{c} 1 \\ 0 \\ 1 \end{array}\right]\right)</m>?
         </p>
-<ol label="a">
+<ol label="A">
 <li>
     <p>
     <m>\left[\begin{array}{c} 2 \\ 1\end{array}\right]</m>
@@ -312,7 +311,7 @@ and
 </m>.
 What piece of information would help you compute <m>T\left(\left[\begin{array}{c}0\\4\\-1\end{array}\right]\right)</m>?
         </p>
-<ol label="a">
+<ol label="A">
 <li>
     <p>
     The value of <m>T\left(\left[\begin{array}{c} 0\\-4\\0\end{array}\right]\right)</m>.
@@ -342,23 +341,23 @@ What piece of information would help you compute <m>T\left(\left[\begin{array}{c
         <p>
   Let <m>T: \IR^4 \rightarrow \IR^3</m> be the linear transformation given by
   <me>
-    T\left(\vec e_1 \right)
+    T\left(\evec_1 \right)
   =
     \left[\begin{array}{c} 0 \\ 3 \\ -2\end{array}\right]
   \hspace{2em}
-    T\left(\vec e_2 \right)
+    T\left(\evec_2 \right)
   =
     \left[\begin{array}{c} -3 \\ 0 \\ 1\end{array}\right]
   \hspace{2em}
-    T\left(\vec e_3 \right)
+    T\left(\evec_3 \right)
   =
     \left[\begin{array}{c} 4 \\ -2 \\ 1\end{array}\right]
   \hspace{2em}
-    T\left(\vec e_4 \right)
+    T\left(\evec_4 \right)
   =
     \left[\begin{array}{c} 2 \\ 0 \\ 0\end{array}\right]
   </me>
-Write the matrix <m>[T(\vec e_1) \,\cdots\, T(\vec e_n)]</m> for <m>T</m>. The matrix <m>A</m> is called the <emph>standard matrix</emph> for the transformation <m>T</m>.
+Write the matrix <m>[T(\evec_1) \,\cdots\, T(\evec_n)]</m> for <m>T</m>. The matrix <m>A</m> is called the <emph>standard matrix</emph> for the transformation <m>T</m>.
         </p>
     </statement>
 </activity>
@@ -372,7 +371,7 @@ Write the matrix <m>[T(\vec e_1) \,\cdots\, T(\vec e_n)]</m> for <m>T</m>. The m
     </introduction>
 <task>
     <p>
-Compute <m>T(\vec e_1)</m>, <m>T(\vec e_2)</m>, and <m>T(\vec e_3)</m>.
+Compute <m>T(\evec_1)</m>, <m>T(\evec_2)</m>, and <m>T(\evec_3)</m>.
     </p>
 </task>
 <task>
@@ -383,10 +382,13 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 </task>
 </activity>
 
-<p>Now we will look at some applications of matrix transformations.</p>
+<subsection xml:id="lintrasapplications">
+	<title>Applications of matrix transformations</title>
+
+<!--<p>Now we will look at some applications of matrix transformations.</p>-->
 
        <activity>
-	<statement>
+	<introduction>
 	<p> Suppose that we work for a company that produces baked
 	goods, including cakes, donuts, and eclairs.  Our company
 	operates two plants, Plant 1 and Plant 2.  In
@@ -397,15 +399,15 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 
 	  <li><p> Plant 2 produces 20 cakes, 30 donuts, and
 	  30 eclairs. </p></li>
-	</ul>
+	</ul></p></introduction>
 
-	<ol label="a.">
-	  <li><p> If plant 1 operates for <m>x_1</m> hours and Plant 2
+	
+	  <task><p> If plant 1 operates for <m>x_1</m> hours and Plant 2
 	  for <m>x_2</m> hours, how many cakes
 	  <m>C</m> does the company produce?  How many donuts
-	  <m>D</m>?  How many eclairs <m>E</m>?  </p></li>
+	  <m>D</m>?  How many eclairs <m>E</m>?  </p></task>
 
-	  <p> We combine the number of hours the two plants operate
+	  <task><p> We combine the number of hours the two plants operate
 	  into a vector
 	  <m>\xvec=\twovec{x_1}{x_2}</m>.  Likewise, we use a vector
 	  <m>\threevec{C}{D}{E}</m> to denote the number 
@@ -413,34 +415,32 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 	  company produces. 
 	  </p>
 
-	  <li><p> We define a matrix transformation <m>T(\xvec) =
+	  <p> Now define a matrix transformation <m>T(\xvec) =
 	  \threevec{C}{D}{E}</m> where <m>\threevec{C}{D}{E}</m>
 	  represents the number of baked goods produced when the
 	  plants are operated for times
 	  <m>\xvec=\twovec{x_1}{x_2}</m>.  If <m>T(\xvec) 
 	  = A\xvec</m>, what are the dimensions of the matrix
-	  <m>A</m>? </p></li>
+	  <m>A</m>? </p></task>
 
-	  <li><p> Find the vector
+	  <task><p> Find the vector
 	  <m>T\left(\twovec{1}{0}\right)</m> and the vector 
 	  <m>T\left(\twovec{0}{1}\right)</m> and use your results to
-	  write the matrix <m>A</m>.  </p></li>
+	  write the matrix <m>A</m>.  </p></task>
 
-	  <li><p> If we operate Plant 1 for 40 hours and Plant 2 for
-	  50 hours, how many baked goods have we produced? </p></li>
+	  <task><p> If we operate Plant 1 for 40 hours and Plant 2 for
+	  50 hours, how many baked goods have we produced? </p></task>
 	
-	  <li><p> Suppose the marketing department says we need to
+	  <task><p> Suppose the marketing department says we need to
 	  produce 1500 cakes, 4700 donuts, and 3300 eclairs.
 	  Is it possible to meet this order?  If so, how long should
-	  the two plants operate? </p></li>
+	  the two plants operate? </p></task>
 
-	  </ol></p></statement></activity>
+	  </activity>
 
-	<activity><statement>
+	<activity><introduction>
 		<p>Continue with the same baked good producing plants from the previous activity.
-		<ol label="a.">
-
-	  <li><p> Let's now consider the needed ingredients:
+	  Consider the needed ingredients:
 	  <ul>
 	    <li><p> Each cake requires 4 units of flour and
 	    and 2 units of sugar. </p></li>
@@ -450,29 +450,28 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 
 	    <li><p> Each eclair requires 1 units of flour and 2 units
 	    of sugar. </p></li>
-	  </ul></p>
+	  </ul></p></introduction>
 
-	  <p> Suppose we make <m>C</m> cakes, <m>D</m> donuts, and
+	  <task><p> Suppose we make <m>C</m> cakes, <m>D</m> donuts, and
 	  <m>E</m> eclairs.  How many units of flour <m>F</m> are
-	  required? How many units of sugar <m>S</m>? </p></li>
+	  required? How many units of sugar <m>S</m>? </p></task>
 
-	  <li><p> Write a matrix <m>B</m> that defines the matrix
+	  <task><p> Write a matrix <m>B</m> that defines the matrix
 	  transformation <m>R\left(\threevec{C}{D}{E}\right) =
-	  \twovec{F}{S}</m>. </p></li>
+	  \twovec{F}{S}</m>. </p></task>
 
-	  <li><p> If Plant 1 operates for 30 hours and Plant 2
+	  <task><p> If Plant 1 operates for 30 hours and Plant 2
 	  operates for 20 
 	  hours, how many units of flour and sugar are required?
-	  </p></li>
+	  </p></task>
 
-	  <li><p> We can consider the matrix transformation
+	  <task><p> We can consider the matrix transformation
 	  <m>P(\xvec) = \twovec{F}{S}</m> that tells us how many units
 	  of flour and sugar are required when we operate the plants for
 	  <m>x_1</m> and <m>x_2</m> hours.  Find the matrix that
-	  defines the transformation <m>P</m>. </p></li>
+	  defines the transformation <m>P</m>. </p></task>
 	    
-	</ol></p>
-	</statement>
+
 
 	<!--<solution>
 	  <p><ol label="a.">
@@ -556,7 +555,7 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
       </activity>
 
       <activity>
-	<statement>
+	<introduction>
 	<p> Suppose we run a company that has two warehouses, which we
 	will call
 	<m>P</m> and <m>Q</m>, and a fleet of 1000 delivery trucks.
@@ -564,11 +563,11 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 	warehouses and returns every evening to one of the
 	warehouses.  Every evening,
 	<ul>
-	  <li><p> 70<percent /> of the trucks that leave <m>P</m> return to
-	  <m>P</m>.  The other 30<percent /> return to <m>Q</m>. </p></li>
+	  <li><p> 70% of the trucks that leave <m>P</m> return to
+	  <m>P</m>.  The other 30% return to <m>Q</m>. </p></li>
 
-	  <li><p> 50<percent /> of the trucks that leave <m>Q</m> return to
-	  <m>Q</m> and 50<percent /> return to <m>P</m>. </p></li>
+	  <li><p> 50% of the trucks that leave <m>Q</m> return to
+	  <m>Q</m> and 50% return to <m>P</m>. </p></li>
 
 	</ul></p>
 
@@ -577,15 +576,10 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 	<m>Q</m> in the morning.  We consider the matrix
 	transformation <m>T(\xvec) = \twovec{P'}{Q'}</m> that
 	describes the number of trucks at location <m>P</m> and
-	<m>Q</m> in the evening.
+	<m>Q</m> in the evening.</p></introduction>
 
-	<sage>
-	  <input>
-	  </input>
-	</sage>
-
-	<ol label="a.">
-	  <li><p> Suppose that all 1000 trucks begin the day at
+	
+	  <task><p> Suppose that all 1000 trucks begin the day at
 	  location <m>P</m> and none at <m>Q</m>.  How many trucks
 	  are at each location at the end of the day? 
 	  Therefore, what is the vector
@@ -593,65 +587,70 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
 
 	  <p> Using this result, what is
 	  <m>T\left(\twovec{1}{0}\right)</m>?
-	  </p></li>
+	  </p></task>
 
-	  <li><p> In the same way, suppose that all 1000 trucks begin
+	  <task><p> In the same way, suppose that all 1000 trucks begin
 	  the day at location <m>Q</m> and none at <m>P</m>.  How many
 	  trucks are at each location at the end of the day?
 	  What is the result <m>T\left(\ctwovec{0}{1000}\right)</m>?
-	  </p></li>
+	  </p></task>
 
-	  <li><p> Find the matrix <m>A</m> such that <m>T(\xvec) =
-	  A\xvec</m>.  </p></li>
+	  <task><p> Find the matrix <m>A</m> such that <m>T(\xvec) =
+	  A\xvec</m>.  </p></task>
 
-	  <li><p> Suppose that there are 100 trucks at <m>P</m> and
+	  <task><p> Suppose that there are 100 trucks at <m>P</m> and
 	  900 at <m>Q</m> at the beginning of the day.  How many are
-	  there at the two locations at the end of the day? </p></li>
+	  there at the two locations at the end of the day? 
 
-	  <li><p> Suppose that there are 550 trucks at <m>P</m> and
+	  	<sage>
+	  <input>
+	  </input>
+	</sage>
+	</p></task>
+
+	  <task><p> Suppose that there are 550 trucks at <m>P</m> and
 	  450 at <m>Q</m> at the end of the day.  How many trucks were
-	  there at the two locations at the beginning of the day? </p></li>
+	  there at the two locations at the beginning of the day? </p></task>
 
-	  </ol></p></statement></activity>
+	  </activity>
 
-	<activity><statement>
+	<activity><introduction>
 		<p>Continue with the same trucking company from the previous activity.</p>
 		
 
 	  <p> Suppose that all of the trucks are at location
-	  <m>Q</m> on Monday morning.
-	  <ol label="a.">
-	    <li><p> How many trucks are at each location Monday
-	    evening? </p></li>
+	  <m>Q</m> on Monday morning.</p></introduction>
+	  
+	    <task><p> How many trucks are at each location Monday
+	    evening? </p></task>
 
-	    <li><p> How many trucks are at each location Tuesday
-	    evening?  </p></li>
+	    <task><p> How many trucks are at each location Tuesday
+	    evening?  </p></task>
 
-	    <li><p> How many trucks are at each location Wednesday
-	    evening? </p></li>
-	  </ol>
-	  </p></statement></activity>
+	    <task><p> How many trucks are at each location Wednesday
+	    evening? </p></task>
+	  </activity>
 
-	<activity><statement>
-		<p>Continue with the same trucking company from the previous two activities.
-		<ol label="a.">
+	<activity><introduction>
+		<p>Continue with the same trucking company from the previous two activities.</p></introduction>
+		
 
-	  <li><p> Suppose that <m>S</m> is the matrix transformation
+	  <task><p> Suppose that <m>S</m> is the matrix transformation
 	  that transforms the distribution of trucks <m>\xvec</m> one
 	  morning into the distribution of trucks two mornings later.
 	  What is the matrix that defines the transformation <m>S</m>?
-	  </p></li>
+	  </p></task>
 
-	  <li><p> Suppose that <m>R</m> is the matrix transformation
+	  <task><p> Suppose that <m>R</m> is the matrix transformation
 	  that transforms the distribution of trucks <m>\xvec</m> one
 	  morning into the distribution of trucks one week later.
 	  What is the matrix that defines the transformation <m>R</m>?
-	  </p></li>
+	  </p></task>
 
-	  <li><p> What happens to the distribution of trucks after a
+	  <task><p> What happens to the distribution of trucks after a
 	  very long time? 
 
-<ol label="a">
+<ol label="A">
 <li>
     <p>
     All the trucks end up at location <m>P</m>.
@@ -673,16 +672,15 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
     </p>
 </li>
 </ol>
-	</p></li>
+	</p></task>
 
-	</ol></p>
-	</statement>
+	
 
 	<!--<solution>
 	  <p><ol label="a.">
 	    <li><p> If 1000 trucks begin at <m>P</m>, that evening we
-	    find that 70<percent /> of them are at <m>P</m> with the
-	    remaining 30<percent /> at <m>Q</m>.  Therefore,
+	    find that 70% of them are at <m>P</m> with the
+	    remaining 30% at <m>Q</m>.  Therefore,
 	    <m>T\left(\twovec{1000}{0}\right) =
 	    \twovec{700}{300}</m>.  Since
 	    <m>T\left(\twovec{1000}{0}\right) =
@@ -763,5 +761,5 @@ Find the standard matrix for <m>T</m>, so that <m>T(\xvec) =
       </activity>
 
 
-
+</subsection>
 </section>

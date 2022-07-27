@@ -1,9 +1,9 @@
 <section xml:id="ch4sec4">
 
-<title>Section 4.4</title>
+<title>Dynamical Systems</title>
 
 <activity>
-      <statement>
+      <introduction>
       <p> Suppose that we have a diagonalizable matrix
       <m>A=PDP^{-1}</m> where
       <me>
@@ -15,32 +15,31 @@
   2 \amp 0 \\
   0 \amp -3 \\
   \end{array}\right]
-      </me>.
-      <ol label="a.">
-  <li><p> Find the eigenvalues of <m>A</m> and find a basis for
-  the associated eigenspaces. </p></li>
+      </me>.</p></introduction>
+      
+  <task><p> Find the eigenvalues of <m>A</m> and find a basis for
+  the associated eigenspaces. </p></task>
 
-  <li><p> Form a basis <m>\bcal</m> of <m>\real^2</m> consisting
+  <task><p> Form a basis <m>\bcal</m> of <m>\real^2</m> consisting
   of eigenvectors 
   of <m>A</m> and write the vector <m>\xvec = \twovec{1}{4}</m>
-  as a linear combination of basis vectors. </p></li>
+  as a linear combination of basis vectors. </p></task>
 
-  <li><p> Write <m>A\xvec</m> as a linear combination of basis
-  vectors. </p></li>
+  <task><p> Write <m>A\xvec</m> as a linear combination of basis
+  vectors. </p></task>
 
-  <li><p> What is <m>\coords{\xvec}{\bcal}</m>, the
+  <task><p> What is <m>\coords{\xvec}{\bcal}</m>, the
   representation of <m>\xvec</m> in the coordinate system
-  defined by <m>\bcal</m>? </p></li>
+  defined by <m>\bcal</m>? </p></task>
 
-  <li><p> What is <m>\coords{A\xvec}{\bcal}</m>, the
+  <task><p> What is <m>\coords{A\xvec}{\bcal}</m>, the
   representation of <m>A\xvec</m> in the coordinate system
-  defined by <m>\bcal</m>? </p></li>
+  defined by <m>\bcal</m>? </p></task>
 
-  <li><p> What is <m>\coords{A^4\xvec}{\bcal}</m>, the
+  <task><p> What is <m>\coords{A^4\xvec}{\bcal}</m>, the
   representation of <m>A^4\xvec</m> in the coordinate system
-  defined by <m>\bcal</m>? </p></li>
-      </ol></p>
-      </statement>
+  defined by <m>\bcal</m>? </p></task>
+     
 
   <!--    <solution>
   <p><ol label="a.">
@@ -80,7 +79,7 @@
     </activity>
 
     <activity>
-      <statement>
+      <introduction>
       <p> Suppose we have two species <m>R</m> and <m>S</m> that
       interact with one another and that we record the change in their
       populations from year to year.  When we begin our study, the
@@ -103,30 +102,30 @@
       0.9 \amp 0.8 \\
       0.2 \amp 0.9 \\
       \end{array}\right]
-      </m>.
-      <ol label="a.">
-  <li><p> Verify that
+      </m>.</p></introduction>
+      
+  <task><p> Verify that
   <me>
     \vvec_1=\twovec{2}{1},\qquad
     \vvec_2=\twovec{-2}{1}
   </me>
   are eigenvectors of <m>A</m> and find their respective
-  eigenvalues. </p></li>
+  eigenvalues. </p></task>
 
-  <li><p> Suppose that initially <m>\xvec_0 = \twovec{2}{3}</m>.
+  <task><p> Suppose that initially <m>\xvec_0 = \twovec{2}{3}</m>.
   Write 
   <m>\xvec_0</m> as a linear combination of the eigenvectors
-  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></task>
 
-  <li><p> Write the vectors <m>\xvec_1</m>, <m>\xvec_2</m>, and
+  <task><p> Write the vectors <m>\xvec_1</m>, <m>\xvec_2</m>, and
   <m>\xvec_3</m> as a linear combination of eigenvectors
-  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></li>
+  <m>\vvec_1</m> and <m>\vvec_2</m>.  </p></task>
 
-  <li><p> When <m>k</m> becomes very large, what happens to the
-  ratio of the populations <m>R_k/S_k</m>?  </p></li>
-</ol></p></statement></activity>
+  <task><p> When <m>k</m> becomes very large, what happens to the
+  ratio of the populations <m>R_k/S_k</m>?  </p></task>
+</activity>
 
-<activity><statement>
+<activity><introduction>
   <p>We will contnue to use the population model from the previous problem:
   <me>
   \begin{aligned}
@@ -141,23 +140,21 @@
       0.9 \amp 0.8 \\
       0.2 \amp 0.9 \\
       \end{array}\right]
-      </m>.
-      <ol label="a.">
-
-  <li><p> Begin instead with <m>\xvec_0 =
+      </m>.</p></introduction>
+      
+  <task><p> Begin instead with <m>\xvec_0 =
   \twovec{4}{4}</m>. What eventually happens to the ratio
-  <m>R_k/S_k</m> as <m>k</m> becomes very large? </p></li>
+  <m>R_k/S_k</m> as <m>k</m> becomes very large? </p></task>
 
-  <li><p> Explain what happens to the ratio <m>R_k/S_k</m> as
+  <task><p> Explain what happens to the ratio <m>R_k/S_k</m> as
   <m>k</m> becomes very large no matter what the initial
-  populations are. </p></li>
+  populations are. </p></task>
 
-  <li><p> After a very long time, by approximately what factor does
+  <task><p> After a very long time, by approximately what factor does
   the population of <m>R</m> grow every year?  By approximately
   what factor does the population of <m>S</m> grow every year?
-  </p></li> 
-      </ol></p>
-      </statement>
+  </p></task> 
+      
 
       <!--<solution>
   <p><ol label="a.">
@@ -209,7 +206,7 @@
 
     <li><p> We see that <m>\xvec_{k+1}\approx 1.3\xvec_k</m> so
     that the populations both grow by a factor of approximately
-    1.3, which is a 30<percent /> growth rate. </p></li>
+    1.3, which is a 30% growth rate. </p></li>
   </ol></p>
       </solution>-->
     </activity>
@@ -223,22 +220,42 @@
   \xvec_{k+1}=A\xvec_k
       </me>.</p>
 
+      <p>Based on the eigenvalues of the <m>2\times2</m> matrix defining a dynamical system of the form <m>\xvec_{k+1}=A\xvec_k</m>, we can classify the system as follows:
+      <ul>
+      <li><p> <m>|\lambda_1|, |\lambda_2| \lt 1</m> produces an
+      <term>attractor</term> so that trajectories are pulled in toward the
+      origin. </p></li>
+
+      <li><p> <m>|\lambda_1| \gt 1</m> and <m>|\lambda_2| \lt 1</m>
+      produces a <term>saddle</term> in which most trajectories are pushed away
+      from the origin and in the direction of
+      <m>E_{\lambda_1}</m>. </p></li>
+
+      <li><p> <m>|\lambda_1|, |\lambda_2| \gt 1</m> produces a
+      <term>repellor</term> in which trajectories are pushed away from the
+      origin. </p></li>
+    </ul>
+
+    </p>
+
     <activity>
-      <statement>
+      <introduction>
     <p> Suppose that
     <m> A = \left[\begin{array}{rr}
     0.7 \amp 0 \\
     0 \amp 1.6 \\
     \end{array}\right]
     </m>.
-    </p>
+    </p></introduction>
 
-    <p> Explain why the species do not interact with one
-    another.  Which of the six types of dynamical systems do we
-    have?  What happens to both species after a long time?</p>
-  </statement></activity>
+    <task><p> Explain why the species do not interact with one
+    another.</p></task>
+    <task><p> Which of the six types of dynamical systems do we
+    have?</p></task>
+    <task><p>What happens to both species after a long time?</p></task>
+  </activity>
 
-  <activity><statement>
+  <activity><introduction>
 
     <p> Suppose now that
     <m> A = \left[\begin{array}{rr}
@@ -246,14 +263,15 @@
     0 \amp 1.6 \\
     \end{array}\right]
     </m>.
-    </p>
+    </p></introduction>
 
-    <p> Explain why <m>S</m> is a beneficial species for <m>R</m>.
-    Which of the six types of dynamical systems do we
-    have?  What happens to both species after a long time?</p>
-  </statement></activity>
+    <task><p> Explain why <m>S</m> is a beneficial species for <m>R</m>.</p></task>
+    <task><p> Which of the six types of dynamical systems do we
+    have?</p></task>
+    <task><p> What happens to both species after a long time?</p></task>
+  </activity>
 
-  <activity><statement>
+  <activity><introduction>
 
     <p> Suppose now that
     <m> A = \left[\begin{array}{rr}
@@ -261,15 +279,16 @@
     -0.4 \amp 1.6 \\
     \end{array}\right]
     </m>.
-    </p>
+    </p></introduction>
 
-    <p> Explain why this describes a predator-prey system.
-    Which of the species is the predator and which is the prey?
-    Which of the six types of dynamical systems do we
-    have?  What happens to both species after a long time?</p>
-</statement></activity>
+    <task><p> Explain why this describes a predator-prey system.
+    Which of the species is the predator and which is the prey?</p></task>
+    <task><p>Which of the six types of dynamical systems do we
+    have?</p></task>
+    <task><p>  What happens to both species after a long time?</p></task>
+</activity>
 
-  <activity><statement>
+  <activity><introduction>
 
     <p> Suppose now that
     <m> A = \left[\begin{array}{rr}
@@ -277,14 +296,16 @@
     -0.4 \amp 1.1 \\
     \end{array}\right]
     </m>.
-    </p>
+    </p></introduction>
 
-    <p> Compare this predator-prey system to the one in the
-    previous part.  Which of the six types of dynamical systems
-    do we have?  What happens to both species after a long
-    time?</p>
+    <task><p> Compare this predator-prey system to the one in the
+    previous activity.</p></task>  
+    <task><p> Which of the six types of dynamical systems
+    do we have? </p></task>
+    <task><p> What happens to both species after a long
+    time?</p></task>
 
-</statement>
+
 
   
 
@@ -371,7 +392,7 @@
     </activity>
 
     <activity>
-      <statement>
+      <introduction>
       <p> The following type of analysis has been used to study the
       population of a bison herd.  We will divide the population of
       female bison into three groups: juveniles who are less than one
@@ -381,15 +402,15 @@
       <sidebyside widths="50% 45%">
   <p> Each year,
   <ul>
-    <li><p> 80<percent /> of the juveniles survive to become
+    <li><p> 80% of the juveniles survive to become
     yearlings. </p></li>
 
-    <li><p> 90<percent /> of the yearlings survive to become
+    <li><p> 90% of the yearlings survive to become
     adults. </p></li>
 
-    <li><p> 80<percent /> of the adults survive. </p></li>
+    <li><p> 80% of the adults survive. </p></li>
 
-    <li><p> 40<percent /> of the adults give birth to a juvenile.</p></li> 
+    <li><p> 40% of the adults give birth to a juvenile.</p></li> 
   </ul></p>
   
   <image source="eigen-3d-species.svg" />
@@ -400,19 +421,26 @@
       have
       <me>
   J_{k+1} = 0.4 A_k
-      </me>.
-      <ol label="a.">
-  <li><p> Find similar expressions for <m>Y_{k+1}</m> and
+      </me>.</p></introduction>
+     
+  <task><p> Find similar expressions for <m>Y_{k+1}</m> and
   <m>A_{k+1}</m> in terms of <m>J_k</m>, <m>Y_k</m>, and
-  <m>A_k</m>.  </p></li>
+  <m>A_k</m>.  </p></task>
 
-  <li><p> As is usual, we write the matrix
+  <task><p> As is usual, we write the matrix
   <m>\xvec_k=\threevec{J_k}{Y_k}{A_k}</m>.  Write the matrix
   <m>A</m> such that
   <m>\xvec_{k+1} = A\xvec_k</m>.
-  </p></li>
+  </p></task>
 
-  <li><p> We can write <m>A = PEP^{-1}</m> where the matrices
+  <task><p>Find the eigenvalues of <m>A</m>.</p></task>
+
+  <task><p>What does the size of the complex eigenvalue tell you about its effect on the long-term behavior of the system?</p></task>
+
+</activity>
+<activity><introduction><p>Use the same model for the herd as the previous activity.</p>
+
+  <p> We can write <m>A = PEP^{-1}</m> where the matrices
   <m>E</m> and <m>P</m> are approximately:
   <me>
     \begin{aligned}
@@ -427,41 +455,42 @@
     2.644 \amp -0.322 \amp  -1.264 \\
     \end{array}\right]\text{.}
     \end{aligned}
-  </me>
-  Make a prediction about the long-term behavior of
-  <m>\xvec_k</m>.  For instance, at what rate does it grow?</p></li>
-  <li><p>  For
+  </me></p></introduction>
+
+  <task><p>Use this information to give an eigenvector associated with the real eigenvalue.</p></task>
+
+  <task><p>Make a prediction about the long-term behavior of
+  <m>\xvec_k</m>.  For instance, at what rate does it grow?</p></task>
+  <task><p>  For
   every 100 adults, how many juveniles, and yearlings are there?
-  </p></li>
-</ol></p></statement></activity>
+  </p></task>>
+</activity>
 
-<activity><statement><p>
-  <ol label="a.">
-
-  <li><p> Use the same model for the bison herd as the previous activity, but 
-  suppose that the birth rate decreases so that only 30<percent />
-  of adults give birth to a juvenile.  How does this affect the
+<activity><introduction><p>
+  Use the same model for the bison herd as the previous activities, but 
+  suppose that the birth rate decreases so that only 30%
+  of adults give birth to a juvenile.</p></introduction>
+  <task><p>  How does this affect the
   long-term growth rate of the herd?
   <sage>
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li><p> Suppose that the birth rate decreases further so that
-  only 20<percent /> of adults give birth to a juvenile.  How does this affect the
+  <task><p> Suppose that the birth rate decreases further so that
+  only 20% of adults give birth to a juvenile.  How does this affect the
   long-term growth rate of the herd?
   <sage>
     <input>
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
-  <li><p> Find the smallest birth rate that supports a stable
-  population. </p></li>
+  <task><p> Find the smallest birth rate that supports a stable
+  population. </p></task>
 
-      </ol></p>
-      </statement>
+      
 
    <!--   <solution>
   <p><ol label="a.">
@@ -491,18 +520,18 @@
     the eigenvector <m>\vvec_1</m>.  After a long
     time, the population is <m>\xvec_k\approx
     c_1(1.058)^k\vvec_1</m>.  All the populations grow annually
-    by a factor of <m>1.058</m> or 5.8<percent />, and there are
+    by a factor of <m>1.058</m> or 5.8%, and there are
     approximately 38 juveniles and 29 yearlings for every 100
     adults. </p></li>
 
     <li><p> We now have eigenvalues <m>\lambda_1=1.011</m> and
     <m>\lambda_{2,3} = -0.106\pm 0.450i</m>.  This shows that
     the growth rate is lowered to <m>1.011</m> or
-    <m>1.1</m><percent /> annually.
+    <m>1.1%</m> annually.
     </p></li>
 
     <li><p> The first eigenvalue is <m>\lambda_1=0.957</m> so
-    the growth rate is about <m>96</m><percent />.  In other
+    the growth rate is about <m>96%</m>.  In other
     words, the population decreases every year.
     </p></li>
 

@@ -1,48 +1,47 @@
 <section xml:id="ch4sec5">
 
-<title>Section 4.5</title>
+<title>Markov chains and Google's PageRank algorithm</title>
 
 <activity>
-      <statement>
-      <p> Suppose that our rental car company rents from two locations
-      <m>P</m> and <m>Q</m>.  We find that 80<percent /> of the cars rented from
-      location <m>P</m> are returned to <m>P</m> while the other 20<percent /> are
+      <introduction>
+      <p> Suppose that a rental car company rents from two locations
+      <m>P</m> and <m>Q</m>.  We find that 80% of the cars rented from
+      location <m>P</m> are returned to <m>P</m> while the other 20% are
       returned to <m>Q</m>.  For cars rented from location <m>Q</m>,
-      60<percent /> are returned to <m>Q</m> and 40<percent /> to <m>P</m>. </p>
+      60% are returned to <m>Q</m> and 40% to <m>P</m>. </p>
 
       <p> We will use <m>P_k</m> and <m>Q_k</m> to denote the number
       of cars at the two locations on day <m>k</m>.  The following
-      day, the number of cars at <m>P</m> equals 80<percent /> of <m>P_k</m> and
-      40<percent /> of <m>Q_k</m>.  This shows that
+      day, the number of cars at <m>P</m> equals 80% of <m>P_k</m> and
+      40% of <m>Q_k</m>.  This shows that
       <me>
   \begin{aligned}
   P_{k+1} \amp {}={} 0.8 P_k + 0.4Q_k \\
   Q_{k+1} \amp {}={} 0.2 P_k + 0.6Q_k\text{.} \\
   \end{aligned}
-      </me>
+      </me></p></introduction>
 
-      <ol label="a.">
-  <li><p> If we use the vector <m>\xvec_k =
+      
+  <task><p> If we use the vector <m>\xvec_k =
   \twovec{P_k}{Q_k}</m> to represent the distribution of cars on
   day <m>k</m>, find a matrix <m>A</m> such that
-  <m>\xvec_{k+1} = A\xvec_k</m>. </p></li>
+  <m>\xvec_{k+1} = A\xvec_k</m>. </p></task>
 
-  <li><p> Find the eigenvalues and associated eigenvectors of
-  <m>A</m>.  </p></li>
+  <task><p> Find the eigenvalues and associated eigenvectors of
+  <m>A</m>.  </p></task>
 
-  <li><p> Suppose that there are initially 1500 cars, all of
+  <task><p> Suppose that there are initially 1500 cars, all of
   which are at location <m>P</m>.  Write the vector
   <m>\xvec_0</m> as a linear combination of eigenvectors of
-  <m>A</m>. </p></li>
+  <m>A</m>. </p></task>
 
-  <li><p> Write the vectors <m>\xvec_k</m> as a linear
-  combination of eigenvectors of <m>A</m>. </p></li>
+  <task><p> Write the vectors <m>\xvec_k</m> as a linear
+  combination of eigenvectors of <m>A</m>. </p></task>
 
-  <li><p> What happens to the distribution of cars after a long
-  time? </p></li>
+  <task><p> What happens to the distribution of cars after a long
+  time? </p></task>
 
-      </ol></p>
-      </statement>
+     
 
   <!--    <solution>
   <p><ol label="a.">
@@ -85,7 +84,7 @@
     </definition>
 
     <activity>
-      <statement>
+      <introduction>
       <p> Suppose you live in a country with three political parties
       <m>P</m>, <m>Q</m>, and <m>R</m>.  We use <m>P_k</m>,
       <m>Q_k</m>, and <m>R_k</m> to denote the percentage of voters
@@ -93,33 +92,32 @@
 
       <sidebyside widths="50% 45%">
   <p> Voters will change parties from one election to the next as
-  shown in the figure.  We see that 60<percent /> of voters stay with the
-  same party.  However, 40<percent /> of those who vote for party <m>P</m>
+  shown in the figure.  We see that 60% of voters stay with the
+  same party.  However, 40% of those who vote for party <m>P</m>
   will vote for party <m>Q</m> in the next election. </p>
 
   <image source="stoch-parties.svg" />
-      </sidebyside>
+      </sidebyside></introduction>
 
-      <p>
-  <ol label="a.">
-    <li><p> Write expressions for <m>P_{k+1}</m>,
+      
+    <task><p> Write expressions for <m>P_{k+1}</m>,
     <m>Q_{k+1}</m>, and <m>R_{k+1}</m> in terms of <m>P_k</m>,
-    <m>Q_k</m>, and <m>R_k</m>.  </p></li>
+    <m>Q_k</m>, and <m>R_k</m>.  </p></task>
 
-    <li><p> If we write <m>\xvec_k =
+    <task><p> If we write <m>\xvec_k =
     \threevec{P_k}{Q_k}{R_k}</m>, find the matrix <m>A</m> such
-    that <m>\xvec_{k+1} = A\xvec_k</m>.  </p></li>
+    that <m>\xvec_{k+1} = A\xvec_k</m>.  </p></task>
 
-    <li><p> Explain why <m>A</m> is a stochastic
-    matrix. </p></li>
+    <task><p> Explain why <m>A</m> is a stochastic
+    matrix. </p></task>
 
-    <li><p> Suppose that initially 40<percent /> of citizens vote for
-    party <m>P</m>, 30<percent /> vote for party <m>Q</m>, and 30<percent /> vote
+    <task><p> Suppose that initially 40% of citizens vote for
+    party <m>P</m>, 30% vote for party <m>Q</m>, and 30% vote
     for party <m>R</m>.  Form the vector <m>\xvec_0</m> and
     explain why <m>\xvec_0</m> is a probability
-    vector. </p></li>
+    vector. </p></task>
 
-    <li><p> Find <m>\xvec_1</m>, the percentages who vote for
+    <task><p> Find <m>\xvec_1</m>, the percentages who vote for
     the three parties in the next election.  Verify that
     <m>\xvec_1</m> is 
     also a probabilty vector and explain why <m>\xvec_k</m> will
@@ -128,31 +126,28 @@
       <input>
       </input>
     </sage>
-    </p></li>
-  </ol></p>
-</statement></activity>
+    </p></task>
+  </activity>
 
-<activity><statement>
-  <p>Use the matrix <m>A</m> you found in the previous activity.
-  <ol label="a.">
+<activity><introduction>
+  <p>Use the matrix <m>A</m> you found in the previous activity.</p></introduction>
+  
 
-    <li><p> Find the eigenvalues of the matrix <m>A</m> and 
+    <task><p> Find the eigenvalues of the matrix <m>A</m> and 
     explain why the eigenspace <m>E_1</m> is a one-dimensional
     subspace 
     of <m>\real^3</m>.  Then verify that
     <m>\vvec=\threevec{1}{2}{2}</m> is a basis vector for
-    <m>E_1</m>.  </p></li> 
+    <m>E_1</m>.  </p></task> 
 
-    <li><p> As every vector in <m>E_1</m> is a scalar multiple
+    <task><p> As every vector in <m>E_1</m> is a scalar multiple
     of <m>\vvec</m>, find a probability vector in <m>E_1</m> and
     explain why it is the only probability vector in
-    <m>E_1</m>.  </p></li>
+    <m>E_1</m>.  </p></task>
 
-    <li><p> Describe what happens to <m>\xvec_k</m> after a very
-    long time. </p></li>
-  </ol>
-      </p>
-      </statement>
+    <task><p> Describe what happens to <m>\xvec_k</m> after a very
+    long time. </p></task>
+  
 
      <!-- <solution>
   <p> The solutions to this activity are given in the following
@@ -177,22 +172,23 @@
     </question>
 
     <activity>
-      <statement>
+      <introduction>
       <p> Consider the matrix
       <me>
   A=\left[\begin{array}{rr}
   0 \amp 1 \\
   1 \amp 0 \\
   \end{array}\right]
-     </me>.
-      <ol label="a.">
-  <li><p> Verify that <m>A</m> is a stochastic
-  matrix. </p></li>
+     </me>.</p></introduction>
+      
+  <task><p> Verify that <m>A</m> is a stochastic
+  matrix. </p></task>
 
-  <li><p> Find the eigenvalues of <m>A</m> and then find a
-  steady-state vector for <m>A</m>.  </p></li>
+  <task><p> Find the eigenvalues of <m>A</m>.</p></task> 
+  <task><p>Find a
+  steady-state vector for <m>A</m>.  </p></task>
 
-  <li><p> We will form the Markov chain beginning with the
+  <task><p> We will form the Markov chain beginning with the
   vector <m>\xvec_0 = \twovec{1}{0}</m> and defining
   <m>\xvec_{k+1} = A\xvec_k</m>.  The Sage cell below 
   constructs the first <m>N</m> terms of the Markov chain with
@@ -210,26 +206,25 @@ A =
 x0 =
 markov_chain(A, x0, 10)
     </input>
-  </sage></p></li>
-  <li><p>What do you notice about the Markov chain?  Does it converge
-  to the steady-state vector for <m>A</m>? </p></li></ol>
-</p></statement></activity>
+  </sage></p></task>
+  <task><p>What do you notice about the Markov chain?  Does it converge
+  to the steady-state vector for <m>A</m>? </p></task></activity>
 
  <activity>
-      <statement>
+      <introduction>
       <p> Consider the matrix
       <me>
   B=\left[\begin{array}{rr}
   0.4 \amp 0.3 \\
   0.6 \amp 0.7 \\
   \end{array}\right]
-      </me>.
-      <ol label="a.">
+      </me>.</p></introduction>
+      
 
-  <li><p> Find the eigenvalues of <m>B</m> along with a
-  steady-state vector for <m>B</m>. </p></li>
+  <task><p> Find the eigenvalues of <m>B</m> along with a
+  steady-state vector for <m>B</m>. </p></task>
 
-  <li><p> As before, find the first 10 terms in the Markov chain
+  <task><p> As before, find the first 10 terms in the Markov chain
   beginning with <m>\xvec_0 = \twovec{1}{0}</m> and
   <m>\xvec_{k+1} = B\xvec_k</m>.  
 <sage>
@@ -243,12 +238,11 @@ A =
 x0 =
 markov_chain(A, x0, 10)
     </input>
-  </sage></p></li>
+  </sage></p></task>
 
-  <li><p>What do you notice about the
+  <task><p>What do you notice about the
   Markov chain?  Does it converge to the steady-state vector for
-  <m>B</m>? </p></li></ol></p>
-</statement></activity>
+  <m>B</m>? </p></task></activity>
 
 <activity><statement>
 
@@ -337,21 +331,22 @@ markov_chain(A, x0, 10)
     </theorem>
 
     <activity>
-      <statement>  <p> We will explore the meaning of the
-      Perron-Frobenius theorem in this activity. 
-      <ol label="a.">
-  <li><p> Consider the matrix
+      <introduction>  <p> We will explore the meaning of the
+      Perron-Frobenius theorem in this activity. </p>
+     
+  <p> Consider the matrix
   <m>C = \left[\begin{array}{rr}
   0 \amp 0.5 \\
   1 \amp 0.5 \\
   \end{array}\right]
-  </m>.
-  This is a positive matrix, as we saw in the
-  previous example.  Find the eigenvectors of <m>C</m> and
-  verify there is a unique
-  steady-state vector.</p></li>
+  </m>.</p></introduction>
 
-  <li><p> Using the Sage cell below, construct the Markov chain
+  <task><p>Show <m>C</m> is a positive matrix by checking powers <m>C^k</m>.</p></task>
+  <task><p>  Find the eigenvectors of <m>C</m> and
+  verify there is a unique
+  steady-state vector.</p></task>
+
+  <task><p> Using the Sage cell below, construct the Markov chain
   with initial vector <m>\xvec_0= \twovec{1}{0}</m> and describe
   what happens to <m>\xvec_k</m> as <m>k</m> becomes large.
   <sage>
@@ -366,49 +361,47 @@ x0 =
 markov_chain(C, x0, 10)
     </input>
   </sage>
-  </p></li>
+  </p></task>
 
 
-  <li><p> Construct another Markov chain with initial vector
+  <task><p> Construct another Markov chain with initial vector
   <m>\xvec_0=\twovec{0.2}{0.8}</m> and describe what happens to
   <m>\xvec_k</m> as <m>k</m> becomes large. 
-</p></li>
+</p></task>
 
-</ol></p>
-</statement></activity>
+</activity>
 
-<activity><statement><p>
-  <ol label="a.">
-
-  <li><p> Consider the matrix
+<activity><introduction><p>
+   Consider the matrix
   <m>D = \left[\begin{array}{rrr}
   0 \amp 0.5 \amp 0 \\
   1 \amp 0.5 \amp 0 \\
   0 \amp 0 \amp 1 \\
   \end{array}\right]
-  </m> and compute several powers of <m>D</m> below.
+  </m></p></introduction>
+   <task><p>Compute several powers of <m>D</m> using Sage, and determine whether <m>D</m> is a positive matrix.
   <sage>
     <input>
     </input>
   </sage>
-  Determine whether <m>D</m> is a positive matrix. </p></li>
+   </p></task>
 
-  <li><p> Find the eigenvalues of <m>D</m> and then find the
+  <task><p> Find the eigenvalues of <m>D</m> and then find the
   steady-state vectors.  Is there a unique steady-state
-  vector? </p></li>
+  vector? </p></task>
 
-  <li><p> What happens to the Markov chain defined by <m>D</m>
+  <task><p> What happens to the Markov chain defined by <m>D</m>
   with initial vector 
-  <m>\xvec_0 =\threevec{1}{0}{0}</m>?</p></li>
-  <li><p> What happens to the
+  <m>\xvec_0 =\threevec{1}{0}{0}</m>?</p></task>
+  <task><p> What happens to the
   Markov chain with initial vector
-  <m>\xvec_0=\threevec{0}{0}{1}</m>?  </p></li>
-</ol></p></statement></activity>
+  <m>\xvec_0=\threevec{0}{0}{1}</m>?  </p></task>
+</activity>
 
  <activity><statement><p> Explain how the matrices <m>C</m> and <m>D</m>, which
   we have considered in previous activities, relate to the
   Perron-Frobenius theorem. 
-      <ol label="a">
+      <ol label="A">
         <li><p> The P-F Theorem tells us <m>C</m> and <m>D</m> both converge to a unique steady-state vector.</p></li>
         <li><p> The P-F Theorem tells us <m>C</m> converges to a unique steady-state vector, but <m>D</m> cannot converge to a unique steady-state vector.</p></li>
         <li><p> The P-F Theorem tells us <m>C</m> converges to a unique steady-state vector, but it tells us nothing about <m>D</m>.</p></li>
@@ -470,7 +463,7 @@ markov_chain(C, x0, 10)
 
 
 
-<p>Do Activity 4.5.5 and 4.5.6 on Google's Page Rank Algorithm directly in Understanding Linear Algebra.</p>
+<p>Do <url href="https://davidaustinm.github.io/ula/sec-stochastic.html#activity-58" visual="davidaustinm.github.io/ula/sec-stochastic.html#activity-58">Activity 4.5.5</url> and <url href="https://davidaustinm.github.io/ula/sec-stochastic.html#activity-59" visual="davidaustinm.github.io/ula/sec-stochastic.html#activity-59">Activity 4.5.6</url> on Google's Page Rank Algorithm directly in Understanding Linear Algebra.</p>
 
 
 

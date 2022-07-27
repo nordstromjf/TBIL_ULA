@@ -1,15 +1,10 @@
 <section xml:id="ch1sec4">
 
-<title>Section 1.4</title>
+<title>Pivots and their influence on solution spaces</title>
 
-<!--Preview Activity 1.4.1-->
-
-<!--TBIL Activity 1.2.7-->
- <activity estimated-time='8'>
-    <statement>
-        <p>
+<p>
 Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</term>) if
-        </p>
+        
 <ol>
 <li> The leading term (first nonzero term) of each nonzero row is a 1.
       Call these terms <term>pivots</term>.
@@ -20,7 +15,14 @@ Recall that a matrix is in <term>reduced row echelon form</term> (<term>RREF</te
 </li>
 <li> All rows of zeroes are at the bottom of the matrix.
 </li>
-</ol>
+</ol></p>
+
+<!--Preview Activity 1.4.1-->
+
+<!--TBIL Activity 1.2.7-->
+ <activity estimated-time='8'>
+    <statement>
+        
     <p>
 For each matrix, circle the leading terms, and label it as RREF or not RREF.
 For the ones not in RREF, find their RREF.
@@ -65,10 +67,10 @@ For the ones not in RREF, find their RREF.
 <activity>
       <!--<title> Some basic observations about pivots </title>-->
 
-      <statement>
-      <p> 
-      <ol label="a.">
-    <li> <p>  Given below is a matrix and its reduced row echelon
+      <introduction> <p>In this activity we explore possibilities for the number of pivot positions in a matrix.</p></introduction>
+    
+      
+    <task> <p>  Given below is a matrix and its reduced row echelon
     form.  Indicate the pivot positions.
     <me>
       \left[
@@ -87,35 +89,31 @@ For the ones not in RREF, find their RREF.
       \end{array}
       \right]
     </me>.
-    </p></li>
+    </p></task>
 
-    <li> <p> How many pivot positions can there be in one row?  </p></li>
-    <li> <p>  In a <m>3\times5</m> matrix, what is the largest possible number
+    <task> <p> How many pivot positions can there be in one row?  </p></task>
+    <task> <p>  In a <m>3\times5</m> matrix, what is the largest possible number
     of pivot positions?  Give an example of a matrix that has the
     largest possible number of pivot positions.
-    </p></li>
+    </p></task>
 
-    <li> <p> How many pivots can there be in one column? </p></li>
-    <li> <p>  In a
+    <task> <p> How many pivots can there be in one column? </p></task>
+    <task> <p>  In a
     <m>5\times3</m> matrix, what is the largest possible number of
     pivot positions?  Give an example of a matrix that has the
-    largest possible number of pivot positions. </p></li>
+    largest possible number of pivot positions. </p></task>
 
-    <li> <p> Give an example of a matrix with a pivot position in
+    <task> <p> Give an example of a matrix with a pivot position in
     every row and every column.  What is special about 
-    such a matrix? </p></li>
-      </ol>
-      </p>
-      </statement></activity>
+    such a matrix? </p></task>
+      
+     </activity>
 
       <!--Activity 1.4.2-->
 
-      <activity>
-      <statement>
-      <p>
-      <ol label="a.">
-    <li xml:id="li-existence-examples"> <p>
-      Shown below are three augmented matrices in reduced row
+      <activity xml:id="li-existence-examples">
+      
+      <introduction><p>Shown below are three augmented matrices in reduced row
       echelon form.
       </p>
       <sidebyside>
@@ -157,48 +155,49 @@ For the ones not in RREF, find their RREF.
           \right]
         </me>
       </p>
-    </sidebyside>
-    <p>
+    </sidebyside></introduction>
+    <task><p>
       For each matrix, identify the pivot positions and determine if
-      the corresponding linear system is (a) consistent or (b) inconsistent.
+      the corresponding linear system is (A) consistent or (B) inconsistent.
       Be able to explain how the location of the pivots determine
       consistency or inconsistency.
-    </p>
-    </li>
+    </p></task>
     
-    <li> <p> Each of these augmented matrices above has a row in
+    
+    <task> <p> Each of these augmented matrices above has a row in
     which each entry is zero.  What, if anything, does the
     presence of such a row tell us about the consistency of the
-    corresponding linear system?  </p></li>
-    </ol></p>
-    </statement>
+    corresponding linear system?  </p></task>
+    
 </activity>
 
-<activity><statement>
-   <p>
-    <ol label="a.">
-    <li> <p> Give an example of a <m>3\times5</m> augmented matrix
+<activity>
+  <introduction></introduction>
+    <task>
+    <p> Give an example of a <m>3\times5</m> augmented matrix
     in reduced row echelon form that represents a consistent
     system.  Indicate the pivot positions in your matrix and be able to
     explain why these pivot positions guarantee a consistent
     system. 
-    </p></li>
+    </p></task>
 
-    <li xml:id="li-pivots-existence">
+    <task xml:id="li-pivots-existence">
       <p> Give an example of a <m>3\times5</m> augmented matrix in
       reduced row echelon form that represents an inconsistent
       system.  Indicate the pivot positions in your matrix and be able to
       explain why these pivot positions guarantee an inconsistent
       system.
-    </p></li>
+    </p></task>
 
-    <li> <p> Write the reduced row echelon form of the coefficient
+    <task> <p> Write the reduced row echelon form of the coefficient
     matrix of the corresponding linear system in
     <xref ref="li-pivots-existence" />.
     What do you notice about the pivot positions in this
-    coefficient matrix?  </p></li>
+    coefficient matrix?  </p></task>
+  </activity>
 
-    <li> <p> Suppose we have a linear system for
+<activity>
+    <statement> <p> Suppose we have a linear system for
     which the <em> coefficient</em> matrix has the following
     reduced row echelon form.
     <me>
@@ -211,8 +210,12 @@ For the ones not in RREF, find their RREF.
       \end{array}
       \right]
     </me>
-    Must the system be (a) consistent, (b) inconsistent, or (c) are you unable to determine anything about consistency? 
-    </p></li>
+    What can you determine about the consistency of the linear system?
+    <ol label="A">
+      <li> It is consistent.</li>
+      <li> It is inconsistent.</li> 
+      <li> You can't determine anything about consistency.</li>
+    
       </ol>
       </p>
       </statement></activity>
@@ -224,7 +227,7 @@ For the ones not in RREF, find their RREF.
       <statement>
     <p>
         Here are the three augmented matrices in reduced row echelon
-        form that we considered previously.
+        form that we considered previously.</p>
         <sidebyside>
           <p>
         <me>
@@ -265,10 +268,10 @@ For the ones not in RREF, find their RREF.
         </me>
           </p>
         </sidebyside>
-      </p>
+      
       <p>
-        For each matrix, identify the pivot positions. Is the corresponding system of linear equations
-        <ol label="a.">
+        For each matrix, identify the pivot positions and determine if the corresponding system of linear equations is 
+        <ol label="A">
             <li><p>consistent with a unique solution.</p>
             </li>
             <li><p>consistent with infinitely many solutions.</p>
@@ -278,32 +281,31 @@ For the ones not in RREF, find their RREF.
         </ol> 
       </p></statement></activity>
     
-    <activity><statement>
-    <p>
-    <ol label="a.">
-      <li><p> If possible, give an example of a <m>3\times5</m>
+    <activity><introduction><p>In this activity, we want to understand the connection between pivot positions and when a system of linear equationa has a unique solution.</p></introduction>
+    
+    <task>
+      <p> If possible, give an example of a <m>3\times5</m>
       augmented matrix that corresponds to a system of linear equations
       having a unique solution.  If it is not possible, be able to explain why.
-      </p></li>
+      </p></task>
 
-      <li><p> If possible, give an example of a <m>5\times3</m>
+      <task><p> If possible, give an example of a <m>5\times3</m>
       augmented matrix that corresponds to a system of linear equations
       having a unique solution.  If it is not possible, be able to explain why.
-      </p></li>
+      </p></task>
 
-      <li> <p>
+      <task> <p>
         What condition on the pivot positions guarantees that a system
         of linear equations has a unique solution?
-      </p></li>
+      </p></task>
 
-      <li> <p>
+      <task> <p>
         If a system of linear equations has a unique solution, what
         can we say about the relationship between the number of
         equations and the number of unknowns?
-      </p></li>
-    </ol>
-    </p>
-      </statement></activity>
+      </p></task>
+    
+      </activity>
 
 
 

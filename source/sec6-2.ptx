@@ -1,0 +1,845 @@
+<section xml:id="ch6sec2">
+
+<title>Orthogonal complements and the matrix transpose</title>
+
+<activity>
+      <introduction>
+  <p> Let <m>\vvec=\twovec{-1}2</m>.</p></introduction>
+  <task><p>Sketch the vector <m>\vvec</m> and one vector that is orthogonal to it.
+  
+  </p></task>
+  
+  <task><p>
+    If a vector <m>\xvec</m> is orthogonal to
+    <m>\vvec</m>, what do we know about the dot product
+    <m>\vvec\cdot\xvec</m>?
+  </p></task>
+
+  <task><p>
+    If we write <m>\xvec=\twovec xy</m>, use the dot product to
+    write an equation for the vectors orthogonal to <m>\vvec</m>
+    in terms of <m>x</m> and <m>y</m>.
+  </p></task>
+
+  <task><p>
+    Use this equation to sketch the set of all vectors orthogonal
+    to <m>\vvec</m>.
+  </p></task></activity>
+
+  <activity>
+  
+  <introduction><p>
+    <xref ref="ch3sec5" /> introduced the 
+    column space <m>\col(A)</m> and null space
+    <m>\nul(A)</m> of a matrix <m>A</m>.  
+    Suppose that <m>A</m> is a matrix and <m>\xvec</m> is a vector
+    satisfying <m>A\xvec=\zerovec</m>.</p></introduction>
+     <task><p> Does <m>\xvec</m>
+    belong to <m>\nul(A)</m> or <m>\col(A)</m>?
+  </p></task>
+
+  <task><p>
+    Suppose that the equation <m>A\xvec=\bvec</m> is
+    consistent.  Does <m>\bvec</m> belong to <m>\nul(A)</m> or
+    <m>\col(A)</m>?
+  </p></task>
+    </activity>
+
+<definition>
+      <idx>orthogonal complement</idx>
+      <statement>
+  <p>
+    Given a subspace <m>W</m> of <m>\real^m</m>, the orthogonal
+    complement of <m>W</m> is the set of vectors in
+    <m>\real^m</m> each of which
+    is orthogonal to every vector in <m>W</m>.  We denote the
+    orthogonal complement by <m>W^\perp</m>.
+  </p>
+      </statement>
+    </definition>
+
+    
+<p>The next two activities help us find a description of the
+    orthogonal complement <m>W^\perp</m>.</p>
+
+<activity>
+     <introduction>
+  <p>
+    Suppose that <m>\wvec_1=\threevec10{-2}</m> and
+    <m>\wvec_2=\threevec11{-1}</m> form a basis for
+    <m>W</m>, a two-dimensional subspace of
+    <m>\real^3</m>. </p></introduction>
+    
+      <task>
+        <p>
+    Suppose that the vector <m>\xvec</m> is orthogonal to
+    <m>\wvec_1</m>.  If we write
+    <m>\xvec=\threevec{x_1}{x_2}{x_3}</m>,
+    use the fact that <m>\wvec_1\cdot\xvec =
+    0</m> to write a linear
+    equation for <m>x_1</m>, <m>x_2</m>, and <m>x_3</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+    Suppose that <m>\xvec</m> is also orthogonal to
+    <m>\wvec_2</m>.  In the same way, write a linear
+    equation for <m>x_1</m>, <m>x_2</m>, and <m>x_3</m>
+    that arises from the fact that <m>\wvec_2\cdot\xvec =
+    0</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+    If <m>\xvec</m> is orthogonal to both <m>\wvec_1</m>
+    and <m>\wvec_2</m>, these two equations give us a
+    linear system <m>B\xvec=\zerovec</m> for some matrix
+    <m>B</m>.  Identify the matrix <m>B</m> and write a
+    parametric description of the solution space to the
+    equation <m>B\xvec = \zerovec</m>.
+        </p>
+      </task></activity>
+
+      <activity>
+     <introduction>
+  <p>
+    Suppose that <m>\wvec_1=\threevec10{-2}</m> and
+    <m>\wvec_2=\threevec11{-1}</m> form a basis for
+    <m>W</m>, a two-dimensional subspace of
+    <m>\real^3</m>. </p></introduction>
+      <task>
+        <p>
+    Since <m>\wvec_1</m> and <m>\wvec_2</m> form a basis
+    for the two-dimensional subspace <m>W</m>, any vector
+    in <m>\wvec</m> in <m>W</m> can be written as a linear
+    combination
+    <me>
+      \wvec = c_1\wvec_1 + c_2\wvec_2\text{.}
+    </me>
+    If <m>\xvec</m> is orthogonal to both <m>\wvec_1</m>
+    and <m>\wvec_2</m>, use the distributive property of
+    dot products to explain why <m>\xvec</m> is orthogonal
+    to <m>\wvec</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+    Give a basis for the orthogonal complement
+    <m>W^\perp</m> and state the dimension <m>\dim W^\perp</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+    Describe <m>(W^\perp)^\perp</m>, the orthogonal
+    complement of <m>W^\perp</m>.
+        </p>
+      </task>
+    
+
+     <!-- <solution>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    We have the equation <m>\wvec_1\cdot\xvec = x_1 - 2x_3
+    = 0</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+    We have the equation <m>\wvec_2\cdot\xvec = x_1+x_2 - x_3
+    = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    These two equations give <m>B\xvec=\zerovec</m> where
+    <me>
+      B = \begin{bmatrix}
+      1 \amp 0 \amp -2 \\
+      1 \amp 1 \amp -1 \\
+      \end{bmatrix}
+      \sim
+      \begin{bmatrix}
+      1 \amp 0 \amp -2 \\
+      0 \amp 1 \amp 1 \\
+      \end{bmatrix}\text{,}
+    </me>
+    whose solutions have the parametric form
+    <m>\xvec=x_3\threevec2{-1}1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    By distributivity,
+    <m>(c_1\wvec_1+c_2\wvec_2)\cdot\xvec=
+    c_1\wvec_1\cdot\xvec + c_2\wvec_2\cdot\xvec = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>W^\perp</m> is the solution space to the equation
+    <m>B\xvec=\zerovec</m>.  Therefore, a basis consists
+    of the single vector
+    <m>\threevec1{-1}1</m>, and <m>W^\perp</m> is
+    one-dimensional.
+        </p>
+      </li>
+      <li>
+        <p>
+    Since every vector in <m>W^\perp</m> is orthogonal to
+    every vector in <m>W</m>, the orthogonal complement of
+    <m>W^\perp</m> is <m>W</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+      </solution>
+
+      <answer>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <m>\wvec_1\cdot\xvec = x_1 - 2x_3
+    = 0</m>. 
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>\wvec_2\cdot\xvec = x_1+x_2 - x_3
+    = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>
+      B = \begin{bmatrix}
+      1 \amp 0 \amp -2 \\
+      1 \amp 1 \amp -1 \\
+      \end{bmatrix}
+    </m>
+    so
+    <m>\xvec=x_3\threevec2{-1}1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    By distributivity,
+    <m>(c_1\wvec_1+c_2\wvec_2)\cdot\xvec=
+    c_1\wvec_1\cdot\xvec + c_2\wvec_2\cdot\xvec = 0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    A basis consists of
+    <m>\threevec1{-1}1</m>, and <m>W^\perp</m> is
+    one-dimensional.
+        </p>
+      </li>
+      <li>
+        <p>
+    The orthogonal complement of
+    <m>W^\perp</m> is <m>W</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+      </answer>-->
+    </activity>
+
+    <definition>
+      <idx>transpose</idx>
+      <statement>
+  <p> The transpose of the <m>m\times n</m> matrix <m>A</m> is
+  the <m>n\times m</m> matrix <m>A^T</m> whose rows are the
+  columns of <m>A</m>.
+  </p>
+      </statement>
+    </definition>
+
+    <activity><statement><p>If
+    <m>B =
+    \begin{bmatrix}
+    3 \amp 4 \\
+    -1 \amp 2 \\
+    0 \amp -2 \\
+    \end{bmatrix}
+    </m>, write the matrix <m>B^T</m>.</p></statement></activity>
+
+     <p> The next activity illustrates how multiplying a vector by
+  <m>A^T</m> is related to computing dot products with the columns
+  of <m>A</m>.  You'll develop a better understanding of this
+  relationship if you compute the dot products and matrix products
+  in this activity without using technology.</p>
+
+    <activity><introduction>
+      <p> Suppose that
+    <me>
+      \vvec_1=\threevec20{-2},\hspace{24pt}
+      \vvec_2=\threevec112,\hspace{24pt}
+      \wvec=\threevec{-2}23\text{.}
+    </me></p>
+ </introduction>
+  
+
+    <task>
+    <p>Find the dot products <m>\vvec_1\cdot\wvec</m> and
+    <m>\vvec_2\cdot\wvec</m>.
+    </p></task>
+
+    <task><p> Now write the matrix
+    <m>A = \begin{bmatrix} \vvec_1 \amp \vvec_2 \end{bmatrix}</m> and
+    its transpose <m>A^T</m>.  Find the product <m>A^T\wvec</m> and
+    describe how this product computes both dot products
+    <m>\vvec_1\cdot\wvec</m> and <m>\vvec_2\cdot\wvec</m>.
+    </p></task>
+
+    <task><p> Suppose that <m>\xvec</m> is a vector that is
+    orthogonal to both <m>\vvec_1</m> and <m>\vvec_2</m>.  What
+    does this say about the dot products <m>\vvec_1\cdot\xvec</m>
+    and <m>\vvec_2\cdot\xvec</m>?  What does this say about the
+    product <m>A^T\xvec</m>?
+    </p></task>
+
+    <task><p> Use the matrix <m>A^T</m> to give a parametric
+    description of all the vectors <m>\xvec</m> that are
+    orthogonal to <m>\vvec_1</m>
+    and <m>\vvec_2</m>.  
+    </p></task></activity>
+
+    <activity><statement>
+      <p>
+        Remember that <m>\nul(A^T)</m>, the null space of
+        <m>A^T</m>, is the solution set of the equation
+        <m>A^T\xvec=\zerovec</m>.  If <m>\xvec</m> is a vector in
+        <m>\nul(A^T)</m>, explain why <m>\xvec</m> must be
+        orthogonal to both <m>\vvec_1</m> and <m>\vvec_2</m>.
+      </p></statement></activity>
+
+    <activity><statement>
+      <p>
+        Remember that <m>\col(A)</m>, the column space of <m>A</m>,
+        is the set of linear combinations of the columns of
+        <m>A</m>.  Therefore, any vector in <m>\col(A)</m> can be
+        written as <m>c_1\vvec_1+c_2\vvec_2</m>.
+        If <m>\xvec</m> is a vector in <m>\nul(A^T)</m>, explain
+        why <m>\xvec</m> is orthogonal to every vector in
+        <m>\col(A)</m>.
+      </p></statement></activity>
+    
+
+   <!--   <solution>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <m>A^T = \begin{bmatrix}
+    3 \amp -1 \amp 0 \\
+    4 \amp 2 \amp -2
+    \end{bmatrix}
+    </m>
+        </p>
+      </li>
+      <li>
+        <p>
+    <md>
+      <mrow>
+        \vvec_1\cdot\wvec \amp{}={} 2(-2) + 0(2) + (-2)3
+        \amp{}={} -10
+      </mrow>
+      <mrow>
+        \vvec_2\cdot\wvec \amp{}={} 1(-2) + 1(2) + 2(3)
+        \amp{}={} 6
+      </mrow>
+    </md>
+        </p>
+      </li>
+      <li>
+        <p>
+    <me>A^T\wvec =
+    \twovec{2(-2)+0(2)+(-2)3}{1(-2)+1(2)+2(3)} =
+    \twovec{-10}{6}
+    =\twovec{\vvec_1\cdot\wvec}{\vvec_2\cdot\wvec}
+    </me>
+        </p>
+      </li>
+      <li>
+        <p>
+    Both dot products are 0 so we have <m>A^T\xvec =
+    \zerovec</m>.
+        </p>
+      </li>
+      <li>
+        <p> We need to solve the equation <m>A^T\xvec =
+        \zerovec</m> so we find the reduced row echelon form 
+        <me>A^T \sim \begin{bmatrix}
+    1 \amp 0 \amp -1 \\
+    0 \amp 1 \amp 3\\
+    \end{bmatrix}\text{.}
+        </me>
+        The vectors orthogonal to both <m>\vvec_1</m> and
+        <m>\vvec_2</m> have the form
+        <m>\xvec=x_3\threevec1{-3}1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>A^T\xvec =
+    \twovec{\vvec_1\cdot\xvec}{\vvec_2\cdot\xvec} =
+    \twovec00</m> tells us that <m>\vvec_1\cdot\xvec=0</m>
+    and <m>\vvec_2\cdot\xvec=0</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    Since <m>\xvec</m> is orthogonal to both
+    <m>\vvec_1</m> and <m>\vvec_2</m>, we have
+    <me>
+      (c_1\vvec_1+c_2\vvec_2)\cdot\xvec =
+      c_1\vvec_1\cdot\xvec + c_2\vvec_2\cdot\xvec = 0
+    </me>
+        </p>
+      </li>
+    </ol>
+  </p>
+      </solution>
+
+      <answer>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <m>A^T = \begin{bmatrix}
+    3 \amp -1 \amp 0 \\
+    4 \amp 2 \amp -2
+    \end{bmatrix}
+    </m>
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>\vvec_1\cdot\wvec =-10</m>,
+    <m>\vvec_2\cdot\wvec =6</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <me>A^T\wvec 
+    =\twovec{\vvec_1\cdot\wvec}{\vvec_2\cdot\wvec}
+    </me>
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>A^T\xvec =
+    \zerovec</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>\xvec=x_3\threevec1{-3}1</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>A^T\xvec =
+    \twovec{\vvec_1\cdot\xvec}{\vvec_2\cdot\xvec} =
+    \twovec00</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    Apply the distributive property of dot products.
+        </p>
+      </li>
+    </ol>
+  </p>
+      </answer>-->
+        
+   <activity>
+      <introduction>
+  <p> In Sage, the transpose of a matrix <c>A</c> is given by
+  <c>A.T</c>.  Define the matrices
+  <me>
+    A =
+    \begin{bmatrix}
+    1 \amp 0 \amp -3 \\
+    2 \amp -2 \amp 1 \\
+    \end{bmatrix},
+    \hspace{6pt}
+    B =
+    \begin{bmatrix}
+    3 \amp -4 \amp 1 \\
+    0 \amp 1 \amp 2 \\
+    \end{bmatrix},
+    \hspace{6pt}
+    C=
+    \begin{bmatrix}
+    1 \amp 0 \amp -3 \\
+    2 \amp -2 \amp 1 \\
+    3 \amp 2 \amp 0 \\
+    \end{bmatrix}\text{.}
+  </me></p></introduction>
+ 
+ 
+    <task><p> Evaluate <m>(A+B)^T</m> and <m>A^T+B^T</m>.  What do
+    you notice about the relationship between these two matrices?
+     <sage>
+    <input>
+    </input>
+  </sage>
+    </p></task>
+
+    <task><p> What happens if you transpose a matrix twice;  that
+    is, what is <m>(A^T)^T</m>?
+    </p></task>
+  
+
+    <task><p> Find <m>\det(C)</m> and <m>\det(C^T)</m>.  What do you
+    notice about the relationship between these determinants?
+    </p></task>
+
+    
+        <task><p> Find the product <m>AC</m> and its transpose
+        <m>(AC)^T</m>.
+        </p></task>
+        <task><p> Is it possible to compute the product <m>A^TC^T</m>?
+        Explain why or why not.
+        </p></task>
+        <task><p> Find the product <m>C^TA^T</m> and compare it to
+        <m>(AC)^T</m>.  What do you notice about the relationship
+        between these two matrices?
+        </p></task>
+    </activity>
+
+    <activity>
+
+    <statement><p> What is the transpose of the identity matrix
+    <m>I</m>?
+    </p></statement></activity>
+
+    <activity>
+
+    <statement><p> If a square matrix <m>D</m> is invertible, explain why
+    you can guarantee that <m>D^T</m> is invertible and why
+    <m>(D^T)^{-1} = (D^{-1})^T</m>.
+    </p></statement></activity>
+
+  
+
+   <!--   <solution>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <m>(A+B)^T = A^T + B^T</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>(A^T)^T = A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>\det(C^T) = \det(C)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+    <ol label="i.">
+      <li>
+        <p>
+          <m> AC = \begin{bmatrix}
+          -8 \amp -6 \amp -3 \\
+          1 \amp 6 \amp -8
+          \end{bmatrix}
+          </m> and
+          <m>(AC)^T = \begin{bmatrix}
+          -8 \amp 1 \\
+          -6 \amp 6 \\
+          -3 \amp -8
+          \end{bmatrix}
+          </m>
+        </p>
+      </li>
+      <li>
+        <p>
+          The product <m>A^TC^T</m> is not defined because
+          <m>A^T</m> has two columns and <m>C^T</m> has
+          three rows.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>(AC)^T=C^TA^T</m>
+        </p>
+      </li>
+    </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>I^T=I</m>
+        </p>
+      </li>
+      <li>
+        <p>
+    We have <m>DD^{-1} = I</m> so <m>(DD^{-1})^T =
+    (D^{-1})^TD^T = 
+    I^T=I</m>.  This means that <m>(D^T)^{-1} =
+    (D^{-1})^T</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+      </solution>
+      
+      <answer>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <m>(A+B)^T = A^T + B^T</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>(A^T)^T = A</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>\det(C^T) = \det(C)</m>
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>(AC)^T=C^TA^T</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>I^T=I</m>
+        </p>
+      </li>
+      <li>
+        <p>
+    <m>(D^T)^{-1} = (D^{-1})^T</m>.
+        </p>
+      </li>
+    </ol>
+  </p>
+      </answer>-->
+          
+   <activity>
+      <introduction>
+  
+        <p>
+    Suppose that <m>W</m> is a <m>5</m>-dimensional
+    subspace of <m>\real^9</m> and that <m>A</m> is a matrix whose
+    columns form a basis for <m>W</m>;  that is, <m>\col(A) =
+    W</m>.</p></introduction>
+   
+      <task><p> What are the dimensions of <m>A</m>? </p></task>
+      
+      <task><p> What is the rank of <m>A</m>? </p></task>
+      
+      <task><p> What are the dimensions of <m>A^T</m>? </p></task>
+      
+      <task><p> What is the rank of <m>A^T</m>? </p></task>
+      
+      <task><p> What is <m>\dim\nul(A^T)</m>?  </p></task>
+      
+      <task><p> What is <m>\dim W^\perp</m>? </p></task>
+      
+      <task><p> How are the dimensions of <m>W</m> and
+      <m>W^\perp</m> related? </p></task>
+   </activity>
+
+   <activity>
+
+     <introduction>
+        <p>
+    Suppose that <m>W</m> is a subspace of <m>\real^4</m>
+    having basis
+    <me>
+      \wvec_1 = \fourvec102{-1},\hspace{24pt}
+      \wvec_2 = \fourvec{-1}2{-6}3.
+    </me></p></introduction>
+   
+      <task>
+        <p>
+          Find the dimensions <m>\dim W</m> and <m>\dim
+          W^\perp</m>.
+        </p>
+      </task>
+
+      <task>
+        <p>
+          Find a basis for <m>W^\perp</m>.  It may be
+          helpful to know that the Sage command
+          <c>A.right_kernel()</c> produces a basis for
+          <m>\nul(A)</m>.
+          <sage>
+      <input>
+      </input>
+          </sage>
+        </p>
+      </task>
+
+      <task>
+        <p>
+          Verify that each of the basis vectors you found
+          for <m>W^\perp</m> are orthogonal to the basis
+          vectors for <m>W</m>.
+        </p>
+      </task>
+    
+    <!--  <solution>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <ol label="i.">
+      <li>
+        <p>
+          <m>A</m> is <m>9\times 5</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\rank(A) = 5</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>A^T</m> is <m>5\times 9</m>.
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\rank(A^T) = 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dim \nul(A^T) = 9 - 5 = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dim W^\perp = \dim\nul(A^T) = 4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dim W + \dim W^\perp = 9 </m> since the
+          subspaces live in <m>\real^9</m>.
+        </p>
+      </li>
+    </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+    <ol label="i.">
+      <li>
+        <p>
+          <m>\dim W = 2</m> so <m>\dim W^\perp =
+          4-2=2</m>.
+        </p>
+      </li>
+      <li>
+        <p>A basis is
+        <m>\vvec_1=\fourvec1{-1}01</m> and
+        <m>\vvec_2=\fourvec0012</m> .
+        </p>
+      </li>
+      <li>
+        <p>You can verify by computing the four dot
+        products.
+        </p>
+      </li>
+    </ol>
+        </p>
+      </li>
+    </ol>
+  </p>
+      </solution>
+      <answer>
+  <p>
+    <ol label="a.">
+      <li>
+        <p>
+    <ol label="i.">
+      <li>
+        <p>
+          <m>9\times 5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5\times 9</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>5</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>4</m>
+        </p>
+      </li>
+      <li>
+        <p>
+          <m>\dim W + \dim W^\perp = 9 </m>
+        </p>
+      </li>
+    </ol>
+        </p>
+      </li>
+      <li>
+        <p>
+    <ol label="i.">
+      <li>
+        <p>
+          <m>2</m> 
+        </p>
+      </li>
+      <li>
+        <p>
+        <m>\fourvec1{-1}01</m> and
+        <m>\fourvec0012</m> .
+        </p>
+      </li>
+      <li>
+        <p>Verify by computing the four dot
+        products.
+        </p>
+      </li>
+    </ol>
+        </p>
+      </li>
+    </ol>
+  </p>
+      </answer>-->
+    </activity>
+
+
+
+
+</section>

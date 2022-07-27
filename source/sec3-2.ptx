@@ -1,16 +1,16 @@
 <section xml:id="ch3sec2">
 
-<title>Section 3.2</title>
+<title>Bases and coordinate systems</title>
    <activity>
-      <statement>
+      <introduction>
       <p> Consider the vectors
       <me>
   \vvec_1 = \twovec{2}{1},
   \vvec_2 = \twovec{1}{2}
       </me>
-      in <m>\real^2</m>.
-      <ol label="a.">
-  <li><p> Find the linear combination <m>\vvec_1 -
+      in <m>\real^2</m>.</p></introduction>
+      
+  <task><p> Find the linear combination <m>\vvec_1 -
   2\vvec_2</m>. <!--on <xref ref="fig-basis-1" />.
   <figure xml:id="fig-basis-1">
     <sidebyside width="50%">
@@ -20,23 +20,22 @@
       Linear combinations of <m>\vvec_1</m> and <m>\vvec_2</m>.
     </caption>
   </figure>-->
-  </p></li>
+  </p></task>
 
-  <li><p> Express the vector <m>\twovec{-3}{0}</m> as a linear
-  combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+  <task><p> Express the vector <m>\twovec{-3}{0}</m> as a linear
+  combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></task>
 
-  <li><p> Find the linear combination <m>10\vvec_1 -
-  13\vvec_2</m>.  </p></li>
+  <task><p> Find the linear combination <m>10\vvec_1 -
+  13\vvec_2</m>.  </p></task>
 
-  <li><p> Express the vector <m>\twovec{16}{-4}</m> as a linear
-  combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></li>
+  <task><p> Express the vector <m>\twovec{16}{-4}</m> as a linear
+  combination of <m>\vvec_1</m> and <m>\vvec_2</m>. </p></task>
 
-  <li><p> Explain why every vector in <m>\real^2</m> can be
+  <task><p> Explain why every vector in <m>\real^2</m> can be
   written as a linear combination of <m>\vvec_1</m> and
-  <m>\vvec_2</m> in exactly one way. </p></li>
+  <m>\vvec_2</m> in exactly one way. </p></task>
 
-      </ol></p>
-      </statement>
+      
 
      <!-- <solution>
   <p><ol label="a.">
@@ -75,6 +74,149 @@
   independent. </p>
       </statement>
     </definition>
+
+      <activity><introduction><p>
+      Use the definition of a basis to determine whther the following sets of vectors form a basis for the appropriate <m>\real^n</m>
+    </p></introduction>
+     
+     
+  
+    <task><p> In the first activity, we considered a set of
+    vectors in <m>\real^2</m>:
+    <me>
+      \vvec_1 = \twovec{2}{1},
+      \vvec_2 = \twovec{1}{2}
+    </me>.
+    Explain why these vectors form a basis for <m>\real^2</m>.
+    </p></task>
+
+    <task><p> Consider the set of vectors in <m>\real^3</m>
+    <me>
+      \vvec_1 = \threevec{1}{1}{1},
+      \vvec_2 = \threevec{0}{1}{-1},
+      \vvec_3 = \threevec{1}{0}{-1}
+    </me>.
+    and determine whether they form a basis for
+    <m>\real^3</m>.
+    </p></task>
+
+    <task><p> Do the vectors
+    <me>
+      \vvec_1 = \threevec{-2}{1}{3},
+      \vvec_2 = \threevec{3}{0}{-1},
+      \vvec_3 = \threevec{1}{1}{0},
+      \vvec_4 = \threevec{0}{3}{-2}
+    </me>
+    form a basis for <m>\real^3</m>?  </p></task>
+  </activity>
+
+  <activity><introduction><p> We can determine whether a set of vectors is a basis using RREF.</p></introduction>
+   
+     
+
+    <task><p> Explain why the vectors
+    <m>\evec_1,\evec_2,\evec_3</m> form a basis for
+    <m>\real^3</m>.  </p></task>
+
+    <task><p> If a set of vectors
+    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> forms a basis for
+    <m>\real^m</m>, what can you guarantee about the pivot
+    positions of the matrix
+    <me>
+      \left[\begin{array}{rrrr}
+      \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
+      \end{array}\right]
+      </me>?
+    </p></task>
+
+    <task><p> If the set of vectors
+    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is a basis 
+    for <m>\real^{10}</m>, how many vectors must be in the set?
+    </p></task>
+  
+
+      <!--<solution>
+  <p><ol label="a.">
+    <li><p> The matrix <m>\left[\begin{array}{rr} \vvec_1 \amp
+    \vvec_2 \end{array}\right]</m> is row equivalent to the
+    identity matrix so it has a pivot position in every row.
+    The columns therefore span <m>\real^2</m>.  There is also a
+    pivot position in every column, which means that the columns
+    are linearly independent.
+    </p></li>
+
+    <li><p> We note that
+    <me>
+      \left[\begin{array}{rrr}
+      1 \amp 0 \amp 1 \\
+      1 \amp 1 \amp 0 \\
+      1 \amp -1 \amp -1
+      \end{array}\right]
+      \sim
+      \left[\begin{array}{rrr}
+      1 \amp 0 \amp 0 \\
+      0 \amp 1 \amp 0 \\
+      0 \amp 0 \amp 1
+      \end{array}\right]\text{.}
+    </me>
+    Since there is a pivot position in every row, the vectors
+    span <m>\real^3</m>.  Since there is a pivot position in
+    every column, the vectors are linearly independent.
+    Consequently, this set of vectors forms a basis for
+    <m>\real^3</m>.
+    </p></li>
+
+    <li><p> The matrix whose columns are the
+    vectors <m>\vvec_1</m>, <m>\vvec_2</m>, <m>\vvec_3</m>, and
+    <m>\vvec_4</m> has dimensions <m>3\times4</m>.
+    Therefore, there cannot be a pivot position in every column,
+    which tells us that the columns cannot be linearly
+    independent.  Therefore, the set of vectors do not form a
+    basis for <m>\real^3</m>.
+    </p></li>
+
+    <li><p> Putting these vectors into a matrix produces the
+    identity matrix, which has a pivot position in every row and
+    every column.  Therefore, the vectors span <m>\real^3</m>
+    and are linearly independent.
+    </p></li>
+
+    <li><p> There must be a pivot position in every row and
+    every column.
+    </p></li>
+
+    <li><p> A basis for <m>\real^{10}</m> must have <m>10</m>
+    vectors.  Because the associated matrix must have a pivot
+    position in every row and every column, there must be the
+    same number of columns as there are rows.  Since the vectors
+    are <m>10</m>-dimensional, there must be 10 vectors.
+    </p></li>
+  </ol></p>
+      </solution>-->
+      
+    </activity>
+
+    <activity estimated-time='10'>
+    <statement>
+        <p>
+  If <m>\{\vvec_1,\vvec_2,\vvec_3,\vvec_4\}</m> is a basis for
+  <m>\IR^4</m>, that means the reduced row echelon form of the matrix <m>[\vvec_1\,\vvec_2\,\vvec_3\,\vvec_4]</m>
+  doesn't have a column without a pivot position, and doesn't have a
+  row of zeros. Determine the reduced row echelon form below.
+        </p>
+  <me>
+    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
+      =
+    \left[\begin{array}{cccc}
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
+    \end{array}\right]
+  </me>
+    </statement>
+</activity>
+
 
     <activity estimated-time='15'>
     <statement>
@@ -142,198 +284,57 @@
     </statement>
 </activity>
 
-<activity estimated-time='10'>
-    <statement>
-        <p>
-  If <m>\{\vec v_1,\vec v_2,\vec v_3,\vec v_4\}</m> is a basis for
-  <m>\IR^4</m>, that means <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>
-  doesn't have a non-pivot column, and doesn't have a
-  row of zeros. What is <m>\RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]</m>?
-        </p>
-  <me>
-    \RREF[\vec v_1\,\vec v_2\,\vec v_3\,\vec v_4]
-      =
-    \left[\begin{array}{cccc}
-      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-      \unknown &amp; \unknown &amp; \unknown &amp; \unknown \\
-    \end{array}\right]
-  </me>
-    </statement>
-</activity>
 
-    <activity>
-      <statement>
-      <p>
-  <ol label="a.">
-    <li><p> In the first activity, we considered a set of
-    vectors in <m>\real^2</m>:
-    <me>
-      \vvec_1 = \twovec{2}{1},
-      \vvec_2 = \twovec{1}{2}
-    </me>.
-    Explain why these vectors form a basis for <m>\real^2</m>.
-    </p></li>
+  
 
-    <li><p> Consider the set of vectors in <m>\real^3</m>
-    <me>
-      \vvec_1 = \threevec{1}{1}{1},
-      \vvec_2 = \threevec{0}{1}{-1},
-      \vvec_3 = \threevec{1}{0}{-1}
-    </me>.
-    and determine whether they form a basis for
-    <m>\real^3</m>.
-    </p></li>
-
-    <li><p> Do the vectors
-    <me>
-      \vvec_1 = \threevec{-2}{1}{3},
-      \vvec_2 = \threevec{3}{0}{-1},
-      \vvec_3 = \threevec{1}{1}{0},
-      \vvec_4 = \threevec{0}{3}{-2}
-    </me>
-    form a basis for <m>\real^3</m>?  </p></li>
-  </ol></p></statement></activity>
-
-  <activity><statement>
-    <p>
-      <ol label="a.">
-
-    <li><p> Explain why the vectors
-    <m>\evec_1,\evec_2,\evec_3</m> form a basis for
-    <m>\real^3</m>.  </p></li>
-
-    <li><p> If a set of vectors
-    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> forms a basis for
-    <m>\real^m</m>, what can you guarantee about the pivot
-    positions of the matrix
-    <me>
-      \left[\begin{array}{rrrr}
-      \vvec_1 \amp \vvec_2 \amp \ldots \amp \vvec_n
-      \end{array}\right]
-      </me>?
-    </p></li>
-
-    <li><p> If the set of vectors
-    <m>\vvec_1,\vvec_2,\ldots,\vvec_n</m> is a basis 
-    for <m>\real^{10}</m>, how many vectors must be in the set?
-    </p></li>
-  </ol>
-      </p>
-      </statement>
-
-      <!--<solution>
-  <p><ol label="a.">
-    <li><p> The matrix <m>\left[\begin{array}{rr} \vvec_1 \amp
-    \vvec_2 \end{array}\right]</m> is row equivalent to the
-    identity matrix so it has a pivot position in every row.
-    The columns therefore span <m>\real^2</m>.  There is also a
-    pivot position in every column, which means that the columns
-    are linearly independent.
-    </p></li>
-
-    <li><p> We note that
-    <me>
-      \left[\begin{array}{rrr}
-      1 \amp 0 \amp 1 \\
-      1 \amp 1 \amp 0 \\
-      1 \amp -1 \amp -1
-      \end{array}\right]
-      \sim
-      \left[\begin{array}{rrr}
-      1 \amp 0 \amp 0 \\
-      0 \amp 1 \amp 0 \\
-      0 \amp 0 \amp 1
-      \end{array}\right]\text{.}
-    </me>
-    Since there is a pivot position in every row, the vectors
-    span <m>\real^3</m>.  Since there is a pivot position in
-    every column, the vectors are linearly independent.
-    Consequently, this set of vectors forms a basis for
-    <m>\real^3</m>.
-    </p></li>
-
-    <li><p> The matrix whose columns are the
-    vectors <m>\vvec_1</m>, <m>\vvec_2</m>, <m>\vvec_3</m>, and
-    <m>\vvec_4</m> has dimensions <m>3\times4</m>.
-    Therefore, there cannot be a pivot position in every column,
-    which tells us that the columns cannot be linearly
-    independent.  Therefore, the set of vectors do not form a
-    basis for <m>\real^3</m>.
-    </p></li>
-
-    <li><p> Putting these vectors into a matrix produces the
-    identity matrix, which has a pivot position in every row and
-    every column.  Therefore, the vectors span <m>\real^3</m>
-    and are linearly independent.
-    </p></li>
-
-    <li><p> There must be a pivot position in every row and
-    every column.
-    </p></li>
-
-    <li><p> A basis for <m>\real^{10}</m> must have <m>10</m>
-    vectors.  Because the associated matrix must have a pivot
-    position in every row and every column, there must be the
-    same number of columns as there are rows.  Since the vectors
-    are <m>10</m>-dimensional, there must be 10 vectors.
-    </p></li>
-  </ol></p>
-      </solution>-->
-      
-    </activity>
+  
 <p>Now we want to look at how to convert between two different bases. This is called <em>change of basis</em>.</p>
 
     <activity>
-      <statement>
+      <introduction>
       <p> Let's begin with the basis <m>\bcal =
       \{\vvec_1,\vvec_2\}</m> of <m>\real^2</m> where
       <me>
   \vvec_1 = \twovec{3}{-2},
   \vvec_2 = \twovec{2}{1}
-      </me>.
-      <ol label="a.">
-  <li><p> If the coordinates of <m>\xvec</m> in the basis
+      </me>.</p></introduction>
+   
+  <task><p> If the coordinates of <m>\xvec</m> in the basis
   <m>\bcal</m> are  <m>\coords{\xvec}{\bcal} = \twovec{-2}{4}</m>, what
-  is the vector <m>\xvec</m>? </p></li>
+  is the vector <m>\xvec</m>? </p></task>
 
-  <li><p> If <m>\xvec = \twovec{3}{5}</m>, find the coordinates
+  <task><p> If <m>\xvec = \twovec{3}{5}</m>, find the coordinates
   of <m>\xvec</m> in the basis <m>\bcal</m>;  that is, find
-  <m>\coords{\xvec}{\bcal}</m>. </p></li>
+  <m>\coords{\xvec}{\bcal}</m>. </p></task>
 
-  <li><p> Find a matrix <m>A</m> such that, for any vector
+  <task><p> Find a matrix <m>A</m> such that, for any vector
   <m>\xvec</m>, we have <m>\xvec = A\coords{\xvec}{\bcal}</m>.
-  Explain why this matrix is invertible. </p></li>
+  Explain why this matrix is invertible. </p></task>
 
-  <li><p> Using what you found in the previous part, find a
+  <task><p> Using what you found in the previous part, find a
   matrix <m>B</m> such that, for any vector <m>\xvec</m>, we
   have <m>\coords{\xvec}{\bcal} = B\xvec</m>.  What is the
   relationship between the two matrices you have found in this and
   the previous part?  Explain why this relationship
-  holds. </p></li>
+  holds. </p></task>
 
-  </ol></p></statement></activity>
+  </activity>
 
   <activity><statement>
-    <p>
-      <ol label="a.">
-
-  <li><p> Suppose now we also consider the basis
+    <p> Suppose now we also consider the basis
   <me>
     \ccal = \left\{\twovec{1}{2}, \twovec{-2}{1}\right\}
   </me>.
-  Find a matrix <m>C</m> that converts coordinates in the basis
+  Find a matrix <m>M</m> that converts coordinates in the basis
   <m>\ccal</m> into coordinates in the basis <m>\bcal</m> from the previous activity;  that
   is, 
   <me>
-    \coords{\xvec}{\bcal} = C \coords{\xvec}{\ccal}
+    \coords{\xvec}{\bcal} = M \coords{\xvec}{\ccal}
   </me>.
   You may wish to think about converting coordinates from the basis
   <m>\ccal</m> into the standard coordinate system and then into
-  the basis <m>\bcal</m>.
-  </p></li>
-  </ol></p></statement></activity>
+  the basis <m>\bcal</m>. 
+  </p></statement></activity>
 
   <activity><statement>
     <p>
@@ -407,8 +408,10 @@
 
     <!--optional application-->
 
+    <p>In the next activity we explore an application of change of basis in the field of computer vision.</p>
+
 <activity><statement>
-  <p> Do Acitivity 3.2.4 Edge Detection in Understanding Linear Algebra</p>
+  <p> Do <url href="https://davidaustinm.github.io/ula/sec-bases.html#activity-32" visual="davidaustinm.github.io/ula/sec-bases.html#activity-32">Activity 3.2.4 Edge detection</url> in Understanding Linear Algebra.</p>
 </statement></activity>
 
 
