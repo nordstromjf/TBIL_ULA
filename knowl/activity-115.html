@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="activity project-like"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.8</span><span class="period">.</span>
+</h3>
+<div class="introduction"><div class="para logical">
+<div class="para">Let's now consider the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">and use the Gaussian elimination process.</div>
+</div></div>
+<article class="task exercise-like"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical">
+<div class="para">We begin with a row replacement operation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<div class="para">What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det A_1\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical">
+<div class="para">Next we perform another row replacement operation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_1=
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+= A_2\text{.}
+\end{equation*}
+</div>
+<div class="para">What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det
+A_2\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical">
+<div class="para">Finally, we perform an interchange:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right]
+= U
+\end{equation*}
+</div>
+<div class="para">to arrive at an upper triangular matrix <span class="process-math">\(U\text{.}\)</span>  What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det U\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para">Since <span class="process-math">\(U\)</span> is upper triangular, we can compute its determinant, which allows us to find <span class="process-math">\(\det A\text{.}\)</span>  What is <span class="process-math">\(\det A\text{?}\)</span>  Is <span class="process-math">\(A\)</span> invertible?</div></article></article><span class="incontext"><a href="ch3sec4.html#activity-115" class="internal">in-context</a></span>
+</body>
+</html>

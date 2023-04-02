@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Determinants</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
+var sc_project=12865162;
+var sc_invisible=1;
+var sc_security="42532f2e";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12865162/0/42532f2e/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="ch3sec3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-three.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch3sec5.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What can we expect</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Finding solutions to systems of linear equations</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Computation with Sage</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Pivots and their influence on solution spaces</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-two.html" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors and linear combinations</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix multiplication and linear combinations</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The span of a set of vectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear independence</span></a></div></li>
+<li>
+<div class="toc-item"><a href="ch2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Matrix transformations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="ch2sec5.html#lintrasapplications" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Applications of matrix transformations</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="ch2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The geometry of matrix transformations</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-three.html" class="internal"><span class="codenumber">3</span> <span class="title">TBIL Activities: Invertibility, Bases, and Coordinate Systems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch3sec1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Invertibility</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bases and coordinate systems</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Image Compression</span></a></div></li>
+<li class="active"><div class="toc-item"><a href="ch3sec4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Determinants</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Subspaces of <span class="process-math">\(\real^p\)</span></span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-four.html" class="internal"><span class="codenumber">4</span> <span class="title">TBIL Activities: Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch4sec1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">An introduction to eigenvalues and eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Finding eigenvalues and eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Diagonalization, similarity, and powers of a matrix</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dynamical Systems</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec5.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Markov chains and Google's PageRank algorithm</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-six.html" class="internal"><span class="codenumber">5</span> <span class="title">TBIL Activities: Orthogonality</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch6sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The dot product</span></a></div></li>
+<li><div class="toc-item"><a href="ch6sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Orthogonal complements and the matrix transpose</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch3sec4"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">3.4</span> <span class="title">Determinants</span>
+</h2>
+<div class="para" id="p-452">A pair of vectors <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\)</span> is called <em class="emphasis">positively</em> oriented if the angle, measured in the counterclockwise direction, from <span class="process-math">\(\vvec_1\)</span> to <span class="process-math">\(\vvec_2\)</span> is less than <span class="process-math">\(180^\circ\text{;}\)</span> we say the pair is <em class="emphasis">negatively</em> oriented if it is more than <span class="process-math">\(180^\circ\text{.}\)</span>
+</div>
+<article class="definition definition-like" id="definition-6"><h3 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.4.0.1</span><span class="period">.</span>
+</h3> <div class="para" id="p-453">Suppose a <span class="process-math">\(2\times2\)</span> matrix <span class="process-math">\(A\)</span> has columns <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span>  If the pair of vectors is positively oriented, then the <em class="emphasis">determinant</em> of <span class="process-math">\(A\text{,}\)</span> denoted <span class="process-math">\(\det A\text{,}\)</span> is the area of the parallelogram formed by <span class="process-math">\(\vvec_1\)</span> and <span class="process-math">\(\vvec_2\text{.}\)</span> If the pair is negatively oriented, then <span class="process-math">\(\det A\)</span> is minus the area of the parallelogram.</div></article><div class="para" id="p-454">For the next several activities, We will use geometry to find the determinant of some simple <span class="process-math">\(2\times2\)</span> matrices.</div>
+<article class="activity project-like" id="activity-108"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-58"><div class="para" id="p-455">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-9" id="fn-9"><sup> 9 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</div></div>
+<article class="task exercise-like" id="task-189"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-456">Find the determinant of the matrix <span class="process-math">\(\left[\begin{array}{rr} -\frac12 \amp 0 \\ 0 \amp 2
+\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-190"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-457">What is the geometric effect of the matrix transformation defined by this matrix?</div></article><article class="task exercise-like" id="task-191"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-458">What does this lead you to believe is generally true about the determinant of a diagonal matrix?</div></article></article><article class="activity project-like" id="activity-109"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-59"><div class="para" id="p-459">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-10" id="fn-10"><sup> 10 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</div></div>
+<article class="task exercise-like" id="task-192"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-460">Find the determinant of the matrix <span class="process-math">\(\left[\begin{array}{rr} 0 \amp 1 \\
+1 \amp 0 \\
+\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-193"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-461">What is the geometric effect of the matrix transformation defined by this matrix?</div></article></article><article class="activity project-like" id="activity-110"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-60"><div class="para" id="p-462">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-11" id="fn-11"><sup> 11 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</div></div>
+<article class="task exercise-like" id="task-194"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-463">Find the determinant of the matrix <span class="process-math">\(\left[\begin{array}{rr} 2 \amp 1 \\
+0 \amp 1 \\
+\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-195"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-464">What is the geometric effect of the matrix transformation defined by this matrix?</div></article><article class="task exercise-like" id="task-196"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-465">What do you notice about the determinant of any matrix of the form <span class="process-math">\(\left[\begin{array}{rr} 2 \amp k \\
+0 \amp 1 \\
+\end{array}\right]\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-197"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-466">What does this say about the determinant of an upper triangular matrix?</div></article></article><article class="activity project-like" id="activity-111"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-61"><div class="para" id="p-467">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-12" id="fn-12"><sup> 12 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</div></div>
+<article class="task exercise-like" id="task-198"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-468">Find the determinant of the matrix <span class="process-math">\(\left[\begin{array}{rr} 2 \amp 0 \\
+1 \amp 1 \\
+\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-199"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-469">When we change the entry in the lower left corner, what is the effect on the determinant?</div></article><article class="task exercise-like" id="task-200"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-470">What does this say about the determinant of a lower triangular matrix?</div></article></article><article class="activity project-like" id="activity-112"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.5</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-62"><div class="para" id="p-471">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-13" id="fn-13"><sup> 13 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinant.</div></div>
+<article class="task exercise-like" id="task-201"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-472">Find the determinant of the matrix <span class="process-math">\(\left[\begin{array}{rr} 1 \amp -1 \\
+-2 \amp 2 \\
+\end{array}\right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-202"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-473">What is the geometric effect of the matrix transformation defined by this matrix?</div></article><article class="task exercise-like" id="task-203"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-474">In general, what is the determinant of a matrix whose columns are linearly dependent?</div></article></article><article class="activity project-like" id="activity-113"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.6</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-63"><div class="para logical" id="p-475">
+<div class="para">Consider the matrices</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = \left[\begin{array}{rr}
+2 \amp 1 \\
+2 \amp -1 \\
+\end{array}\right],
+B = \left[\begin{array}{rr}
+1 \amp 0 \\
+0 \amp 2 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-204"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-476">Use the diagram in <a class="external" href="https://davidaustinm.github.io/ula/sec-determinants.html#activity-35" target="_blank">Activity 3.4.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-14" id="fn-14"><sup> 14 </sup></a> of Undertanding Linear Algebra or your own sketch of the appropriate parallelogram to find the determinants of <span class="process-math">\(A\text{,}\)</span> <span class="process-math">\(B\text{,}\)</span> and <span class="process-math">\(AB\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-205"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-477">What does this suggest is generally true about the relationship of <span class="process-math">\(\det(AB)\)</span> to <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det B\text{?}\)</span>
+</div></article></article><div class="para" id="p-478">The next several activities will investigate the connection between the determinant of a matrix and its invertibility using Gaussian elimination.</div>
+<article class="activity project-like" id="activity-114"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.7</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-64"><div class="para logical" id="p-479">
+<div class="para">Consider the two upper triangular matrices</div>
+<div class="displaymath process-math">
+\begin{equation*}
+U_1 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right],
+U_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp 0 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-206"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-480">Which of the matrices <span class="process-math">\(U_1\)</span> and <span class="process-math">\(U_2\)</span> are invertible?</div></article><article class="task exercise-like" id="task-207"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-481">Use our earlier observation that the determinant of an upper triangular matrix is the product of its diagonal entries to find <span class="process-math">\(\det U_1\)</span> and <span class="process-math">\(\det U_2\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-208"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-482">Explain why an upper triangular matrix is invertible if and only if its determinant is not zero.</div></article></article><article class="activity project-like" id="activity-115"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.8</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-65"><div class="para logical" id="p-483">
+<div class="para">Let's now consider the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\end{equation*}
+</div>
+<div class="para">and use the Gaussian elimination process.</div>
+</div></div>
+<article class="task exercise-like" id="task-209"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="p-484">
+<div class="para">We begin with a row replacement operation</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+-2 \amp 2 \amp -6 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+= A_1\text{.}
+\end{equation*}
+</div>
+<div class="para">What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det A_1\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="task-210"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="p-485">
+<div class="para">Next we perform another row replacement operation:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_1=
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+3 \amp -1 \amp 10 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+= A_2\text{.}
+\end{equation*}
+</div>
+<div class="para">What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det
+A_2\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="task-211"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="p-486">
+<div class="para">Finally, we perform an interchange:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A_2 =
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 0 \amp -2 \\
+0 \amp 2 \amp 4 \\
+\end{array}\right]
+\sim
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 2 \\
+0 \amp 2 \amp 4 \\
+0 \amp 0 \amp -2 \\
+\end{array}\right]
+= U
+\end{equation*}
+</div>
+<div class="para">to arrive at an upper triangular matrix <span class="process-math">\(U\text{.}\)</span>  What is the relationship between <span class="process-math">\(\det A\)</span> and <span class="process-math">\(\det U\text{?}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="task-212"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-487">Since <span class="process-math">\(U\)</span> is upper triangular, we can compute its determinant, which allows us to find <span class="process-math">\(\det A\text{.}\)</span>  What is <span class="process-math">\(\det A\text{?}\)</span>  Is <span class="process-math">\(A\)</span> invertible?</div></article></article><article class="activity project-like" id="activity-116"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.9</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-66"><div class="para logical" id="p-488">
+<div class="para">Consider the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A = 
+\left[\begin{array}{rrr}
+1 \amp -1 \amp 3 \\
+0 \amp 2 \amp -2 \\
+2 \amp 1 \amp 3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-213"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-489">Perform a sequence of row operations to find an upper triangular matrix <span class="process-math">\(U\)</span> that is row equivalent to <span class="process-math">\(A\text{.}\)</span>  Use this to determine <span class="process-math">\(\det A\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-214"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-490">Is the matrix <span class="process-math">\(A\)</span> invertible?</div></article></article><article class="activity project-like" id="activity-117"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.10</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-67"><div class="para" id="p-491">Suppose we apply a sequence of row operations on a matrix <span class="process-math">\(A\)</span> to obtain <span class="process-math">\(A'\text{.}\)</span>
+</div></div>
+<article class="task exercise-like" id="task-215"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-492">Explain why <span class="process-math">\(\det A
+\neq 0\)</span> if and only if <span class="process-math">\(\det A' \neq 0\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-216"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-493">Explain why an <span class="process-math">\(n\times n\)</span> matrix <span class="process-math">\(A\)</span> is invertible if and only if <span class="process-math">\(\det A \neq 0\text{.}\)</span>
+</div></article></article><article class="activity project-like" id="activity-118"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.11</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-494">If <span class="process-math">\(A\)</span> is an invertible matrix with <span class="process-math">\(\det A =
+-3\text{,}\)</span> what is <span class="process-math">\(\det A^{-1}\text{?}\)</span>
+</div></article><div class="para" id="p-495">Another way to calculate the determinant is through cofactor expansion. We will explore cofactor expansions through some examples.</div>
+<article class="activity project-like" id="activity-119"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.12</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-496">
+<div class="para">Using a cofactor expansion, show that the determinant of the following matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\det
+\left[\begin{array}{rrr}
+2 \amp 0 \amp -1 \\
+3 \amp 1 \amp 2 \\
+-2 \amp 4 \amp -3 \\
+\end{array}\right] = -36\text{.}
+\end{equation*}
+</div>
+<div class="para">Remember that you can choose any row or column to create the expansion, but the choice of a particular row or column may simplify the computation.</div>
+</div></article><article class="activity project-like" id="activity-120"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.13</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-497">
+<div class="para">Use a cofactor expansion to find the determinant of</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{rrrr}
+-3 \amp 0 \amp 0 \amp 0 \\
+4 \amp 1 \amp 0  \amp 0 \\
+-1 \amp 4 \amp -4 \amp 0\\
+0 \amp 3 \amp 2 \amp 3 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+</div></article><article class="activity project-like" id="activity-121"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.14</span><span class="period">.</span>
+</h3>
+<div class="para" id="p-498">Explain how the cofactor expansion technique shows that the determinant of a triangular matrix is equal to the product of its diagonal entries.</div></article><article class="activity project-like" id="activity-122"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.4.0.15</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-499">
+<div class="para">Sage will compute the determinant of a matrix <code class="code-inline tex2jax_ignore">A</code> with the command <code class="code-inline tex2jax_ignore">A.det()</code>.  Use Sage to find the determinant of the matrix</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left[\begin{array}{rrrr}
+2 \amp 1 \amp -2 \amp -3 \\
+3 \amp 0 \amp -1  \amp -2 \\
+-3 \amp 4 \amp 1 \amp 2\\
+1 \amp 3 \amp 3 \amp -1 \\
+\end{array}\right]\text{.}
+\end{equation*}
+</div>
+<div class="para"><pre class="ptx-sagecell sagecell-sage" id="sage-27"><script type="text/x-sage">
+</script></pre></div>
+</div></article></section><div class="hidden-content tex2jax_ignore" id="hk-fn-9"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-10"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-11"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-12"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-13"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+<div class="hidden-content tex2jax_ignore" id="hk-fn-14"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-determinants.html#activity-35</code></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch3sec3.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch3sec5.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
+var sc_project=12865162;
+var sc_invisible=1;
+var sc_security="42532f2e";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12865162/0/42532f2e/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+</body>
+</html>

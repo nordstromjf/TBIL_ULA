@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Vectors and linear combinations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="TBIL Activities for Understanding Linear Algebra">
+<meta property="book:author" content="Jennifer Nordstrom">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'color', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore|ignore-math",
+    processHtmlClass: "process-math",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
+    },
+  },
+  chtml: {
+    scale: 0.98,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/color', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+  startup: {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script><script src="https://unpkg.com/lunr/lunr.js"></script><script src="lunr-pretext-search-index.js"></script><script src="https://pretextbook.org/js/0.2/pretext_search.js"></script><link href="https://pretextbook.org/css/0.6/pretext_search.css" rel="stylesheet" type="text/css">
+<script>js_version = 0.2</script><script src="https://pretextbook.org/js/lib/jquery.min.js"></script><script src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script src="https://pretextbook.org/js/0.2/pretext.js"></script><script>miniversion=0.1</script><script src="https://pretextbook.org/js/0.2/pretext_add_on.js?x=1"></script><script src="https://pretextbook.org/js/0.2/user_preferences.js"></script><script src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://pretextbook.org/css/0.6/pretext.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/shell_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/banner_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/toc_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/style_default.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="https://pretextbook.org/css/0.6/setcolors.css" rel="stylesheet" type="text/css">
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
+var sc_project=12865162;
+var sc_invisible=1;
+var sc_security="42532f2e";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12865162/0/42532f2e/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+</head>
+<body class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="TBILLinear.html"><span class="title">TBIL Activities for Understanding Linear Algebra</span></a></h1>
+<p class="byline">Jennifer Nordstrom</p>
+</div>
+<div id="searchresultsplaceholder" style="display: none">
+<button id="closesearchresults" onclick="document.getElementById('searchresultsplaceholder').style.display = 'none'; return false;">x</button><h2>Search Results: <span id="searchterms"></span>
+</h2>
+<div id="searchempty"><span>No results.</span></div>
+<ol id="searchresults"></ol>
+</div>
+</div></header><nav id="ptx-navbar" class="navbar"><button class="toc-toggle button" aria-label="Show or hide table of contents"><span class="icon">☰</span><span class="name">Contents</span></button><a class="index-button button" href="index-1.html" title="Index"><span class="name">Index</span></a><button id="user-preferences-button" class="user-preferences-button button" title="Modify user preferences"><span id="theavatarbutton" class="name">You!</span><div id="preferences_menu_holder" class="hidden"><ol id="preferences_menu" style="font-family: 'Roboto Serif', serif;">
+<li data-env="avatar" tabindex="-1">Choose avatar<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden avatar">
+<li data-val="You!" tabindex="-1">
+<span id="theYou!" class="avatarcheck">✔️</span>You!</li>
+<li data-val="😺" tabindex="-1">
+<span id="the😺" class="avatarcheck"></span>😺</li>
+<li data-val="👤" tabindex="-1">
+<span id="the👤" class="avatarcheck"></span>👤</li>
+<li data-val="👽" tabindex="-1">
+<span id="the👽" class="avatarcheck"></span>👽</li>
+<li data-val="🐶" tabindex="-1">
+<span id="the🐶" class="avatarcheck"></span>🐶</li>
+<li data-val="🐼" tabindex="-1">
+<span id="the🐼" class="avatarcheck"></span>🐼</li>
+<li data-val="🌈" tabindex="-1">
+<span id="the🌈" class="avatarcheck"></span>🌈</li>
+</ol>
+</li>
+<li data-env="fontfamily" tabindex="-1">Font family<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fontfamily">
+<li data-val="face" data-change="OS" tabindex="-1" style="font-family: 'Open Sans'">
+<span id="theOS" class="ffcheck">✔️</span><span class="name">Open Sans</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+<li data-val="face" data-change="RS" tabindex="-1" style="font-family: 'Roboto Serif'">
+<span id="theRS" class="ffcheck"></span><span class="name">Roboto Serif</span><span class="sample">AaBbCc 123 PreTeXt</span>
+</li>
+</ol>
+</li>
+<li data-env="font" tabindex="-1">Adjust font<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden fonts">
+<li>Size</li>
+<li><span id="thesize">12</span></li>
+<li data-val="size" data-change="-1" tabindex="-1" style="font-size: 80%">Smaller</li>
+<li data-val="size" data-change="1" tabindex="-1" style="font-size: 110%">Larger</li>
+<li>Width</li>
+<li><span id="thewdth">100</span></li>
+<li data-val="wdth" data-change="-5" tabindex="-1" style="font-variation-settings: 'wdth' 60">narrower</li>
+<li data-val="wdth" data-change="5" tabindex="-1" style="font-variation-settings: 'wdth' 150">wider</li>
+<li>Weight</li>
+<li><span id="thewght">400</span></li>
+<li data-val="wght" data-change="-50" tabindex="-1" style="font-weight: 200">thinner</li>
+<li data-val="wght" data-change="50" tabindex="-1" style="font-weight: 700">heavier</li>
+<li>Letter spacing</li>
+<li>
+<span id="thelspace">0</span><span class="byunits">/200</span>
+</li>
+<li data-val="lspace" data-change="-1" tabindex="-1">closer</li>
+<li data-val="lspace" data-change="1" tabindex="-1">f a r t h e r</li>
+<li>Word spacing</li>
+<li>
+<span id="thewspace">0</span><span class="byunits">/50</span>
+</li>
+<li data-val="wspace" data-change="-1" tabindex="-1">smaller gap </li>
+<li data-val="wspace" data-change="1" tabindex="-1">larger gap</li>
+<li>Line Spacing</li>
+<li>
+<span id="theheight">135</span><span class="byunits">/100</span>
+</li>
+<li data-val="height" data-change="-5" tabindex="-1" style="line-height: 1">closer<br>together</li>
+<li data-val="height" data-change="5" tabindex="-1" style="line-height: 1.75">further<br>apart</li>
+</ol>
+</li>
+<li data-env="atmosphere" tabindex="-1">Light/dark mode<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden atmosphere">
+<li data-val="default" tabindex="-1">
+<span id="thedefault" class="atmospherecheck">✔️</span>default</li>
+<li data-val="pastel" tabindex="-1">
+<span id="thepastel" class="atmospherecheck"></span>pastel</li>
+<li data-val="darktwilight" tabindex="-1">
+<span id="thedarktwilight" class="atmospherecheck"></span>twilight</li>
+<li data-val="dark" tabindex="-1">
+<span id="thedark" class="atmospherecheck"></span>dark</li>
+<li data-val="darkmidnight" tabindex="-1">
+<span id="thedarkmidnight" class="atmospherecheck"></span>midnight</li>
+</ol>
+</li>
+<li data-env="ruler" tabindex="-1">Reading ruler<div class="wrap_to_submenu"><span class="to_submenu">▻</span></div>
+<ol class="hidden ruler">
+<li data-val="none" tabindex="-1">
+<span id="thenone" class="rulercheck">✔️</span>none</li>
+<li data-val="underline" tabindex="-1">
+<span id="theunderline" class="rulercheck"></span>underline</li>
+<li data-val="lunderline" tabindex="-1">
+<span id="thelunderline" class="rulercheck"></span>L-underline</li>
+<li data-val="greybar" tabindex="-1">
+<span id="thegreybar" class="rulercheck"></span>grey bar</li>
+<li data-val="lightbox" tabindex="-1">
+<span id="thelightbox" class="rulercheck"></span>light box</li>
+<li data-val="sunrise" tabindex="-1">
+<span id="thesunrise" class="rulercheck"></span>sunrise</li>
+<li data-val="sunriseunderline" tabindex="-1">
+<span id="thesunriseunderline" class="rulercheck"></span>sunrise underline</li>
+<li class="moveQ">Motion by:</li>
+<li data-val="mouse" tabindex="-1">
+<span id="themouse" class="motioncheck">✔️</span>follow the mouse</li>
+<li data-val="arrow" tabindex="-1">
+<span id="thearrow" class="motioncheck"></span>up/down arrows - not yet</li>
+<li data-val="eye" tabindex="-1">
+<span id="theeye" class="motioncheck"></span>eye tracking - not yet</li>
+</ol>
+</li>
+</ol></div></button><span class="treebuttons"><a class="previous-button button" href="ch-two.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-two.html" title="Up"><span class="icon">^</span><span class="name">Up</span></a><a class="next-button button" href="ch2sec2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a></span><div class="searchbox"><div class="searchwidget">
+<input id="ptxsearch" type="text" name="terms" placeholder="Search" onchange="doSearch()"><button id="searchbutton" type="button" onclick="doSearch()">🔍</button>
+</div></div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\avec}{{\mathbf a}}
+    \newcommand{\bvec}{{\mathbf b}}
+    \newcommand{\cvec}{{\mathbf c}}
+    \newcommand{\dvec}{{\mathbf d}}
+    \newcommand{\dtil}{\widetilde{\mathbf d}}
+    \newcommand{\evec}{{\mathbf e}}
+    \newcommand{\fvec}{{\mathbf f}}
+    \newcommand{\nvec}{{\mathbf n}}
+    \newcommand{\pvec}{{\mathbf p}}
+    \newcommand{\qvec}{{\mathbf q}}
+    \newcommand{\svec}{{\mathbf s}}
+    \newcommand{\tvec}{{\mathbf t}}
+    \newcommand{\uvec}{{\mathbf u}}
+    \newcommand{\vvec}{{\mathbf v}}
+    \newcommand{\wvec}{{\mathbf w}}
+    \newcommand{\xvec}{{\mathbf x}}
+    \newcommand{\yvec}{{\mathbf y}}
+    \newcommand{\zvec}{{\mathbf z}}
+    \newcommand{\rvec}{{\mathbf r}}
+    \newcommand{\mvec}{{\mathbf m}}
+    \newcommand{\zerovec}{{\mathbf 0}}
+    \newcommand{\onevec}{{\mathbf 1}}
+    \newcommand{\real}{{\mathbb R}}
+    \newcommand{\twovec}[2]{\left[\begin{array}{r}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\ctwovec}[2]{\left[\begin{array}{c}#1 \\ #2
+    \end{array}\right]}
+    \newcommand{\threevec}[3]{\left[\begin{array}{r}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\cthreevec}[3]{\left[\begin{array}{c}#1 \\ #2 \\ #3
+    \end{array}\right]}
+    \newcommand{\fourvec}[4]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\cfourvec}[4]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\ #4
+    \end{array}\right]}
+    \newcommand{\fivevec}[5]{\left[\begin{array}{r}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\cfivevec}[5]{\left[\begin{array}{c}#1 \\ #2 \\ #3 \\
+    #4 \\ #5 \\ \end{array}\right]}
+    \newcommand{\mattwo}[4]{\left[\begin{array}{rr}#1 \amp #2 \\ #3 \amp #4 \\ \end{array}\right]}
+    \newcommand{\laspan}[1]{\text{Span}\{#1\}}
+    \newcommand{\bcal}{{\cal B}}
+    \newcommand{\ccal}{{\cal C}}
+    \newcommand{\scal}{{\cal S}}
+    \newcommand{\wcal}{{\cal W}}
+    \newcommand{\ecal}{{\cal E}}
+    \newcommand{\coords}[2]{\left\{#1\right\}_{#2}}
+    \newcommand{\gray}[1]{\color{gray}{#1}}
+    \newcommand{\lgray}[1]{\color{lightgray}{#1}}
+    \newcommand{\rank}{\text{rank}}
+    \newcommand{\row}{\text{Row}}
+    \newcommand{\col}{\text{Col}}
+    \renewcommand{\row}{\text{Row}}
+    \newcommand{\nul}{\text{Nul}}
+    \newcommand{\var}{\text{Var}}
+    \newcommand{\corr}{\text{corr}}
+    \newcommand{\len}[1]{\left|#1\right|}
+    \newcommand{\bbar}{\overline{\bvec}}
+    \newcommand{\bhat}{\widehat{\bvec}}
+    \newcommand{\bperp}{\bvec^\perp}
+    \newcommand{\xhat}{\widehat{\xvec}}
+    \newcommand{\vhat}{\widehat{\vvec}}
+    \newcommand{\uhat}{\widehat{\uvec}}
+    \newcommand{\what}{\widehat{\wvec}}
+    \newcommand{\Sighat}{\widehat{\Sigma}}
+    \newcommand{\circledNumber}[1]{\boxed{#1}}
+\newcommand{\IR}{\mathbb{R}}
+\newcommand{\IC}{\mathbb{C}}
+\renewcommand{\P}{\mathcal{P}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\RREF}{\operatorname{RREF}}
+\newcommand{\vspan}{\operatorname{span}}
+\newcommand{\setList}[1]{\left\{#1\right\}}
+\newcommand{\setBuilder}[2]{\left\{#1\,\middle|\,#2\right\}}
+\newcommand{\unknown}{\,{\color{gray}?}\,}
+\newcommand{\drawtruss}[2][1]{
+\begin{tikzpicture}[scale=#1, every node/.style={scale=#1}]
+\draw (0,0) node[left,magenta]{C} -- 
+      (1,1.71) node[left,magenta]{A} -- 
+      (2,0) node[above,magenta]{D} -- cycle;
+\draw (2,0) -- 
+      (3,1.71) node[right,magenta]{B} -- 
+      (1,1.71) -- cycle;
+\draw (3,1.71) -- (4,0) node[right,magenta]{E} -- (2,0) -- cycle;
+\draw[blue] (0,0) -- (0.25,-0.425) -- (-0.25,-0.425) -- cycle;
+\draw[blue] (4,0) -- (4.25,-0.425) -- (3.75,-0.425) -- cycle;
+\draw[thick,red,-&gt;] (2,0) -- (2,-0.75);
+#2
+\end{tikzpicture}
+}
+\newcommand{\trussNormalForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, blue,-&gt;] (4,0) -- (3.5,0.5);
+}
+\newcommand{\trussCompletion}{
+\trussNormalForces
+\draw [thick, magenta,&lt;-&gt;] (0.4,0.684) -- (0.6,1.026);
+\draw [thick, magenta,&lt;-&gt;] (3.4,1.026) -- (3.6,0.684);
+\draw [thick, magenta,&lt;-&gt;] (1.8,1.71) -- (2.2,1.71);
+\draw [thick, magenta,-&gt;] (1.6,0.684) -- (1.5,0.855);
+\draw [thick, magenta,&lt;-] (1.5,0.855) -- (1.4,1.026);
+\draw [thick, magenta,-&gt;] (2.4,0.684) -- (2.5,0.855);
+\draw [thick, magenta,&lt;-] (2.5,0.855) -- (2.6,1.026);
+}
+\newcommand{\trussCForces}{
+\draw [thick, blue,-&gt;] (0,0) -- (0.5,0.5);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.4,0.684);
+\draw [thick, magenta,-&gt;] (0,0) -- (0.5,0);
+}
+\newcommand{\trussStrutVariables}{
+\node[above] at (2,1.71) {\(x_1\)};
+\node[left] at (0.5,0.866) {\(x_2\)};
+\node[left] at (1.5,0.866) {\(x_3\)};
+\node[right] at (2.5,0.866) {\(x_4\)};
+\node[right] at (3.5,0.866) {\(x_5\)};
+\node[below] at (1,0) {\(x_6\)};
+\node[below] at (3,0) {\(x_7\)};
+}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar"><nav id="ptx-toc" class="depth2"><ul class="structural">
+<li>
+<div class="toc-item"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="colophon-1.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li><div class="toc-item"><a href="acknowledgement-1.html" class="internal"><span class="title">Acknowledgements</span></a></div></li>
+<li><div class="toc-item"><a href="preface.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-first.html" class="internal"><span class="codenumber">1</span> <span class="title">TBIL Activities: Systems of Equations</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch1sec1.html" class="internal"><span class="codenumber">1.1</span> <span class="title">What can we expect</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec2.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Finding solutions to systems of linear equations</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec3.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Computation with Sage</span></a></div></li>
+<li><div class="toc-item"><a href="ch1sec4.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Pivots and their influence on solution spaces</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-two.html" class="internal"><span class="codenumber">2</span> <span class="title">TBIL Activities: Vectors, Matrices, and Linear Combinations</span></a></div>
+<ul class="structural">
+<li class="active"><div class="toc-item"><a href="ch2sec1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Vectors and linear combinations</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Matrix multiplication and linear combinations</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec3.html" class="internal"><span class="codenumber">2.3</span> <span class="title">The span of a set of vectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch2sec4.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Linear independence</span></a></div></li>
+<li>
+<div class="toc-item"><a href="ch2sec5.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Matrix transformations</span></a></div>
+<ul class="structural"><li><div class="toc-item"><a href="ch2sec5.html#lintrasapplications" class="internal"><span class="codenumber">2.5.1</span> <span class="title">Applications of matrix transformations</span></a></div></li></ul>
+</li>
+<li><div class="toc-item"><a href="ch2sec6.html" class="internal"><span class="codenumber">2.6</span> <span class="title">The geometry of matrix transformations</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-three.html" class="internal"><span class="codenumber">3</span> <span class="title">TBIL Activities: Invertibility, Bases, and Coordinate Systems</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch3sec1.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Invertibility</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec2.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Bases and coordinate systems</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec3.html" class="internal"><span class="codenumber">3.3</span> <span class="title">Image Compression</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec4.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Determinants</span></a></div></li>
+<li><div class="toc-item"><a href="ch3sec5.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Subspaces of <span class="process-math">\(\real^p\)</span></span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-four.html" class="internal"><span class="codenumber">4</span> <span class="title">TBIL Activities: Eigenvalues and Eigenvectors</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch4sec1.html" class="internal"><span class="codenumber">4.1</span> <span class="title">An introduction to eigenvalues and eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec2.html" class="internal"><span class="codenumber">4.2</span> <span class="title">Finding eigenvalues and eigenvectors</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec3.html" class="internal"><span class="codenumber">4.3</span> <span class="title">Diagonalization, similarity, and powers of a matrix</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec4.html" class="internal"><span class="codenumber">4.4</span> <span class="title">Dynamical Systems</span></a></div></li>
+<li><div class="toc-item"><a href="ch4sec5.html" class="internal"><span class="codenumber">4.5</span> <span class="title">Markov chains and Google's PageRank algorithm</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="ch-six.html" class="internal"><span class="codenumber">5</span> <span class="title">TBIL Activities: Orthogonality</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="ch6sec1.html" class="internal"><span class="codenumber">5.1</span> <span class="title">The dot product</span></a></div></li>
+<li><div class="toc-item"><a href="ch6sec2.html" class="internal"><span class="codenumber">5.2</span> <span class="title">Orthogonal complements and the matrix transpose</span></a></div></li>
+</ul>
+</li>
+<li>
+<div class="toc-item"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural">
+<li><div class="toc-item"><a href="index-1.html" class="internal"><span class="title">Index</span></a></div></li>
+<li><div class="toc-item"><a href="colophon-2.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content">
+<section class="section" id="ch2sec1"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Vectors and linear combinations</span>
+</h2>
+<article class="activity project-like" id="activity-28"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.1</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-10"><div class="para logical" id="p-108">
+<div class="para">Suppose that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+\right],
+\wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+\right].
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-31"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="p-109">
+<div class="para">Find expressions for the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{array}{cccc}
+\vvec, \amp 2\vvec, \amp -\vvec, \amp -2\vvec, \\
+\wvec, \amp 2\wvec, \amp -\wvec, \amp -2\wvec\text{.} \\
+\end{array}
+\end{equation*}
+</div>
+<div class="para">and sketch them in the <span class="process-math">\(xy\)</span> plane.</div>
+</div></article><article class="task exercise-like" id="task-32"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-110">What geometric effect does scalar multiplication by a positive number have on a vector?  (A) preserves the length, changes the direction, (B) preserves the direction, changes the length, (C) changes the length and the direction.</div></article><article class="task exercise-like" id="task-33"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para" id="p-111">What geometric effect does scalar multiplication by a negative number have on a vector?  (A) preserves the length, changes the direction, (B) preserves the direction, changes the length, (C) changes the length and the direction.</div></article></article><article class="activity project-like" id="activity-29"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.2</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-11"><div class="para logical" id="p-112">
+<div class="para">As in the previous activity, suppose that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+\right],
+\wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+\right].
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-34"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-113">Sketch the vectors <span class="process-math">\(\vvec, \wvec, \vvec + \wvec\)</span> in the <span class="process-math">\(xy\)</span> plane.</div></article><article class="task exercise-like" id="task-35"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="p-114">
+<div class="para">Consider vectors that have the form <span class="process-math">\(\vvec +
+a\wvec\)</span> where <span class="process-math">\(a\)</span> is any scalar.  Sketch a few of these vectors when, say, <span class="process-math">\(a = -2, -1, 0, 1, \)</span> and <span class="process-math">\(2\text{.}\)</span> Consider the points at the tips of each of these vectors. An appropriate geometric description for this set of points would be</div>
+<ol class="upper-alpha">
+<li id="li-68"><div class="para" id="p-115">a line through the tip of <span class="process-math">\(\vvec\)</span> parallel to <span class="process-math">\(\wvec\text{.}\)</span>
+</div></li>
+<li id="li-69"><div class="para" id="p-116">a line through the tip of <span class="process-math">\(\wvec\)</span> parallel to <span class="process-math">\(\vvec\text{.}\)</span>
+</div></li>
+<li id="li-70"><div class="para" id="p-117">a line through <span class="process-math">\((0,0)\)</span> parallel to <span class="process-math">\(\vvec+\wvec\text{.}\)</span>
+</div></li>
+</ol>
+</div></article></article><article class="activity project-like" id="activity-30"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.3</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-12"><div class="para logical" id="p-118">
+<div class="para">As in the previous activity, suppose that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec = \left[\begin{array}{r} 3 \\ 1 \end{array}
+\right],
+\wvec = \left[\begin{array}{r} -1 \\ 2 \end{array}
+\right].
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-36"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="p-119">
+<div class="para">If <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> are two scalars, then the vector</div>
+<div class="displaymath process-math">
+\begin{equation*}
+a \vvec + b \wvec 
+\end{equation*}
+</div>
+<div class="para">is called a <dfn class="terminology">linear combination</dfn> of the vectors <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{.}\)</span>  Find the vector that is the linear combination when <span class="process-math">\(a = -2\)</span> and <span class="process-math">\(b = 1\text{.}\)</span>
+</div>
+</div></article><article class="task exercise-like" id="task-37"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-120">Can the vector <span class="process-math">\(\left[\begin{array}{r} -31 \\ 37
+\end{array}\right]\)</span> be represented as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+</div></article></article><article class="activity project-like" id="activity-31"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.4</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-13">
+<div class="para logical" id="p-121">
+<div class="para">In this activity, we will look at linear combinations of a pair of vectors,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec = \left[\begin{array}{r} 2 \\ 1 \end{array}\right],
+\wvec = \left[\begin{array}{r} 1 \\ 2 \end{array}\right]
+\end{equation*}
+</div>
+<div class="para">with weights <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{.}\)</span>
+</div>
+</div>  <div class="para" id="p-122">Go to the Applet in <a class="external" href="https://davidaustinm.github.io/ula/sec-vectors-lin-combs.html#activity-11" target="_blank">Activity 2.1.2</a><a href="" data-knowl="" class="id-ref fn-knowl original" data-refid="hk-fn-2" id="fn-2"><sup> 2 </sup></a> in Understanding Linear Algebra.</div>
+</div>
+<article class="task exercise-like" id="task-38"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para" id="p-123">The weight <span class="process-math">\(b\)</span> is initially set to 0.  Explain what happens as you vary <span class="process-math">\(a\)</span> with <span class="process-math">\(b=0\text{?}\)</span>  How is this related to scalar multiplication?</div></article><article class="task exercise-like" id="task-39"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para" id="p-124">What is the linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\)</span> when <span class="process-math">\(a = 1\)</span> and <span class="process-math">\(b=-2\text{?}\)</span>  You may find this result using the diagram, but you should also verify it by computing the linear combination.</div></article><article class="task exercise-like" id="task-40"><h4 class="heading"><span class="codenumber">(c)</span></h4>
+<div class="para logical" id="p-125">
+<div class="para">The vectors that arise when the weight <span class="process-math">\(b\)</span> is set to 1 and <span class="process-math">\(a\)</span> is varied is</div>
+<ol class="upper-alpha">
+<li id="li-71"><div class="para" id="p-126">a line through <span class="process-math">\(\vvec\)</span> parallel to <span class="process-math">\(\wvec\text{.}\)</span>
+</div></li>
+<li id="li-72"><div class="para" id="p-127">a line through <span class="process-math">\(\wvec\)</span> parallel to <span class="process-math">\(\vvec\text{.}\)</span>
+</div></li>
+<li id="li-73"><div class="para" id="p-128">a line through <span class="process-math">\((0,0)\)</span> parallel to <span class="process-math">\(\vvec+\wvec\text{.}\)</span>
+</div></li>
+</ol>
+</div></article><article class="task exercise-like" id="task-41"><h4 class="heading"><span class="codenumber">(d)</span></h4>
+<div class="para" id="p-129">Can the vector <span class="process-math">\(\left[\begin{array}{r} 0 \\ 0 \end{array} \right]\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  If so, what are weights <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-42"><h4 class="heading"><span class="codenumber">(e)</span></h4>
+<div class="para" id="p-130">Can the vector <span class="process-math">\(\left[\begin{array}{r} 3 \\ 0 \end{array} \right]\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  If so, what are weights <span class="process-math">\(a\)</span> and <span class="process-math">\(b\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-43"><h4 class="heading"><span class="codenumber">(f)</span></h4>
+<div class="para" id="p-131">Verify the result from the previous part by algebraically finding the weights <span class="process-math">\(a\)</span> and <span class="process-math">\(b\)</span> that form the linear combination <span class="process-math">\(\left[\begin{array}{r} 3 \\ 0 \end{array} \right]\text{.}\)</span>
+</div></article><article class="task exercise-like" id="task-44"><h4 class="heading"><span class="codenumber">(g)</span></h4>
+<div class="para" id="p-132">Can the vector <span class="process-math">\(\left[\begin{array}{r} 1.3 \\ -1.7 \end{array} \right]\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>  What about the vector <span class="process-math">\(\left[\begin{array}{r} 15.2 \\ 7.1 \end{array} \right]\text{?}\)</span>
+</div></article><article class="task exercise-like" id="task-45"><h4 class="heading"><span class="codenumber">(h)</span></h4>
+<div class="para" id="p-133">Are there any two-dimensional vectors that cannot be expressed as linear combinations of <span class="process-math">\(\vvec\)</span> and <span class="process-math">\(\wvec\text{?}\)</span>
+</div></article></article><article class="activity project-like" id="activity-32"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.5</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-134">
+<div class="para">Given the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec_1 = \left[\begin{array}{r} 4 \\ 0 \\ 2 \\ 1
+\end{array} \right], 
+\vvec_2 = \left[\begin{array}{r} 1 \\ -3 \\ 3 \\ 1
+\end{array} \right], 
+\vvec_3 = \left[\begin{array}{r} -2 \\ 1 \\ 1 \\ 0
+\end{array} \right], 
+\bvec   = \left[\begin{array}{r} 0 \\ 1 \\ 2 \\ -2
+\end{array} \right]\text{,}
+\end{equation*}
+</div>
+<div class="para">we ask if <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>  Rephrase this question by writing a linear system for the weights <span class="process-math">\(c_1\text{,}\)</span> <span class="process-math">\(c_2\text{,}\)</span> and <span class="process-math">\(c_3\)</span> and use the Sage cell below to answer this question. <pre class="ptx-sagecell sagecell-sage" id="sage-1"><script type="text/x-sage">
+</script></pre>
+</div>
+</div></article><article class="activity project-like" id="activity-33"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.6</span><span class="period">.</span>
+</h3>
+<div class="para logical" id="p-135">
+<div class="para">Consider the following linear system.</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\begin{alignedat}{4}
+3x_1 \amp {}+{} \amp 2x_2 \amp {}-{} x_3 \amp {}={} \amp 4 \\
+x_1 \amp \amp \amp {}+{} 2x_3 \amp {}={} \amp 0 \\
+-x_1 \amp {}-{} \amp x_2 \amp {}+{} 3x_3 \amp {}={} \amp 1
+\\
+\end{alignedat}
+\end{equation*}
+</div>
+<div class="para">Identify vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> <span class="process-math">\(\vvec_3\text{,}\)</span> and <span class="process-math">\(\bvec\)</span> and rephrase the question "Is this linear system consistent?" by asking "Can <span class="process-math">\(\bvec\)</span> be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{?}\)</span>"</div>
+</div></article><article class="activity project-like" id="activity-34"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.7</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-14"><div class="para logical" id="p-136">
+<div class="para">Consider the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+\end{array} \right], 
+\vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+\end{array} \right], 
+\vvec_3 = \left[\begin{array}{r} 2 \\ 0 \\ -1 \\
+\end{array} \right], 
+\bvec   = \left[\begin{array}{r} -1 \\ 3 \\ -1 \\
+\end{array} \right]\text{.}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-46"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="p-137">
+<div class="para">Which statement is the most accurate for <span class="process-math">\(\bvec\text{?}\)</span>
+</div>
+<ol class="upper-alpha">
+<li id="li-74"><div class="para" id="p-138">The vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in exactly one way.</div></li>
+<li id="li-75"><div class="para" id="p-139">The vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in more than one way.</div></li>
+<li id="li-76"><div class="para" id="p-140">The vector <span class="process-math">\(\bvec\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para"><pre class="ptx-sagecell sagecell-sage" id="sage-2"><script type="text/x-sage">
+</script></pre></div>
+</div></article><article class="task exercise-like" id="task-47"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="p-141">
+<div class="para">Considering just the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{,}\)</span> determine the most accurate statement.</div>
+<ol class="upper-alpha">
+<li id="li-77"><div class="para" id="p-142">Every three dimensional vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in exactly one way.</div></li>
+<li id="li-78"><div class="para" id="p-143">Every three dimensional vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in more than one way.</div></li>
+<li id="li-79"><div class="para" id="p-144">There are vectors <span class="process-math">\(\bvec\)</span> that cannot be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Be able to explain how the pivot positions of the matrix <span class="process-math">\(\left[\begin{array}{rrr} \vvec_1 \amp
+\vvec_2 \amp \vvec_3 \end{array} \right]\)</span> help answer this question.</div>
+</div></article></article><article class="activity project-like" id="activity-35"><h3 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.0.8</span><span class="period">.</span>
+</h3>
+<div class="introduction" id="introduction-15"><div class="para logical" id="p-145">
+<div class="para">Consider the vectors</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\vvec_1 = \left[\begin{array}{r} 0 \\ -2 \\ 1 \\
+\end{array} \right], 
+\vvec_2 = \left[\begin{array}{r} 1 \\ 1 \\ -1 \\
+\end{array} \right], 
+\vvec_3 = \left[\begin{array}{r} 1 \\ -1 \\ -2 \\
+\end{array} \right], 
+\bvec   = \left[\begin{array}{r} 0 \\ 8 \\ -4 \\
+\end{array} \right]\text{.}
+\end{equation*}
+</div>
+</div></div>
+<article class="task exercise-like" id="task-48"><h4 class="heading"><span class="codenumber">(a)</span></h4>
+<div class="para logical" id="p-146">
+<div class="para">Which statement is the most accurate for <span class="process-math">\(\bvec\text{?}\)</span>
+</div>
+<ol class="upper-alpha">
+<li id="li-80"><div class="para" id="p-147">The vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in exactly one way.</div></li>
+<li id="li-81"><div class="para" id="p-148">The vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in more than one way.</div></li>
+<li id="li-82"><div class="para" id="p-149">The vector <span class="process-math">\(\bvec\)</span> cannot be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para"><pre class="ptx-sagecell sagecell-sage" id="sage-3"><script type="text/x-sage">
+</script></pre></div>
+</div></article><article class="task exercise-like" id="task-49"><h4 class="heading"><span class="codenumber">(b)</span></h4>
+<div class="para logical" id="p-150">
+<div class="para">Considering just the vectors <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> from the previous part, determine the most accurate statement.</div>
+<ol class="upper-alpha">
+<li id="li-83"><div class="para" id="p-151">Every three dimensional vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in exactly one way.</div></li>
+<li id="li-84"><div class="para" id="p-152">Every three dimensional vector <span class="process-math">\(\bvec\)</span> can be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\)</span> in more than one way.</div></li>
+<li id="li-85"><div class="para" id="p-153">There are vectors <span class="process-math">\(\bvec\)</span> that cannot be expressed as a linear combination of <span class="process-math">\(\vvec_1\text{,}\)</span> <span class="process-math">\(\vvec_2\text{,}\)</span> and <span class="process-math">\(\vvec_3\text{.}\)</span>
+</div></li>
+</ol>
+<div class="para">Be able to explain how the pivot positions of the matrix <span class="process-math">\(\left[\begin{array}{rrr} \vvec_1 \amp
+\vvec_2 \amp \vvec_3 \end{array} \right]\)</span> help answer this question.</div>
+</div></article></article></section><div class="hidden-content tex2jax_ignore" id="hk-fn-2"><div class="fn"><code class="code-inline tex2jax_ignore">davidaustinm.github.io/ula/sec-vectors-lin-combs.html#activity-11</code></div></div>
+</div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="ch-two.html" title="Previous"><span class="icon">&lt;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon">^</span><span class="name">Top</span></a><a class="next-button button" href="ch2sec2.html" title="Next"><span class="name">Next</span><span class="icon">&gt;</span></a>
+</div></main>
+</div>
+<div class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org"><div class="name">Authored in PreTeXt</div>
+<div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259 "></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0  472  9732 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496 A 4241 4241  0  0  1  4724  3590 "></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259 A 4507 4507  0  0  1  4724  9448 "></path><polyline points="5385,4299 4062,8125 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8598,3496 8598,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="850,3496 850,9259 " style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="4960,9685 4488,9685 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="3070,4582 1889,6141 3070,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="6418,4582 7600,6141 6418,7700 " style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round; "></polyline><polyline points="8976,3590 8976,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732 "></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy"><div class="name">Powered by Runestone</div>
+<img class="logo" title="Powered by Runestone" src="https://runestone.academy/runestone/static/rectangle_badge.png" alt="Powered by Runestone"></a><a class="mathjax-logo" href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a>
+</div>
+<!--Start: StatCounter code--><!--*** DO NOT COPY ANOTHER PROJECT'S MAGIC NUMBERS/ID ***--><!--***        GET YOUR OWN FROM STATCOUNTER           ***--><script>
+var sc_project=12865162;
+var sc_invisible=1;
+var sc_security="42532f2e";
+var scJsHost = (("https:" == document.location.protocol) ? "https://secure." : "https://www.");
+document.write("<sc"+"ript src='" + scJsHost+ "statcounter.com/counter/counter.js'></"+"script>");
+</script><noscript><div class="statcounter"><a title="web analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12865162/0/42532f2e/1/" alt="web analytics"></a></div></noscript>
+<!--End: StatCounter code-->
+</body>
+</html>

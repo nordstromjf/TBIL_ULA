@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>// Make *any* pre with class 'sagecell-sage' an executable Sage cell
+// Their results will be linked, only within language type
+sagecell.makeSagecell({inputLocation: 'pre.sagecell-sage',
+                       linked: true,
+                       languages: ['sage'],
+                       evalButtonText: 'Evaluate (Sage)'});
+</script>
+</head>
+<body class="ignore-math">
+<article class="task exercise-like"><h4 class="heading">
+<span class="type">Task</span><span class="space"> </span><span class="codenumber">4.5.0.5.b</span><span class="period">.</span>
+</h4>
+<div class="para">As before, find the first 10 terms in the Markov chain beginning with <span class="process-math">\(\xvec_0 = \twovec{1}{0}\)</span> and <span class="process-math">\(\xvec_{k+1} = B\xvec_k\text{.}\)</span> <pre class="ptx-sagecell sagecell-sage" id="sage-36"><script type="text/x-sage">def markov_chain(A, x0, N):
+    for i in range(N):
+        x0 = A*x0
+        print (x0)
+## define the matrix A and x0
+A =
+x0 =
+markov_chain(A, x0, 10)
+</script></pre>
+</div></article><span class="incontext"><a href="ch4sec5.html#task-388" class="internal">in-context</a></span>
+</body>
+</html>
