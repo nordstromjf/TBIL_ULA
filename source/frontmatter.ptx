@@ -57,7 +57,7 @@
     <!-- You should be a little careful about what you put here -->
     <!-- Avoid elements that should have a number, for example  -->
     <p>
-      This is a workbook with activities intended to be used with Austin's Understanding Linear Algebra. Most Acitivtes are adaptations of the acitivites in his text to be implemented in a team-based learning format.
+      This is a workbook with activities intended to be used with Austin's Understanding Linear Algebra. Most Activities are adaptations of the activities in his text to be implemented in a team-based learning format.
     </p>
 
   </preface>
