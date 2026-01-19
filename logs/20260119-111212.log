@@ -1,0 +1,12 @@
+WARNING : Project's CLI version could not be detected from `requirements.txt`.
+WARNING : Try `pretext init --refresh` to produce a compatible file.
+INFO    : Staging deployment according to strategy default_target
+INFO    : Since no target was supplied, we will use "html".
+
+INFO    : Staging latest build located in `/Users/jennifernordstrom/pretextbooks/TBILworkbook/output/html` at `/Users/jennifernordstrom/pretextbooks/TBILworkbook/output/stage`.
+INFO    : 
+INFO    : Preparing to deploy from active `main` git branch.
+
+INFO    : Changes to project source since last commit detected.
+INFO    : Committing these changes to local Git repository.
+
